@@ -43,16 +43,17 @@ RewriteRule ^ /tuskin-coffee-mumbai-cafe? [R=301,L]
 RewriteCond %{THE_REQUEST} \s/+commercial-kitchen-equipment-for-restaurant/?[\s?] [NC]
 RewriteRule ^ /commercial-kitchen-equipment-complete-setup-for-f-b? [R=301,L]
 
+# 301 redirect: retired page -> projects
+RewriteCond %{THE_REQUEST} \s/+old_projects(?:\.html)?/?[\s?] [NC]
+RewriteRule ^ /projects? [R=301,L]
+
 # General: redirect any URL with a trailing slash to the same URL without it
-# (skips real subfolders, and skips Blog Site's own paths, which canonicalize
-# the opposite way — see Blog Site\.htaccess rules 5-7)
+# (skips real subfolders)
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/(Blog%20Site|Blog\+Site)/ [NC]
 RewriteCond %{THE_REQUEST} \s/+(.+)/[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/(Blog%20Site|Blog\+Site)/ [NC]
 RewriteCond %{THE_REQUEST} \s/+(.+)/[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 

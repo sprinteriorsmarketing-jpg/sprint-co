@@ -136,7 +136,7 @@ Cities
 https://www.sprint-co.com/cities
 
 Blog
-https://blog.sprint-co.com/
+https://www.sprint-co.com/insights
 
 Sitemap
 https://www.sprint-co.com/sitemap.xml
