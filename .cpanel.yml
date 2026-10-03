@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/sprintco/public_html/
-    - /bin/rsync -a --exclude='.git/' --exclude='.cpanel.yml' ./ $DEPLOYPATH
+    - /bin/rsync -rltv --exclude='.git/' --exclude='.cpanel.yml' --exclude='.well-known/' --exclude='blog/' --exclude='bms/' --exclude='Digital-Marketing/' --exclude='downloads/' --exclude='ems/' --exclude='magazine.sprint-co.com/' --exclude='spark.sprint-co.com/' --exclude='spco/' --exclude='testbms.sprint-co.com/' ./ $DEPLOYPATH
