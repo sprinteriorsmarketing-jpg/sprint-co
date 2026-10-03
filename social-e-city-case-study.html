@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-881264946"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-881264946');
+  gtag('config', 'G-9EFG5Q3JHZ');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Case Study: Designing Rebellion at the Heart of India's Silicon Valley | SprintCo</title>
+    <meta name="description" content="5,500 sq. ft., 65-day build, 2 global features. How SprintCo and FlatpackCo turned a hidden office floor in Electronic City into SOCIAL ECity.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── SprintCo Case Study — scoped design system ── */
+        .ccs-page {
+            --ccs-orange: #f4602b;
+            --ccs-black: #1a1a1a;
+            --ccs-cream: #f6f0ea;
+            --ccs-white: #fff;
+            --ccs-gray: #6b6b64;
+            --ccs-line: #e2ddd3;
+            font-family: 'Poppins', sans-serif;
+            color: var(--ccs-black);
+            background: var(--ccs-white);
+        }
+
+        .ccs-page * { box-sizing: border-box; }
+
+        .ccs-eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ccs-orange);
+            margin: 0 0 18px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .ccs-eyebrow::before {
+            content: "";
+            width: 28px;
+            height: 1.5px;
+            background: var(--ccs-orange);
+            display: inline-block;
+        }
+
+        .ccs-wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* ── Hero ── */
+        .ccs-hero {
+            position: relative;
+            min-height: 88vh;
+            display: flex;
+            align-items: flex-end;
+            background: #111;
+            overflow: hidden;
+        }
+        .ccs-hero__bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.55;
+        }
+        .ccs-hero__gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(17,17,17,0.15) 0%, rgba(17,17,17,0.55) 55%, rgba(17,17,17,0.94) 100%);
+        }
+        .ccs-hero__content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 150px 40px 56px;
+            max-width: 1180px;
+            margin: 0 auto;
+            color: #fff;
+        }
+        .ccs-hero__tag {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ccs-orange);
+            margin: 0 0 22px 0;
+        }
+        .ccs-hero__title {
+            font-size: clamp(36px, 5.2vw, 70px);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.01em;
+            margin: 0 0 20px 0;
+            max-width: 880px;
+        }
+        .ccs-hero__sub {
+            font-size: clamp(15px, 1.4vw, 18px);
+            font-weight: 300;
+            line-height: 1.55;
+            color: rgba(255,255,255,0.85);
+            max-width: 560px;
+            margin: 0 0 42px 0;
+        }
+        .ccs-hero__meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 24px;
+        }
+        .ccs-hero__field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            min-width: 140px;
+        }
+        .ccs-hero__label {
+            font-size: 10.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: rgba(255,255,255,0.55);
+            font-weight: 500;
+        }
+        .ccs-hero__value {
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        /* ── Stat Strip ── */
+        .ccs-stats {
+            background: var(--ccs-black);
+            padding: 40px 0;
+        }
+        .ccs-stats__grid {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .ccs-stat__num {
+            font-size: clamp(28px, 3.2vw, 42px);
+            font-weight: 700;
+            color: var(--ccs-orange);
+            line-height: 1;
+            margin: 0 0 10px 0;
+        }
+        .ccs-stat__label {
+            font-size: 13px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.45;
+        }
+
+        /* ── Section shell ── */
+        .ccs-section {
+            padding: 84px 0;
+            border-bottom: 1px solid var(--ccs-line);
+        }
+        .ccs-section--cream { background: var(--ccs-cream); }
+        .ccs-section__head {
+            max-width: 760px;
+            margin: 0 0 40px 0;
+        }
+        .ccs-section__title {
+            font-size: clamp(28px, 3.2vw, 42px);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            line-height: 1.15;
+            margin: 0;
+        }
+        .ccs-lede {
+            font-size: 19px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--ccs-black);
+            max-width: 780px;
+            margin: 0 0 32px 0;
+        }
+        .ccs-body {
+            font-size: 15.5px;
+            font-weight: 300;
+            line-height: 1.75;
+            color: #4a4a45;
+            max-width: 780px;
+            margin: 0 0 18px 0;
+        }
+        .ccs-body strong { color: var(--ccs-black); font-weight: 600; }
+
+        /* ── Bulleted pointer list ── */
+        .ccs-points {
+            list-style: none;
+            margin: 0 0 8px 0;
+            padding: 0;
+            max-width: 700px;
+        }
+        .ccs-points li {
+            position: relative;
+            padding: 0 0 0 22px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #4a4a45;
+        }
+        .ccs-points li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--ccs-orange);
+        }
+        .ccs-points li strong { color: var(--ccs-black); font-weight: 600; }
+        .ccs-points--tight li { margin-bottom: 9px; }
+
+        /* ── Pull quote ── */
+        .ccs-quote {
+            border-left: 3px solid var(--ccs-orange);
+            padding: 4px 0 4px 24px;
+            margin: 30px 0;
+            max-width: 780px;
+        }
+        .ccs-quote p {
+            font-size: 19px;
+            font-weight: 500;
+            font-style: italic;
+            line-height: 1.45;
+            color: var(--ccs-black);
+            margin: 0 0 10px 0;
+        }
+        .ccs-quote cite {
+            font-size: 12.5px;
+            font-style: normal;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--ccs-gray);
+        }
+        .ccs-quote cite span {
+            font-weight: 300;
+            color: var(--ccs-gray);
+        }
+
+        /* ── Two-tone compare cards ── */
+        .ccs-compare {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 8px;
+        }
+        .ccs-compare__card {
+            border-radius: 16px;
+            padding: 28px 26px;
+        }
+        .ccs-compare__card--light {
+            background: var(--ccs-white);
+            border: 1px solid var(--ccs-line);
+        }
+        .ccs-compare__card--dark {
+            background: var(--ccs-black);
+            color: #fff;
+        }
+        .ccs-compare__tag {
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ccs-orange);
+            margin: 0 0 16px 0;
+        }
+        .ccs-compare__card ul {
+            margin: 0;
+            padding: 0 0 0 18px;
+        }
+        .ccs-compare__card li {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.65;
+            margin-bottom: 9px;
+        }
+        .ccs-compare__card--light li { color: #4a4a45; }
+        .ccs-compare__card--dark li { color: rgba(255,255,255,0.82); }
+        .ccs-compare__statement {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* ── Pillar cards ── */
+        .ccs-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 30px;
+        }
+        .ccs-pillar {
+            background: var(--ccs-white);
+            border: 1px solid var(--ccs-line);
+            border-radius: 14px;
+            padding: 26px 24px;
+        }
+        .ccs-pillar__num {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--ccs-orange);
+            letter-spacing: 0.08em;
+            margin: 0 0 14px 0;
+        }
+        .ccs-pillar__title {
+            font-size: 17px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+        .ccs-pillar__text {
+            font-size: 13.5px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--ccs-gray);
+            margin: 0;
+        }
+
+        /* ── Moodboard image block ── */
+        .ccs-moodboard {
+            margin: 30px 0 0 0;
+            border-radius: 16px;
+            overflow: hidden;
+            max-width: 900px;
+        }
+        .ccs-moodboard img { width: 100%; display: block; }
+        .ccs-moodboard__cap {
+            font-size: 12.5px;
+            font-weight: 300;
+            color: var(--ccs-gray);
+            margin: 12px 0 0 0;
+            letter-spacing: 0.02em;
+        }
+
+        /* ── Day / Night split ── */
+        .ccs-daynight {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 36px;
+        }
+        .ccs-daynight__card {
+            border-radius: 14px;
+            padding: 26px 24px;
+        }
+        .ccs-daynight__card--day {
+            background: var(--ccs-white);
+            border: 1px solid var(--ccs-line);
+        }
+        .ccs-daynight__card--night {
+            background: var(--ccs-black);
+            color: #fff;
+        }
+        .ccs-daynight__tag {
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ccs-orange);
+            margin: 0 0 14px 0;
+        }
+        .ccs-daynight__card ul {
+            margin: 0;
+            padding: 0 0 0 18px;
+        }
+        .ccs-daynight__card li {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.65;
+            margin-bottom: 9px;
+        }
+        .ccs-daynight__card--day li { color: #4a4a45; }
+        .ccs-daynight__card--night li { color: rgba(255,255,255,0.82); }
+
+        /* ── Requirement / Execution split cards ── */
+        .ccs-challenges {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .ccs-challenge {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid var(--ccs-line);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+        .ccs-challenge__side {
+            padding: 22px 26px;
+        }
+        .ccs-challenge__side--problem { background: var(--ccs-white); }
+        .ccs-challenge__side--solution { background: var(--ccs-black); color: #fff; }
+        .ccs-challenge__label {
+            font-size: 10.5px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin: 0 0 8px 0;
+        }
+        .ccs-challenge__side--problem .ccs-challenge__label { color: var(--ccs-gray); }
+        .ccs-challenge__side--solution .ccs-challenge__label { color: var(--ccs-orange); }
+        .ccs-challenge__title {
+            font-size: 15.5px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+        .ccs-challenge__text {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.55;
+            margin: 0;
+        }
+        .ccs-challenge__side--problem .ccs-challenge__text { color: #4a4a45; }
+        .ccs-challenge__side--solution .ccs-challenge__text { color: rgba(255,255,255,0.82); }
+
+        /* ── Bar chart ── */
+        .ccs-barchart {
+            margin-top: 40px;
+            max-width: 620px;
+        }
+        .ccs-bar-row { margin-bottom: 20px; }
+        .ccs-bar-row__label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .ccs-bar-row__label span:last-child {
+            color: var(--ccs-orange);
+            font-weight: 700;
+        }
+        .ccs-bar-track {
+            background: var(--ccs-line);
+            border-radius: 8px;
+            height: 14px;
+            overflow: hidden;
+        }
+        .ccs-bar-fill {
+            height: 100%;
+            border-radius: 8px;
+        }
+        .ccs-bar-fill--sprintco { background: var(--ccs-orange); width: 65%; }
+        .ccs-bar-fill--other { background: var(--ccs-black); width: 100%; }
+        .ccs-chart-caption {
+            margin-top: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ccs-black);
+        }
+
+        /* ── Locations / feature strip ── */
+        .ccs-locations {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 36px 0 0 0;
+        }
+        .ccs-location {
+            background: var(--ccs-black);
+            border-radius: 14px;
+            padding: 24px 22px;
+            color: #fff;
+        }
+        .ccs-location__name {
+            font-size: 17px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+        .ccs-location__tag {
+            font-size: 12px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ── Press features ── */
+        .ccs-press {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+            max-width: 820px;
+        }
+        .ccs-press__card {
+            border: 1px solid var(--ccs-line);
+            border-radius: 14px;
+            padding: 24px 22px;
+        }
+        .ccs-press__pub {
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ccs-orange);
+            margin: 0 0 10px 0;
+        }
+        .ccs-press__text {
+            font-size: 13.5px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: #4a4a45;
+            margin: 0;
+        }
+
+        /* ── Gallery ── */
+        .ccs-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 230px;
+            grid-auto-flow: dense;
+            gap: 16px;
+            margin-top: 10px;
+        }
+        .ccs-gallery__item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .ccs-gallery__item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .ccs-gallery__item:hover img { transform: scale(1.06); }
+        .ccs-gallery__item--wide { grid-column: span 2; }
+        .ccs-gallery__item--tall { grid-row: span 2; }
+
+        /* ── Results checklist ── */
+        .ccs-checklist {
+            list-style: none;
+            margin: 30px 0 0 0;
+            padding: 0;
+            max-width: 780px;
+        }
+        .ccs-checklist li {
+            display: flex;
+            gap: 14px;
+            padding: 16px 0;
+            border-top: 1px solid var(--ccs-line);
+            font-size: 14.5px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #4a4a45;
+        }
+        .ccs-checklist li:last-child { border-bottom: 1px solid var(--ccs-line); }
+        .ccs-checklist li strong { color: var(--ccs-black); font-weight: 600; }
+        .ccs-checklist__icon {
+            flex: 0 0 22px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--ccs-orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+        .ccs-checklist__icon svg { width: 11px; height: 11px; stroke: #fff; stroke-width: 3; fill: none; }
+
+        /* ── CTA ── */
+        .ccs-cta {
+            background: var(--ccs-black);
+            padding: 90px 0;
+            text-align: center;
+            color: #fff;
+        }
+        .ccs-cta__eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ccs-orange);
+            margin: 0 0 18px 0;
+        }
+        .ccs-cta__title {
+            font-size: clamp(26px, 3.6vw, 40px);
+            font-weight: 700;
+            line-height: 1.2;
+            max-width: 680px;
+            margin: 0 auto 18px auto;
+        }
+        .ccs-cta__text {
+            font-size: 15px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+            max-width: 520px;
+            margin: 0 auto 34px auto;
+            line-height: 1.6;
+        }
+        .ccs-cta__actions {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .ccs-btn {
+            display: inline-block;
+            padding: 15px 32px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .ccs-btn--primary { background: var(--ccs-orange); color: #fff; }
+        .ccs-btn--primary:hover { background: #fff; color: var(--ccs-orange); }
+        .ccs-btn--ghost { border: 1.5px solid rgba(255,255,255,0.3); color: #fff; }
+        .ccs-btn--ghost:hover { border-color: var(--ccs-orange); color: var(--ccs-orange); }
+
+        .ccs-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1024px) {
+            .ccs-wrap, .ccs-hero__content, .ccs-stats__grid { padding-left: 24px; padding-right: 24px; }
+            .ccs-stats__grid { grid-template-columns: repeat(2, 1fr); gap: 30px 20px; }
+            .ccs-pillars, .ccs-compare, .ccs-daynight, .ccs-press, .ccs-locations { grid-template-columns: 1fr; }
+            .ccs-cols { grid-template-columns: 1fr; gap: 26px; }
+            .ccs-gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
+            .ccs-gallery__item--wide { grid-column: span 2; }
+            .ccs-section { padding: 60px 0; }
+            .ccs-challenge { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .ccs-hero { min-height: 74vh; }
+            .ccs-hero__content { padding: 110px 20px 36px; }
+            .ccs-hero__meta { gap: 20px; }
+            .ccs-section__head { margin-bottom: 30px; }
+            .ccs-lede { font-size: 17px; }
+            .ccs-quote p { font-size: 17px; }
+            .ccs-gallery { grid-template-columns: 1fr; grid-auto-rows: 260px; }
+            .ccs-gallery__item, .ccs-gallery__item--wide { grid-column: span 1; }
+        }
+    </style>
+
+<!--linkedin partner tracking code-->
+<script type="text/javascript">
+    _linkedin_partner_id = "5652372";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/javascript">
+    (function(l) {
+        if (!l) {
+            window.lintrk = function(a, b) {
+                window.lintrk.q.push([a, b])
+            };
+            window.lintrk.q = []
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+    })(window.lintrk);
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=5652372&fmt=gif" />
+</noscript>
+<!--END linkedin partner tracking code-->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1467236020816075');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1467236020816075&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body class="page-template-template-blank singular template-projects-single">
+
+<!-- Navigation -->
+<div class="website-menu fixed-menu">
+    <div class="website-menu-logo"><a href="/"><img src="images/sprintco-secondary-logo.svg" alt="SprintCo"></a></div>
+    <div class="website-menu-handler">Menu <img src="images/menu-icn.svg" alt="Menu"></div>
+</div>
+<div id="main-navigations">
+    <div class="main-navigations-logo">
+        <div class="navigations-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
+        <div class="close-menu-handler">Close <img src="images/close-menu.svg" alt="Close"></div>
+    </div>
+    <div class="menu-main-menu-container">
+    <ul id="menu-main-menu" class="footer-main-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="about">About Us</a></li>
+        <li class="current-menu-item menu-item-has-children"><a href="projects">Projects</a>
+            <ul class="sub-menu">
+                <li><a href="projects">All</a></li>
+                <li><a href="projects">Bar</a></li>
+                <li><a href="projects">Cafe</a></li>
+                <li><a href="projects">Restaurant</a></li>
+                <li><a href="projects">QSR</a></li>
+                <li><a href="projects">Kiosk</a></li>
+                <li><a href="projects">Entertainment Spaces</a></li>
+            </ul>
+        </li>
+        <li><a href="our-offerings">Our Offerings</a></li>
+        <li><a href="insights">Insights</a></li>
+    </ul>
+    </div>
+    <div class="main-navigations-footer">
+        <div class="common-button light-button"><a href="contact"><span>Get in touch</span></a></div>
+        <div class="menu-social-links-container">
+        <ul class="footer-social-nav">
+            <li><a href="https://www.linkedin.com/company/sprint-co/" target="_blank">Linkedin</a></li>
+            <li><a href="https://www.instagram.com/sprintco_designs/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@B2B_Designers" target="_blank">YouTube</a></li>
+            <li class="menu-none"><a href="https://www.flatpackco.com/" target="_blank">FlatPackCo</a></li>
+        </ul>
+        </div>
+    </div>
+</div>
+<div class="main-navigations-overlay"></div>
+
+<main class="ccs-page">
+
+    <!-- ── Hero ── -->
+    <section class="ccs-hero">
+        <img class="ccs-hero__bg" src="images/Socials-ECITY-HERO-IMAGE-min.png" alt="SOCIAL ECity — Anti-Office interior designed by SprintCo">
+        <div class="ccs-hero__gradient"></div>
+        <div class="ccs-hero__content">
+            <p class="ccs-hero__tag">A SprintCo Case Study</p>
+            <h1 class="ccs-hero__title">Designing Rebellion at the Heart of India&#8217;s Silicon Valley</h1>
+            <p class="ccs-hero__sub">A hidden third-floor office box in Electronic City, rebuilt as SOCIAL ECity — hard at work by day, loud by night.</p>
+            <div class="ccs-hero__meta">
+                <div class="ccs-hero__field">
+                    <span class="ccs-hero__label">Client</span>
+                    <span class="ccs-hero__value">Impresario Entertainment &amp; Hospitality</span>
+                </div>
+                <div class="ccs-hero__field">
+                    <span class="ccs-hero__label">Theme</span>
+                    <span class="ccs-hero__value">The Anti-Office</span>
+                </div>
+                <div class="ccs-hero__field">
+                    <span class="ccs-hero__label">Footprint</span>
+                    <span class="ccs-hero__value">5,500 sq. ft. — Electronic City, Bengaluru</span>
+                </div>
+                <div class="ccs-hero__field">
+                    <span class="ccs-hero__label">Designed By</span>
+                    <span class="ccs-hero__value">SprintCo</span>
+                </div>
+                <div class="ccs-hero__field">
+                    <span class="ccs-hero__label">Executed By</span>
+                    <span class="ccs-hero__value">FlatpackCo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Stat Strip ── -->
+    <section class="ccs-stats">
+        <div class="ccs-stats__grid">
+            <div class="ccs-stat">
+                <p class="ccs-stat__num">5,500</p>
+                <p class="ccs-stat__label">Sq. ft. — hidden office floor turned landmark</p>
+            </div>
+            <div class="ccs-stat">
+                <p class="ccs-stat__num">65 Days</p>
+                <p class="ccs-stat__label">Build time, vs. 100+ days traditional</p>
+            </div>
+            <div class="ccs-stat">
+                <p class="ccs-stat__num">60 ft</p>
+                <p class="ccs-stat__label">Bar counter, assembled on-site in 30 hours</p>
+            </div>
+            <div class="ccs-stat">
+                <p class="ccs-stat__num">2</p>
+                <p class="ccs-stat__label">Global publications — FoodInSpace &amp; Love That Design</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── 01: The Challenge ── -->
+    <section class="ccs-section">
+        <div class="ccs-wrap">
+            <p class="ccs-eyebrow">01 &nbsp;/&nbsp; Situation &amp; Challenge</p>
+            <div class="ccs-section__head">
+                <h2 class="ccs-section__title">SOCIAL ECity &amp; The Challenge</h2>
+            </div>
+            <p class="ccs-lede">A hidden third-floor box, two very different guests, and one instruction: make it unmissable.</p>
+            <div class="ccs-compare">
+                <div class="ccs-compare__card ccs-compare__card--light">
+                    <p class="ccs-compare__tag">The Site We Were Given</p>
+                    <ul>
+                        <li>A third-floor commercial space, tucked away and invisible from the street</li>
+                        <li>Structured like a standard office — long corridors, boxed-in zones</li>
+                        <li>Two very different guests to design for: 9-to-5 tech workers, late-night hangout seekers</li>
+                    </ul>
+                </div>
+                <div class="ccs-compare__card ccs-compare__card--dark">
+                    <p class="ccs-compare__tag">The Brief</p>
+                    <p class="ccs-compare__statement">&#8220;Turn this office-shaped box into a SOCIAL-shaped experience. And make sure nobody misses it.&#8221;</p>
+                </div>
+            </div>
+            <ul class="ccs-points" style="margin-top:36px;">
+                <li><strong>Shreya, 24</strong> — product analyst; her favourite work desk by day, her sweet wine by night.</li>
+                <li><strong>Mr. Ashoke Rao, 52</strong> — tech founder; books a room for an investor pitch, stays back for live music.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ── 02: Strategy & Design Concept ── -->
+    <section class="ccs-section ccs-section--cream">
+        <div class="ccs-wrap">
+            <p class="ccs-eyebrow">02 &nbsp;/&nbsp; Approach</p>
+            <div class="ccs-section__head">
+                <h2 class="ccs-section__title">The Strategy &amp; Design Concept</h2>
+            </div>
+            <p class="ccs-lede">SOCIAL didn&#8217;t want &#8220;cool.&#8221; It wanted chaotic charm — office culture roasted, not imitated.</p>
+            <ul class="ccs-points">
+                <li><strong>Corporate clich&eacute;s, reframed</strong> — XL sheets, PPT decks and DOC files turned into ironic wall art.</li>
+                <li><strong>Office props repurposed</strong> — file cabinets, chairs and printers, now planters and decor.</li>
+                <li><strong>Kannada pop typography</strong> — pulled straight from film posters and street ads.</li>
+                <li><strong>A real shipping container</strong> — built into the mezzanine as its centrepiece.</li>
+                <li><strong>Server-room aesthetics</strong> — driving the bar&#8217;s CRT, 90s throwback vibe.</li>
+                <li><strong>Mismatched bathroom tiles</strong> — deliberate disorder, on purpose.</li>
+            </ul>
+            <div class="ccs-moodboard">
+                <img src="images/social-e-city-moodboard-min-1024x576.jpg" alt="SOCIAL ECity moodboard — corporate satire references translated into interior design">
+                <p class="ccs-moodboard__cap">The moodboard: corporate clich&eacute;s, office props and Kannada pop culture, translated into built form.</p>
+            </div>
+            <div class="ccs-daynight">
+                <div class="ccs-daynight__card ccs-daynight__card--day">
+                    <p class="ccs-daynight__tag">By Day</p>
+                    <ul>
+                        <li>Flexible workstations and community tables</li>
+                        <li>Pivot tables that rearrange by group size or vibe</li>
+                        <li>Semi-private rooms named after Kannada icons</li>
+                        <li>A cantilevered &#8220;CEO Room&#8221; with a digital stock ticker</li>
+                    </ul>
+                </div>
+                <div class="ccs-daynight__card ccs-daynight__card--night">
+                    <p class="ccs-daynight__tag">By Night</p>
+                    <ul>
+                        <li>Server-room-style bar becomes the glowing heart of the space</li>
+                        <li>Infinity mirror DJ console turns on</li>
+                        <li>Tapri-style smoking zone rolls into action</li>
+                        <li>Lighting and acoustic shifts flip the floor to nightlife</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ccs-pillars">
+                <div class="ccs-pillar">
+                    <p class="ccs-pillar__num">01</p>
+                    <h3 class="ccs-pillar__title">Satire, Not Slogans</h3>
+                    <p class="ccs-pillar__text">Office culture was the material, not the enemy.</p>
+                </div>
+                <div class="ccs-pillar">
+                    <p class="ccs-pillar__num">02</p>
+                    <h3 class="ccs-pillar__title">One Floor, Two Identities</h3>
+                    <p class="ccs-pillar__text">A full workday and a full nightlife shift, on the same footprint.</p>
+                </div>
+                <div class="ccs-pillar">
+                    <p class="ccs-pillar__num">03</p>
+                    <h3 class="ccs-pillar__title">Local, Not Generic</h3>
+                    <p class="ccs-pillar__text">Kannada typography and tapri culture, built in — not layered on.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── 03: Execution & Build ── -->
+    <section class="ccs-section">
+        <div class="ccs-wrap">
+            <p class="ccs-eyebrow">03 &nbsp;/&nbsp; Delivery</p>
+            <div class="ccs-section__head">
+                <h2 class="ccs-section__title">Execution &amp; Build</h2>
+            </div>
+            <p class="ccs-lede">Three site problems. One build partner, FlatpackCo. Every fix engineered to repeat.</p>
+            <div class="ccs-challenges">
+                <div class="ccs-challenge">
+                    <div class="ccs-challenge__side ccs-challenge__side--problem">
+                        <p class="ccs-challenge__label">Challenge 01</p>
+                        <p class="ccs-challenge__title">Invisible Entrance</p>
+                        <p class="ccs-challenge__text">Access tucked into a corner, easy to miss.</p>
+                    </div>
+                    <div class="ccs-challenge__side ccs-challenge__side--solution">
+                        <p class="ccs-challenge__label">Solution</p>
+                        <p class="ccs-challenge__text">A bold Flatpack-built fa&ccedil;ade juts out — visible even from the metro line.</p>
+                    </div>
+                </div>
+                <div class="ccs-challenge">
+                    <div class="ccs-challenge__side ccs-challenge__side--problem">
+                        <p class="ccs-challenge__label">Challenge 02</p>
+                        <p class="ccs-challenge__title">Signboard Chaos</p>
+                        <p class="ccs-challenge__text">Risked getting lost among flex boards and hoardings.</p>
+                    </div>
+                    <div class="ccs-challenge__side ccs-challenge__side--solution">
+                        <p class="ccs-challenge__label">Solution</p>
+                        <p class="ccs-challenge__text">Oversized type, high-contrast colour and angled panels cut through the noise.</p>
+                    </div>
+                </div>
+                <div class="ccs-challenge">
+                    <div class="ccs-challenge__side ccs-challenge__side--problem">
+                        <p class="ccs-challenge__label">Challenge 03</p>
+                        <p class="ccs-challenge__title">Boring Layout</p>
+                        <p class="ccs-challenge__text">Long corridors, boxed zones, zero SOCIAL energy.</p>
+                    </div>
+                    <div class="ccs-challenge__side ccs-challenge__side--solution">
+                        <p class="ccs-challenge__label">Solution</p>
+                        <p class="ccs-challenge__text">CEO room, server-room bar, flexible layouts — built for quick install and future rollouts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="ccs-points ccs-points--tight" style="margin-top:40px;">
+                <li><strong>Off-site fabrication</strong> — bar, mezzanine, furniture and fa&ccedil;ade, all engineered at the Flatpack factory.</li>
+                <li><strong>Zero surprises on site</strong> — what was visualised is exactly what got installed.</li>
+                <li><strong>Built to repeat</strong> — every major element designed for replication across future locations.</li>
+            </ul>
+
+            <div class="ccs-barchart">
+                <div class="ccs-bar-row">
+                    <div class="ccs-bar-row__label"><span>SprintCo x Flatpack</span><span>65 Days</span></div>
+                    <div class="ccs-bar-track"><div class="ccs-bar-fill ccs-bar-fill--sprintco"></div></div>
+                </div>
+                <div class="ccs-bar-row">
+                    <div class="ccs-bar-row__label"><span style="color:var(--ccs-black);">Traditional Construction</span><span style="color:var(--ccs-black);">100+ Days</span></div>
+                    <div class="ccs-bar-track"><div class="ccs-bar-fill ccs-bar-fill--other"></div></div>
+                </div>
+                <p class="ccs-chart-caption">35%+ faster build time, without compromising detail or durability.</p>
+            </div>
+
+            <div class="ccs-locations">
+                <div class="ccs-location">
+                    <p class="ccs-location__name">30 Hours</p>
+                    <p class="ccs-location__tag">To assemble the 60 ft server-room-style bar, pre-engineered off-site.</p>
+                </div>
+                <div class="ccs-location">
+                    <p class="ccs-location__name">4 Components</p>
+                    <p class="ccs-location__tag">Bar, mezzanine, furniture and fa&ccedil;ade — shifted to off-site fabrication.</p>
+                </div>
+                <div class="ccs-location">
+                    <p class="ccs-location__name">1 System</p>
+                    <p class="ccs-location__tag">Pre-engineered, plug-and-play, and ready to scale to future locations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── 04: Project Gallery ── -->
+    <section class="ccs-section ccs-section--cream">
+        <div class="ccs-wrap">
+            <p class="ccs-eyebrow">04 &nbsp;/&nbsp; The Space</p>
+            <div class="ccs-section__head">
+                <h2 class="ccs-section__title">Project Gallery</h2>
+                <p class="ccs-lede" style="margin-top:16px;margin-bottom:0;">A third-floor office box, rewritten as a cultural landmark.</p>
+            </div>
+            <div class="ccs-gallery">
+                <div class="ccs-gallery__item ccs-gallery__item--wide">
+                    <img src="images/SJP4490-Edit-min-scaled.jpg" alt="SOCIAL ECity — Flatpack-built facade and entrance">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/SJP3679-Edit-min-1024x597.jpg" alt="SOCIAL ECity interior — day-use workspace zone">
+                </div>
+                <div class="ccs-gallery__item ccs-gallery__item--tall">
+                    <img src="images/SJP4091-Enhanced-NR-Edit-min-809x1024.jpg" alt="SOCIAL ECity — vertical view of the server-room-style bar">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/SJP3712-Edit-min-1024x683.jpg" alt="SOCIAL ECity interior — repurposed office props as decor">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/SJP3746-Edit-min-1024x683.jpg" alt="SOCIAL ECity interior — Kannada pop typography and signage">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/SJP3822-Edit-min-1024x683.jpg" alt="SOCIAL ECity interior — shipping container mezzanine">
+                </div>
+                <div class="ccs-gallery__item ccs-gallery__item--tall">
+                    <img src="images/SJP4098-Enhanced-NR-Edit-min-683x1024.jpg" alt="SOCIAL ECity — vertical view of seating and lighting">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/SJP3856-Edit-min-1024x683.jpg" alt="SOCIAL ECity interior — flexible furniture layout">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/SJP3905-Edit-min-1024x683.jpg" alt="SOCIAL ECity interior — cantilevered CEO room">
+                </div>
+                <div class="ccs-gallery__item ccs-gallery__item--wide">
+                    <img src="images/SJP4172-Edit-min-1024x683.jpg" alt="SOCIAL ECity — wide interior view of the anti-office layout">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/SJP4234-Edit-min-1024x692.jpg" alt="SOCIAL ECity interior — nightlife lighting transition">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/SJP4268-Edit-min-1024x683.jpg" alt="SOCIAL ECity interior — tapri-style smoking zone">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/SJP4380-Edit-min-1024x683.jpg" alt="SOCIAL ECity interior — infinity mirror DJ console">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/SJP4402-Edit-min-1024x683.jpg" alt="SOCIAL ECity interior — bathroom detail with mismatched tiles">
+                </div>
+                <div class="ccs-gallery__item ccs-gallery__item--wide">
+                    <img src="images/SJP4490-Edit-min-1-1024x683.jpg" alt="SOCIAL ECity — wide facade view at night">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/SJP4588-Edit-min-1024x677.jpg" alt="SOCIAL ECity interior — detail of branding and signage">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/E-city-social-Pre-final-min-1024x576.jpg" alt="SOCIAL ECity — construction detail ahead of opening">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── 05: Results & Impact ── -->
+    <section class="ccs-section">
+        <div class="ccs-wrap">
+            <p class="ccs-eyebrow">05 &nbsp;/&nbsp; Impact</p>
+            <div class="ccs-section__head">
+                <h2 class="ccs-section__title">Results &amp; Impact</h2>
+            </div>
+            <ul class="ccs-checklist">
+                <li>
+                    <span class="ccs-checklist__icon"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"></polyline></svg></span>
+                    <span><strong>A space that felt invisible</strong> now draws people in from across the street — solved at the fa&ccedil;ade and signage level.</span>
+                </li>
+                <li>
+                    <span class="ccs-checklist__icon"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"></polyline></svg></span>
+                    <span><strong>Boardroom-boring layout</strong> is now a canvas of contradictions, where irony, chaos and comfort coexist by design.</span>
+                </li>
+                <li>
+                    <span class="ccs-checklist__icon"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"></polyline></svg></span>
+                    <span><strong>Build cut to 65 days</strong> against 100+ traditional, with a 60 ft bar assembled in 30 hours and zero on-site surprises.</span>
+                </li>
+                <li>
+                    <span class="ccs-checklist__icon"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"></polyline></svg></span>
+                    <span><strong>A construction method built to repeat</strong> — every major element engineered for replication at future locations.</span>
+                </li>
+                <li>
+                    <span class="ccs-checklist__icon"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"></polyline></svg></span>
+                    <span><strong>Endorsed by Riyaaz Amlani</strong>, Managing Director of Impresario Entertainment &amp; Hospitality, as a defining project for SOCIAL.</span>
+                </li>
+            </ul>
+            <div class="ccs-press">
+                <div class="ccs-press__card">
+                    <p class="ccs-press__pub">FoodInSpace &mdash; Milan</p>
+                    <p class="ccs-press__text">The world&#8217;s first magazine dedicated to F&amp;B spaces, for its immersive storytelling and rebellion-in-a-box design.</p>
+                </div>
+                <div class="ccs-press__card">
+                    <p class="ccs-press__pub">Love That Design &mdash; Dubai</p>
+                    <p class="ccs-press__text">Spotlighted for its bold spatial choices and the Flatpack-driven rethink of traditional F&amp;B builds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── 06: Call To Action ── -->
+    <section class="ccs-cta">
+        <p class="ccs-cta__eyebrow">Call To Action</p>
+        <h2 class="ccs-cta__title">Want a Space That&#8217;s Bold, Fast, and Built With Care?</h2>
+        <p class="ccs-cta__text">If you&#8217;re dreaming up a space that sparks connection and saves time, cost and construction waste — let&#8217;s talk.</p>
+        <div class="ccs-cta__actions">
+            <a href="contact" class="ccs-btn ccs-btn--primary">Start Your Project</a>
+            <a href="social-e-city-bengaluru-bar" class="ccs-btn ccs-btn--ghost">View the Full Project</a>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="scrolltop"><img src="images/scrolltop.svg" alt="Scroll To Top"></div>
+    <div class="footer-container">
+        <div class="footer-block">
+            <div class="footer-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
+            <p>Vasudev Chamber-B, 21, Old Nagardas Cross Rd, near Andheri Subway, opposite Wilson House, Mogra Pada, Natwar Nagar, Andheri East, Mumbai, Maharashtra- 400069<br><br>
+            &copy; 2025 Copyright B2B Designers Pvt Limited 2025. <br>All Rights Reserved.</p>
+            <ul class="footer-privacy-nav"><li><a href="#">Privacy Policy</a></li></ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-main-nav">
+                <li><a href="projects">Projects</a></li>
+                <li><a href="our-offerings">Our Offerings</a></li>
+                <li><a href="our-clients">Our Clients</a></li>
+                <li><a href="insights">Insights</a></li>
+                  <li><a href="../cities">Cities</a></li>
+            </ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-social-nav">
+                <li><a href="https://www.linkedin.com/company/sprint-co/" target="_blank">Linkedin</a></li>
+                <li><a href="https://www.instagram.com/sprintco_designs/" target="_blank">Instagram</a></li>
+                <li><a href="https://www.youtube.com/@B2B_Designers" target="_blank">YouTube</a></li>
+                <li class="menu-none"><a href="https://www.flatpackco.com/" target="_blank">FlatPackCo</a></li>
+            </ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-contact-nav">
+                <li class="copy-text"><a>info@sprint-co.com</a></li>
+                <li class="copy-text"><a>(+91) 9004301234</a></li>
+                <li class="common-button light-button"><a href="contact"><span>Get in Touch</span></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

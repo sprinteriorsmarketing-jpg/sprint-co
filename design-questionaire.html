@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design & Build Questionnaire — SprintCo</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --orange: #E85B2A;
+    --orange-light: #FBF0EB;
+    --orange-dark: #B03E17;
+    --ink: #1A1714;
+    --ink-mid: #4A4540;
+    --ink-soft: #8A847E;
+    --surface: #F9F7F4;
+    --white: #FFFFFF;
+    --border: rgba(26,23,20,0.1);
+    --border-strong: rgba(26,23,20,0.18);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--surface);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: var(--white);
+    padding: 80px 48px 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(232, 91, 42, 0.2);
+    border: 1px solid rgba(232, 91, 42, 0.35);
+    color: #F09070;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #F09070;
+    border-radius: 50%;
+  }
+
+  .hero h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    max-width: 780px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--orange);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  .hero-bar {
+    display: flex;
+    gap: 32px;
+    padding: 28px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-stat strong {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--white);
+  }
+
+  .hero-stat span {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    margin-top: 2px;
+  }
+
+  /* PROGRESS NAV */
+  .progress-nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 90;
+  }
+
+  .nav-section {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    padding: 14px 20px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .nav-section:hover, .nav-section.active {
+    color: var(--orange);
+    border-bottom-color: var(--orange);
+  }
+
+  /* MAIN */
+  .page-body {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 64px 48px 120px;
+  }
+
+  /* INTRO */
+  .intro-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 40px;
+    margin-bottom: 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .intro-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--orange);
+  }
+
+  .intro-card p {
+    font-size: 15px;
+    color: var(--ink-mid);
+    line-height: 1.75;
+  }
+
+  .intro-card p + p { margin-top: 12px; }
+
+  /* SECTION */
+  .form-section {
+    margin-bottom: 64px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .section-number {
+    width: 40px;
+    height: 40px;
+    background: var(--orange);
+    color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.3px;
+    color: var(--ink);
+  }
+
+  .section-subtitle {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+
+  /* QUESTION CARD */
+  .question-group {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .question-group-title {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+  }
+
+  .question-item {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .question-item:last-child { border-bottom: none; }
+
+  .question-label {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .question-label .required {
+    color: var(--orange);
+    margin-left: 2px;
+  }
+
+  .question-hint {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    padding: 11px 14px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    resize: vertical;
+  }
+
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(232, 91, 42, 0.12);
+  }
+
+  textarea { min-height: 90px; }
+
+  .inline-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* CHECKBOX / RADIO */
+  .options-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .option-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    font-size: 14px;
+  }
+
+  .option-item:hover {
+    border-color: var(--orange);
+    background: var(--orange-light);
+  }
+
+  .option-item input[type="radio"],
+  .option-item input[type="checkbox"] {
+    width: auto;
+    accent-color: var(--orange);
+  }
+
+  /* FLATPACK HIGHLIGHT */
+  .flatpack-callout {
+    background: var(--orange-light);
+    border: 1px solid rgba(232, 91, 42, 0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+
+  .flatpack-callout strong {
+    color: var(--orange-dark);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+
+  .flatpack-callout p {
+    font-size: 13px;
+    color: var(--orange-dark);
+    line-height: 1.6;
+  }
+
+  /* FILE UPLOAD */
+  .file-upload {
+    border: 1.5px dashed var(--border-strong);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background: var(--surface);
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+
+  .file-upload:hover { border-color: var(--orange); }
+
+  .file-upload p {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+
+  .file-upload-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--orange);
+  }
+
+  /* SUBMIT */
+  .submit-zone {
+    background: var(--ink);
+    border-radius: 16px;
+    padding: 40px 40px;
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  .submit-zone h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .submit-zone p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+
+  .submit-btn {
+    background: var(--orange);
+    color: var(--white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    border-radius: 100px;
+    padding: 16px 48px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    letter-spacing: 0.02em;
+  }
+
+  .submit-btn:hover { background: var(--orange-dark); }
+  .submit-btn:active { transform: scale(0.98); }
+  .submit-btn:disabled { opacity: 0.6; cursor: wait; }
+
+  .form-status {
+    display: none;
+    margin-top: 20px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .form-status.is-visible { display: block; }
+  .form-status.is-error { background: rgba(232, 91, 42, 0.15); color: #F09070; }
+  .form-status.is-success { background: rgba(120, 200, 140, 0.15); color: #8FE0A6; }
+
+  .file-list {
+    margin-top: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .file-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: var(--ink-mid);
+  }
+
+  .file-list-item .file-size { color: var(--ink-soft); flex-shrink: 0; }
+
+  .field-error {
+    display: block;
+    font-size: 12px;
+    color: var(--orange-dark);
+    margin-top: 6px;
+  }
+
+  /* FIRST FIELD */
+  .main-offering-card {
+    background: var(--white);
+    border: 1.5px solid var(--orange);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 56px;
+  }
+
+  .main-offering-card label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .main-offering-card .hint {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 48px 20px 0; }
+    .hero-bar { gap: 20px; flex-wrap: wrap; }
+    .progress-nav { padding: 0 20px; }
+    .page-body { padding: 40px 20px 80px; }
+    .inline-pair { grid-template-columns: 1fr; }
+    .submit-zone { padding: 28px 20px; }
+    .intro-card { padding: 24px 20px 24px 28px; }
+  }
+</style>
+</head>
+<body class="page-template-template-blank">
+
+<!-- Navigation -->
+<div class="website-menu fixed-menu">
+    <div class="website-menu-logo"><a href="/"><img src="images/sprintco-secondary-logo.svg" alt="SprintCo"></a></div>
+    <div class="website-menu-handler">Menu <img src="images/menu-icn.svg" alt="Menu"></div>
+</div>
+<div id="main-navigations">
+    <div class="main-navigations-logo">
+        <div class="navigations-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
+        <div class="close-menu-handler">Close <img src="images/close-menu.svg" alt="Close"></div>
+    </div>
+    <div class="menu-main-menu-container">
+    <ul id="menu-main-menu" class="footer-main-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="about">About Us</a></li>
+        <li class="menu-item-has-children"><a href="projects">Projects</a>
+            <ul class="sub-menu">
+                <li><a href="projects">All</a></li>
+                <li><a href="projects">Bar</a></li>
+                <li><a href="projects">Cafe</a></li>
+                <li><a href="projects">Restaurant</a></li>
+                <li><a href="projects">QSR</a></li>
+                <li><a href="projects">Kiosk</a></li>
+                <li><a href="projects">Entertainment Spaces</a></li>
+            </ul>
+        </li>
+        <li><a href="our-offerings">Our Offerings</a></li>
+        <li><a href="insights">Insights</a></li>
+    </ul>
+    </div>
+    <div class="main-navigations-footer">
+        <div class="common-button light-button"><a href="contact"><span>Get in touch</span></a></div>
+        <div class="menu-social-links-container">
+        <ul class="footer-social-nav">
+            <li><a href="https://www.linkedin.com/company/sprint-co/" target="_blank">Linkedin</a></li>
+            <li><a href="https://www.instagram.com/sprintco_designs/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@B2B_Designers" target="_blank">YouTube</a></li>
+            <li class="menu-none"><a href="https://www.flatpackco.com/" target="_blank">FlatPackCo</a></li>
+        </ul>
+        </div>
+    </div>
+</div>
+<div class="main-navigations-overlay"></div>
+
+<!-- HERO -->
+<section class="hero">
+  
+  <h1>Let's build your<br><em>perfect outlet.</em></h1>
+  <p class="hero-sub">Tell us about your brand, your customers, and your vision — and we'll design a space that works as hard as you do.</p>
+  
+</section>
+
+<!-- SECTION NAV -->
+<nav class="progress-nav" aria-label="Form sections">
+  <a href="#brand" class="nav-section active">Brand &amp; Strategy</a>
+  <a href="#concept" class="nav-section">Concept &amp; Customers</a>
+  <a href="#design" class="nav-section">Design Details</a>
+  <a href="#build" class="nav-section">Build Phase</a>
+  <a href="#additional" class="nav-section">Additional</a>
+</nav>
+
+<!-- PAGE BODY -->
+<main class="page-body">
+
+  <!-- INTRO -->
+  <div class="intro-card">
+    <p>The following questions help us understand your concept, brand values, and goals. Feel free to skip any question that isn't relevant — or one you've already answered elsewhere.</p>
+    <p>The more you share, the better we can design a space that aligns perfectly with your vision. Fields marked <span style="color: var(--orange); font-weight: 600;">*</span> are recommended.</p>
+  </div>
+
+  <form id="design-questionnaire-form" method="POST" action="https://formsubmit.co/kiishann.mullani@sprint-co.com" enctype="multipart/form-data" novalidate>
+
+    <!-- FormSubmit config (see js/design-questionaire-form-submit.js for the AJAX path) -->
+    <input type="hidden" name="_subject" value="New Design &amp; Build Questionnaire Submission">
+    <input type="hidden" name="_cc" value="abbas.lokhandwalla@sprint-co.com,shahana.khan@sprint-co.com">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <!-- YOUR DETAILS -->
+    <div class="main-offering-card" id="contact-card">
+      <label>Your details <span style="color: var(--orange);">*</span></label>
+      <p class="hint">So our team can review your answers and get back to you.</p>
+      <div class="inline-pair" style="margin-bottom: 12px;">
+        <div>
+          <input type="text" id="full-name" name="full_name" placeholder="Full name" required>
+        </div>
+        <div>
+          <input type="email" id="email" name="email" placeholder="Email address" required>
+        </div>
+      </div>
+      <div class="inline-pair">
+        <div>
+          <input type="tel" id="phone" name="phone" placeholder="Phone number">
+        </div>
+        <div>
+          <input type="text" id="company" name="company" placeholder="Company / brand name">
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN OFFERING -->
+    <div class="main-offering-card">
+      <label for="main-offering">What is your main offering? <span style="color: var(--orange);">*</span></label>
+      <p class="hint">E.g. Pizza, Burgers, Juice, Coffee, etc. — one line is perfect.</p>
+      <input type="text" id="main-offering" name="main_offering" placeholder="Describe your main offering…">
+    </div>
+
+  <!-- SECTION 1: BRAND & STRATEGY -->
+  <section class="form-section" id="brand">
+    <div class="section-header">
+      <div class="section-number">01</div>
+      <div>
+        <div class="section-title">Brand &amp; Strategy</div>
+        <div class="section-subtitle">Your brand identity and long-term objectives</div>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-group-title">Brand Overview</div>
+      <div class="question-item">
+        <label class="question-label" for="brand-briefing">Brand vision, values, and personality <span class="required">*</span></label>
+        <p class="question-hint">Share your brand's core identity — what you stand for and how you want to be perceived.</p>
+        <textarea id="brand-briefing" name="brand_briefing" placeholder="Our brand stands for…"></textarea>
+      </div>
+      <div class="question-item">
+        <label class="question-label">Brand documents or guidelines</label>
+        <p class="question-hint">Upload any existing brand decks, style guides, or dine-in briefs.</p>
+        <div class="file-upload" id="brand-files-dropzone" onclick="document.getElementById('brand-files').click()">
+          <span class="file-upload-label">Click to upload files</span>
+          <p>PDF, PPTX, DOC, or images — 10 MB total across all files</p>
+          <input type="file" id="brand-files" name="attachment[]" multiple accept=".pdf,.pptx,.doc,.docx,.jpg,.jpeg,.png" style="display:none">
+        </div>
+        <div class="file-list" id="brand-files-list"></div>
+        <span class="field-error" id="brand-files-error" style="display:none;"></span>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-group-title">Strategic Objectives</div>
+      <div class="question-item">
+        <label class="question-label" for="vision">Vision for your dine-in experience <span class="required">*</span></label>
+        <textarea id="vision" name="vision" placeholder="We want guests to feel…"></textarea>
+      </div>
+      <div class="question-item">
+        <label class="question-label" for="success">What defines success in the next 3–5 years?</label>
+        <textarea id="success" name="success_criteria" placeholder="E.g. 10 new outlets, becoming the go-to spot for…"></textarea>
+      </div>
+      <div class="question-item">
+        <label class="question-label" for="perception">How would you like customers to perceive your new space?</label>
+        <textarea id="perception" name="perception" placeholder="Customers should walk in and immediately feel…" style="min-height: 70px;"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: CONCEPT & CUSTOMER INSIGHTS -->
+  <section class="form-section" id="concept">
+    <div class="section-header">
+      <div class="section-number">02</div>
+      <div>
+        <div class="section-title">Concept &amp; Customer Insights</div>
+        <div class="section-subtitle">Your business profile and who you serve</div>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-group-title">Understanding Your Business</div>
+      <div class="question-item">
+        <label class="question-label" for="company-profile">Company / brand profile <span class="required">*</span></label>
+        <p class="question-hint">Concept, market sector, current size, number of outlets.</p>
+        <textarea id="company-profile" name="company_profile" placeholder="We are a…"></textarea>
+      </div>
+      <div class="question-item">
+        <label class="question-label" for="project-objectives">Key objectives for this project</label>
+        <textarea id="project-objectives" name="project_objectives" placeholder="The primary goal of this outlet is to…" style="min-height: 70px;"></textarea>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-group-title">Target Audience</div>
+      <div class="question-item">
+        <label class="question-label" for="geo">Geographic profile</label>
+        <p class="question-hint">Region, city type (metro / suburban / tier 2, etc.)</p>
+        <input type="text" id="geo" name="geo_profile" placeholder="E.g. Mumbai metro, high-street location">
+      </div>
+      <div class="question-item">
+        <label class="question-label" for="demo">Demographic profile</label>
+        <p class="question-hint">Age range, gender skew, education or income level.</p>
+        <input type="text" id="demo" name="demographic_profile" placeholder="E.g. 18–35, urban professionals">
+      </div>
+      <div class="question-item">
+        <label class="question-label" for="psycho">Psychographic profile</label>
+        <p class="question-hint">Lifestyle, personality, values of your typical customer.</p>
+        <input type="text" id="psycho" name="psychographic_profile" placeholder="E.g. Health-conscious, social, experience-driven">
+      </div>
+      <div class="question-item">
+        <label class="question-label" for="competitors">Closest competitors or benchmarks</label>
+        <p class="question-hint">Include national and international examples; paste URLs if helpful.</p>
+        <textarea id="competitors" name="competitors" placeholder="E.g. Brand A (local), Brand B (international) — https://…" style="min-height: 70px;"></textarea>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-group-title">Customer Journey &amp; Behaviour</div>
+      <div class="question-item">
+        <label class="question-label" for="top-products">Highest-selling products / combos / group orders</label>
+        <textarea id="top-products" name="top_products" placeholder="Our top sellers are…" style="min-height: 70px;"></textarea>
+      </div>
+      <div class="question-item">
+        <label class="question-label">Average ticket size</label>
+        <div class="inline-pair">
+          <div>
+            <p class="question-hint">Individual (₹)</p>
+            <input type="number" name="avg_ticket_individual" placeholder="e.g. 350">
+          </div>
+          <div>
+            <p class="question-hint">Family / group (₹)</p>
+            <input type="number" name="avg_ticket_family" placeholder="e.g. 1200">
+          </div>
+        </div>
+      </div>
+      <div class="question-item">
+        <label class="question-label" for="peak-hours">Peak hours</label>
+        <p class="question-hint">Weekdays, weekends, festivals — include times if you know them.</p>
+        <textarea id="peak-hours" name="peak_hours" placeholder="Lunch 12–2 pm on weekdays; evenings on weekends…" style="min-height: 70px;"></textarea>
+      </div>
+      <div class="question-item">
+        <label class="question-label">Store visit breakdown</label>
+        <p class="question-hint">Approximate % of individuals, families, and groups.</p>
+        <div class="inline-pair">
+          <div>
+            <p class="question-hint">Individuals (%)</p>
+            <input type="number" name="visit_pct_individuals" placeholder="e.g. 40">
+          </div>
+          <div>
+            <p class="question-hint">Families &amp; groups (%)</p>
+            <input type="number" name="visit_pct_families" placeholder="e.g. 60">
+          </div>
+        </div>
+      </div>
+      <div class="question-item">
+        <label class="question-label" for="dwell-time">Average time spent in-store</label>
+        <input type="text" id="dwell-time" name="dwell_time" placeholder="e.g. 20–30 minutes">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: DESIGN DETAILS -->
+  <section class="form-section" id="design">
+    <div class="section-header">
+      <div class="section-number">03</div>
+      <div>
+        <div class="section-title">Design Details</div>
+        <div class="section-subtitle">Aesthetic direction, technology, and differentiation</div>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-group-title">Design Objectives &amp; Preferences</div>
+      <div class="question-item">
+        <label class="question-label" for="brand-keywords">Brand keywords</label>
+        <p class="question-hint">List 3–6 words that define your brand's look and feel.</p>
+        <input type="text" id="brand-keywords" name="brand_keywords" placeholder="E.g. Green, Energetic, Modern, Warm">
+      </div>
+      <div class="question-item">
+        <label class="question-label" for="space-tone">Desired tone of the space</label>
+        <input type="text" id="space-tone" name="space_tone" placeholder="E.g. Warm, youthful, global, minimalist">
+      </div>
+      <div class="question-item">
+        <label class="question-label">Façade preference</label>
+        <div class="options-group">
+          <label class="option-item"><input type="radio" name="facade" value="Bright and attention-grabbing"> Bright and attention-grabbing</label>
+          <label class="option-item"><input type="radio" name="facade" value="Muted and refined"> Muted and refined</label>
+          <label class="option-item"><input type="radio" name="facade" value="Trendy / contemporary"> Trendy / contemporary</label>
+          <label class="option-item"><input type="radio" name="facade" value="Retro / heritage"> Retro / heritage</label>
+        </div>
+      </div>
+      <div class="question-item">
+        <label class="question-label">Counter style</label>
+        <div class="options-group">
+          <label class="option-item"><input type="radio" name="counter" value="Functional and efficient"> Functional and efficient</label>
+          <label class="option-item"><input type="radio" name="counter" value="High visibility / theatre kitchen"> High visibility / theatre kitchen</label>
+          <label class="option-item"><input type="radio" name="counter" value="Digital-first (kiosks, screens)"> Digital-first (kiosks, screens)</label>
+        </div>
+      </div>
+      <div class="question-item">
+        <label class="question-label">Seating preference</label>
+        <div class="options-group">
+          <label class="option-item"><input type="checkbox" name="seating[]" value="Booth seating"> Booth seating</label>
+          <label class="option-item"><input type="checkbox" name="seating[]" value="Flexible / moveable arrangements"> Flexible / moveable arrangements</label>
+          <label class="option-item"><input type="checkbox" name="seating[]" value="High bar / counter seating"> High bar / counter seating</label>
+          <label class="option-item"><input type="checkbox" name="seating[]" value="Communal tables"> Communal tables</label>
+          <label class="option-item"><input type="checkbox" name="seating[]" value="Outdoor / alfresco"> Outdoor / alfresco</label>
+        </div>
+      </div>
+      <div class="question-item">
+        <label class="question-label">Colour scheme preference</label>
+        <div class="options-group">
+          <label class="option-item"><input type="radio" name="colour_scheme" value="Bright and bold"> Bright and bold</label>
+          <label class="option-item"><input type="radio" name="colour_scheme" value="Muted and sophisticated"> Muted and sophisticated</label>
+          <label class="option-item"><input type="radio" name="colour_scheme" value="Monochromatic"> Monochromatic</label>
+          <label class="option-item"><input type="radio" name="colour_scheme" value="No strong preference — open to proposals"> No strong preference — open to proposals</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-group-title">Technology &amp; Innovation</div>
+      <div class="question-item">
+        <label class="question-label" for="tech-role">Role of technology in your outlet</label>
+        <p class="question-hint">Should tech enhance convenience, create a 'wow' moment, or stay in the background?</p>
+        <textarea id="tech-role" name="tech_role" placeholder="We want technology to…" style="min-height: 70px;"></textarea>
+      </div>
+      <div class="question-item">
+        <label class="question-label">Planned digital integrations</label>
+        <div class="options-group">
+          <label class="option-item"><input type="checkbox" name="digital_integrations[]" value="Self-ordering kiosks"> Self-ordering kiosks</label>
+          <label class="option-item"><input type="checkbox" name="digital_integrations[]" value="Tablets at the table"> Tablets at the table</label>
+          <label class="option-item"><input type="checkbox" name="digital_integrations[]" value="QR code ordering"> QR code ordering</label>
+          <label class="option-item"><input type="checkbox" name="digital_integrations[]" value="Digital menu boards"> Digital menu boards</label>
+          <label class="option-item"><input type="checkbox" name="digital_integrations[]" value="None planned yet"> None planned yet</label>
+        </div>
+      </div>
+      <div class="question-item">
+        <label class="question-label" for="existing-systems">Existing systems to align with</label>
+        <input type="text" id="existing-systems" name="existing_systems" placeholder="E.g. Petpooja POS, specific loyalty app…">
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-group-title">Competition Analysis</div>
+      <div class="question-item">
+        <label class="question-label" for="differentiation">How will your outlet differentiate from competitors? <span class="required">*</span></label>
+        <textarea id="differentiation" name="differentiation" placeholder="Our outlet will stand out through…"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: BUILD PHASE -->
+  <section class="form-section" id="build">
+    <div class="section-header">
+      <div class="section-number">04</div>
+      <div>
+        <div class="section-title">Build Phase</div>
+        <div class="section-subtitle">Timeline, budget, and build approach</div>
+      </div>
+    </div>
+
+    <div class="flatpack-callout">
+      <strong>About SprintCo Flatpack Build</strong>
+      <p>Our modular, flat-packed solutions can save up to 50% in build time and costs by minimising on-site work. Questions below help us explore whether Flatpack is the right fit for your project.</p>
+    </div>
+
+    <div class="question-group">
+      <div class="question-group-title">Build Approach</div>
+      <div class="question-item">
+        <label class="question-label">Are you interested in the Flatpack Build method?</label>
+        <div class="options-group">
+          <label class="option-item"><input type="radio" name="flatpack_interest" value="Yes — tell me more"> Yes — tell me more</label>
+          <label class="option-item"><input type="radio" name="flatpack_interest" value="I'd like a comparison with traditional methods"> I'd like a comparison with traditional methods</label>
+          <label class="option-item"><input type="radio" name="flatpack_interest" value="Not at this stage"> Not at this stage</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-group-title">Timeline &amp; Budget</div>
+      <div class="question-item">
+        <label class="question-label">Desired timeline</label>
+        <div class="inline-pair">
+          <div>
+            <p class="question-hint">Design phase</p>
+            <input type="text" name="timeline_design" placeholder="E.g. 4 weeks">
+          </div>
+          <div>
+            <p class="question-hint">Build phase</p>
+            <input type="text" name="timeline_build" placeholder="E.g. 6–8 weeks">
+          </div>
+        </div>
+      </div>
+      <div class="question-item">
+        <label class="question-label" for="budget">Approximate budget allocation</label>
+        <p class="question-hint">Break down interiors, signage, equipment, etc. if possible.</p>
+        <textarea id="budget" name="budget" placeholder="Total budget: ₹ ___&#10;Interiors: ___&#10;Signage: ___&#10;Equipment: ___" style="min-height: 100px;"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: ADDITIONAL DETAILS -->
+  <section class="form-section" id="additional">
+    <div class="section-header">
+      <div class="section-number">05</div>
+      <div>
+        <div class="section-title">Additional Details</div>
+        <div class="section-subtitle">Operations, franchise, and future vision</div>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-group-title">Operational Considerations</div>
+      <div class="question-item">
+        <label class="question-label" for="ops-challenges">Specific operational challenges</label>
+        <p class="question-hint">Kitchen workflows, peak-hour bottlenecks, storage constraints, etc.</p>
+        <textarea id="ops-challenges" name="ops_challenges" placeholder="Our main operational challenges are…"></textarea>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-group-title">Franchise Partners (if applicable)</div>
+      <div class="question-item">
+        <label class="question-label" for="franchise-notes">Can franchise partners segment customers by demographics and location?</label>
+        <div class="options-group" style="margin-bottom: 12px;">
+          <label class="option-item"><input type="radio" name="franchise_segmentation" value="Yes"> Yes</label>
+          <label class="option-item"><input type="radio" name="franchise_segmentation" value="No"> No</label>
+          <label class="option-item"><input type="radio" name="franchise_segmentation" value="Not applicable"> Not applicable</label>
+        </div>
+        <textarea id="franchise-notes" name="franchise_notes" placeholder="Any additional context on your franchise structure…" style="min-height: 60px;"></textarea>
+      </div>
+    </div>
+
+    <div class="question-group">
+      <div class="question-group-title">Future Vision</div>
+      <div class="question-item">
+        <label class="question-label" for="future">Long-term plans for scaling or expansion</label>
+        <textarea id="future" name="future_plans" placeholder="In 5 years, we plan to…"></textarea>
+      </div>
+      <div class="question-item">
+        <label class="question-label">Would you like to explore an end-to-end partnership with SprintCo?</label>
+        <p class="question-hint">From concept development through to build completion.</p>
+        <div class="options-group">
+          <label class="option-item"><input type="radio" name="partnership" value="Yes, absolutely"> Yes, absolutely</label>
+          <label class="option-item"><input type="radio" name="partnership" value="I'd like to discuss it"> I'd like to discuss it</label>
+          <label class="option-item"><input type="radio" name="partnership" value="Just design for now"> Just design for now</label>
+          <label class="option-item"><input type="radio" name="partnership" value="Just build for now"> Just build for now</label>
+        </div>
+      </div>
+      <div class="question-item">
+        <label class="question-label" for="anything-else">Anything else you'd like to share?</label>
+        <textarea id="anything-else" name="anything_else" placeholder="We're all ears — add anything that helps us understand your vision better…" style="min-height: 100px;"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBMIT -->
+  <div class="submit-zone" id="submit">
+    <h3>Ready to bring your vision to life?</h3>
+    <p>Our team will review your answers and get back to you within 2 business days.</p>
+    <button class="submit-btn" type="submit" id="submit-btn">Submit Questionnaire →</button>
+    <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+  </div>
+
+  </form>
+
+</main>
+
+<script>
+  const navLinks = document.querySelectorAll('.nav-section');
+  const sections = document.querySelectorAll('.form-section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const id = entry.target.id;
+        const active = document.querySelector(`.nav-section[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+<script src="js/design-questionaire-form-submit.js"></script>
+
+<!-- Footer -->
+<footer>
+    <div class="scrolltop"><img src="images/scrolltop.svg" alt="Scroll To Top"></div>
+    <div class="footer-container">
+        <div class="footer-block">
+            <div class="footer-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
+            <p>Vasudev Chamber-B, 21, Old Nagardas Cross Rd, near Andheri Subway, opposite Wilson House, Mogra Pada, Natwar Nagar, Andheri East, Mumbai, Maharashtra- 400069<br><br>
+            © 2025 Copyright B2B Designers Pvt Limited 2025. <br>All Rights Reserved.</p>
+            <ul class="footer-privacy-nav"><li><a href="#">Privacy Policy</a></li></ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-main-nav">
+                <li><a href="projects">Projects</a></li>
+                <li><a href="our-offerings">Our Offerings</a></li>
+                <li><a href="our-clients">Our Clients</a></li>
+                <li><a href="insights">Insights</a></li>
+                  <li><a href="../cities">Cities</a></li>
+            </ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-social-nav">
+                <li><a href="https://www.linkedin.com/company/sprint-co/" target="_blank">Linkedin</a></li>
+                <li><a href="https://www.instagram.com/sprintco_designs/" target="_blank">Instagram</a></li>
+                <li><a href="https://www.youtube.com/@B2B_Designers" target="_blank">YouTube</a></li>
+                <li class="menu-none"><a href="https://www.flatpackco.com/" target="_blank">FlatPackCo</a></li>
+            </ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-contact-nav">
+                <li class="copy-text"><a>info@sprint-co.com</a></li>
+                <li class="copy-text"><a>(+91) 9004301234</a></li>
+                <li class="common-button light-button"><a href="contact"><span>Get in Touch</span></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

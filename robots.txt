@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+Disallow: /Decks/
+Disallow: /consultation/
+Allow: /consultation/Images/
+Disallow: /Ineternal_Projects_Template.html
+Disallow: /New_project_template.html
+Disallow: /croffle-guys-case-study%20-%20Copy.html
+Disallow: /social-e-city-case-study%20-%20Copy.html
+
+Sitemap: https://www.sprint-co.com/sitemap.xml

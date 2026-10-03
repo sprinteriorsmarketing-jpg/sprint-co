@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Branding Checklist | SprintCo</title>
+<meta name="description" content="A comprehensive, interactive checklist for developing and executing food &amp; beverage brands — from brand story and strategy through identity, physical experience, packaging, marketing and launch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --body-color: #f6f0ea;
+    --dark-color: #303033;
+    --orange-color: #f4602b;
+    --card-color: #ffffff;
+    --border-color: #e4dcd1;
+    --muted-color: #6f6a66;
+    --primary-font: "Poppins", Arial, sans-serif;
+    --secondary-font: "Plus Jakarta Sans", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--body-color);
+    color: var(--dark-color);
+    font-family: var(--secondary-font);
+    line-height: 1.55;
+    padding-inline: clamp(16px, 4vw, 32px);
+  }
+
+  a { color: var(--orange-color); }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  /* ---------- Header ---------- */
+
+  header.page-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--body-color);
+    padding-block: 18px 12px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-family: var(--primary-font);
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange-color);
+    margin: 0 0 8px;
+  }
+
+  h1 {
+    font-family: var(--primary-font);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle {
+    font-family: var(--secondary-font);
+    font-weight: 500;
+    color: var(--muted-color);
+    margin: 0 0 16px;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+  }
+
+  .progress-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .progress-track {
+    flex: 1 1 200px;
+    height: 10px;
+    background: #eae1d4;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--orange-color);
+    border-radius: 999px;
+    transition: width 0.25s ease;
+  }
+
+  .progress-label {
+    font-family: var(--primary-font);
+    font-weight: 600;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .header-actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .btn {
+    font-family: var(--primary-font);
+    font-weight: 600;
+    font-size: 0.78rem;
+    border: 1px solid var(--dark-color);
+    background: transparent;
+    color: var(--dark-color);
+    border-radius: 999px;
+    padding: 7px 14px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .btn:hover { background: var(--dark-color); color: #fff; }
+
+  .btn.btn-primary {
+    border-color: var(--orange-color);
+    background: var(--orange-color);
+    color: #fff;
+  }
+
+  .btn.btn-primary:hover { background: #d94f1f; border-color: #d94f1f; }
+
+  /* ---------- Intro ---------- */
+
+  main { padding-block: 24px 8px; }
+
+  .intro {
+    font-size: 1.02rem;
+    color: var(--dark-color);
+    margin: 0 0 28px;
+    max-width: 68ch;
+  }
+
+  /* ---------- TOC ---------- */
+
+  nav.toc {
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 18px 20px 20px;
+    margin-bottom: 36px;
+  }
+
+  nav.toc h2 {
+    font-family: var(--primary-font);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-color);
+    margin: 0 0 12px;
+  }
+
+  nav.toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 6px 16px;
+  }
+
+  nav.toc a {
+    display: block;
+    text-decoration: none;
+    color: var(--dark-color);
+    font-size: 0.92rem;
+    padding: 6px 4px;
+    border-radius: 6px;
+  }
+
+  nav.toc a:hover { color: var(--orange-color); }
+
+  .toc-num {
+    font-family: var(--primary-font);
+    font-weight: 700;
+    color: var(--orange-color);
+    margin-right: 2px;
+  }
+
+  /* ---------- Sections ---------- */
+
+  section.checklist-section {
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: clamp(18px, 4vw, 32px);
+    margin-bottom: 24px;
+    scroll-margin-top: 128px;
+  }
+
+  .section-heading h2 {
+    font-family: var(--primary-font);
+    font-weight: 700;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    margin: 0 0 6px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .section-num { color: var(--orange-color); }
+
+  .section-desc {
+    color: var(--muted-color);
+    font-style: italic;
+    margin: 0 0 22px;
+    font-size: 0.95rem;
+  }
+
+  .subsection { margin-bottom: 22px; }
+  .subsection:last-child { margin-bottom: 0; }
+
+  /* Tick box lives on the subsection heading — it stands for every
+     item listed beneath it, so it reuses the same checkbox look those
+     items used to have. */
+  .subsection-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 4px;
+    margin: 0 0 10px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .subsection-head:hover { background: #faf5ee; }
+
+  .subsection-head input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    border: 1.5px solid #c9beae;
+    border-radius: 5px;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+  }
+
+  .subsection-head input[type="checkbox"]::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    transform: scale(0);
+    border-radius: 2px;
+    background: var(--orange-color);
+    transition: transform 0.1s ease;
+  }
+
+  .subsection-head input[type="checkbox"]:checked::before { transform: scale(1); }
+
+  .subsection h3 {
+    font-family: var(--primary-font);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--dark-color);
+    margin: 0;
+    flex: 1;
+  }
+
+  .subsection:has(.subsection-head input:checked) h3 {
+    color: var(--muted-color);
+    text-decoration: line-through;
+    text-decoration-color: #c9beae;
+  }
+
+  .subsection:has(.subsection-head input:checked) .plain-list {
+    opacity: 0.5;
+  }
+
+  ul.plain-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 6px 28px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 4px 18px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  ul.plain-list li {
+    font-size: 0.94rem;
+    padding: 2px 4px;
+    break-inside: avoid;
+  }
+
+  ul.plain-list li::before {
+    content: "\2013";
+    color: var(--muted-color);
+    margin-right: 6px;
+  }
+
+  /* ---------- Request form ---------- */
+
+  section.request-section {
+    background: var(--dark-color);
+    color: var(--body-color);
+    border-radius: 16px;
+    padding: clamp(20px, 4vw, 36px);
+    margin-bottom: 24px;
+  }
+
+  section.request-section h2 {
+    font-family: var(--primary-font);
+    font-weight: 700;
+    font-size: clamp(1.15rem, 3vw, 1.5rem);
+    margin: 0 0 6px;
+    color: #fff;
+  }
+
+  section.request-section .request-intro {
+    color: #cfc9c3;
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .request-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .request-field label {
+    display: block;
+    font-family: var(--primary-font);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #cfc9c3;
+    margin-bottom: 6px;
+  }
+
+  .request-field .req { color: var(--orange-color); }
+
+  .request-field input,
+  .request-field textarea {
+    width: 100%;
+    font-family: var(--secondary-font);
+    font-size: 0.95rem;
+    color: var(--dark-color);
+    background: #fff;
+    border: 1.5px solid transparent;
+    border-radius: 8px;
+    padding: 11px 13px;
+  }
+
+  .request-field textarea {
+    resize: vertical;
+    min-height: 90px;
+  }
+
+  .request-field input:focus,
+  .request-field textarea:focus {
+    outline: none;
+    border-color: var(--orange-color);
+  }
+
+  .request-field.full-width { grid-column: 1 / -1; }
+
+  .request-form-footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .form-status {
+    font-size: 0.85rem;
+    margin: 0;
+  }
+
+  .form-status.is-success { color: #8fd19e; }
+  .form-status.is-error { color: #f39a8a; }
+
+  /* ---------- Print ---------- */
+
+  @media print {
+    header.page-header { position: static; }
+    .header-actions, .btn { display: none !important; }
+    section.checklist-section { break-inside: avoid; border: none; padding: 0; margin-bottom: 18px; }
+    nav.toc { break-after: page; }
+    section.request-section { display: none !important; }
+    body { background: #fff; }
+  }
+
+  @media (max-width: 480px) {
+    .progress-row { gap: 10px; }
+    .header-actions { width: 100%; }
+    .btn { flex: 1; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="page-header">
+    <p class="eyebrow">Checklist</p>
+    <h1> Branding Checklist</h1>
+    <p class="subtitle">Brand Creation, Experience &amp; Execution Framework</p>
+    <div class="progress-row">
+      <div class="progress-track" role="progressbar" aria-label="Checklist completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressTrack">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-label" id="progressLabel">0 of 26 groups complete</span>
+      <div class="header-actions">
+        <button type="button" class="btn" id="resetBtn">Reset</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">A comprehensive checklist for developing and executing food &amp; beverage brands across strategy, identity, physical experience, digital presence, packaging, marketing and launch.</p>
+
+    <nav class="toc" aria-label="Table of contents">
+      <h2>Jump to a section</h2>
+      <ul>
+          <li><a href="#section-01"><span class="toc-num">01.</span> Brand Story</a></li>
+          <li><a href="#section-02"><span class="toc-num">02.</span> Brand Strategy</a></li>
+          <li><a href="#section-03"><span class="toc-num">03.</span> Brand Identity</a></li>
+          <li><a href="#section-04"><span class="toc-num">04.</span> Brand Installations &amp; Environment</a></li>
+          <li><a href="#section-05"><span class="toc-num">05.</span> Menu Design</a></li>
+          <li><a href="#section-06"><span class="toc-num">06.</span> Uniform &amp; Staff Appearance</a></li>
+          <li><a href="#section-07"><span class="toc-num">07.</span> Online Presence</a></li>
+          <li><a href="#section-08"><span class="toc-num">08.</span> Packaging Design</a></li>
+          <li><a href="#section-9"><span class="toc-num">9.</span> Promotional Materials</a></li>
+          <li><a href="#section-11"><span class="toc-num">11.</span> Social Media Marketing</a></li>
+          <li><a href="#section-12"><span class="toc-num">12.</span> Brand Launch</a></li>
+      </ul>
+    </nav>
+
+
+      <section id="section-01" class="checklist-section">
+        <div class="section-heading">
+          <h2><span class="section-num">01.</span> Brand Story</h2>
+          <p class="section-desc">The foundation of why this brand exists.</p>
+        </div>
+        <div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-1" data-item aria-labelledby="sub-1-label" />
+            <h3 id="sub-1-label">Brand Foundation</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Brand story</li>
+            <li>Founder story</li>
+            <li>Origin story</li>
+            <li>Purpose</li>
+            <li>Vision &amp; Mission</li>
+            <li>Brand philosophy</li>
+            <li>Brand personality</li>
+            <li>Brand positioning</li>
+            <li>Brand USP</li>
+            <li>Brand differentiator</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="section-02" class="checklist-section">
+        <div class="section-heading">
+          <h2><span class="section-num">02.</span> Brand Strategy</h2>
+          <p class="section-desc">Who are we, who are we speaking to, and why should they choose us?</p>
+        </div>
+        <div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-2" data-item aria-labelledby="sub-2-label" />
+            <h3 id="sub-2-label">Market</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Market/category analysis</li>
+            <li>Competitor analysis</li>
+            <li>Competitive positioning</li>
+            <li>Market opportunity</li>
+          </ul>
+        </div>
+<div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-3" data-item aria-labelledby="sub-3-label" />
+            <h3 id="sub-3-label">Target Audience</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Primary audience</li>
+            <li>Secondary audience</li>
+            <li>Customer demographics</li>
+            <li>Customer behaviors</li>
+            <li>Customer expectations</li>
+            <li>Customer pain points</li>
+          </ul>
+        </div>
+<div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-4" data-item aria-labelledby="sub-4-label" />
+            <h3 id="sub-4-label">Positioning</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Positioning statement</li>
+            <li>Brand territory</li>
+            <li>Tone of voice</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="section-03" class="checklist-section">
+        <div class="section-heading">
+          <h2><span class="section-num">03.</span> Brand Identity</h2>
+          <p class="section-desc">Turn strategy into a cohesive visual and verbal identity.</p>
+        </div>
+        <div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-5" data-item aria-labelledby="sub-5-label" />
+            <h3 id="sub-5-label">Core Identity</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Logo</li>
+            <li>Logo variations</li>
+            <li>Primary logo</li>
+            <li>Secondary logo</li>
+            <li>Monogram/icon</li>
+            <li>Wordmark</li>
+            <li>Symbol</li>
+            <li>Favicon</li>
+          </ul>
+        </div>
+<div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-6" data-item aria-labelledby="sub-6-label" />
+            <h3 id="sub-6-label">Fonts</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Primary typeface</li>
+            <li>Secondary typeface</li>
+            <li>Display typography</li>
+            <li>Body typography</li>
+            <li>Numeric typography</li>
+            <li>Menu typography</li>
+            <li>Digital typography</li>
+          </ul>
+        </div>
+<div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-7" data-item aria-labelledby="sub-7-label" />
+            <h3 id="sub-7-label">Colour</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Primary palette</li>
+            <li>Secondary palette</li>
+            <li>Accent colours</li>
+            <li>Background colours</li>
+            <li>Digital colour applications</li>
+            <li>Print colour specifications</li>
+          </ul>
+        </div>
+<div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-8" data-item aria-labelledby="sub-8-label" />
+            <h3 id="sub-8-label">Visual Language</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>AI Generated Images Style</li>
+            <li>Photography direction</li>
+            <li>Illustration style</li>
+            <li>Iconography</li>
+            <li>Image treatment</li>
+            <li>Texture</li>
+            <li>Composition principles</li>
+            <li>Layout principles</li>
+          </ul>
+        </div>
+<div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-9" data-item aria-labelledby="sub-9-label" />
+            <h3 id="sub-9-label">Guidelines</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Brand guideline document</li>
+            <li>Logo usage</li>
+            <li>Colour usage</li>
+            <li>Typography</li>
+            <li>Photography</li>
+            <li>Graphic elements</li>
+            <li>Do&#x27;s &amp; don&#x27;ts</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="section-04" class="checklist-section">
+        <div class="section-heading">
+          <h2><span class="section-num">04.</span> Brand Installations &amp; Environment</h2>
+          <p class="section-desc">How the brand physically lives in the restaurant.</p>
+        </div>
+        <div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-10" data-item aria-labelledby="sub-10-label" />
+            <h3 id="sub-10-label">Exterior</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Main signage</li>
+            <li>Logo signage</li>
+            <li>Blade/sign projection</li>
+            <li>Entrance signage</li>
+            <li>Window graphics</li>
+            <li>Glass branding</li>
+            <li>Outdoor branding</li>
+            <li>Valet signage</li>
+            <li>Parking signage</li>
+          </ul>
+        </div>
+<div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-11" data-item aria-labelledby="sub-11-label" />
+            <h3 id="sub-11-label">Interior</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Wall graphics</li>
+            <li>Feature walls</li>
+            <li>Brand statements</li>
+            <li>Illustrations</li>
+            <li>Patterns</li>
+            <li>Decorative graphics</li>
+            <li>Wayfinding</li>
+            <li>Directional signage</li>
+            <li>Table numbers</li>
+            <li>Table signage</li>
+            <li>Counter signage</li>
+            <li>Digital screens</li>
+            <li>Menu boards</li>
+            <li>Restroom signage</li>
+            <li>Washroom graphics</li>
+            <li>Queue management</li>
+            <li>Pickup area branding</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="section-05" class="checklist-section">
+        <div class="section-heading">
+          <h2><span class="section-num">05.</span> Menu Design</h2>
+          <p class="section-desc">One of the most important pieces of F&amp;B brand communication.</p>
+        </div>
+        <div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-12" data-item aria-labelledby="sub-12-label" />
+            <h3 id="sub-12-label">Menu Strategy</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Menu hierarchy</li>
+            <li>Category structure</li>
+            <li>Item naming</li>
+            <li>Descriptions</li>
+            <li>Pricing hierarchy</li>
+            <li>Signature item highlighting</li>
+            <li>Bestseller highlighting</li>
+            <li>Chef recommendation</li>
+            <li>Dietary indicators</li>
+            <li>Allergen information</li>
+            <li>Add-ons</li>
+            <li>Combos</li>
+            <li>Upselling opportunities</li>
+          </ul>
+        </div>
+<div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-13" data-item aria-labelledby="sub-13-label" />
+            <h3 id="sub-13-label">Menu Design</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Main menu</li>
+            <li>Breakfast menu</li>
+            <li>Lunch menu</li>
+            <li>Dinner menu</li>
+            <li>Drinks menu</li>
+            <li>Bar menu</li>
+            <li>Dessert menu</li>
+            <li>Kids menu</li>
+            <li>Seasonal menu</li>
+            <li>Special menu</li>
+            <li>Tasting menu</li>
+            <li>QR menu</li>
+            <li>Digital menu</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="section-06" class="checklist-section">
+        <div class="section-heading">
+          <h2><span class="section-num">06.</span> Uniform &amp; Staff Appearance</h2>
+          <p class="section-desc">Staff are walking brand ambassadors.</p>
+        </div>
+        <div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-14" data-item aria-labelledby="sub-14-label" />
+            <h3 id="sub-14-label">Uniform</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Front-of-house uniform</li>
+            <li>Back-of-house uniform</li>
+            <li>Chef uniform</li>
+            <li>Manager uniform</li>
+            <li>Host/hostess uniform</li>
+            <li>Delivery uniform</li>
+            <li>Security uniform</li>
+            <li>Event uniform</li>
+          </ul>
+        </div>
+<div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-15" data-item aria-labelledby="sub-15-label" />
+            <h3 id="sub-15-label">Components</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Shirt/top</li>
+            <li>T-shirt</li>
+            <li>Jacket</li>
+            <li>Apron</li>
+            <li>Trousers</li>
+            <li>Skirt</li>
+            <li>Cap</li>
+            <li>Scarf</li>
+            <li>Tie</li>
+            <li>Shoes</li>
+            <li>Name badge</li>
+            <li>Accessories</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="section-07" class="checklist-section">
+        <div class="section-heading">
+          <h2><span class="section-num">07.</span> Online Presence</h2>
+          <p class="section-desc">Every digital brand touchpoint, not just website/app.</p>
+        </div>
+        <div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-16" data-item aria-labelledby="sub-16-label" />
+            <h3 id="sub-16-label">Website</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Website strategy</li>
+            <li>Sitemap</li>
+            <li>UX direction</li>
+            <li>UI design</li>
+            <li>Homepage</li>
+            <li>About</li>
+            <li>Menu</li>
+            <li>Reservations</li>
+            <li>Contact</li>
+            <li>Location</li>
+            <li>Gallery</li>
+            <li>Events</li>
+            <li>Offers</li>
+            <li>Careers</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="section-08" class="checklist-section">
+        <div class="section-heading">
+          <h2><span class="section-num">08.</span> Packaging Design</h2>
+          <p class="section-desc">Treat packaging as brand media, not merely functional packaging.</p>
+        </div>
+        <div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-17" data-item aria-labelledby="sub-17-label" />
+            <h3 id="sub-17-label">Primary Packaging</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Food boxes</li>
+            <li>Burger boxes</li>
+            <li>Pizza boxes</li>
+            <li>Meal boxes</li>
+            <li>Dessert boxes</li>
+            <li>Cake boxes</li>
+            <li>Beverage cups</li>
+            <li>Coffee cups</li>
+            <li>Ice cream cups</li>
+            <li>Bowls</li>
+            <li>Containers</li>
+            <li>Bottles</li>
+            <li>Jars</li>
+          </ul>
+        </div>
+<div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-18" data-item aria-labelledby="sub-18-label" />
+            <h3 id="sub-18-label">Secondary Packaging</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Paper bags</li>
+            <li>Carry bags</li>
+            <li>Delivery bags</li>
+            <li>Gift bags</li>
+            <li>Gift boxes</li>
+            <li>Hampers</li>
+          </ul>
+        </div>
+<div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-19" data-item aria-labelledby="sub-19-label" />
+            <h3 id="sub-19-label">Packaging Components</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Stickers</li>
+            <li>Seals</li>
+            <li>Labels</li>
+            <li>Sleeves</li>
+            <li>Tissue paper</li>
+            <li>Wrapping paper</li>
+            <li>Cutlery</li>
+            <li>Napkins</li>
+            <li>Coasters</li>
+            <li>Toothpick packs</li>
+            <li>Sauce containers</li>
+            <li>Sauce labels</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="section-9" class="checklist-section">
+        <div class="section-heading">
+          <h2><span class="section-num">9.</span> Promotional Materials</h2>
+          <p class="section-desc">Campaign-specific communication.</p>
+        </div>
+        <div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-20" data-item aria-labelledby="sub-20-label" />
+            <h3 id="sub-20-label">In-Restaurant</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Promotional posters</li>
+            <li>Offer cards</li>
+            <li>Standees</li>
+            <li>Table tents</li>
+            <li>Counter cards</li>
+            <li>Window posters</li>
+            <li>Menu inserts</li>
+            <li>Promotional signage</li>
+            <li>Event branding</li>
+          </ul>
+        </div>
+<div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-21" data-item aria-labelledby="sub-21-label" />
+            <h3 id="sub-21-label">Advertising</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Print ads</li>
+            <li>Outdoor ads</li>
+            <li>Digital ads</li>
+            <li>Display ads</li>
+            <li>Promotional banners</li>
+            <li>Platform creatives</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="section-11" class="checklist-section">
+        <div class="section-heading">
+          <h2><span class="section-num">11.</span> Social Media Marketing</h2>
+          <p class="section-desc">Strategy, identity, content and campaigns.</p>
+        </div>
+        <div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-22" data-item aria-labelledby="sub-22-label" />
+            <h3 id="sub-22-label">Strategy</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Social media strategy</li>
+            <li>Platform selection</li>
+            <li>Content pillars</li>
+            <li>Posting strategy</li>
+            <li>Campaign strategy</li>
+          </ul>
+        </div>
+<div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-23" data-item aria-labelledby="sub-23-label" />
+            <h3 id="sub-23-label">Social Identity</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Profile image</li>
+            <li>Cover/banner</li>
+            <li>Highlight covers</li>
+            <li>Story templates</li>
+            <li>Post templates</li>
+            <li>Reel covers</li>
+            <li>Carousel templates</li>
+            <li>Promotional templates</li>
+          </ul>
+        </div>
+<div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-24" data-item aria-labelledby="sub-24-label" />
+            <h3 id="sub-24-label">Content</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Food photography</li>
+            <li>Food videos</li>
+            <li>Restaurant photography</li>
+            <li>Behind-the-scenes</li>
+            <li>Chef content</li>
+            <li>Staff content</li>
+            <li>Customer content</li>
+            <li>Founder content</li>
+            <li>Reviews/testimonials</li>
+            <li>Educational content</li>
+            <li>Offers</li>
+            <li>Events</li>
+            <li>UGC</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="section-12" class="checklist-section">
+        <div class="section-heading">
+          <h2><span class="section-num">12.</span> Brand Launch</h2>
+          <p class="section-desc">The brand continues beyond delivery of design files.</p>
+        </div>
+        <div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-25" data-item aria-labelledby="sub-25-label" />
+            <h3 id="sub-25-label">Pre-Launch</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Teaser identity</li>
+            <li>Coming-soon communication</li>
+            <li>Teaser campaign</li>
+            <li>Hoardings</li>
+            <li>Social launch assets</li>
+            <li>PR assets</li>
+            <li>Influencer assets</li>
+            <li>Invitation</li>
+            <li>Launch event branding</li>
+          </ul>
+        </div>
+<div class="subsection">
+          <div class="subsection-head">
+            <input type="checkbox" id="sub-26" data-item aria-labelledby="sub-26-label" />
+            <h3 id="sub-26-label">Launch</h3>
+          </div>
+          <ul class="plain-list">
+                        <li>Launch campaign (Digital)</li>
+            <li>Social media launch</li>
+            <li>Website launch</li>
+            <li>Google profile</li>
+            <li>Delivery platforms</li>
+          
+          </ul>
+        </div>
+      </section>
+
+    <section class="request-section" id="request-form-section">
+      <h2>Tell us about your brand &amp; requirement</h2>
+      <p class="request-intro">Share the client's details and what they need, and our team will follow up with a tailored plan.</p>
+      <form id="checklist-request-form" novalidate>
+        <input type="hidden" name="_subject" value="F&amp;B Branding Checklist &mdash; Client Requirement Submission">
+        <input type="hidden" name="_cc" value="marketing@sprint-co.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="request-form-grid">
+          <div class="request-field">
+            <label for="req-name">Name<span class="req">*</span></label>
+            <input type="text" id="req-name" name="client_name" placeholder="Client's full name" required>
+          </div>
+          <div class="request-field">
+            <label for="req-number">Number<span class="req">*</span></label>
+            <input type="tel" id="req-number" name="client_number" placeholder="Client's phone number" required>
+          </div>
+          <div class="request-field">
+            <label for="req-brand">Brand Name<span class="req">*</span></label>
+            <input type="text" id="req-brand" name="brand_name" placeholder="Client's brand / restaurant name" required>
+          </div>
+          <div class="request-field full-width">
+            <label for="req-requirement">Requirement<span class="req">*</span></label>
+            <textarea id="req-requirement" name="requirement" placeholder="Briefly describe the client's project and what they're looking for…" required></textarea>
+          </div>
+        </div>
+        <div class="request-form-footer">
+          <button type="submit" class="btn btn-primary" id="reqSubmitBtn">Send</button>
+          <p class="form-status" id="reqFormStatus" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var STORAGE_KEY = "fb-branding-checklist-v2";
+  var checkboxes = Array.prototype.slice.call(document.querySelectorAll('[data-item]'));
+  var fill = document.getElementById('progressFill');
+  var label = document.getElementById('progressLabel');
+  var track = document.getElementById('progressTrack');
+  var total = checkboxes.length;
+
+  function loadState() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function saveState(state) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  function updateProgress() {
+    var checked = checkboxes.filter(function (cb) { return cb.checked; }).length;
+    var pct = total ? Math.round((checked / total) * 100) : 0;
+    fill.style.width = pct + '%';
+    label.textContent = checked + ' of ' + total + ' groups complete';
+    track.setAttribute('aria-valuenow', String(pct));
+  }
+
+  var state = loadState();
+  checkboxes.forEach(function (cb) {
+    if (state[cb.id]) cb.checked = true;
+    cb.addEventListener('change', function () {
+      var s = loadState();
+      if (cb.checked) { s[cb.id] = true; } else { delete s[cb.id]; }
+      saveState(s);
+      updateProgress();
+    });
+  });
+  updateProgress();
+
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    if (!confirm('Clear all checked groups on this checklist?')) return;
+    checkboxes.forEach(function (cb) { cb.checked = false; });
+    saveState({});
+    updateProgress();
+  });
+})();
+</script>
+
+<!-- Mail-sending logic for the request form lives in its own file,
+     kept in this Checklist folder and not shared with the site's js/ files. -->
+<script src="checklist-request-form.js"></script>
+
+</body>
+</html>

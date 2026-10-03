@@ -1,0 +1,930 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-881264946"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-881264946');
+  gtag('config', 'G-9EFG5Q3JHZ');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Case Study: Expanding Croffle Footprints Across India | SprintCo</title>
+    <meta name="description" content="How SprintCo turned The Croffle Guys from one self-built outlet into a repeatable, nationwide-ready brand design system across Mumbai — a case study in scaling QSR through design.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ── Croffle Guys Case Study — scoped design system ── */
+        .ccs-page {
+            --ccs-orange: #f4602b;
+            --ccs-black: #1a1a1a;
+            --ccs-cream: #f6f0ea;
+            --ccs-white: #fff;
+            --ccs-gray: #6b6b64;
+            --ccs-line: #e2ddd3;
+            font-family: 'Poppins', sans-serif;
+            color: var(--ccs-black);
+            background: var(--ccs-white);
+        }
+
+        .ccs-page * { box-sizing: border-box; }
+
+        .ccs-eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ccs-orange);
+            margin: 0 0 18px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .ccs-eyebrow::before {
+            content: "";
+            width: 28px;
+            height: 1.5px;
+            background: var(--ccs-orange);
+            display: inline-block;
+        }
+
+        .ccs-wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* ── Hero ── */
+        .ccs-hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: flex-end;
+            background: #111;
+            overflow: hidden;
+        }
+        .ccs-hero__bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.55;
+        }
+        .ccs-hero__gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(17,17,17,0.15) 0%, rgba(17,17,17,0.55) 55%, rgba(17,17,17,0.94) 100%);
+        }
+        .ccs-hero__content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 160px 40px 60px;
+            max-width: 1180px;
+            margin: 0 auto;
+            color: #fff;
+        }
+        .ccs-hero__tag {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ccs-orange);
+            margin: 0 0 24px 0;
+        }
+        .ccs-hero__title {
+            font-size: clamp(38px, 5.6vw, 76px);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.01em;
+            margin: 0 0 24px 0;
+            max-width: 920px;
+        }
+        .ccs-hero__sub {
+            font-size: clamp(16px, 1.6vw, 20px);
+            font-weight: 300;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.85);
+            max-width: 640px;
+            margin: 0 0 48px 0;
+        }
+        .ccs-hero__meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 36px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 28px;
+        }
+        .ccs-hero__field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            min-width: 140px;
+        }
+        .ccs-hero__label {
+            font-size: 10.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: rgba(255,255,255,0.55);
+            font-weight: 500;
+        }
+        .ccs-hero__value {
+            font-size: 14.5px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        /* ── Stat Strip ── */
+        .ccs-stats {
+            background: var(--ccs-black);
+            padding: 46px 0;
+        }
+        .ccs-stats__grid {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .ccs-stat__num {
+            font-size: clamp(30px, 3.4vw, 44px);
+            font-weight: 700;
+            color: var(--ccs-orange);
+            line-height: 1;
+            margin: 0 0 10px 0;
+        }
+        .ccs-stat__label {
+            font-size: 13.5px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.5;
+        }
+
+        /* ── Section shell ── */
+        .ccs-section {
+            padding: 110px 0;
+            border-bottom: 1px solid var(--ccs-line);
+        }
+        .ccs-section--cream { background: var(--ccs-cream); }
+        .ccs-section__head {
+            max-width: 760px;
+            margin: 0 0 56px 0;
+        }
+        .ccs-section__title {
+            font-size: clamp(30px, 3.4vw, 46px);
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            line-height: 1.15;
+            margin: 0;
+        }
+        .ccs-lede {
+            font-size: 21px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--ccs-black);
+            max-width: 820px;
+            margin: 0 0 28px 0;
+        }
+        .ccs-body {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.85;
+            color: #4a4a45;
+            max-width: 780px;
+            margin: 0 0 22px 0;
+        }
+        .ccs-body strong { color: var(--ccs-black); font-weight: 600; }
+
+        /* ── Pull quote ── */
+        .ccs-quote {
+            border-left: 3px solid var(--ccs-orange);
+            padding: 4px 0 4px 28px;
+            margin: 40px 0;
+            max-width: 780px;
+        }
+        .ccs-quote p {
+            font-size: 22px;
+            font-weight: 500;
+            font-style: italic;
+            line-height: 1.5;
+            color: var(--ccs-black);
+            margin: 0 0 12px 0;
+        }
+        .ccs-quote cite {
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--ccs-gray);
+        }
+        .ccs-quote cite span {
+            font-weight: 300;
+            color: var(--ccs-gray);
+        }
+
+        /* ── Persona chips ── */
+        .ccs-personas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin: 40px 0 10px 0;
+        }
+        .ccs-persona {
+            background: var(--ccs-white);
+            border: 1px solid var(--ccs-line);
+            border-radius: 14px;
+            padding: 26px 24px;
+        }
+        .ccs-persona__name {
+            font-size: 15.5px;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+        }
+        .ccs-persona__age {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--ccs-orange);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 0 0 12px 0;
+        }
+        .ccs-persona__desc {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--ccs-gray);
+            margin: 0;
+        }
+
+        /* ── Strategy / pillar cards ── */
+        .ccs-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 50px;
+        }
+        .ccs-pillar {
+            background: var(--ccs-white);
+            border: 1px solid var(--ccs-line);
+            border-radius: 16px;
+            padding: 34px 30px;
+        }
+        .ccs-pillar__num {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--ccs-orange);
+            letter-spacing: 0.08em;
+            margin: 0 0 18px 0;
+        }
+        .ccs-pillar__title {
+            font-size: 19px;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+        }
+        .ccs-pillar__text {
+            font-size: 14.5px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--ccs-gray);
+            margin: 0;
+        }
+
+        /* ── Timeline ── */
+        .ccs-timeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            margin-top: 54px;
+            counter-reset: ccs-step;
+        }
+        .ccs-timestep {
+            flex: 1 1 200px;
+            position: relative;
+            padding: 24px 24px 0 0;
+            border-top: 3px solid var(--ccs-orange);
+        }
+        .ccs-timestep__num {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--ccs-orange);
+            margin: 0 0 10px 0;
+        }
+        .ccs-timestep__title {
+            font-size: 15px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+        .ccs-timestep__text {
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--ccs-gray);
+            margin: 0;
+        }
+
+        /* ── Locations strip ── */
+        .ccs-locations {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 46px 0 0 0;
+        }
+        .ccs-location {
+            background: var(--ccs-black);
+            border-radius: 16px;
+            padding: 30px 26px;
+            color: #fff;
+        }
+        .ccs-location__name {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+        .ccs-location__tag {
+            font-size: 12.5px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ── Gallery ── */
+        .ccs-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 230px;
+            grid-auto-flow: dense;
+            gap: 16px;
+            margin-top: 10px;
+        }
+        .ccs-gallery__item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .ccs-gallery__item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .ccs-gallery__item:hover img { transform: scale(1.06); }
+        .ccs-gallery__item--wide { grid-column: span 2; }
+        .ccs-gallery__item--tall { grid-row: span 2; }
+
+        /* ── Results ── */
+        .ccs-checklist {
+            list-style: none;
+            margin: 40px 0 0 0;
+            padding: 0;
+            max-width: 820px;
+        }
+        .ccs-checklist li {
+            display: flex;
+            gap: 16px;
+            padding: 20px 0;
+            border-top: 1px solid var(--ccs-line);
+            font-size: 15.5px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #4a4a45;
+        }
+        .ccs-checklist li:last-child { border-bottom: 1px solid var(--ccs-line); }
+        .ccs-checklist li strong { color: var(--ccs-black); font-weight: 600; }
+        .ccs-checklist__icon {
+            flex: 0 0 24px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--ccs-orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+        .ccs-checklist__icon svg { width: 12px; height: 12px; stroke: #fff; stroke-width: 3; fill: none; }
+
+        /* ── CTA ── */
+        .ccs-cta {
+            background: var(--ccs-black);
+            padding: 110px 0;
+            text-align: center;
+            color: #fff;
+        }
+        .ccs-cta__eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ccs-orange);
+            margin: 0 0 20px 0;
+        }
+        .ccs-cta__title {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 700;
+            line-height: 1.2;
+            max-width: 720px;
+            margin: 0 auto 20px auto;
+        }
+        .ccs-cta__text {
+            font-size: 16px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+            max-width: 560px;
+            margin: 0 auto 40px auto;
+            line-height: 1.7;
+        }
+        .ccs-cta__actions {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .ccs-btn {
+            display: inline-block;
+            padding: 16px 34px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .ccs-btn--primary {
+            background: var(--ccs-orange);
+            color: #fff;
+        }
+        .ccs-btn--primary:hover { background: #fff; color: var(--ccs-orange); }
+        .ccs-btn--ghost {
+            border: 1.5px solid rgba(255,255,255,0.3);
+            color: #fff;
+        }
+        .ccs-btn--ghost:hover { border-color: var(--ccs-orange); color: var(--ccs-orange); }
+
+        /* ── Two column layout used inside sections ── */
+        .ccs-cols {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1024px) {
+            .ccs-wrap, .ccs-hero__content, .ccs-stats__grid { padding-left: 24px; padding-right: 24px; }
+            .ccs-stats__grid { grid-template-columns: repeat(2, 1fr); gap: 34px 20px; }
+            .ccs-personas, .ccs-pillars, .ccs-locations { grid-template-columns: 1fr; }
+            .ccs-cols { grid-template-columns: 1fr; gap: 30px; }
+            .ccs-gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
+            .ccs-gallery__item--wide { grid-column: span 2; }
+            .ccs-section { padding: 70px 0; }
+        }
+
+        @media (max-width: 640px) {
+            .ccs-hero { min-height: 78vh; }
+            .ccs-hero__content { padding: 120px 20px 40px; }
+            .ccs-hero__meta { gap: 22px; }
+            .ccs-section__head { margin-bottom: 36px; }
+            .ccs-lede { font-size: 18px; }
+            .ccs-quote p { font-size: 19px; }
+            .ccs-gallery { grid-template-columns: 1fr; grid-auto-rows: 260px; }
+            .ccs-gallery__item, .ccs-gallery__item--wide { grid-column: span 1; }
+            .ccs-timeline { flex-direction: column; }
+            .ccs-timestep { border-top: none; border-left: 3px solid var(--ccs-orange); padding: 0 0 28px 20px; }
+        }
+    </style>
+
+<!--linkedin partner tracking code-->
+<script type="text/javascript">
+    _linkedin_partner_id = "5652372";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/javascript">
+    (function(l) {
+        if (!l) {
+            window.lintrk = function(a, b) {
+                window.lintrk.q.push([a, b])
+            };
+            window.lintrk.q = []
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+    })(window.lintrk);
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=5652372&fmt=gif" />
+</noscript>
+<!--END linkedin partner tracking code-->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1467236020816075');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1467236020816075&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body class="page-template-template-blank singular template-projects-single">
+
+<!-- Navigation -->
+<div class="website-menu fixed-menu">
+    <div class="website-menu-logo"><a href="/"><img src="images/sprintco-secondary-logo.svg" alt="SprintCo"></a></div>
+    <div class="website-menu-handler">Menu <img src="images/menu-icn.svg" alt="Menu"></div>
+</div>
+<div id="main-navigations">
+    <div class="main-navigations-logo">
+        <div class="navigations-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
+        <div class="close-menu-handler">Close <img src="images/close-menu.svg" alt="Close"></div>
+    </div>
+    <div class="menu-main-menu-container">
+    <ul id="menu-main-menu" class="footer-main-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="about">About Us</a></li>
+        <li class="current-menu-item menu-item-has-children"><a href="projects">Projects</a>
+            <ul class="sub-menu">
+                <li><a href="projects">All</a></li>
+                <li><a href="projects">Bar</a></li>
+                <li><a href="projects">Cafe</a></li>
+                <li><a href="projects">Restaurant</a></li>
+                <li><a href="projects">QSR</a></li>
+            </ul>
+        </li>
+        <li><a href="our-offerings">Our Offerings</a></li>
+        <li><a href="insights">Insights</a></li>
+    </ul>
+    </div>
+    <div class="main-navigations-footer">
+        <div class="common-button light-button"><a href="contact"><span>Get in touch</span></a></div>
+        <div class="menu-social-links-container">
+        <ul class="footer-social-nav">
+            <li><a href="https://www.linkedin.com/company/sprint-co/" target="_blank">Linkedin</a></li>
+            <li><a href="https://www.instagram.com/sprintco_designs/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@B2B_Designers" target="_blank">YouTube</a></li>
+            <li class="menu-none"><a href="https://www.flatpackco.com/" target="_blank">FlatPackCo</a></li>
+        </ul>
+        </div>
+    </div>
+</div>
+<div class="main-navigations-overlay"></div>
+
+<main class="ccs-page">
+
+    <!-- ── Hero ── -->
+    <section class="ccs-hero">
+        <img class="ccs-hero__bg" src="images/Croffle-Guys-Hero.png" alt="The Croffle Guys — interior designed by SprintCo">
+        <div class="ccs-hero__gradient"></div>
+        <div class="ccs-hero__content">
+            <p class="ccs-hero__tag"></p>
+            <h1 class="ccs-hero__title">Expanding Croffle Footprints Across India</h1>
+            <p class="ccs-hero__sub">How a self-built, one-outlet dessert idea became a repeatable brand design system engineered by SprintCo to travel across Mumbai, and ready for the rest of India.</p>
+            <div class="ccs-hero__meta">
+                <div class="ccs-hero__field">
+                    <span class="ccs-hero__label">Client</span>
+                    <span class="ccs-hero__value">The Croffle Guys</span>
+                </div>
+                <div class="ccs-hero__field">
+                    <span class="ccs-hero__label">Category</span>
+                    <span class="ccs-hero__value">QSR — Dessert / Croffle</span>
+                </div>
+                <div class="ccs-hero__field">
+                    <span class="ccs-hero__label">Scope</span>
+                    <span class="ccs-hero__value">Brand-Led Design System + Build</span>
+                </div>
+                <div class="ccs-hero__field">
+                    <span class="ccs-hero__label">Locations</span>
+                    <span class="ccs-hero__value">Charni Road, Matunga, Lokhandwala — Mumbai</span>
+                </div>
+                <div class="ccs-hero__field">
+                    <span class="ccs-hero__label">Executed By</span>
+                    <span class="ccs-hero__value">FlatPackCo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Stat Strip ── -->
+    <section class="ccs-stats">
+        <div class="ccs-stats__grid">
+            <div class="ccs-stat">
+                <p class="ccs-stat__num">3</p>
+                <p class="ccs-stat__label">Outlets designed &amp; delivered across Mumbai</p>
+            </div>
+            <div class="ccs-stat">
+                <p class="ccs-stat__num">30&ndash;45</p>
+                <p class="ccs-stat__label">Days to build each outlet, start to finish</p>
+            </div>
+            <div class="ccs-stat">
+                <p class="ccs-stat__num">1</p>
+                <p class="ccs-stat__label">Design system built once, replicated everywhere</p>
+            </div>
+            <div class="ccs-stat">
+                <p class="ccs-stat__num">70/30</p>
+                <p class="ccs-stat__label">Brand DNA to local-adaptation design ratio</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── 01: The Challenge ── -->
+    <section class="ccs-section">
+        <div class="ccs-wrap">
+            <p class="ccs-eyebrow">01 &nbsp;/&nbsp; Situation &amp; Challenge</p>
+            <div class="ccs-section__head">
+                <h2 class="ccs-section__title">The Croffle Guys &amp; The Challenge</h2>
+            </div>
+            <div class="ccs-cols">
+                <div>
+                    <p class="ccs-lede">Four founders didn&#8217;t just open a caf&eacute;, they invented a category.</p>
+                    <p class="ccs-body">Amay Thakkar, Veer Pinto, Rahul Vohra and Annanya Agarwal built The Croffle Guys around a single hybrid product: the croffle, a croissant folded into waffle form. It wasn&#8217;t positioned as another dessert caf&eacute; , it was built to be the anchor of a new QSR category, aimed squarely at young, urban Indians who treat a snack run like a social event.</p>
+                    <p class="ccs-body">The first outlet had no professional designer behind it at all. It was self-built with the help of friends and family , a scrappy proof of concept that worked because the product and the founders&#8217; instincts were right. That outlet proved the idea. It didn&#8217;t prove the brand could scale.</p>
+                    <p class="ccs-body">As demand grew and the founders set their sights on new Mumbai neighbourhoods, they came to SprintCo with what looked like a straightforward construction brief: help us build outlet two and three. The real problem was sitting one layer beneath that ask.</p>
+                    <div class="ccs-quote">
+                        <p>&#8220;We were supposed to work on just their build. But we realised that what they actually required was also to create a completely new design.&#8221;</p>
+                        <cite>Sona Mantri <span>, Founder, SprintCo</span></cite>
+                    </div>
+                    <p class="ccs-body">Croffle Guys didn&#8217;t have a construction problem. They had a <strong>scaling problem</strong>. Every new outlet risked one of two failures: look identical and feel dated to the neighbourhood, or get reinvented from scratch and dilute the very brand identity that made outlet one work. The target guest , defined sharply in the brand&#8217;s own audience personas , would notice either mistake immediately.</p>
+                </div>
+                <div class="ccs-persona-side">
+                    <p style="font-size:13px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ccs-gray);margin:0 0 20px 0;">Who were we designing for</p>
+                    <div class="ccs-persona" style="margin-bottom:18px;">
+                        <p class="ccs-persona__name">The Caf&eacute; Besties</p>
+                        <p class="ccs-persona__age">Age 26 &middot; Gen Z</p>
+                        <p class="ccs-persona__desc">Always caf&eacute;-hopping, chasing a vibe. Bold flavours, aesthetic corners, playlists that match their mood , if it&#8217;s not Instagrammable, it&#8217;s not happening.</p>
+                    </div>
+                    <div class="ccs-persona" style="margin-bottom:18px;">
+                        <p class="ccs-persona__name">The Solo Regular</p>
+                        <p class="ccs-persona__age">Age 22</p>
+                        <p class="ccs-persona__desc">Well-travelled, music-obsessed. Chooses corners with character and playlists with soul , a vibe worth revisiting, not just a coffee.</p>
+                    </div>
+                    <div class="ccs-persona">
+                        <p class="ccs-persona__name">The Design-Led Couple</p>
+                        <p class="ccs-persona__age">Ages 32 &amp; 34</p>
+                        <p class="ccs-persona__desc">Food-curious, caf&eacute; loyal. Spend weekends discovering spots with great design, bold menus and a bit of story to tell.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── 02: Strategy & Design Concept ── -->
+    <section class="ccs-section ccs-section--cream">
+        <div class="ccs-wrap">
+            <p class="ccs-eyebrow">02 &nbsp;/&nbsp; Approach</p>
+            <div class="ccs-section__head">
+                <h2 class="ccs-section__title">The Strategy &amp; Design Concept</h2>
+            </div>
+            <p class="ccs-lede">Before drawing a single layout, SprintCo reframed the brief: this wasn&#8217;t a restaurant to design. It was a brand to systemise.</p>
+            <p class="ccs-body">The team studied the existing brand equity closely , the personality Croffle Guys already had, the audience it was built for, the energy that made outlet one feel different. Rather than replacing that instinct, SprintCo doubled down on it and gave it a design language disciplined enough to travel.</p>
+            <p class="ccs-body">At the centre of that language sits Sona Mantri&#8217;s own scaling framework, applied here for this brand: <strong>70% brand DNA, 30% localisation</strong>. Seventy percent of the design, the palette, the materiality, the spatial logic, never changes. The remaining thirty percent flexes to the neighbourhood it&#8217;s built in.</p>
+            <div class="ccs-quote">
+                <p>&#8220;What works in Mumbai may not be the same as what works in Pune. You define what the brand is all about, and then you add the 30% which is localisation as per the location.&#8221;</p>
+                <cite>Sona Mantri <span>, Founder, SprintCo</span></cite>
+            </div>
+            <p class="ccs-body">Colour became the discipline that held it all together. Orange, already core to the Croffle Guys identity, was made the single loudest element in every space. Everything else, from the counter to the facade to the washrooms, was deliberately neutralised so nothing competed with it.</p>
+            <div class="ccs-quote">
+                <p>&#8220;We took that orange colour and had fun with it. Everything else was there to neutralise and support that hero we were trying to create.&#8221;</p>
+                <cite>Sona Mantri <span>, Founder, SprintCo</span></cite>
+            </div>
+            <p class="ccs-body">The brief also carried a clear repositioning: move away from the conventional caf&eacute; and build a genuine hangout. Seating was zoned for specific social moments , a window seat for friends who lose track of time, a corner for the regular who claims it and never gives it back, a counter for the after-work crowd rolling in like they already own the place. Signage was built to read like a treasure map, camera-ready by design, not by accident.</p>
+            <div class="ccs-pillars">
+                <div class="ccs-pillar">
+                    <p class="ccs-pillar__num">01</p>
+                    <h3 class="ccs-pillar__title">Brand DNA Lock-In</h3>
+                    <p class="ccs-pillar__text">Every non-negotiable brand element was systemised before a single new outlet was designed, so identity could survive contact with a new neighbourhood.</p>
+                </div>
+                <div class="ccs-pillar">
+                    <p class="ccs-pillar__num">02</p>
+                    <h3 class="ccs-pillar__title">Hero Colour Discipline</h3>
+                    <p class="ccs-pillar__text">Orange was concentrated, never diluted. Every material and finish decision was made to protect it as the one unmistakable signal of the brand.</p>
+                </div>
+                <div class="ccs-pillar">
+                    <p class="ccs-pillar__num">03</p>
+                    <h3 class="ccs-pillar__title">Zoned for Social Behaviour</h3>
+                    <p class="ccs-pillar__text">Seating, signage and sightlines were built around how Gen Z and millennial guests actually gather , not around a generic caf&eacute; template.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── 03: Execution & Build ── -->
+    <section class="ccs-section">
+        <div class="ccs-wrap">
+            <p class="ccs-eyebrow">03 &nbsp;/&nbsp; Delivery</p>
+            <div class="ccs-section__head">
+                <h2 class="ccs-section__title">Execution &amp; Build</h2>
+            </div>
+            <p class="ccs-lede">A design system is only as good as its ability to get built , fast, and without dilution.</p>
+            <p class="ccs-body">This is where SprintCo paired design with FlatPackCo, our execution partner, to close the gap between a finished drawing and an open door. Rather than handing off the concept and hoping local contractors interpreted it correctly outlet after outlet, the same team that designed the system also owned building it.</p>
+            <p class="ccs-body">The method was prototype-first: build and stress-test the system at one location, finalise every material and service detail with the client, confirm it holds up operationally, and only then replicate it , adapting the 30% that needed to flex for each address.</p>
+            <div class="ccs-quote">
+                <p>&#8220;Scale doesn&#8217;t happen when you&#8217;re designing the restaurant. Scale happens when you&#8217;re designing the system which is adaptable and replicated easily. Consistency beats complexity every single time.&#8221;</p>
+                <cite>Sona Mantri <span>, Founder, SprintCo</span></cite>
+            </div>
+            <p class="ccs-body">The payoff was speed. With nothing left to reinvent from scratch, each new Croffle Guys outlet moved from site to service in <strong>30 to 45 days</strong> , turning the design system from an aesthetic upgrade into a genuine growth lever for the brand.</p>
+            <div class="ccs-quote">
+                <p>&#8220;What helped the most was the fact that we could execute these outlets at scale , that&#8217;s the best thing about having SprintCo and Flatpack on board.&#8221;</p>
+                <cite>Rahul Vohra <span>, Co-Founder, The Croffle Guys</span></cite>
+            </div>
+            <p class="ccs-body">The proof sits in three genuinely different Mumbai micro-markets, each carrying identical brand DNA with its own dial of local adaptation:</p>
+            <div class="ccs-locations">
+                <div class="ccs-location">
+                    <p class="ccs-location__name">Charni Road</p>
+                    <p class="ccs-location__tag">The system&#8217;s first live proof point , brand DNA established, prototype validated.</p>
+                </div>
+                <div class="ccs-location">
+                    <p class="ccs-location__name">Matunga</p>
+                    <p class="ccs-location__tag">Same design language, adapted to a different footfall and neighbourhood rhythm.</p>
+                </div>
+                <div class="ccs-location">
+                    <p class="ccs-location__name">Lokhandwala</p>
+                    <p class="ccs-location__tag">Third outlet, delivered on the same 30&ndash;45 day build cycle, consistency at pace.</p>
+                </div>
+            </div>
+            <div class="ccs-timeline">
+                <div class="ccs-timestep">
+                    <p class="ccs-timestep__num">01</p>
+                    <p class="ccs-timestep__title">Brief Reframed</p>
+                    <p class="ccs-timestep__text">A construction ask becomes a brand design mandate.</p>
+                </div>
+                <div class="ccs-timestep">
+                    <p class="ccs-timestep__num">02</p>
+                    <p class="ccs-timestep__title">Brand &amp; Audience Study</p>
+                    <p class="ccs-timestep__text">Existing equity and target personas mapped before design begins.</p>
+                </div>
+                <div class="ccs-timestep">
+                    <p class="ccs-timestep__num">03</p>
+                    <p class="ccs-timestep__title">70/30 System Built</p>
+                    <p class="ccs-timestep__text">Brand DNA locked; localisation logic defined.</p>
+                </div>
+                <div class="ccs-timestep">
+                    <p class="ccs-timestep__num">04</p>
+                    <p class="ccs-timestep__title">Prototype Finalised</p>
+                    <p class="ccs-timestep__text">Every material and service detail tested on outlet one.</p>
+                </div>
+                <div class="ccs-timestep">
+                    <p class="ccs-timestep__num">05</p>
+                    <p class="ccs-timestep__title">Replicated at Scale</p>
+                    <p class="ccs-timestep__text">Matunga and Lokhandwala delivered in 30&ndash;45 days each.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── 04: Project Gallery ── -->
+    <section class="ccs-section ccs-section--cream">
+        <div class="ccs-wrap">
+            <p class="ccs-eyebrow">04 &nbsp;/&nbsp; The Spaces</p>
+            <div class="ccs-section__head">
+                <h2 class="ccs-section__title">Project Gallery</h2>
+                <p class="ccs-lede" style="margin-top:20px;">Three addresses. One unmistakable identity.</p>
+            </div>
+            <div class="ccs-gallery">
+                <div class="ccs-gallery__item ccs-gallery__item--wide">
+                    <img src="images/Croffle-Guys-Hero.png" alt="The Croffle Guys — orange-forward QSR interior designed by SprintCo">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/Croffle-Guys-2.jpeg" alt="The Croffle Guys interior — playful seating and signage">
+                </div>
+                <div class="ccs-gallery__item ccs-gallery__item--tall">
+                    <img src="images/Croffle-Guys-10-portrait.jpeg" alt="The Croffle Guys — vertical view of counter and signage">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/Croffle-Guys-3.jpeg" alt="The Croffle Guys interior — zoned seating for social moments">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/Croffle-Guys-4.jpeg" alt="The Croffle Guys interior — brand-led material palette">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/Croffle-Guys-5.jpeg" alt="The Croffle Guys interior — counter and service flow">
+                </div>
+                <div class="ccs-gallery__item ccs-gallery__item--tall">
+                    <img src="images/Croffle-Guys-11-portrait.jpeg" alt="The Croffle Guys — vertical view of seating and wayfinding">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/Croffle-Guys-6.jpeg" alt="The Croffle Guys interior — camera-ready corner design">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/Croffle-Guys-7.jpeg" alt="The Croffle Guys interior — playful wayfinding and graphics">
+                </div>
+                <div class="ccs-gallery__item ccs-gallery__item--wide">
+                    <img src="images/Croffle-Guys-8.jpeg" alt="The Croffle Guys — wide interior view showing hero orange palette">
+                </div>
+                <div class="ccs-gallery__item">
+                    <img src="images/Croffle-Guys-9.jpeg" alt="The Croffle Guys interior — detail of seating and finishes">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── 05: Results & Impact ── -->
+    <section class="ccs-section">
+        <div class="ccs-wrap">
+            <p class="ccs-eyebrow">05 &nbsp;/&nbsp; Impact</p>
+            <div class="ccs-section__head">
+                <h2 class="ccs-section__title">Results &amp; Impact</h2>
+            </div>
+            <p class="ccs-lede">The real result here isn&#8217;t a nicer-looking caf&eacute;. It&#8217;s a brand that now owns a repeatable system to grow on.</p>
+            <ul class="ccs-checklist">
+                <li>
+                    <span class="ccs-checklist__icon"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"></polyline></svg></span>
+                    <span><strong>A design system now exists where none did before</strong>, replacing one-off, ad hoc outlet builds with a documented, repeatable brand kit.</span>
+                </li>
+                <li>
+                    <span class="ccs-checklist__icon"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"></polyline></svg></span>
+                    <span><strong>Three live outlets prove it holds up</strong> across genuinely different Mumbai neighbourhoods, Charni Road, Matunga and Lokhandwala, without diluting the brand.</span>
+                </li>
+                <li>
+                    <span class="ccs-checklist__icon"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"></polyline></svg></span>
+                    <span><strong>Build timelines compressed to 30&ndash;45 days per outlet</strong>, removing the single biggest bottleneck to opening a new location.</span>
+                </li>
+                <li>
+                    <span class="ccs-checklist__icon"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"></polyline></svg></span>
+                    <span><strong>No dependency on hiring a fresh local agency</strong> for every new neighbourhood or city, the design system itself now travels.</span>
+                </li>
+                <li>
+                    <span class="ccs-checklist__icon"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"></polyline></svg></span>
+                    <span><strong>A brand built by four founders with no designer</strong> now has design as one of its core scaling assets, validated by the people who lived the transition.</span>
+                </li>
+            </ul>
+            <div class="ccs-quote">
+                <p>&#8220;Thanks to Sona&#8217;s expertise and Kavita&#8217;s design capabilities, we can hopefully take Croffle nationwide, and have these designs, and the way these designs are consistent with our brand, flow on a nationwide level.&#8221;</p>
+                <cite>Rahul Vohra <span>, Co-Founder, The Croffle Guys</span></cite>
+            </div>
+            <p class="ccs-body">The Croffle Guys is no longer scaling a restaurant. It is scaling a system, and systems, unlike single restaurants, are built to travel.</p>
+        </div>
+    </section>
+
+    <!-- ── 06: Call To Action ── -->
+    <section class="ccs-cta">
+        <p class="ccs-cta__eyebrow"></p>
+        <h2 class="ccs-cta__title">Building a Brand That&#8217;s Built to Scale?</h2>
+        <p class="ccs-cta__text">If your concept is ready to move past one location, SprintCo designs the system that gets it there , consistently, and fast.</p>
+        <div class="ccs-cta__actions">
+            <a href="contact" class="ccs-btn ccs-btn--primary">Start Your Project</a>
+            <a href="the-croffle-guys-qsr-interior-design" class="ccs-btn ccs-btn--ghost">View the Full Project</a>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="scrolltop"><img src="images/scrolltop.svg" alt="Scroll To Top"></div>
+    <div class="footer-container">
+        <div class="footer-block">
+            <div class="footer-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
+            <p>Vasudev Chamber-B, 21, Old Nagardas Cross Rd, near Andheri Subway, opposite Wilson House, Mogra Pada, Natwar Nagar, Andheri East, Mumbai, Maharashtra- 400069<br><br>
+            &copy; 2025 Copyright B2B Designers Pvt Limited 2025. <br>All Rights Reserved.</p>
+            <ul class="footer-privacy-nav"><li><a href="#">Privacy Policy</a></li></ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-main-nav">
+                <li><a href="projects">Projects</a></li>
+                <li><a href="our-offerings">Our Offerings</a></li>
+                <li><a href="our-clients">Our Clients</a></li>
+                <li><a href="insights">Insights</a></li>
+                  <li><a href="../cities">Cities</a></li>
+            </ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-social-nav">
+                <li><a href="https://www.linkedin.com/company/sprint-co/" target="_blank">Linkedin</a></li>
+                <li><a href="https://www.instagram.com/sprintco_designs/" target="_blank">Instagram</a></li>
+                <li><a href="https://www.youtube.com/@B2B_Designers" target="_blank">YouTube</a></li>
+                <li class="menu-none"><a href="https://www.flatpackco.com/" target="_blank">FlatPackCo</a></li>
+            </ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-contact-nav">
+                <li class="copy-text"><a>info@sprint-co.com</a></li>
+                <li class="copy-text"><a>(+91) 9004301234</a></li>
+                <li class="common-button light-button"><a href="contact"><span>Get in Touch</span></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

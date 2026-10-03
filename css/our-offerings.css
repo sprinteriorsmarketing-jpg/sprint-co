@@ -1,0 +1,38 @@
+/* Our Offerings page — hero + alternating service sections */
+
+.offering-hero{padding:14.583vw 5.208vw 5.208vw;box-sizing:border-box;background-color:var(--body-color)}
+.offering-hero .container{max-width:56.25vw;margin:0 auto;text-align:center;padding:0}
+.offering-hero-eyebrow{display:block;font-family:var(--seconday-font);font-weight:600;font-size:.833vw;line-height:1vw;letter-spacing:.208vw;text-transform:uppercase;color:var(--orange-color);margin:0 0 1.25vw}
+.offering-hero h1{font-family:var(--seconday-font);font-weight:400;color:var(--headlines);font-size:3.229vw;line-height:3.75vw;margin:0 0 1.667vw}
+.offering-hero-intro{font-family:var(--primary-font);font-weight:400;color:var(--dark-color);font-size:1.146vw;line-height:1.875vw;margin:0 0 2.083vw}
+.offering-hero .common-button{display:flex;justify-content:center}
+
+.offering-services{background-color:var(--body-color)}
+.offering-service{display:flex;align-items:stretch;flex-wrap:wrap;border-top:.052vw solid rgba(23,23,23,.12)}
+.offering-service:last-child{border-bottom:.052vw solid rgba(23,23,23,.12)}
+.offering-service-media,.offering-service-content{width:50%;box-sizing:border-box}
+.offering-service-media{min-height:34.375vw;background-size:cover;background-position:center}
+.offering-service-content{display:flex;align-items:center}
+.offering-service-content-inner{padding:5.208vw 6.25vw;box-sizing:border-box}
+.offering-service-num{display:block;font-family:var(--seconday-font);font-weight:600;font-size:.833vw;line-height:1vw;letter-spacing:.208vw;color:var(--orange-color);margin:0 0 1.042vw}
+.offering-service-content h2{font-family:var(--seconday-font);font-weight:400;color:var(--headlines);font-size:2.083vw;line-height:2.396vw;margin:0 0 1.25vw}
+.offering-service-content p{font-family:var(--primary-font);font-weight:400;color:var(--dark-color);font-size:.938vw;line-height:1.563vw;margin:0 0 1.042vw}
+.offering-service-content p:last-child{margin-bottom:0}
+
+.offering-service--reverse{flex-direction:row-reverse}
+
+@media (max-width:767px){
+    .offering-hero{padding:120px 20px 40px}
+    .offering-hero .container{max-width:100%}
+    .offering-hero-eyebrow{font-size:12px;line-height:14px;letter-spacing:2px;margin:0 0 14px}
+    .offering-hero h1{font-size:34px;line-height:40px;margin:0 0 16px}
+    .offering-hero-intro{font-size:16px;line-height:26px;margin:0 0 24px}
+
+    .offering-service,.offering-service--reverse{flex-direction:column}
+    .offering-service-media,.offering-service-content{width:100%}
+    .offering-service-media{min-height:280px}
+    .offering-service-content-inner{padding:40px 20px}
+    .offering-service-num{font-size:12px;line-height:14px;letter-spacing:2px;margin:0 0 12px}
+    .offering-service-content h2{font-size:26px;line-height:32px;margin:0 0 14px}
+    .offering-service-content p{font-size:15px;line-height:24px;margin:0 0 14px}
+}

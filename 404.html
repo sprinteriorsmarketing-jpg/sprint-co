@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <script>
+        // Relative assets support direct file previews; the base keeps them rooted
+        // correctly when Apache serves this page for a deeply nested missing URL.
+        if (window.location.protocol !== 'file:') {
+            document.write('<base href="/">');
+        }
+    </script>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Page Not Found – SprintCo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error-section {
+            min-height: 78vh;
+            display: grid;
+            place-items: center;
+            padding: 180px 24px 100px;
+            background: #f6f0ea;
+            color: #1a1a1a;
+            text-align: center;
+        }
+        .error-content { max-width: 820px; }
+        .error-code {
+            margin: 0;
+            color: #f4602b;
+            font-size: clamp(112px, 22vw, 270px);
+            font-weight: 800;
+            letter-spacing: -.08em;
+            line-height: .72;
+        }
+        .error-content h1 {
+            margin: clamp(42px, 6vw, 70px) 0 18px;
+            font-size: clamp(30px, 5vw, 62px);
+            line-height: 1.08;
+        }
+        .error-content > p:not(.error-code) {
+            max-width: 600px;
+            margin: 0 auto 34px;
+            color: #5b554f;
+            font-size: clamp(16px, 1.6vw, 20px);
+            line-height: 1.6;
+        }
+        .error-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+        .error-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 170px;
+            padding: 15px 26px;
+            border: 2px solid #f4602b;
+            background: #f4602b;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: background .2s ease, color .2s ease, transform .2s ease;
+        }
+        .error-button.secondary { background: transparent; color: #f4602b; }
+        .error-button:hover,
+        .error-button:focus-visible {
+            background: #1a1a1a;
+            border-color: #1a1a1a;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 575px) {
+            .error-section { min-height: 70vh; padding: 140px 20px 70px; }
+            .error-button { width: 100%; }
+        }
+        @media (prefers-reduced-motion: reduce) { .error-button { transition: none; } }
+    </style>
+</head>
+<body class="home page-template-template-blank">
+
+<!-- Navigation -->
+<div class="website-menu fixed-menu">
+    <div class="website-menu-logo"><a href="/"><img src="images/sprintco-secondary-logo.svg" alt="SprintCo"></a></div>
+    <div class="website-menu-handler">Menu <img src="images/menu-icn.svg" alt="Menu"></div>
+</div>
+<div id="main-navigations">
+    <div class="main-navigations-logo">
+        <div class="navigations-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
+        <div class="close-menu-handler">Close <img src="images/close-menu.svg" alt="Close"></div>
+    </div>
+    <div class="menu-main-menu-container">
+        <ul id="menu-main-menu" class="footer-main-nav">
+            <li class="current-menu-item"><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li class="menu-item-has-children"><a href="/projects">Projects</a>
+                <ul class="sub-menu">
+                    <li><a href="/projects">All</a></li>
+                    <li><a href="/projects">Bar</a></li>
+                    <li><a href="/projects">Cafe</a></li>
+                    <li><a href="/projects">Restaurant</a></li>
+                    <li><a href="/projects">QSR</a></li>
+                </ul>
+            </li>
+            <li><a href="/our-offerings">Our Offerings</a></li>
+            <li><a href="/insights">Insights</a></li>
+        </ul>
+    </div>
+    <div class="main-navigations-footer">
+        <div class="common-button light-button"><a href="/contact"><span>Get in touch</span></a></div>
+        <div class="menu-social-links-container">
+            <ul class="footer-social-nav">
+                <li><a href="https://www.linkedin.com/company/sprint-co/" target="_blank" rel="noopener">Linkedin</a></li>
+                <li><a href="https://www.instagram.com/sprintco_designs/" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="https://www.youtube.com/@B2B_Designers" target="_blank" rel="noopener">YouTube</a></li>
+                <li class="menu-none"><a href="https://www.flatpackco.com/" target="_blank" rel="noopener">FlatPackCo</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="main-navigations-overlay"></div>
+
+<main id="site-content">
+    <section class="error-section">
+        <div class="error-content">
+            <p class="error-code" aria-hidden="true">404</p>
+            <h1>This page missed the table.</h1>
+            <p>The page you’re looking for may have moved, changed its name, or is no longer available.</p>
+            <div class="error-actions">
+                <a class="error-button" href="/">Return home</a>
+                <a class="error-button secondary" href="/projects">Explore projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="scrolltop"><img src="images/scrolltop.svg" alt="Scroll To Top"></div>
+        <div class="footer-container">
+            <div class="footer-block">
+                <div class="footer-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
+                <p>Vasudev Chamber-B, 21, Old Nagardas Cross Rd, near Andheri Subway, opposite Wilson House, Mogra Pada, Natwar Nagar, Andheri East, Mumbai, Maharashtra- 400069<br><br>
+                © 2025 Copyright B2B Designers Pvt Limited 2025.<br>All Rights Reserved.</p>
+                <ul class="footer-privacy-nav"><li><a href="#">Privacy Policy</a></li></ul>
+            </div>
+            <div class="footer-block">
+                <ul class="footer-main-nav">
+                    <li><a href="/projects">Projects</a></li>
+                    <li><a href="/our-offerings">Our Offerings</a></li>
+                    <li><a href="/our-clients">Our Clients</a></li>
+                    <li><a href="/insights">Insights</a></li>
+                    <li><a href="../cities">Cities</a></li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <ul class="footer-social-nav">
+                    <li><a href="https://www.linkedin.com/company/sprint-co/" target="_blank" rel="noopener">Linkedin</a></li>
+                    <li><a href="https://www.instagram.com/sprintco_designs/" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://www.youtube.com/@B2B_Designers" target="_blank" rel="noopener">YouTube</a></li>
+                    <li class="menu-none"><a href="https://www.flatpackco.com/" target="_blank" rel="noopener">FlatPackCo</a></li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <ul class="footer-contact-nav">
+                    <li class="copy-text"><a>info@sprint-co.com</a></li>
+                    <li class="copy-text"><a>(+91) 9004301234</a></li>
+                    <li class="common-button light-button"><a href="/contact"><span>Get in Touch</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1404 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-881264946"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-881264946');
+  gtag('config', 'G-9EFG5Q3JHZ');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Commercial Restaurant Interior Designs India – SprintCo Portfolio</title>
+    <meta name="description" content="Explore SprintCo's restaurant, café, bar, QSR and kiosk projects, including Pizza Hut, BrewDog, Blue Tokai, Social and Aminia, across India and Dubai.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .pt-page {
+            background-color: #fff;
+            min-height: 100vh;
+        }
+
+        .pt-toolbar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: baseline;
+            gap: 24px;
+            padding: 120px 50px 30px;
+        }
+
+        .pt-toolbar-title {
+            font-family: var(--seconday-font);
+            font-weight: 700;
+            font-size: clamp(32px, 4vw, 56px);
+            color: #171717;
+            letter-spacing: 0.02em;
+            margin: 0;
+        }
+
+        .pt-toolbar-controls {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .pt-sort,
+        .pt-filter-toggle {
+            font-family: var(--primary-font);
+            font-size: 13px;
+            font-weight: 400;
+            color: #171717;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            letter-spacing: 0.02em;
+        }
+
+        .pt-sort span {
+            color: #f4602b;
+        }
+
+        .pt-filter-toggle {
+            color: #171717;
+        }
+
+        .pt-filter-panel {
+            display: none;
+            padding: 0 50px 20px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .pt-filter-panel.open {
+            display: flex;
+        }
+
+        .pt-filter-panel a {
+            font-family: var(--primary-font);
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            color: #86868b;
+            padding: 6px 18px;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .pt-filter-panel a:hover,
+        .pt-filter-panel a.active {
+            color: #f4602b;
+            border-color: #f4602b;
+        }
+
+        .pt-projects-list {
+            padding: 20px 50px 60px;
+        }
+
+        .pt-project-row {
+            margin-bottom: 50px;
+            cursor: pointer;
+        }
+
+        .pt-project-row a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .pt-image-strip {
+            display: flex;
+            gap: 0;
+            width: 80%;
+            overflow: hidden;
+            transition: gap 0.4s ease;
+        }
+
+        .pt-image-strip .pt-img-cell {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .pt-image-strip .pt-img-cell img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease;
+        }
+
+        .pt-project-row:hover .pt-image-strip {
+            gap: 10px;
+        }
+
+        .pt-project-row:hover .pt-img-cell img {
+            transform: scale(1.03);
+        }
+
+        .pt-project-text {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            padding-top: 14px;
+        }
+
+        .pt-project-name {
+            font-family: var(--seconday-font);
+            font-weight: 700;
+            font-size: 22px;
+            color: #f4602b;
+            margin: 0;
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+        }
+
+        .pt-project-sub {
+            font-family: var(--seconday-font);
+            font-weight: 300;
+            font-size: 20px;
+            color: #f4602b;
+            opacity: 0.55;
+            margin: 0;
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+        }
+
+        @media (min-width: 1400px) {
+            .pt-image-strip .pt-img-cell img {
+                height: 340px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .pt-toolbar {
+                padding: 110px 30px 20px;
+            }
+            .pt-projects-list {
+                padding: 20px 30px 40px;
+            }
+            .pt-filter-panel {
+                padding: 0 30px 15px;
+            }
+            .pt-image-strip {
+                width: 100%;
+            }
+            .pt-image-strip .pt-img-cell img {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pt-toolbar {
+                padding: 100px 20px 16px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .pt-projects-list {
+                padding: 16px 20px 30px;
+            }
+            .pt-filter-panel {
+                padding: 0 20px 12px;
+            }
+            .pt-image-strip {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+            .pt-image-strip .pt-img-cell {
+                flex: 1 1 48%;
+            }
+            .pt-image-strip .pt-img-cell img {
+                height: 160px;
+            }
+            .pt-project-name {
+                font-size: 18px;
+            }
+            .pt-project-sub {
+                font-size: 16px;
+            }
+            .pt-project-row {
+                margin-bottom: 36px;
+            }
+        }
+    </style>
+
+<!--linkedin partner tracking code-->
+<script type="text/javascript">
+    _linkedin_partner_id = "5652372";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/javascript">
+    (function(l) {
+        if (!l) {
+            window.lintrk = function(a, b) {
+                window.lintrk.q.push([a, b])
+            };
+            window.lintrk.q = []
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+    })(window.lintrk);
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=5652372&fmt=gif" />
+</noscript>
+<!--END linkedin partner tracking code-->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1467236020816075');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1467236020816075&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body class="page-template-template-blank">
+
+<!-- Navigation -->
+<div class="website-menu fixed-menu">
+    <div class="website-menu-logo"><a href="/"><img src="images/sprintco-secondary-logo.svg" alt="SprintCo"></a></div>
+    <div class="website-menu-handler">Menu <img src="images/menu-icn.svg" alt="Menu"></div>
+</div>
+<div id="main-navigations">
+    <div class="main-navigations-logo">
+        <div class="navigations-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
+        <div class="close-menu-handler">Close <img src="images/close-menu.svg" alt="Close"></div>
+    </div>
+    <div class="menu-main-menu-container">
+    <ul id="menu-main-menu" class="footer-main-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="about">About Us</a></li>
+        <li class="current-menu-item menu-item-has-children"><a href="projects">Projects</a>
+            <ul class="sub-menu">
+                <li><a href="projects">All</a></li>
+                <li><a href="projects">Bar</a></li>
+                <li><a href="projects">Cafe</a></li>
+                <li><a href="projects">Restaurant</a></li>
+                <li><a href="projects">QSR</a></li>
+                <li><a href="projects">Kiosk</a></li>
+                <li><a href="projects">Entertainment Spaces</a></li>
+            </ul>
+        </li>
+        <li><a href="our-offerings">Our Offerings</a></li>
+        <li><a href="insights">Insights</a></li>
+    </ul>
+    </div>
+    <div class="main-navigations-footer">
+        <div class="common-button light-button"><a href="contact"><span>Get in touch</span></a></div>
+        <div class="menu-social-links-container">
+        <ul class="footer-social-nav">
+            <li><a href="https://www.linkedin.com/company/sprint-co/" target="_blank">Linkedin</a></li>
+            <li><a href="https://www.instagram.com/sprintco_designs/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@B2B_Designers" target="_blank">YouTube</a></li>
+            <li class="menu-none"><a href="https://www.flatpackco.com/" target="_blank">FlatPackCo</a></li>
+        </ul>
+        </div>
+    </div>
+</div>
+<div class="main-navigations-overlay"></div>
+
+<main id="site-content">
+<div class="pt-page">
+
+    <!-- Toolbar -->
+    <div class="pt-toolbar">
+        <h1 class="pt-toolbar-title">Projects</h1>
+        <div class="pt-toolbar-controls">
+            <button class="pt-filter-toggle" id="pt-filter-btn">Project Type +</button>
+        </div>
+    </div>
+
+    <!-- Filter Panel -->
+    <div class="pt-filter-panel" id="pt-filter-panel">
+        <a href="projects" data-category="all" class="active">All</a>
+        <a href="bar-interior-design-projects" data-category="bar">Bar</a>
+        <a href="cafe-interior-design-projects" data-category="cafe">Cafe</a>
+        <a href="qsr-interior-design-projects" data-category="qsr">QSR</a>
+        <a href="restaurant-interior-design-projects" data-category="restaurant">Restaurant</a>
+        <a href="kiosk-design-projects" data-category="kiosk">Kiosk</a>
+        <a href="#entertainment" data-category="entertainment">Entertainment Spaces</a>
+    </div>
+
+    <!-- Projects List -->
+    <div class="pt-projects-list" id="pt-projects-list">
+
+        <!-- 1. Half Light Coffee Roasters -->
+        <div class="pt-project-row" data-category="cafe">
+            <a href="half-light-coffee-roasters-gurgaon-cafe">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/half-light-gurgaon (9).jpg" alt="Half Light Coffee Roasters"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/half-light-gurgaon (6).jpg" alt="Half Light Coffee Roasters"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/half-light-gurgaon (7).jpg" alt="Half Light Coffee Roasters"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/half-light-gurgaon (2).jpg" alt="Half Light Coffee Roasters"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Half Light Coffee Roasters</p>
+                    <p class="pt-project-sub">Gurgaon &middot; Cafe</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- DDUCKPIN -->
+        <div class="pt-project-row" data-category="bar">
+            <a href="dduckpin-malad-mumbai-bar">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/dduckpin-signage-entrance.png" alt="DDUCKPIN"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/dduckpin-pool-table-lounge.png" alt="DDUCKPIN"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/dduckpin-bowling-lanes-mirror.png" alt="DDUCKPIN"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/dduckpin-lounge-green-pod.png" alt="DDUCKPIN"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">DDUCKPIN</p>
+                    <p class="pt-project-sub">Malad, Mumbai &middot; Bar</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 2. Pizza Hut -->
+        <div class="pt-project-row" data-category="qsr">
+            <a href="pizza-hut-mumbai-qsr">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Pizza_Hut_SM.png" alt="Pizza Hut"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Pizza_Hut_SM-2-1024x576.png" alt="Pizza Hut"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Pizza_Hut_SM-3-1024x576.png" alt="Pizza Hut"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Pizza_Hut_SM-5-1024x576.png" alt="Pizza Hut"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Pizza Hut</p>
+                    <p class="pt-project-sub">Mumbai &middot; QSR</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 3. The Hood By Olive -->
+        <div class="pt-project-row" data-category="bar">
+            <a href="the-hood-by-olive-bengaluru-bar">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/The-Hood-4-2-1024x682.jpg" alt="The Hood By Olive"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/7-819x1024.jpg" alt="The Hood By Olive"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/8-819x1024.jpg" alt="The Hood By Olive"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/9-819x1024.jpg" alt="The Hood By Olive"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">The Hood By Olive</p>
+                    <p class="pt-project-sub">Bengaluru &middot; Bar</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 4. Therapy Cocktail Bar & Cafe -->
+        <div class="pt-project-row" data-category="bar">
+            <a href="therapy-cocktail-mumbai-cafe">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/23_optimized_2000.png" alt="Therapy Cocktail Bar &amp; Cafe"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/17.png" alt="Therapy Cocktail Bar &amp; Cafe"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/therapy-new1.png" alt="Therapy Cocktail Bar &amp; Cafe"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/therapy-new.png" alt="Therapy Cocktail Bar &amp; Cafe"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Therapy Cocktail Bar &amp; Cafe</p>
+                    <p class="pt-project-sub">Mumbai &middot; Bar</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 5. Social E-City -->
+        <div class="pt-project-row" data-category="bar">
+            <a href="social-e-city-bengaluru-bar">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/SJP4490-Edit-min-scaled.jpg" alt="Social E-City"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/SJP3679-Edit-min-1024x597.jpg" alt="Social E-City"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/SJP3712-Edit-min-1024x683.jpg" alt="Social E-City"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/SJP3746-Edit-min-1024x683.jpg" alt="Social E-City"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Social E-City</p>
+                    <p class="pt-project-sub">Bengaluru &middot; Bar</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 6. BrewDog Chandigarh -->
+        <div class="pt-project-row" data-category="bar">
+            <a href="brewdog-chandigarh-bar">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/brewdog-chandigarh-img22.png" alt="BrewDog"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/HERO-IMAGE-1.jpg" alt="BrewDog"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/BDC2.png" alt="BrewDog"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/brewdog-chandigarh-img10.png" alt="BrewDog"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">BrewDog</p>
+                    <p class="pt-project-sub">Chandigarh &middot; Bar</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 7. Oceans 11 -->
+        <div class="pt-project-row" data-category="restaurant">
+            <a href="oceans-11-mumbai-restaurant">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Oceans-11_Presentation_14March2024-1024x576.jpg" alt="Oceans 11"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/8-1024x576.jpg" alt="Oceans 11"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/2-1024x576.jpg" alt="Oceans 11"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/3-1024x576.jpg" alt="Oceans 11"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Oceans 11</p>
+                    <p class="pt-project-sub">Mumbai &middot; Restaurant</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 8. Sandoitchi Mumbai -->
+        <div class="pt-project-row" data-category="qsr">
+            <a href="sandoitchi-mumbai-qsr">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Hero-Image-min-1.jpg" alt="Sandoitchi"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/9V2A8635-min.jpg" alt="Sandoitchi"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/9V2A8654-min-1.jpg" alt="Sandoitchi"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/9V2A8670-min.jpg" alt="Sandoitchi"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Sandoitchi</p>
+                    <p class="pt-project-sub">Mumbai &middot; QSR</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 9. Aminia -->
+        <div class="pt-project-row" data-category="restaurant">
+            <a href="aminia-dubai-restaurant">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Aminia-dubai-Facade-hero-image.jpg" alt="Aminia"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Aminia-dubai-facade2-1024x576.jpg" alt="Aminia"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Aminia-dubai18.png" alt="Aminia"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Aminia-dubai11.png" alt="Aminia"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Aminia</p>
+                    <p class="pt-project-sub">Dubai &middot; Restaurant</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 10. Social Bata Chowk -->
+        <div class="pt-project-row" data-category="bar">
+            <a href="social-bata-chowk-faridabad-bar">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/BATA-CHOWK-SOCIAL-HERO-IMAGE-min.png" alt="Social Bata Chowk"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/2-min-scaled.jpg" alt="Social Bata Chowk"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/3-min-scaled.jpg" alt="Social Bata Chowk"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/5-min.jpg" alt="Social Bata Chowk"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Social Bata Chowk</p>
+                    <p class="pt-project-sub">Faridabad &middot; Bar</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 11. Karchi & Chow's -->
+        <div class="pt-project-row" data-category="restaurant">
+            <a href="karchi-and-chows-agra-restaurant">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_4892-min-scaled.jpg" alt="Karchi &amp; Chow's"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/KARCHICHOWS-_Version-2.0-min-1024x576.jpg" alt="Karchi &amp; Chow's"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_4952-min-1024x768.jpg" alt="Karchi &amp; Chow's"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_4956-min-1024x768.jpg" alt="Karchi &amp; Chow's"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Karchi &amp; Chow's</p>
+                    <p class="pt-project-sub">Agra &middot; Restaurant</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 12. Blue Tokai -->
+        <div class="pt-project-row" data-category="cafe">
+            <a href="blue-tokai-mumbai-cafe">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/2-min-1-scaled.jpg" alt="Blue Tokai"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/1-zoom-min-891x1024.jpg" alt="Blue Tokai"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/3-min-1024x768.jpg" alt="Blue Tokai"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/4-min-1024x768.jpg" alt="Blue Tokai"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Blue Tokai</p>
+                    <p class="pt-project-sub">Mumbai &middot; Cafe</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 13. The Beer Café Kandivali -->
+        <div class="pt-project-row" data-category="bar">
+            <a href="the-beer-cafe-kandivali-mumbai-bar">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_2326-min-scaled.jpg" alt="The Beer Caf&eacute;"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/HERO-IMAGE-min-1024x683.jpg" alt="The Beer Caf&eacute;"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_2330-min-1024x683.jpg" alt="The Beer Caf&eacute;"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_2332-min-1024x683.jpg" alt="The Beer Caf&eacute;"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">The Beer Caf&eacute;</p>
+                    <p class="pt-project-sub">Kandivali, Mumbai &middot; Bar</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 14. Dosa Coffee -->
+        <div class="pt-project-row" data-category="qsr">
+            <a href="dosa-coffee-new-delhi-qsr">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/29-min.jpg" alt="Dosa Coffee"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/30-min-1024x1024.jpg" alt="Dosa Coffee"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/31-min-1-1024x1024.jpg" alt="Dosa Coffee"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/32-min-1024x1024.jpg" alt="Dosa Coffee"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Dosa Coffee</p>
+                    <p class="pt-project-sub">New Delhi &middot; QSR</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 15. Harvest Salad Co. -->
+        <div class="pt-project-row" data-category="cafe">
+            <a href="harvest-salad-co-indiranagar-bengaluru-cafe">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Copy-of-Harvest-Salad1521-min.jpg" alt="Harvest Salad Co."></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/harvest-facade-min-731x1024.jpg" alt="Harvest Salad Co."></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/harvest-branding-min-819x1024.jpg" alt="Harvest Salad Co."></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Copy-of-DSC09942-min-1024x768.jpg" alt="Harvest Salad Co."></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Harvest Salad Co.</p>
+                    <p class="pt-project-sub">Indiranagar, Bengaluru &middot; Cafe</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 16. Poee and Co -->
+        <div class="pt-project-row" data-category="bar">
+            <a href="poee-and-co-panjim-goa-restaurant">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/3J6A2287-scaled.jpg" alt="Poee and Co"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/3J6A2285-1024x683.jpg" alt="Poee and Co"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/3J6A2294-1024x683.jpg" alt="Poee and Co"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/3J6A2296-1024x683.jpg" alt="Poee and Co"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Poee and Co</p>
+                    <p class="pt-project-sub">Panjim, Goa &middot; Bar</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 17. Amoeba -->
+        <div class="pt-project-row" data-category="bar">
+            <a href="amoeba-mumbai-bar">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/2-min.jpg" alt="Amoeba"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/5-min-1024x576.jpg" alt="Amoeba"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/6-min-1024x576.jpg" alt="Amoeba"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/10-min-1024x576.jpg" alt="Amoeba"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Amoeba</p>
+                    <p class="pt-project-sub">Mumbai &middot; Bar</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 18. Amoeba Sports Bar -->
+        <div class="pt-project-row" data-category="bar">
+            <a href="amoeba-sports-bar-itpb-bangalore-bar">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_1640-1-scaled.jpg" alt="Amoeba Sports Bar"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_1545-scaled.jpg" alt="Amoeba Sports Bar"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_1611-scaled.jpg" alt="Amoeba Sports Bar"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/DSC_9543-min1-scaled.jpg" alt="Amoeba Sports Bar"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Amoeba Sports Bar</p>
+                    <p class="pt-project-sub">ITPB, Bangalore &middot; Bar</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 19. Tea Tapri -->
+        <div class="pt-project-row" data-category="kiosk">
+            <a href="tea-tapri-lucknow-airport-qsr">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/WhatsApp-Image-2025-08-21-at-12-2-1.jpg" alt="Tea Tapri"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/WhatsApp-Image-2025-08-21-at-4.jpg" alt="Tea Tapri"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/WhatsApp-Image-2025-08-21-at-4-3.jpg" alt="Tea Tapri"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/WhatsApp-Image-2025-08-21-at-12-5.jpg" alt="Tea Tapri"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Tea Tapri</p>
+                    <p class="pt-project-sub">Lucknow Airport &middot; Kiosk</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 20. Tuskin Coffee -->
+        <div class="pt-project-row" data-category="cafe">
+            <a href="tuskin-coffee-mumbai-cafe">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/tuskin-straigh-shot-edited.png" alt="Tuskin Coffee"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_5605-1-scaled.jpg" alt="Tuskin Coffee"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_5592-scaled.jpg" alt="Tuskin Coffee"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_3470-1-scaled.jpg" alt="Tuskin Coffee"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Tuskin Coffee</p>
+                    <p class="pt-project-sub">Mumbai &middot; Cafe</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 21. Cococart -->
+        <div class="pt-project-row" data-category="kiosk">
+            <a href="cococart-mumbai-airport-terminal-2-restaurant">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_3762-1-scaled.jpg" alt="Cococart"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_3749-scaled.jpg" alt="Cococart"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_3761-1-scaled.jpg" alt="Cococart"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/IMG_3765-1-scaled.jpg" alt="Cococart"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Cococart</p>
+                    <p class="pt-project-sub">Mumbai Airport, Terminal 2 &middot; Kiosk</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 22. Kanha Delight Express -->
+        <div class="pt-project-row" data-category="qsr">
+            <a href="kanha-delight-express-jaipur-qsr">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/KANHA-GROUP-WEBSITE-THUMBNAIL-216x300.png" alt="Kanha Delight Express"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/KANHA-DELIGHT-IMG2.png" alt="Kanha Delight Express"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/KANHA-DELIGHT-IMG3.png" alt="Kanha Delight Express"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/KANHA-DELIGHT-IMG1.png" alt="Kanha Delight Express"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Kanha Delight Express</p>
+                    <p class="pt-project-sub">Jaipur &middot; QSR</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 23. Punjab Grill -->
+        <div class="pt-project-row" data-category="kiosk">
+            <a href="punjab-grill-bangalore-qsr">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/1-20.png" alt="Punjab Grill"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/2-23.png" alt="Punjab Grill"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/3-20.png" alt="Punjab Grill"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/4-14.png" alt="Punjab Grill"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Punjab Grill</p>
+                    <p class="pt-project-sub">Bangalore &middot; Kiosk</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 24. Sandwizzaa -->
+        <div class="pt-project-row" data-category="qsr">
+            <a href="sandwizzaa-kandivali-qsr">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/SANDWIZZAA-INDIAS-BEST-QSR-DESIGN-FIRM.png" alt="Sandwizzaa"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/2-1024x537.png" alt="Sandwizzaa"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/4.png" alt="Sandwizzaa"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/8.png" alt="Sandwizzaa"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Sandwizzaa</p>
+                    <p class="pt-project-sub">Kandivali &middot; QSR</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 25. Domino's Pizza -->
+        <div class="pt-project-row" data-category="qsr">
+            <a href="dominos-pizza-qsr">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/90452c9e-2184-43c7-8ac5-b0e4e11aafd7-min.jpg" alt="Domino's Pizza"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Copy-of-Dominos-Pitch-Deck-min-1024x576.png" alt="Domino's Pizza"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/1a45e17c-3d9c-4ce0-bb8c-35553e5f997c-min.jpg" alt="Domino's Pizza"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/2da47e9f-97fe-4162-9ecd-1e90e2ef1170-min.jpg" alt="Domino's Pizza"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Domino's Pizza</p>
+                    <p class="pt-project-sub">Multiple Locations &middot; QSR</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 26. Dolce Café -->
+        <div class="pt-project-row" data-category="cafe">
+            <a href="dolce-cafe-new-delhi-cafe">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/55-min.jpg" alt="Dolce Caf&eacute;"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/DOLCE-HERO-IMAGE-min.png" alt="Dolce Caf&eacute;"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/55-min-1-1024x576.jpg" alt="Dolce Caf&eacute;"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/56-min-1024x576.jpg" alt="Dolce Caf&eacute;"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Dolce Caf&eacute;</p>
+                    <p class="pt-project-sub">New Delhi &middot; Cafe</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 27. Kongsi Tea Bar -->
+        <div class="pt-project-row" data-category="cafe">
+            <a href="kongsi-tea-bar-bengaluru-qsr">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/3-min-2.jpg" alt="Kongsi Tea Bar"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/VIEW-3-min-1024x793.jpg" alt="Kongsi Tea Bar"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Kongsi-tea_Initial-Phase1-min-1024x576.jpg" alt="Kongsi Tea Bar"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/VIEW-2-min-1024x1024.jpg" alt="Kongsi Tea Bar"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Kongsi Tea Bar</p>
+                    <p class="pt-project-sub">Bengaluru &middot; Cafe</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 28. The Beer Café Inorbit Mall -->
+        <div class="pt-project-row" data-category="bar">
+            <a href="the-beer-cafe-inorbit-mall-mumbai-bar">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/0N9A9967-min-scaled.jpg" alt="The Beer Caf&eacute;"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/0N9A0012-min-1024x683.jpg" alt="The Beer Caf&eacute;"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/0N9A0014-min-1024x683.jpg" alt="The Beer Caf&eacute;"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/0N9A0016-min-1024x628.jpg" alt="The Beer Caf&eacute;"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">The Beer Caf&eacute;</p>
+                    <p class="pt-project-sub">Inorbit Mall, Mumbai &middot; Bar</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 29. Trunks and Leaves -->
+        <div class="pt-project-row" data-category="restaurant">
+            <a href="trunks-and-leaves-mumbai-restaurant">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/8-min.png" alt="Trunks and Leaves"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/17-min-1024x576.png" alt="Trunks and Leaves"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/3-min-1024x576.png" alt="Trunks and Leaves"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/4-min-1024x576.png" alt="Trunks and Leaves"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Trunks and Leaves</p>
+                    <p class="pt-project-sub">Mumbai &middot; Restaurant</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 30. Haldiram -->
+        <div class="pt-project-row" data-category="qsr">
+            <a href="haldiram-bengaluru-qsr">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/HALDIRAM-HERO-IMAGE-min-1.png" alt="Haldiram"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Haldirams-min.png" alt="Haldiram"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/HALDIRAM-HERO-IMAGE-min-1.png" alt="Haldiram"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Haldirams-min.png" alt="Haldiram"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Haldiram</p>
+                    <p class="pt-project-sub">Bengaluru &middot; QSR</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 31. Sandoitchi Ahmedabad -->
+        <div class="pt-project-row" data-category="qsr">
+            <a href="sandoitchi-ahmedabad-qsr">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/View01-min.jpg" alt="Sandoitchi"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/GLASS-min-1024x808.jpg" alt="Sandoitchi"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/View02-min-1024x808.jpg" alt="Sandoitchi"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Sandoitchi-min-1024x576.jpg" alt="Sandoitchi"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Sandoitchi</p>
+                    <p class="pt-project-sub">Ahmedabad &middot; QSR</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 32. Third Wave Coffee -->
+        <div class="pt-project-row" data-category="cafe">
+            <a href="third-wave-coffee-mumbai-cafe">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/1-min-2.jpg" alt="Third Wave Coffee"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/5-min-1-1024x576.jpg" alt="Third Wave Coffee"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/2-min-1-1024x576.jpg" alt="Third Wave Coffee"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/3-min-1-1024x576.jpg" alt="Third Wave Coffee"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Third Wave Coffee</p>
+                    <p class="pt-project-sub">Mumbai &middot; Cafe</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 33. Fly Chicken -->
+        <div class="pt-project-row" data-category="qsr">
+            <a href="fly-chicken-hyderabad-qsr">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/2025-03-09-min.jpg" alt="Fly Chicken"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/fly-chicken3-min.png" alt="Fly Chicken"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/unnamed-3-min-1024x768.jpg" alt="Fly Chicken"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/2025-03-09-1-min-1024x683.jpg" alt="Fly Chicken"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Fly Chicken</p>
+                    <p class="pt-project-sub">Hyderabad &middot; QSR</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 34. BrewDog Mumbai -->
+        <div class="pt-project-row" data-category="bar">
+            <a href="brewdog-mumbai-bar">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/1-1-scaled.jpg" alt="BrewDog"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/1-2-1024x683.jpg" alt="BrewDog"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/1-1-1-1024x683.jpg" alt="BrewDog"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/BrewDog_-Beer-garden-Ideation-1024x576.jpg" alt="BrewDog"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">BrewDog</p>
+                    <p class="pt-project-sub">Mumbai &middot; Bar</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 35. Coffee Culture -->
+        <div class="pt-project-row" data-category="cafe">
+            <a href="coffee-culture-citylight-surat-cafe">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/3.jpg" alt="Coffee Culture"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/4-1024x684.jpg" alt="Coffee Culture"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/5-1024x684.jpg" alt="Coffee Culture"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/6-1024x682.jpg" alt="Coffee Culture"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Coffee Culture</p>
+                    <p class="pt-project-sub">Citylight, Surat &middot; Cafe</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 36. The Croffle Guys -->
+        <div class="pt-project-row" data-category="qsr">
+            <a href="the-croffle-guys-qsr-interior-design">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Croffle-Guys-Hero.png" alt="The Croffle Guys"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Croffle-Guys-2.jpeg" alt="The Croffle Guys"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Croffle-Guys-3.jpeg" alt="The Croffle Guys"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Croffle-Guys-4.jpeg" alt="The Croffle Guys"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">The Croffle Guys</p>
+                    <p class="pt-project-sub">Mumbai &middot; QSR</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 37. Blue Tokai, Hyderabad -->
+        <div class="pt-project-row" data-category="cafe">
+            <a href="blue-tokai-hyderabad-cafe">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Blue-Tokai-Hyderabad-Hero.jpeg" alt="Blue Tokai Hyderabad"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Blue-Tokai-Hyderabad-2.jpeg" alt="Blue Tokai Hyderabad"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Blue-Tokai-Hyderabad-4-portrait.jpeg" alt="Blue Tokai Hyderabad"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/Blue-Tokai-Hyderabad-10.jpeg" alt="Blue Tokai Hyderabad"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Blue Tokai</p>
+                    <p class="pt-project-sub">Banjara Hills, Hyderabad &middot; Cafe</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 38. Zaitoon Signature -->
+        <div class="pt-project-row" data-category="restaurant">
+            <a href="zaitoon-signature-nungambakkam-chennai-restaurant">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/zaitoon-signature-facade-night.jpg" alt="Zaitoon Signature"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/zaitoon-signature-dining-room.jpg" alt="Zaitoon Signature"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/zaitoon-signature-lounge-seating.png" alt="Zaitoon Signature"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/zaitoon-signature-banquet-hall.png" alt="Zaitoon Signature"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Zaitoon Signature</p>
+                    <p class="pt-project-sub">Nungambakkam, Chennai &middot; Restaurant</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 39. Navtara -->
+        <div class="pt-project-row" data-category="restaurant">
+            <a href="navtara-anjuna-goa-restaurant">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/navtara-facade-garland.jpg" alt="Navtara"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/navtara-dining-booths.jpg" alt="Navtara"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/navtara-brand-heritage-wall.jpg" alt="Navtara"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/navtara-red-booth-seating.jpg" alt="Navtara"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Navtara</p>
+                    <p class="pt-project-sub">Anjuna, Goa &middot; Restaurant</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 40. Uttham Midway Lounge -->
+        <div class="pt-project-row" data-category="restaurant">
+            <a href="uttham-midway-lounge-sonipat">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/uttham-midway-lounge-arched-view.jpg" alt="Uttham Midway Lounge"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/uttham-midway-family-dining-hall.jpg" alt="Uttham Midway Lounge"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/uttham-midway-kids-play-zone.jpg" alt="Uttham Midway Lounge"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/uttham-midway-travel-gallery-seating.jpg" alt="Uttham Midway Lounge"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Uttham Midway Lounge</p>
+                    <p class="pt-project-sub">Sonipat &middot; Restaurant</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 41. Cookie Man -->
+        <div class="pt-project-row" data-category="kiosk">
+            <a href="cookie-man-bkc-mumbai-kiosk">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/cookie-man-storefront.jpg" alt="Cookie Man"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/cookie-man-display-counter.jpg" alt="Cookie Man"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/cookie-man-wide-view.jpg" alt="Cookie Man"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/cookie-man-seating-area.jpg" alt="Cookie Man"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Cookie Man</p>
+                    <p class="pt-project-sub">BKC, Mumbai &middot; Kiosk</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 42. Dolce Cafe -->
+        <div class="pt-project-row" data-category="kiosk">
+            <a href="dolce-cafe-kiosk-new-delhi">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/docle-cafe (1).jpg" alt="Dolce Cafe"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/docle-cafe (2).jpg" alt="Dolce Cafe"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/docle-cafe (3).jpg" alt="Dolce Cafe"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/docle-cafe (4).jpg" alt="Dolce Cafe"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Dolce Cafe</p>
+                    <p class="pt-project-sub">New Delhi &middot; Kiosk</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 43. Dunkel Braun -->
+        <div class="pt-project-row" data-category="kiosk">
+            <a href="dunkel-braun-raipur-kiosk">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/dunkel-braun-bakehouse-signage.jpg" alt="Dunkel Braun"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/dunkel-braun-facade-wide.jpg" alt="Dunkel Braun"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/dunkel-braun-display-case.jpg" alt="Dunkel Braun"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/dunkel-braun-cakes-display.jpg" alt="Dunkel Braun"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Dunkel Braun</p>
+                    <p class="pt-project-sub">Raipur &middot; Kiosk</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 44. First Coffee -->
+        <div class="pt-project-row" data-category="kiosk">
+            <a href="first-coffee-chitkara-university-punjab-kiosk">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/first-coffee-signage.jpg" alt="First Coffee"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/first-coffee-counter.jpg" alt="First Coffee"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/first-coffee-signage.jpg" alt="First Coffee"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/first-coffee-counter.jpg" alt="First Coffee"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">First Coffee</p>
+                    <p class="pt-project-sub">Chitkara University, Punjab &middot; Kiosk</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 45. Haldiram Cafe -->
+        <div class="pt-project-row" data-category="kiosk">
+            <a href="haldiram-cafe-phoenix-citadel-indore-kiosk">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/hr-cafe (1).jpg" alt="Haldiram Cafe"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/hr-cafe (2).jpg" alt="Haldiram Cafe"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/hr-cafe (3).jpg" alt="Haldiram Cafe"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/hr-cafe (4).jpg" alt="Haldiram Cafe"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Haldiram Cafe</p>
+                    <p class="pt-project-sub">Phoenix Citadel, Indore &middot; Kiosk</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 46. The Yellow Straw -->
+        <div class="pt-project-row" data-category="kiosk">
+            <a href="the-yellow-straw-hyderabad-kiosk">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/yellow-straw-entrance-balloons.jpg" alt="The Yellow Straw"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/yellow-straw-counter-view.jpg" alt="The Yellow Straw"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/yellow-straw-signage-close.jpg" alt="The Yellow Straw"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/yellow-straw-mall-view.jpg" alt="The Yellow Straw"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">The Yellow Straw</p>
+                    <p class="pt-project-sub">Hyderabad &middot; Kiosk</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 47. Kongsi Tea Bar (Kiosk) -->
+        <div class="pt-project-row" data-category="kiosk">
+            <a href="kongsi-tea-bar-bangalore-kiosk">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/kongsi-tea-bar-wide-counter.jpg" alt="Kongsi Tea Bar"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/kongsi-tea-bar-counter-blue.jpg" alt="Kongsi Tea Bar"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/kongsi-tea-bar-signage-detail.jpg" alt="Kongsi Tea Bar"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/kongsi-tea-bar-2.jpg" alt="Kongsi Tea Bar"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Kongsi Tea Bar</p>
+                    <p class="pt-project-sub">Bangalore &middot; Kiosk</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 48. Zaazaa -->
+        <div class="pt-project-row" data-category="entertainment">
+            <a href="zaazaa-vile-parle-mumbai-entertainment">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/zaazaa-entrance-signage-wall.jpg" alt="Zaazaa"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/zaazaa-soft-play-mountain-mural.jpg" alt="Zaazaa"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/zaazaa-splash-pool-ocean-theme.jpg" alt="Zaazaa"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/zaazaa-aviation-racing-zone.jpg" alt="Zaazaa"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Zaazaa</p>
+                    <p class="pt-project-sub">Vile Parle, Mumbai &middot; Entertainment Spaces</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 49. Playseum -->
+        <div class="pt-project-row" data-category="entertainment">
+            <a href="playseum-santacruz-mumbai-entertainment">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/playseum-entrance-ticket-counter.jpg" alt="Playseum"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/playseum-magical-water-world.jpg" alt="Playseum"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/playseum-farmers-cafe-and-farm-zone.jpg" alt="Playseum"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/playseum-ct-scan-roleplay.jpg" alt="Playseum"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Playseum</p>
+                    <p class="pt-project-sub">Santacruz, Mumbai &middot; Entertainment Spaces</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 50. Bakingo -->
+        <div class="pt-project-row" data-category="cafe">
+            <a href="bakingo-delhi-cafe">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/bakingo-storefront-facade.jpg" alt="Bakingo"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/bakingo-pastry-display-counter.jpg" alt="Bakingo"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/bakingo-dream-station-lounge.jpg" alt="Bakingo"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/bakingo-gifting-retail-wall.jpg" alt="Bakingo"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Bakingo</p>
+                    <p class="pt-project-sub">Delhi &middot; Cafe</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 51. Hamleys -->
+        <div class="pt-project-row" data-category="entertainment">
+            <a href="hamleys-lower-parel-mumbai-entertainment">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/hamleys-entrance-neon-signage.jpg" alt="Hamleys"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/hamleys-double-decker-bus-display.jpg" alt="Hamleys"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/hamleys-action-figures-star-wars-wall.jpg" alt="Hamleys"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/hamleys-lego-books-gaming-zone.jpg" alt="Hamleys"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">Hamleys</p>
+                    <p class="pt-project-sub">Lower Parel, Mumbai &middot; Entertainment Spaces</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- 52. MB Chicken -->
+        <div class="pt-project-row" data-category="qsr">
+            <a href="mb-chicken-doraha-punjab-qsr">
+                <div class="pt-image-strip">
+                    <div class="pt-img-cell"><img loading="lazy" src="images/mb-chicken-storefront-facade.jpg" alt="MB Chicken"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/mb-chicken-neon-burger-og-wall.jpg" alt="MB Chicken"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/mb-chicken-order-counter-menu-boards.jpg" alt="MB Chicken"></div>
+                    <div class="pt-img-cell"><img loading="lazy" src="images/mb-chicken-dining-hall-wide.jpg" alt="MB Chicken"></div>
+                </div>
+                <div class="pt-project-text">
+                    <p class="pt-project-name">MB Chicken</p>
+                    <p class="pt-project-sub">Doraha, Punjab &middot; QSR</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Above Footer CTA -->
+<div class="above-footer">
+    <div class="container os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.1s">
+        <div class="quick-connect-section">
+            <div class="quick-connect-icon">
+                <img src="images/quick-connect-icn.svg" alt="Quick Connect">
+            </div>
+            <div class="quick-connect-heading">
+                <h2>Your Perfect F&amp;B Space is One Step Away.</h2>
+            </div>
+            <div class="quick-connect-text">
+                <p>With unmatched expertise and award-winning designs, we're ready to turn your ideas into reality.</p>
+                <a href="contact" class="quick-connect-button">Let's start now</a>
+            </div>
+        </div>
+    </div>
+    <div class="marquee-wrapper">
+        <div class="logo-marquee">
+            <div class="logo-marquee-track">
+                <img src="images/Frame-657324568-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324578-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324579-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324581-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324582-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324583-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324584-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324585-1-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324586-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324587-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324588-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324589-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324590-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324591-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324592-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324593-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324594-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324595-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324596-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324597-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324598-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324599-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324600-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324601-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324602-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324603-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324604-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324605-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324606-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324607-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324608-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324609-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324610-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324611-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324612-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324613-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324614-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324615-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324616-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324617-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324618-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324619-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324620-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324621-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324622-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324623-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324624-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324625-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324626-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324627-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324568-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324578-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324579-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324581-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324582-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324583-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324584-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324585-1-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324586-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324587-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324588-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324589-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324590-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324591-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324592-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324593-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324594-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324595-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324596-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324597-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324598-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324599-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324600-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324601-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324602-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324603-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324604-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324605-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324606-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324607-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324608-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324609-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324610-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324611-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324612-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324613-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324614-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324615-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324616-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324617-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324618-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324619-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324620-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324621-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324622-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324623-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324624-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324625-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324626-150x150.jpg" alt="" class="logo-item">
+                <img src="images/Frame-657324627-150x150.jpg" alt="" class="logo-item">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="scrolltop"><img src="images/scrolltop.svg" alt="Scroll To Top"></div>
+    <div class="footer-container">
+        <div class="footer-block">
+            <div class="footer-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
+            <p>Vasudev Chamber-B, 21, Old Nagardas Cross Rd, near Andheri Subway, opposite Wilson House, Mogra Pada, Natwar Nagar, Andheri East, Mumbai, Maharashtra- 400069<br><br>
+            &copy; 2025 Copyright B2B Designers Pvt Limited 2025. <br>All Rights Reserved.</p>
+            <ul class="footer-privacy-nav"><li><a href="#">Privacy Policy</a></li></ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-main-nav">
+                <li><a href="projects">Projects</a></li>
+                <li><a href="our-offerings">Our Offerings</a></li>
+                <li><a href="our-clients">Our Clients</a></li>
+                <li><a href="insights">Insights</a></li>
+                  <li><a href="../cities">Cities</a></li>
+            </ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-social-nav">
+                <li><a href="https://www.linkedin.com/company/sprint-co/" target="_blank">Linkedin</a></li>
+                <li><a href="https://www.instagram.com/sprintco_designs/" target="_blank">Instagram</a></li>
+                <li><a href="https://www.youtube.com/@B2B_Designers" target="_blank">YouTube</a></li>
+                <li class="menu-none"><a href="https://www.flatpackco.com/" target="_blank">FlatPackCo</a></li>
+            </ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-contact-nav">
+                <li class="copy-text"><a>info@sprint-co.com</a></li>
+                <li class="copy-text"><a>(+91) 9004301234</a></li>
+                <li class="common-button light-button"><a href="contact"><span>Get in Touch</span></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var filterBtn = document.getElementById('pt-filter-btn');
+    var filterPanel = document.getElementById('pt-filter-panel');
+    var filterLinks = filterPanel.querySelectorAll('a');
+    var rows = document.querySelectorAll('.pt-project-row');
+
+    filterBtn.addEventListener('click', function() {
+        filterPanel.classList.toggle('open');
+        this.textContent = filterPanel.classList.contains('open') ? 'Project Type -' : 'Project Type +';
+    });
+
+    // Bar, Cafe, QSR, Restaurant and Kiosk have their own pages; only the
+    // Entertainment Spaces button still filters in place (via #entertainment).
+    function showCategory(cat) {
+        filterLinks.forEach(function(l) {
+            l.classList.toggle('active', l.getAttribute('data-category') === cat);
+        });
+        rows.forEach(function(row) {
+            row.style.display = (cat === 'all' || row.getAttribute('data-category') === cat) ? '' : 'none';
+        });
+    }
+
+    filterLinks.forEach(function(link) {
+        if (link.getAttribute('href').charAt(0) !== '#') return;
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            history.replaceState(null, '', '#entertainment');
+            showCategory(this.getAttribute('data-category'));
+        });
+    });
+
+    if (location.hash === '#entertainment') {
+        filterPanel.classList.add('open');
+        filterBtn.textContent = 'Project Type -';
+        showCategory('entertainment');
+    }
+});
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

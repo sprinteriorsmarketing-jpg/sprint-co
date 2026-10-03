@@ -1,0 +1,94 @@
+/* ============================================================
+   Shared site footer (matches the main SprintCo site footer)
+   Scoped to footer-only selectors so it is safe to load on
+   templates that use a different base stylesheet.
+   ============================================================ */
+:root{--body-color:#f6f0ea;--headlines:#171717;--white:#fff;--mild-grey:#86868b;--dark-color:#303033;--orange-color:#f4602b;--primary-font:"Poppins", sans-serif;--seconday-font:"Plus Jakarta Sans", sans-serif}
+
+footer{background-color:var(--headlines);position:relative;z-index:2}
+.footer-container{border:.104vw solid var(--dark-color);display:flex;box-sizing:border-box}
+.footer-block{box-sizing:border-box}
+.footer-block:last-child{border:none}
+.footer-block ul{list-style:none;padding:0;margin:0}
+.footer-block p{color:var(--mild-grey);font-weight:400;font-size:.729vw;line-height:1.25vw;margin:0 0 1.458vw}
+.footer-block a{color:var(--mild-grey)}
+
+.footer-logo{width:17.917vw}
+.footer-logo img{width:100%;height:auto;display:block}
+
+.footer-privacy-nav{display:flex;justify-content:space-between;align-items:center}
+.footer-privacy-nav a{font-size:.729vw;line-height:1.042vw;font-weight:400;text-transform:uppercase;color:var(--mild-grey)}
+
+.footer-main-nav li{margin-bottom:2.604vw;list-style:none}
+.footer-main-nav a{font-size:1.146vw;line-height:1.146vw;text-decoration:none;transition:0.5s;color:var(--mild-grey)}
+
+.footer-social-nav li{margin-bottom:2.604vw;list-style:none}
+.footer-social-nav a{font-size:1.146vw;line-height:1.146vw;text-decoration:none;display:block;position:relative;transition:0.5s;color:var(--mild-grey)}
+.footer-social-nav a::after{content:"";position:absolute;background-image:url(../images/footer-social-icn.svg);background-repeat:no-repeat;background-position:right center;right:0;transition:0.5s}
+.footer-social-nav a:hover{color:var(--white)}
+.footer-social-nav a:hover::after{background-image:url(../images/footer-social-icn-hover.svg);color:var(--white)}
+
+.footer-contact-nav li{margin-bottom:2.604vw}
+.footer-contact-nav a{font-size:.729vw;line-height:1.042vw;font-weight:400;position:relative;padding-left:0;transition:0.5s;cursor:pointer}
+.footer-contact-nav li:not(.common-button) a:hover{color:var(--white)}
+.footer-contact-nav li:not(.common-button) a::before{content:"";position:absolute;top:0;left:0;background:url(../images/copy-icn.svg) no-repeat left top;transition:0.5s;opacity:0}
+.footer-contact-nav li:not(.common-button) a:hover::before{opacity:1}
+
+.common-button a,.common-button button{font-weight:600;text-decoration:none;display:inline-block;position:relative;border-color:var(--headlines);border-style:solid;color:var(--headlines);transition:0.75s;background-color:#fff0;box-sizing:border-box;text-transform:uppercase;text-align:center;border-radius:0;cursor:pointer}
+.common-button a span,.common-button button span{position:relative;transition:0.75s;display:inline-block;min-width:0;text-align:left;box-sizing:border-box}
+.common-button a span::after,.common-button button span::after{content:"";position:absolute;right:0;top:50%;transform:translate(0,-50%);background-image:url(../images/button-icn.svg);background-repeat:no-repeat;background-position:right center;transition:0.5s}
+.common-button a:hover,.common-button button:hover{background-color:var(--orange-color);border-color:var(--orange-color);color:var(--white)}
+.common-button a:hover span::after,.common-button button:hover span::after{background-image:url(../images/button-icn-hover.svg)}
+.light-button a{color:var(--white);border-color:var(--white)}
+.light-button a span::after{background-image:url(../images/button-icn-white.svg)}
+
+.scrolltop{cursor:pointer}
+.scrolltop img{width:100%;height:auto}
+
+@media (min-width:768px){
+  footer{padding:4.896vw 5.208vw}
+  .footer-block{padding:3.646vw 5.208vw 3.125vw;border-right:.104vw solid var(--dark-color)}
+  .footer-logo{margin-bottom:4.115vw}
+  footer .footer-main-nav li{width:auto;white-space:nowrap}
+  .footer-main-nav a{padding-right:1.51vw;padding-left:0;position:relative}
+  .footer-main-nav a::before{content:"";position:absolute;width:.885vw;height:.938vw;background:url(../images/star-icn.svg) no-repeat left top;background-size:.885vw;top:.182vw;left:0;opacity:0}
+  .footer-main-nav a:hover{padding-right:0;padding-left:1.51vw;color:var(--white);display:inline-block}
+  .footer-main-nav a:hover::before{opacity:1}
+  .footer-social-nav li{width:9.896vw}
+  .footer-social-nav a::after{width:1.042vw;height:1.042vw;background-size:1.042vw}
+  .footer-social-nav a:hover::after{right:-.521vw}
+  .footer-contact-nav li:not(.common-button) a:hover{padding-left:1.667vw}
+  .footer-contact-nav li:not(.common-button) a::before{width:1.25vw;height:1.25vw;background-size:1.25vw}
+  .common-button a,.common-button button{padding:1.094vw .833vw;font-size:.938vw;line-height:.938vw;border-width:.104vw;min-width:12.5vw}
+  .common-button a span,.common-button button span{padding-right:1.042vw}
+  .common-button a span::after,.common-button button span::after{width:.417vw;height:.729vw;background-size:.417vw}
+  .common-button a:hover,.common-button button:hover{padding:1.094vw .833vw}
+  .common-button a:hover span,.common-button button:hover span{min-width:100%}
+  .common-button a:hover span::after,.common-button button:hover span::after{width:.833vw;background-size:.833vw}
+  .scrolltop{width:1.146vw;position:absolute;right:1.979vw;top:5.208vw}
+}
+@media (max-width:767px){
+  footer{padding:30px 20px}
+  .scrolltop{width:16px;margin:0 auto 30px}
+  .footer-container{flex-direction:column}
+  .footer-block{padding:40px 22px;border-bottom:2px solid var(--dark-color)}
+  .footer-block p{font-size:12px;line-height:19px;margin-bottom:22px}
+  .footer-block ul li:last-child{margin-bottom:0}
+  .footer-logo{margin-bottom:40px;width:210px}
+  .footer-privacy-nav a{font-size:12px;line-height:16px}
+  .footer-main-nav li{margin-bottom:40px}
+  .footer-main-nav a{font-size:20px;line-height:22px;padding-left:32px;position:relative}
+  .footer-main-nav a::before{content:"";position:absolute;width:12px;height:12px;top:7px;left:0;background-image:url(../images/star-icn-gray.svg);background-repeat:no-repeat;background-position:left top;background-size:12px}
+  .footer-main-nav a:hover{color:var(--white)}
+  .footer-social-nav li{margin-bottom:40px}
+  .footer-social-nav a{font-size:20px;line-height:22px}
+  .footer-social-nav a::after{width:14px;height:20px;background-size:14px}
+  .footer-contact-nav li{margin-bottom:40px}
+  .footer-contact-nav a{font-size:20px;line-height:30px}
+  .footer-contact-nav li:not(.common-button) a:hover{padding-left:32px}
+  .footer-contact-nav li:not(.common-button) a::before{width:24px;height:24px;background-size:24px}
+  .footer-contact-nav li.common-button a{width:100%}
+  .common-button a,.common-button button{padding:14px 30px;font-weight:600;font-size:14px;line-height:18px;letter-spacing:1px;border-width:1.5px}
+  .common-button a span,.common-button button span{padding-right:20px}
+  .common-button a span::after,.common-button button span::after{width:8px;height:14px;background-size:8px}
+}

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SprintCo Architecture — Draft Preview</title>
+<meta name="description" content="SprintCo Architecture, draft landing page for architectural projects. Internal preview, not linked to production.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../lookbook.css">
+<link rel="stylesheet" href="architecture.css">
+</head>
+<body class="is-preloading">
+
+<!-- ================= PRELOADER ================= -->
+<div id="preloader" class="preloader" aria-hidden="true">
+  <svg class="preloader__mark" viewBox="0 0 47 48" xmlns="http://www.w3.org/2000/svg">
+    <path class="pm-grey" d="M35.5799 23.8601L46.3752 16.908L40.889 7.52416L28.9307 14.5095V0.501953H18.0579V13.8785L35.5799 23.8601L18.0579 34.2255V47.2958H28.9307V33.2956L41.129 40.1813L46.4786 30.72L35.5799 23.8601Z"/>
+    <path class="pm-orange" d="M6.1033 40.4395L6.08115 40.4062L6.1033 40.4395Z"/>
+    <path class="pm-orange" d="M5.49782 8.42383L0.513672 17.2431L12.5827 24.0624L0.613355 31.055L5.73042 39.8005L32.6301 23.8815L5.49782 8.42383Z"/>
+  </svg>
+  <div class="preloader__pct"><span id="preloaderPct">0</span></div>
+  <div class="preloader__blinds" id="preloaderBlinds"></div>
+</div>
+
+<!-- ================= SOLO WORDMARK INTRO ================= -->
+<div id="introWord" class="intro-word" aria-hidden="true">
+  <span class="intro-word__letters" id="introWordLetters"></span>
+</div>
+
+<div style="position:fixed;top:0;left:0;right:0;z-index:1000;background:#16130f;color:#efe7da;font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:7px 10px;">
+  
+</div>
+
+<div id="progress"></div>
+
+<header class="topbar arch-topbar">
+  <a class="brandmark" href="#top"><img src="../assets/branding/sprintco-secondary-logo.svg" alt="SprintCo"></a>
+  <nav class="arch-nav">
+    <a href="#index">01&nbsp; Index</a>
+    <a href="#projects">02&nbsp; Projects</a>
+    <a href="#contact">03&nbsp; Contact</a>
+  </nav>
+  <a class="cta" href="#contact">Get in touch</a>
+</header>
+
+<nav class="dots" id="dotNav">
+  <a href="#villa-chennai" data-label="Villa Chennai"><span>Villa Chennai</span></a>
+  <a href="#mg" data-label="MG — Emgee Greens"><span>MG — Emgee Greens</span></a>
+  <a href="#r-bungalow" data-label="R Bungalow"><span>R Bungalow</span></a>
+  <a href="#nest" data-label="Nest Hotel"><span>Nest Hotel</span></a>
+  <a href="#rathi-residence" data-label="Rathi Residence"><span>Rathi Residence</span></a>
+  <a href="#casa-palma" data-label="Casa Palma"><span>Casa Palma</span></a>
+  <a href="#bhatia-villa" data-label="Bhatia Villa"><span>Bhatia Villa</span></a>
+  <a href="#reddy-villa" data-label="Reddy Villa"><span>Reddy Villa</span></a>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="arch-hero" id="top">
+  <div class="arch-hero__drafting" aria-hidden="true">
+    <span class="dh-rule dh-rule--top"></span>
+    <span class="dh-rule dh-rule--bottom"></span>
+    <span class="dh-tick dh-tick--1"></span>
+    <span class="dh-tick dh-tick--2"></span>
+    <span class="dh-tick dh-tick--3"></span>
+    <span class="dh-arc"></span>
+    <span class="dh-compass"></span>
+    <span class="dh-cross dh-cross--1"></span>
+    <span class="dh-cross dh-cross--2"></span>
+    <span class="dh-diag"></span>
+  </div>
+
+  <div class="arch-hero__wordmark-wrap">
+    <div class="arch-hero__wordmark" id="heroWatermark" aria-hidden="true"><span class="wm-solid">SPRINT</span><span class="wm-outline">C</span><span class="wm-accent">O</span></div>
+    <span class="coord-tag">X 24.180 &nbsp;·&nbsp; Y 08.402</span>
+  </div>
+
+  <!-- wordmark repeated in front of the photo, stroke-only, so the outline "cuts through" the image -->
+  <div class="arch-hero__wordmark-wrap arch-hero__wordmark-wrap--front" aria-hidden="true">
+    <div class="arch-hero__wordmark arch-hero__wordmark--front"><span>SPRINT</span><span>C</span><span>O</span></div>
+  </div>
+
+  <div class="arch-hero__inner">
+    <div class="arch-hero__frame">
+      <img id="heroPhoto" src="assets/villa-chennai/villa-chennai-1.png" alt="Featured SprintCo architecture project">
+      <span class="frame-tick tl"></span>
+      <span class="frame-tick tr"></span>
+      <span class="frame-tick bl"></span>
+      <span class="frame-tick br"></span>
+    </div>
+    <div class="arch-hero__caption">
+      <span>FIG. <span id="heroFigCurrent">01</span> / <span id="heroFigTotal">04</span></span>
+      <span class="im-carousel__btn" id="heroFigPause" aria-label="Pause"><svg viewBox="0 0 24 24" width="10" height="10"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg></span>
+    </div>
+    <div class="arch-hero__progress"><span id="heroProgressBar"></span></div>
+
+    <div class="arch-hero__side">
+      <span class="serif arch-hero__studio">architecture</span>
+      <p class="arch-hero__tagline">SPACES DESIGNED FOR HOW INDIA BUILDS AND GATHERS</p>
+    </div>
+  </div>
+<br> <br> <br> <br>
+  <div class="scrolldown"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<!-- ================= INTRO STATEMENT ================= -->
+<section class="pad intro-statement" id="index">
+  <div class="wrap">
+    <div class="reveal intro-statement-text">
+      <p class="intro-line">Twenty-five years of shaping built environments for how India <span class="hl">lives, works, and gathers.</span></p>
+      <p class="intro-line">This is <span class="hl">SprintCo Architecture</span> — the design and build practice behind our residential, hospitality, and masterplan projects.</p>
+      <p class="intro-cursive">Four projects, four different briefs, one process.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECT INDEX (masonry) ================= -->
+<section class="pad arch-index" id="projects">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:34px;">
+      <span class="eyebrow">Architecture</span>
+      <h3 class="kicker" style="margin-top:6px;">Projects</h3>
+    </div>
+  </div>
+  <div class="arch-grid reveal">
+    <a class="arch-card" href="#villa-chennai">
+      <div class="arch-card__img"><img src="assets/villa-chennai/villa-chennai-1.png" alt="Villa Chennai — exterior at dusk"></div>
+      <div class="arch-tile-label"><span class="loc">Chennai, Tamil Nadu</span><h4 class="name">Villa Chennai</h4></div>
+    </a>
+    <a class="arch-card" href="#mg">
+      <div class="arch-card__img"><img src="assets/mg/mg-5.jpg" alt="MG — Emgee Greens clubhouse interior"></div>
+      <div class="arch-tile-label"><span class="loc">Lonavala, Maharashtra</span><h4 class="name">MG — Emgee Greens</h4></div>
+    </a>
+    <a class="arch-card" href="#r-bungalow">
+      <div class="arch-card__img"><img src="assets/r-bungalow/r-bungalow-monolith-2.png" alt="R Bungalow — Monolith Mudhouse concept sketch"></div>
+      <div class="arch-tile-label"><span class="loc">Bandra, Mumbai · Concept</span><h4 class="name">R Bungalow</h4></div>
+    </a>
+    <a class="arch-card" href="#nest">
+      <div class="arch-card__img"><img src="assets/nest/nest-1.png" alt="Nest Hotel — arched stone facade at twilight"></div>
+      <div class="arch-tile-label"><span class="loc">Raipur, Chhattisgarh</span><h4 class="name">Nest Hotel</h4></div>
+    </a>
+    <div class="arch-card">
+      <div class="arch-card__img"><img src="assets/sangam/sangam.png" alt="Sangam — facade at dusk"></div>
+      <div class="arch-tile-label"><span class="loc">Bengaluru</span><h4 class="name">Sangam</h4></div>
+    </div>
+    <a class="arch-card" href="#rathi-residence">
+      <div class="arch-card__img"><img src="assets/mukesh-rathi/rathi-1.jpg" alt="Rathi Residence — living room with carved jali screen wall"></div>
+      <div class="arch-tile-label"><span class="loc">New Delhi</span><h4 class="name">Rathi Residence</h4></div>
+    </a>
+    <a class="arch-card" href="#casa-palma">
+      <div class="arch-card__img"><img src="assets/casa-palma/casa-palma-1.png" alt="Casa Palma — tropical Mediterranean villa exterior, Kochi"></div>
+      <div class="arch-tile-label"><span class="loc">Kochi</span><h4 class="name">Casa Palma</h4></div>
+    </a>
+    <a class="arch-card" href="#bhatia-villa">
+      <div class="arch-card__img"><img src="assets/bhatia-villa/bhatia-villa-1.png" alt="Bhatia Villa — cubist white-stucco facade with navy entry canopy"></div>
+      <div class="arch-tile-label"><span class="loc">New Delhi</span><h4 class="name">Bhatia Villa</h4></div>
+    </a>
+    <a class="arch-card" href="#reddy-villa">
+      <div class="arch-card__img"><img src="assets/reddy-villa/reddy-villa-1.png" alt="Reddy Villa — Mediterranean stucco facade among palms"></div>
+      <div class="arch-tile-label"><span class="loc">India</span><h4 class="name">Reddy Villa</h4></div>
+    </a>
+  </div>
+</section>
+
+<!-- ================= CASE: VILLA CHENNAI ================= -->
+<section class="case wrap" id="villa-chennai">
+  <div class="case-head reveal">
+    <div>
+      <span class="loc">Location: Chennai, Tamil Nadu</span>
+      <h3 class="name">Villa Chennai</h3>
+    </div>
+  </div>
+  <div class="case-body reveal">
+    <div>
+      <p>A three-level private residence built around light, stone, and a poolside garden edge. SprintCo led the architecture and execution, the structural envelope, the stacked glass-and-stone facade, and the layered terraces that step back from the street toward a private pool deck at the rear.</p>
+      <p>Inside, the collaboration continued with 3 Views on the interior design: warm stone cladding and timber joinery on the exterior give way to Athangudi-tile floors, upholstered headboards, and brass detailing indoors, a residence designed to feel handcrafted at every scale, from the facade down to the bedside table.</p>
+    </div>
+  </div>
+  <div class="im-carousel">
+    <div class="im-carousel__track">
+      <div class="im-carousel__slide"><img src="assets/villa-chennai/villa-chennai-1.png" alt="Villa Chennai — exterior at dusk, VILLA 06 signage"></div>
+      <div class="im-carousel__slide"><img src="assets/villa-chennai/villa-chennai-2.png" alt="Villa Chennai — exterior view"></div>
+      <div class="im-carousel__slide"><img src="assets/villa-chennai/villa-chennai-3.png" alt="Villa Chennai — exterior view"></div>
+      <div class="im-carousel__slide"><img src="assets/villa-chennai/villa-chennai-4.png" alt="Villa Chennai — living room with Athangudi tile flooring"></div>
+      <div class="im-carousel__slide"><img src="assets/villa-chennai/villa-chennai-5.png" alt="Villa Chennai — interior detail"></div>
+      <div class="im-carousel__slide"><img src="assets/villa-chennai/villa-chennai-6.png" alt="Villa Chennai — bedroom with upholstered headboard"></div>
+      <div class="im-carousel__slide"><img src="assets/villa-chennai/villa-chennai-7.png" alt="Villa Chennai — interior detail"></div>
+      <div class="im-carousel__slide"><img src="assets/villa-chennai/villa-chennai-8.png" alt="Villa Chennai — corridor detail"></div>
+    </div>
+    <div class="im-carousel__nav">
+      <button class="im-carousel__btn im-carousel__btn--prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+      <span class="im-carousel__counter"><span class="im-current">01</span> / <span class="im-total">08</span></span>
+      <button class="im-carousel__btn im-carousel__btn--next" aria-label="Next slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+    </div>
+    <div class="im-carousel__progress"></div>
+  </div>
+</section>
+
+<!-- ================= CASE: MG / EMGEE GREENS ================= -->
+<section class="case wrap" id="mg">
+  <div class="case-head reveal">
+    <div>
+      <span class="loc">Location: Lonavala, Maharashtra </span>
+      <h3 class="name">MG — Emgee Greens</h3>
+    </div>
+  </div>
+  <div class="case-body reveal">
+    <div>
+      <p>For Emgee Group's 80-acre gated plotted community near Karla, SprintCo designed the architectural centrepiece: a 40,000 sq. ft. clubhouse anchoring a 7-acre golf course — the first between Mumbai and Pune.</p>
+      <p>The brief called for a resort-scale clubhouse that still reads as an extension of the landscape: layered timber pergolas, deep verandas, and a poolside pavilion designed to frame the site's 22-year-old green cover, restaurant, bar, games room, and sports facilities including padel tennis, pickleball, and cricket.</p>
+      <p class="serif" style="font-size:1.1rem;color:var(--stone);margin-top:14px;">"100 Shades of Green" Emgee Greens brand positioning.</p>
+    </div>
+  </div>
+  <div class="im-carousel">
+    <div class="im-carousel__track">
+      <div class="im-carousel__slide"><img src="assets/mg/mg-3.jpg" alt="Emgee Greens clubhouse — exterior view"></div>
+      <div class="im-carousel__slide"><img src="assets/mg/mg-1.jpg" alt="Emgee Greens clubhouse — poolside exterior at dusk"></div>
+      <div class="im-carousel__slide"><img src="assets/mg/mg-2.jpg" alt="Emgee Greens clubhouse — exterior view"></div>
+      <div class="im-carousel__slide"><img src="assets/mg/mg-4.jpg" alt="Emgee Greens clubhouse — exterior view"></div>
+      <div class="im-carousel__slide"><img src="assets/mg/mg-5.jpg" alt="Emgee Greens clubhouse — interior"></div>
+      <div class="im-carousel__slide"><img src="assets/mg/mg-6.jpg" alt="Emgee Greens clubhouse — interior"></div>
+      <div class="im-carousel__slide"><img src="assets/mg/mg-7.jpg" alt="Emgee Greens clubhouse — interior"></div>
+      <div class="im-carousel__slide"><img src="assets/mg/mg-8.jpg" alt="Emgee Greens — golf course view"></div>
+      <div class="im-carousel__slide"><img src="assets/mg/mg-9.jpg" alt="Emgee Greens — landscape view"></div>
+      <div class="im-carousel__slide"><img src="assets/mg/mg-10.jpg" alt="Emgee Greens clubhouse — detail"></div>
+      <div class="im-carousel__slide"><img src="assets/mg/mg-11.jpg" alt="Emgee Greens clubhouse — detail"></div>
+      <div class="im-carousel__slide"><img src="assets/mg/mg-12.jpg" alt="Emgee Greens clubhouse — detail"></div>
+      <div class="im-carousel__slide"><img src="assets/mg/mg-13.jpg" alt="Emgee Greens clubhouse — detail"></div>
+    </div>
+    <div class="im-carousel__nav">
+      <button class="im-carousel__btn im-carousel__btn--prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+      <span class="im-carousel__counter"><span class="im-current">01</span> / <span class="im-total">13</span></span>
+      <button class="im-carousel__btn im-carousel__btn--next" aria-label="Next slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+    </div>
+    <div class="im-carousel__progress"></div>
+  </div>
+</section>
+
+<!-- ================= CASE: R BUNGALOW ================= -->
+<section class="case wrap" id="r-bungalow">
+  <div class="case-head reveal">
+    <div>
+      <span class="loc">Location: Bandra, Mumbai · Ideation, May 2026</span>
+      <h3 class="name">R Bungalow</h3>
+    </div>
+    
+  </div>
+  <div class="case-body reveal">
+    <div>
+      <p><strong>Concept in development.</strong> R Bungalow is envisioned as a two-level lifestyle dining destination in Bandra: a lively ground-floor café by day, a slower, more immersive dining room above. Rather than demolish the existing two-storey structure, SprintCo proposed a layered independent facade, a lightweight secondary skin anchored to the existing slabs, upgrading the building without major structural intervention.</p>
+      <p>Three design routes were explored for that facade: <strong>The Monolith Mudhouse</strong>, a sculptural lime-plaster mass that reads as carved rather than built; <strong>The Living Canopy</strong>, a vegetation-led facade merging architecture and landscape; and <strong>The Porous Pavilion</strong>, a breathable terracotta screen that glows like a lantern at night. The gallery below moves from the existing site through all three.</p>
+    </div>
+  </div>
+  <div class="im-carousel">
+    <div class="im-carousel__track">
+      <div class="im-carousel__slide"><img src="assets/r-bungalow/r-bungalow-monolith-2.png" alt="R Bungalow — Route 1: The Monolith Mudhouse, detail view"></div>
+      <div class="im-carousel__slide"><img src="assets/r-bungalow/r-bungalow-before-1.png" alt="R Bungalow — existing site facade, before intervention"></div>
+      <div class="im-carousel__slide"><img src="assets/r-bungalow/r-bungalow-monolith-1.png" alt="R Bungalow — Route 1: The Monolith Mudhouse concept sketch"></div>
+      
+      <div class="im-carousel__slide"><img src="assets/r-bungalow/r-bungalow-canopy-1.png" alt="R Bungalow — Route 2: The Living Canopy concept render"></div>
+      <div class="im-carousel__slide"><img src="assets/r-bungalow/r-bungalow-canopy-2.png" alt="R Bungalow — Route 2: The Living Canopy, detail view"></div>
+      <div class="im-carousel__slide"><img src="assets/r-bungalow/r-bungalow-pavilion-1.png" alt="R Bungalow — Route 3: The Porous Pavilion concept render"></div>
+      <div class="im-carousel__slide"><img src="assets/r-bungalow/r-bungalow-pavilion-2.png" alt="R Bungalow — Route 3: The Porous Pavilion, night view"></div>
+      <div class="im-carousel__slide"><img src="assets/r-bungalow/r-bungalow-detail-1.png" alt="R Bungalow — facade detailing study"></div>
+    </div>
+    <div class="im-carousel__nav">
+      <button class="im-carousel__btn im-carousel__btn--prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+      <span class="im-carousel__counter"><span class="im-current">01</span> / <span class="im-total">08</span></span>
+      <button class="im-carousel__btn im-carousel__btn--next" aria-label="Next slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+    </div>
+    <div class="im-carousel__progress"></div>
+  </div>
+</section>
+
+<!-- ================= CASE: NEST HOTEL ================= -->
+<section class="case wrap" id="nest">
+  <div class="case-head reveal">
+    <div>
+      <span class="loc">Location: Raipur, Chhattisgarh </span>
+      <h3 class="name">Nest Hotel</h3>
+    </div>
+    
+  </div>
+  <div class="case-body reveal">
+    <div>
+      <p>Nest Hotel is envisioned as an elegant urban retreat that reinterprets classical architectural character for the modern traveller. Its rhythmic arches, refined proportions and warm stone-toned facade create a timeless identity, while contemporary glazing, subtle greenery and layered lighting bring freshness and sophistication.</p>
+      <p>The hotel balances heritage-inspired grandeur with warmth, comfort and efficient hospitality, offering guests a welcoming "nest" within the city — from the arched, colonnaded entrance through to guest rooms and bathrooms finished with the same quiet, material-led restraint.</p>
+      <p class="serif" style="font-size:1.1rem;color:var(--stone);margin-top:14px;">"Contemporary Classical Elegance" — design direction.</p>
+      <p>The hotel is conceived as a contemporary interpretation of classical architecture, combining rhythmic arches, balanced proportions and refined detailing with clean modern lines. A warm, neutral material palette, subtle greenery and thoughtfully integrated lighting create a timeless urban landmark that feels elegant, welcoming and distinctly memorable.</p>
+    </div>
+  </div>
+  <div class="im-carousel">
+    <div class="im-carousel__track">
+      <div class="im-carousel__slide"><img src="assets/nest/nest-1.png" alt="Nest Hotel — arched stone facade at twilight"></div>
+      <div class="im-carousel__slide"><img src="assets/nest/nest-2.png" alt="Nest Hotel — aerial view of the facade and porte-cochere"></div>
+      <div class="im-carousel__slide"><img src="assets/nest/nest-3.png" alt="Nest Hotel — ground floor facade detail"></div>
+      <div class="im-carousel__slide"><img src="assets/nest/nest-4.png" alt="Nest Hotel — entrance canopy and illuminated signage"></div>
+      <div class="im-carousel__slide"><img src="assets/nest/nest-5.png" alt="Nest Hotel — arched entrance doors"></div>
+      <div class="im-carousel__slide"><img src="assets/nest/nest-6.png" alt="Nest Hotel — elevator lobby"></div>
+      <div class="im-carousel__slide"><img src="assets/nest/nest-7.png" alt="Nest Hotel — guest floor corridor with wayfinding"></div>
+      <div class="im-carousel__slide"><img src="assets/nest/nest-8.jpg" alt="Nest Hotel — guest bedroom"></div>
+      <div class="im-carousel__slide"><img src="assets/nest/nest-9.jpg" alt="Nest Hotel — guest room work desk and lounge"></div>
+      <div class="im-carousel__slide"><img src="assets/nest/nest-10.png" alt="Nest Hotel — bathroom with dark marble walk-in shower"></div>
+      <div class="im-carousel__slide"><img src="assets/nest/nest-11.png" alt="Nest Hotel — bathroom in white marble"></div>
+    </div>
+    <div class="im-carousel__nav">
+      <button class="im-carousel__btn im-carousel__btn--prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+      <span class="im-carousel__counter"><span class="im-current">01</span> / <span class="im-total">11</span></span>
+      <button class="im-carousel__btn im-carousel__btn--next" aria-label="Next slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+    </div>
+    <div class="im-carousel__progress"></div>
+  </div>
+</section>
+
+<!-- ================= CASE: RATHI RESIDENCE ================= -->
+<section class="case wrap" id="rathi-residence">
+  <div class="case-head reveal">
+    <div>
+      <span class="loc">Location: New Delhi</span>
+      <h3 class="name">Rathi Residence</h3>
+    </div>
+    
+  </div>
+  <div class="case-body reveal">
+    <div>
+      <p>A full-house residential interior for a private family home in Delhi, spanning formal living areas, a suite of bedrooms and a dedicated basement entertainment level. The material language stays consistent throughout: rich walnut and rosewood veneers, carved jali screens, herringbone parquet, and warm cove lighting layered against restrained, tactile backdrops.</p>
+      <p>The living room is anchored by a laser-cut lattice partition that filters light without closing off the space, while the master and guest bedrooms lean into tufted upholstery, statement chandeliers and picture windows. A daughter's room breaks the palette with a soft floral mural and a built-in window seat, and the basement level turns fully social — a bar, home theatre and lounge finished in weathered metal and reclaimed wood.</p>
+      <p>Custom joinery carries the detailing further: a book-matched walnut main door sets the tone at the entrance, and a family of bespoke bedroom wardrobe doors, each with a inset photo panel, repeats the same craft logic room to room.</p>
+    </div>
+  </div>
+  <div class="im-carousel">
+    <div class="im-carousel__track">
+      <div class="im-carousel__slide"><img src="assets/mukesh-rathi/rathi-1.jpg" alt="Rathi Residence — living room with carved jali screen wall, option 1"></div>
+      <div class="im-carousel__slide"><img src="assets/mukesh-rathi/rathi-2.jpg" alt="Rathi Residence — living room, option 2"></div>
+      <div class="im-carousel__slide"><img src="assets/mukesh-rathi/rathi-3.jpg" alt="Rathi Residence — master bedroom with tufted headboard, option 1"></div>
+      <div class="im-carousel__slide"><img src="assets/mukesh-rathi/rathi-4.jpg" alt="Rathi Residence — master bedroom, option 2"></div>
+      <div class="im-carousel__slide"><img src="assets/mukesh-rathi/rathi-5.jpg" alt="Rathi Residence — master bedroom, option 3"></div>
+      <div class="im-carousel__slide"><img src="assets/mukesh-rathi/rathi-6.jpg" alt="Rathi Residence — daughter's room with floral mural and window seat"></div>
+      <div class="im-carousel__slide"><img src="assets/mukesh-rathi/rathi-7.jpg" alt="Rathi Residence — guest bedroom with herringbone flooring and lake view"></div>
+      <div class="im-carousel__slide"><img src="assets/mukesh-rathi/rathi-8.jpg" alt="Rathi Residence — basement lounge and home theatre, option 1"></div>
+      <div class="im-carousel__slide"><img src="assets/mukesh-rathi/rathi-9.jpg" alt="Rathi Residence — basement lounge and bar, option 2"></div>
+      <div class="im-carousel__slide"><img src="assets/mukesh-rathi/rathi-10.jpg" alt="Rathi Residence — basement office nook"></div>
+      <div class="im-carousel__slide"><img src="assets/mukesh-rathi/rathi-11.jpg" alt="Rathi Residence — basement powder room in pebble stone and wood"></div>
+      <div class="im-carousel__slide"><img src="assets/mukesh-rathi/rathi-12.jpg" alt="Rathi Residence — book-matched walnut main entrance door"></div>
+      <div class="im-carousel__slide"><img src="assets/mukesh-rathi/rathi-13.jpg" alt="Rathi Residence — custom bedroom wardrobe door detailing"></div>
+    </div>
+    <div class="im-carousel__nav">
+      <button class="im-carousel__btn im-carousel__btn--prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+      <span class="im-carousel__counter"><span class="im-current">01</span> / <span class="im-total">13</span></span>
+      <button class="im-carousel__btn im-carousel__btn--next" aria-label="Next slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+    </div>
+    <div class="im-carousel__progress"></div>
+  </div>
+</section>
+
+<!-- ================= CASE: CASA PALMA ================= -->
+<section class="case wrap" id="casa-palma">
+  <div class="case-head reveal">
+    <div>
+      <span class="loc">Location: Kochi </span>
+      <h3 class="name">Casa Palma</h3>
+    </div>
+  </div>
+  <div class="case-body reveal">
+    <div>
+      <p>Casa Palma is a private villa in Kochi built on a simple idea: a Mediterranean shell, softened and opened up for the tropics. Lime-washed stucco walls, terracotta-tiled roofs and arched steel-framed windows give the house a quiet, established character, while deep verandas, a gated palm-lined driveway and generous cross-ventilation keep it firmly rooted in its coastal setting.</p>
+      <p>Inside, a double-height living room opens through a run of arched French doors onto the front porch, blurring the line between the garden and the interior. A glazed spiral stair rises through the front facade as a lit, sculptural centrepiece, visible from the street after dark. Materials stay warm and restrained throughout, travertine flooring, stone-topped furniture and a muted, art-led palette, so the architecture, not the decor, carries the house.</p>
+      <p>A second, garden-facing wing shifts the material language toward exposed grey stone and dark timber battens under deep, wood-lined eaves, a quieter counterpoint to the villa's formal front facade. Inside it, a teak-lined reading lounge with built-in shelving and a low daybed opens onto floor-to-ceiling glazing, keeping the same principle of dissolving the boundary between the built and the planted.</p>
+    </div>
+  </div>
+  <div class="im-carousel">
+    <div class="im-carousel__track">
+      <div class="im-carousel__slide"><img src="assets/casa-palma/casa-palma-1.png" alt="Casa Palma — front elevation with carport and glazed stair tower"></div>
+      <div class="im-carousel__slide"><img src="assets/casa-palma/casa-palma-2.png" alt="Casa Palma — front-left view among palm trees"></div>
+      <div class="im-carousel__slide"><img src="assets/casa-palma/casa-palma-3.png" alt="Casa Palma — warm right-side elevation at golden hour"></div>
+      <div class="im-carousel__slide"><img src="assets/casa-palma/casa-palma-4.png" alt="Casa Palma — front elevation, alternate view"></div>
+      <div class="im-carousel__slide"><img src="assets/casa-palma/casa-palma-5.png" alt="Casa Palma — double-height living room with arched doors to the porch"></div>
+      <div class="im-carousel__slide"><img src="assets/casa-palma/casa-palma-6.png" alt="Casa Palma — living room, opposite-corner view toward the arched porch"></div>
+      <div class="im-carousel__slide"><img src="assets/casa-palma/casa-palma-8.png" alt="Casa Palma — garden wing, stone and timber elevation"></div>
+      <div class="im-carousel__slide"><img src="assets/casa-palma/casa-palma-9.png" alt="Casa Palma — reading lounge in teak with garden view"></div>
+      <div class="im-carousel__slide"><img src="assets/casa-palma/casa-palma-10.png" alt="Casa Palma — reading lounge in teak with garden view"></div>
+    </div>
+    <div class="im-carousel__nav">
+      <button class="im-carousel__btn im-carousel__btn--prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+      <span class="im-carousel__counter"><span class="im-current">01</span> / <span class="im-total">08</span></span>
+      <button class="im-carousel__btn im-carousel__btn--next" aria-label="Next slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+    </div>
+    <div class="im-carousel__progress"></div>
+  </div>
+</section>
+
+<!-- ================= CASE: BHATIA VILLA ================= -->
+<section class="case wrap" id="bhatia-villa">
+  <div class="case-head reveal">
+    <div>
+      <span class="loc">Location: New Delhi </span>
+      <h3 class="name">Bhatia Villa</h3>
+    </div>
+  </div>
+  <div class="case-body reveal">
+    <div>
+      <p>Bhatia Villa is a contemporary family residence built from a composition of stacked, shifting boxes rather than a single unified mass. Textured white stucco volumes cantilever over each other at the upper floor, broken up by deep-set black-framed windows, vertical timber-and-metal louvre screens, and a single navy-blue soffit that marks the entrance canopy — the one saturated colour note against an otherwise monochrome facade.</p>
+      <p>The entry sequence is deliberately layered: a timber-lined carport gives way to a dark pivot door set into a navy-framed recess, screened from the street by a low stucco wall and clipped hedging beneath a canopy of jacaranda trees.</p>
+      <p>Inside, the architecture opens up. A double-height living room is lit through full-height glazing onto the rear garden, with a floating timber staircase — its treads cantilevered off the wall with no visible stringer — reading as the room's sculptural centrepiece. Warm oak tones, a neutral sectional, leather accent seating and large-format abstract art keep the interior calm and tactile against the exposed concrete-toned flooring.</p>
+    </div>
+  </div>
+  <div class="im-carousel">
+    <div class="im-carousel__track">
+      <div class="im-carousel__slide"><img src="assets/bhatia-villa/bhatia-villa-1.png" alt="Bhatia Villa — front elevation with carport and entry canopy"></div>
+      <div class="im-carousel__slide"><img src="assets/bhatia-villa/bhatia-villa-2.png" alt="Bhatia Villa — corner elevation view"></div>
+      <div class="im-carousel__slide"><img src="assets/bhatia-villa/bhatia-villa-3.png" alt="Bhatia Villa — front elevation, alternate angle"></div>
+      <div class="im-carousel__slide"><img src="assets/bhatia-villa/bhatia-villa-4.png" alt="Bhatia Villa — double-height living room with floating timber staircase"></div>
+      <div class="im-carousel__slide"><img src="assets/bhatia-villa/bhatia-villa-5.png" alt="Bhatia Villa — living room toward the rear garden glazing"></div>
+    </div>
+    <div class="im-carousel__nav">
+      <button class="im-carousel__btn im-carousel__btn--prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+      <span class="im-carousel__counter"><span class="im-current">01</span> / <span class="im-total">05</span></span>
+      <button class="im-carousel__btn im-carousel__btn--next" aria-label="Next slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+    </div>
+    <div class="im-carousel__progress"></div>
+  </div>
+</section>
+
+<!-- ================= CASE: REDDY VILLA ================= -->
+<section class="case wrap" id="reddy-villa">
+  <div class="case-head reveal">
+    <div>
+      <span class="loc">Location: Hyderabad </span>
+      <h3 class="name">Reddy Villa</h3>
+    </div>
+  </div>
+  <div class="case-body reveal">
+    <div>
+      <p>Reddy Villa is a grand Mediterranean-style residence set among mature palms, built around a formal, symmetrical language: lime-plastered stucco walls, a terracotta-tiled hip roof, and tall arched steel-framed windows that repeat rhythmically across both storeys. A covered carport and gated, hedge-lined driveway announce the house well before the front door, in keeping with its established, estate-like presence.</p>
+      <p>The interior carries the same formality through into scale rather than ornament: a double-height reception room lined with a run of arched French doors that open fully onto the garden, twin wrought-iron chandeliers overhead, and a travertine floor underfoot. A single oversized abstract canvas and a book-matched stone coffee table are the only real punctuation in an otherwise restrained, neutral palette of taupe upholstery and warm stone — letting the arches and the light do the work.</p>
+    </div>
+  </div>
+  <div class="im-carousel">
+    <div class="im-carousel__track">
+      <div class="im-carousel__slide"><img src="assets/reddy-villa/reddy-villa-1.png" alt="Reddy Villa — front elevation with carport, among palms"></div>
+      <div class="im-carousel__slide"><img src="assets/reddy-villa/reddy-villa-2.png" alt="Reddy Villa — front elevation, alternate angle"></div>
+      <div class="im-carousel__slide"><img src="assets/reddy-villa/reddy-villa-3.png" alt="Reddy Villa — front elevation at golden hour"></div>
+      <div class="im-carousel__slide"><img src="assets/reddy-villa/reddy-villa-4.png" alt="Reddy Villa — double-height reception room with arched French doors"></div>
+      <div class="im-carousel__slide"><img src="assets/reddy-villa/reddy-villa-5.png" alt="Reddy Villa — reception room toward the arched garden doors"></div>
+    </div>
+    <div class="im-carousel__nav">
+      <button class="im-carousel__btn im-carousel__btn--prev" aria-label="Previous slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+      <span class="im-carousel__counter"><span class="im-current">01</span> / <span class="im-total">05</span></span>
+      <button class="im-carousel__btn im-carousel__btn--next" aria-label="Next slide"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+    </div>
+    <div class="im-carousel__progress"></div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="eyebrow" style="color:var(--orange);">Contact Us Today</span>
+        <h2>Let's build your<br>next project<br>together.</h2>
+        <div class="contact-phone">+91 9004301234</div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="tel:+919004301234">Contact us today!</a>
+          <a class="btn btn-outline" href="https://www.sprint-co.com" target="_blank" rel="noopener noreferrer">Visit our website</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img class="footer-logo" src="../assets/branding/sprintco-logo.svg" alt="SprintCo">
+  <div class="tagline">Design that tells your story.</div>
+  <div class="footer-social">
+    <a href="https://www.linkedin.com/company/sprint-co/" target="_blank" rel="noopener" aria-label="SprintCo on LinkedIn">
+      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </a>
+    <a href="https://www.instagram.com/sprintco_designs/" target="_blank" rel="noopener" aria-label="SprintCo on Instagram">
+      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    </a>
+  </div>
+  
+</footer>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+</div>
+
+<script src="../lookbook.js"></script>
+<script src="architecture.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+/* ===================================================================
+   SprintCo Architecture — page-specific styles
+   Extends Decks/lookbook.css (shared tokens, .case, .im-carousel, nav.dots,
+   reveal-on-scroll, #progress). Everything below is new for this draft.
+=================================================================== */
+
+body{padding-top:0;}
+
+/* ===================================================================
+   PRELOADER + INTRO SEQUENCE
+   1) preloader: SprintCo mark solidifies grey->colour as % counts to 100
+   2) vertical blinds wipe clears the preloader
+   3) solo "SPRINTCO" wordmark draws in, holds, centred
+   4) settles into the final hero (small wordmark + photo + captions fade in)
+=================================================================== */
+.preloader{
+  position:fixed;inset:0;z-index:10000;background:var(--cream);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;
+  transition:opacity .5s var(--ease);
+}
+.preloader__mark{
+  width:64px;height:auto;opacity:.28;filter:grayscale(1);transform:scale(.9);
+  transition:opacity .5s var(--ease), filter .5s var(--ease), transform .6s cubic-bezier(.25,.1,.25,1);
+}
+.preloader__mark path{transition:fill .4s var(--ease);}
+.preloader.is-ready .preloader__mark{opacity:1;filter:grayscale(0);transform:scale(1);}
+.preloader__pct{
+  font-family:'Inter',sans-serif;font-size:.8rem;letter-spacing:.06em;color:var(--stone);
+  font-variant-numeric:tabular-nums;transition:opacity .3s var(--ease);
+}
+.preloader.is-ready .preloader__pct{color:var(--orange);}
+.preloader.is-hiding{opacity:0;pointer-events:none;}
+.preloader__blinds{position:absolute;inset:0;display:flex;pointer-events:none;}
+.preloader__blinds span{flex:1 1 0;background:var(--cream);transform:scaleY(1);transform-origin:bottom;transition:transform .55s cubic-bezier(.65,0,.35,1);}
+.preloader.is-wiping .preloader__blinds span{transform:scaleY(0);}
+
+/* solo wordmark intro */
+.intro-word{
+  position:fixed;inset:0;z-index:9000;display:flex;align-items:center;justify-content:center;
+  background:var(--cream);opacity:0;pointer-events:none;transition:opacity .4s var(--ease);
+}
+body.intro-active .intro-word{opacity:1;}
+body.hero-settled .intro-word{opacity:0;transform:scale(.94);transition:opacity .6s var(--ease), transform .7s var(--ease);}
+.intro-word__letters{
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,10vw,7.5rem);letter-spacing:.02em;color:var(--ink);
+  display:inline-flex;
+}
+.intro-word__letters .il{
+  display:inline-block;clip-path:inset(0 100% 0 0);transition:clip-path .5s cubic-bezier(.25,.1,.25,1);
+}
+.intro-word__letters .il.in{clip-path:inset(0 0 0 0);}
+.intro-word__letters .il.accent{color:var(--orange);}
+
+/* hero content: hidden until the intro hands off */
+.arch-hero__drafting,.arch-hero__wordmark-wrap{opacity:0;transition:opacity 1s var(--ease);}
+.arch-hero__inner{opacity:0;transform:translateY(14px);transition:opacity .9s var(--ease), transform .9s var(--ease);}
+body.intro-active .arch-hero__drafting,
+body.hero-settled .arch-hero__drafting,
+body.hero-settled .arch-hero__wordmark-wrap{opacity:1;}
+body.hero-settled .arch-hero__inner{opacity:1;transform:translateY(0);}
+header.arch-topbar{opacity:0;transition:opacity .8s var(--ease);}
+body:not(.is-preloading) header.arch-topbar{opacity:1;}
+
+/* ---------- draft banner offset ---------- */
+#progress{top:34px;}
+
+/* ---------- topbar: add inline nav between logo and CTA ---------- */
+header.arch-topbar{top:34px;}
+.arch-nav{display:flex;gap:34px;}
+.arch-nav a{
+  font-family:'Inter',sans-serif;font-weight:600;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink);opacity:.75;transition:opacity .3s var(--ease), color .3s var(--ease);
+}
+.arch-nav a:hover{opacity:1;color:var(--orange);}
+@media (max-width:760px){ .arch-nav{display:none;} }
+
+/* nav.dots sits a bit lower here since dots track 4 project chapters, not 6 */
+nav.dots a span{max-width:220px;white-space:normal;text-align:right;}
+
+/* ---------- HERO ---------- */
+.arch-hero{
+  position:relative;min-height:100svh;overflow:hidden;
+  background:var(--cream);color:var(--ink);
+  padding-top:150px;padding-bottom:70px;
+  display:flex;flex-direction:column;align-items:center;
+}
+
+/* drafting-board motif */
+.arch-hero__drafting{position:absolute;inset:0;z-index:0;pointer-events:none;}
+.dh-rule{position:absolute;left:5%;right:5%;height:0;border-top:1px dashed var(--stone-line);}
+.dh-rule--top{top:120px;}
+.dh-rule--bottom{bottom:60px;}
+.dh-tick{position:absolute;width:1px;height:12px;background:var(--stone);opacity:.5;}
+.dh-tick--1{top:114px;left:5%;}
+.dh-tick--2{top:114px;left:50%;}
+.dh-tick--3{top:114px;right:5%;}
+.dh-arc{
+  position:absolute;left:6%;top:22%;width:120px;height:120px;
+  border:1px solid var(--stone-line);border-radius:50%;
+  clip-path:polygon(0 0, 60% 0, 60% 60%, 0 60%);
+  opacity:.7;
+}
+.dh-compass{
+  position:absolute;left:7%;bottom:14%;width:90px;height:90px;
+  border:1px solid var(--stone-line);border-radius:50%;
+}
+.dh-compass::after{
+  content:"";position:absolute;top:50%;left:50%;width:5px;height:5px;
+  background:var(--stone);border-radius:50%;transform:translate(-50%,-50%);
+}
+.dh-cross{position:absolute;width:14px;height:14px;opacity:.55;}
+.dh-cross::before,.dh-cross::after{content:"";position:absolute;background:var(--stone);}
+.dh-cross::before{left:50%;top:0;width:1px;height:100%;transform:translateX(-50%);}
+.dh-cross::after{top:50%;left:0;width:100%;height:1px;transform:translateY(-50%);}
+.dh-cross--1{right:9%;bottom:22%;}
+.dh-cross--2{left:42%;top:130px;}
+.dh-diag{
+  position:absolute;right:8%;bottom:8%;width:70px;height:0;
+  border-top:1px solid var(--stone-line);transform:rotate(-28deg);transform-origin:right;
+}
+
+/* giant background wordmark — half solid, half outline, one accent letter */
+.arch-hero__wordmark-wrap{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;pointer-events:none;}
+.arch-hero__wordmark{
+  font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:.01em;
+  font-size:clamp(4rem,16vw,14rem);line-height:.8;
+  white-space:nowrap;user-select:none;
+}
+.arch-hero__wordmark .wm-solid{color:rgba(22,19,15,.55);}
+.arch-hero__wordmark .wm-outline{color:transparent;-webkit-text-stroke:1.5px rgba(22,19,15,.32);}
+.arch-hero__wordmark .wm-accent{color:var(--orange);opacity:.85;-webkit-text-stroke:0;}
+/* front copy of the wordmark: stroke-only, sits above the photo frame so its
+   outline "cuts through" the image wherever the two overlap */
+.arch-hero__wordmark-wrap--front{z-index:3;}
+.arch-hero__wordmark--front{color:transparent;-webkit-text-stroke:1.5px var(--paper);opacity:.8;}
+.arch-hero__wordmark--front span{display:inline-block;}
+
+.coord-tag{
+  position:absolute;top:calc(50% + 150px);left:calc(50% + 20vw);
+  font-family:'Inter',sans-serif;font-size:.68rem;letter-spacing:.1em;color:var(--stone);opacity:.55;
+}
+@media (max-width:900px){ .coord-tag{display:none;} }
+
+/* featured photo frame */
+.arch-hero__inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%;}
+.arch-hero__frame{
+  position:relative;width:clamp(280px,38vw,560px);aspect-ratio:4/3;overflow:hidden;
+  box-shadow:0 40px 80px -20px rgba(22,19,15,.28);
+}
+.arch-hero__frame img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .5s var(--ease);}
+.frame-tick{position:absolute;width:16px;height:16px;border:1.5px solid var(--orange);opacity:.9;}
+.frame-tick.tl{top:-1px;left:-1px;border-right:0;border-bottom:0;}
+.frame-tick.tr{top:-1px;right:-1px;border-left:0;border-bottom:0;}
+.frame-tick.bl{bottom:-1px;left:-1px;border-right:0;border-top:0;}
+.frame-tick.br{bottom:-1px;right:-1px;border-left:0;border-top:0;}
+
+.arch-hero__caption{
+  display:flex;align-items:center;gap:14px;margin-top:18px;
+  font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);
+}
+.arch-hero__caption .im-carousel__btn{width:24px;height:24px;border-color:var(--stone-line);}
+.arch-hero__caption .im-carousel__btn svg{stroke:var(--ink);}
+.arch-hero__progress{width:clamp(280px,38vw,560px);height:2px;background:var(--stone-line);margin-top:10px;overflow:hidden;}
+.arch-hero__progress span{display:block;height:100%;width:0;background:var(--orange);transition:width .1s linear;}
+
+.arch-hero__side{margin-top:44px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;}
+.arch-hero__studio{font-size:clamp(1.6rem,3.4vw,2.4rem);color:var(--orange);}
+.arch-hero__tagline{
+  font-family:'Inter',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;
+}
+.tag-div{color:var(--stone-line);}
+
+@media (max-width:640px){
+  .arch-hero{padding-top:130px;}
+  .dh-rule--top{top:100px;}
+  .dh-tick{top:94px;}
+  .arch-hero__wordmark{font-size:clamp(2.6rem,20vw,5rem);}
+  .arch-hero__side{margin-top:30px;}
+}
+
+/* ---------- project index (symmetrical grid) ---------- */
+.arch-index{padding-top:60px;}
+.arch-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:36px 24px;
+  padding:0 20px;
+}
+@media (min-width:641px){ .arch-grid{padding:0 64px;} }
+@media (max-width:900px){ .arch-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:560px){ .arch-grid{grid-template-columns:1fr;} }
+.arch-card{display:block;color:inherit;}
+.arch-card__img{aspect-ratio:4/3;overflow:hidden;position:relative;background:var(--stone-line);}
+.arch-card__img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease);}
+.arch-card:hover .arch-card__img img{transform:scale(1.05);}
+.arch-tile-label{padding:14px 2px 0;}
+.arch-tile-label .loc{
+  display:block;font-family:'Inter',sans-serif;font-weight:700;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);
+}
+.arch-tile-label .name{font-size:1.5rem;margin-top:4px;}
+
+/* ---------- case sections: minor additions ---------- */
+.case .loc{display:block;max-width:60ch;}

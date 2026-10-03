@@ -1,0 +1,118 @@
+Options -MultiViews
+RewriteEngine On
+
+# Serve the branded error document while preserving the HTTP 404 status.
+ErrorDocument 404 /404.html
+
+# City pages live in /In/ or /locations/ — redirect root-level city URLs there.
+# Must stay above rule 1 and the catch-all, or those rules fire first.
+# International cities (the /locations/ folder) are listed explicitly; every
+# other restaurant-interior-designer-* URL at the site root goes to /In/.
+# Add a slug to the list below whenever a new /locations/ page is created.
+RewriteRule ^(restaurant-interior-designer-(?:abu-dhabi|auckland|austin|bahrain|baku|bali|bangkok|beijing|boston|brisbane|brussels|cape-town|cebu|colombo|davao|doha|dubai|dublin|galle|greece|guangzhou|hikkaduwa|jakarta|johannesburg|kandy|kuwait-city|london|malta|manila|melbourne|montreal|muscat|nairobi|new-jersey|new-york|paris|perth|phoenix|port-elizabeth|prague|rome|seoul|shanghai|shenzhen|singapore|sydney|tbilisi|tokyo|toronto|turkey|vancouver))(?:\.html)?$ /locations/$1 [R=301,L]
+RewriteRule ^(restaurant-interior-designer-[a-z-]+?)(?:\.html)?$ /In/$1 [R=301,L]
+
+# 0) /index.html should redirect to the site root, not to /index
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^ /? [R=301,L]
+
+# 1) If a browser requests any other *.html URL directly, send a permanent
+#    redirect to the clean (extension-less) URL. Keeps one canonical URL per page.
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 2) Internally serve the matching .html file when the clean URL is requested,
+#    without changing what's shown in the address bar.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+# 301 redirect: old slug -> corrected slug (adds "a")
+RewriteCond %{THE_REQUEST} \s/+top-interior-design-ideas-for-luxury-bar/?[\s?] [NC]
+RewriteRule ^ /top-interior-design-ideas-for-a-luxury-bar? [R=301,L]
+
+# 301 redirect: old slug -> corrected slug (adds "-for-2025")
+RewriteCond %{THE_REQUEST} \s/+best-kiosk-design-ideas/?[\s?] [NC]
+RewriteRule ^ /best-kiosk-design-ideas-for-2025? [R=301,L]
+
+# 301 redirect: old slug -> renamed slug
+RewriteCond %{THE_REQUEST} \s/+tuskin-cafe-interior-design/?[\s?] [NC]
+RewriteRule ^ /tuskin-coffee-mumbai-cafe? [R=301,L]
+
+# 301 redirect: old slug -> renamed slug
+RewriteCond %{THE_REQUEST} \s/+commercial-kitchen-equipment-for-restaurant/?[\s?] [NC]
+RewriteRule ^ /commercial-kitchen-equipment-complete-setup-for-f-b? [R=301,L]
+
+# General: redirect any URL with a trailing slash to the same URL without it
+# (skips real subfolders, and skips Blog Site's own paths, which canonicalize
+# the opposite way — see Blog Site\.htaccess rules 5-7)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(Blog%20Site|Blog\+Site)/ [NC]
+RewriteCond %{THE_REQUEST} \s/+(.+)/[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/(Blog%20Site|Blog\+Site)/ [NC]
+RewriteCond %{THE_REQUEST} \s/+(.+)/[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+
+# 301 redirect: strip trailing slash for this exact slug
+RewriteCond %{THE_REQUEST} \s/+best-bar-lighting-design-ideas-restaurant/[\s?] [NC]
+RewriteRule ^ /best-bar-lighting-design-ideas-restaurant? [R=301,L]
+
+
+# 301 redirect: old slug -> renamed slug
+RewriteCond %{THE_REQUEST} \s/+cafe-interior-design-ideas/?[\s?] [NC]
+RewriteRule ^ /cafe-design-ideas-for-stylish-cozy-spaces? [R=301,L]
+
+
+# 301 redirect: old slug -> renamed slug
+RewriteCond %{THE_REQUEST} \s/+dolce-cafe-interior-design-new-delhi/?[\s?] [NC]
+RewriteRule ^ /dolce-cafe-new-delhi-cafe? [R=301,L]
+
+# 301 redirect: old slug -> renamed slug
+RewriteCond %{THE_REQUEST} \s/+commercial-kitchen-equipment-for-restaurants-and-cafes/?[\s?] [NC]
+RewriteRule ^ /commercial-kitchen-equipment-complete-setup-for-f-b? [R=301,L]
+
+# 301 redirect: old slug -> renamed slug
+RewriteCond %{THE_REQUEST} \s/+how-to-design-a-cafe-interior/?[\s?] [NC]
+RewriteRule ^ /how-to-design-a-cafe-interior-guide-for-first-time-owners? [R=301,L]
+
+# 301 redirect: strip trailing slash for this exact slug
+RewriteCond %{THE_REQUEST} \s/+rooftop-bar-design-elements/[\s?] [NC]
+RewriteRule ^ /rooftop-bar-design-elements? [R=301,L]
+
+# 301 redirect: old slug -> renamed slug
+RewriteCond %{THE_REQUEST} \s/+therapy-bar-and-cafe-design-in-borivali-mumbai/?[\s?] [NC]
+RewriteRule ^ /therapy-cocktail-mumbai-cafe? [R=301,L]
+
+
+# 301 redirect: old slug -> renamed slug
+RewriteCond %{THE_REQUEST} \s/+qsr-layout-design-tips/?[\s?] [NC]
+RewriteRule ^ /qsr-layout-design-tips-for-better-space-speed? [R=301,L]
+
+
+# 301 redirect: old slug -> renamed slug
+RewriteCond %{THE_REQUEST} \s/+blue-tokai-cafe-interior-design-mumbai/?[\s?] [NC]
+RewriteRule ^ /blue-tokai-mumbai-cafe? [R=301,L]
+
+
+# 301 redirect: strip trailing slash for this exact slug
+RewriteCond %{THE_REQUEST} \s/+sona-mantri/[\s?] [NC]
+RewriteRule ^ /sona-mantri? [R=301,L]
+
+
+
+# Catch-all: any URL that isn't a real file/directory and wasn't handled
+# by the rules above -> redirect to the homepage
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /? [R=301,L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php83” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php83 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SprintCo — Decks</title>
+<meta name="description" content="SprintCo Decks — select a lookbook or portfolio deck to view.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lookbook.css">
+<style>
+  body{background:var(--paper);}
+
+  .index-hero{
+    position:relative;padding:80px 0 70px;overflow:hidden;
+    background-size:cover;background-position:center;
+    background-image:url('assets/backgrounds/divider-orange-texture.jpg');
+    color:#fff;
+  }
+  .index-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(20,12,6,.35) 0%, rgba(15,9,5,.78) 100%);}
+  .index-hero .wrap{position:relative;z-index:1;}
+  .index-hero .brandmark{margin-bottom:40px;}
+  .index-hero .brandmark img{height:30px;width:auto;}
+  .index-hero h1{font-size:clamp(2.4rem,6vw,4.4rem);line-height:.98;}
+  .index-hero p{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.05rem,2vw,1.35rem);color:rgba(255,255,255,.8);margin-top:16px;max-width:46ch;}
+
+  .deck-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+    padding:70px 0 90px;
+  }
+  @media (max-width:980px){ .deck-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:640px){ .deck-grid{grid-template-columns:1fr;padding:50px 0 60px;gap:16px;} }
+
+  .deck-card{
+    display:flex;flex-direction:column;align-items:flex-start;gap:18px;
+    background:#fff;border:1px solid var(--stone-line);border-radius:20px;
+    padding:32px 28px;text-decoration:none;color:var(--ink);
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease);
+  }
+  .deck-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent;}
+  .deck-card.featured{
+    grid-column:1 / -1;
+    flex-direction:row;align-items:center;justify-content:space-between;gap:32px;
+    background:var(--ink);color:#fff;border-color:var(--ink);
+  }
+  @media (max-width:760px){ .deck-card.featured{flex-direction:column;align-items:flex-start;} }
+
+  .deck-icon{
+    width:64px;height:64px;flex:none;border-radius:50%;
+    background:var(--orange);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 14px 28px -10px rgba(255,71,19,.55);
+  }
+  .deck-card.featured .deck-icon{width:76px;height:76px;}
+  .deck-icon svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+  .deck-card.featured .deck-icon svg{width:34px;height:34px;}
+
+  .deck-name{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.01em;line-height:1;}
+  .deck-card.featured .deck-name{font-size:2.2rem;}
+  .deck-desc{font-size:.88rem;line-height:1.6;color:var(--stone);margin-top:2px;}
+  .deck-card.featured .deck-desc{color:rgba(244,237,225,.65);max-width:52ch;}
+  .deck-meta{
+    display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding-top:6px;
+    font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);
+  }
+  .deck-card.featured .deck-meta{color:var(--orange);}
+  .deck-meta .arrow{transition:transform .3s var(--ease);}
+  .deck-card:hover .deck-meta .arrow{transform:translateX(4px);}
+  .deck-card.featured .deck-content{display:flex;flex-direction:column;gap:14px;}
+  .deck-card.featured .deck-top{display:flex;align-items:center;gap:20px;}
+</style>
+</head>
+<body>
+
+<section class="index-hero">
+  <div class="wrap">
+    <div class="brandmark"><img src="assets/branding/sprintco-secondary-logo.svg" alt="SprintCo"></div>
+    <h1>Decks Library</h1>
+    <p>Select a deck below to open it, either the full brand Lookbook, or a portfolio deck filtered to one project category.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="deck-grid">
+
+    <a class="deck-card featured" href="Lookbook">
+      <div class="deck-top">
+        <div class="deck-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        </div>
+        <div class="deck-content">
+          <div class="deck-name">Lookbook</div>
+          <div class="deck-desc">The full SprintCo story, who we are, our process, FlatPackCo, the team, and our complete portfolio across every category.</div>
+        </div>
+      </div>
+      <div class="deck-meta">Full Brand Story <span class="arrow">→</span></div>
+    </a>
+
+    <a class="deck-card" href="Marque">
+      <div class="deck-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+      </div>
+      <div class="deck-name">Marque Projects</div>
+      <div class="deck-desc">Our flagship, signature engagements, plus a full walkthrough of how we take a project from first idea to opening day.</div>
+      <div class="deck-meta">10 Projects <span class="arrow">→</span></div>
+    </a>
+
+    <a class="deck-card" href="Contemporary">
+      <div class="deck-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+      </div>
+      <div class="deck-name">Contemporary</div>
+      <div class="deck-desc">Modern cafés, QSRs, kiosks and lounges from India's leading contemporary F&amp;B brands.</div>
+      <div class="deck-meta">19 Projects <span class="arrow">→</span></div>
+    </a>
+
+    <a class="deck-card" href="cafes">
+      <div class="deck-icon">
+        <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+      </div>
+      <div class="deck-name">Cafés</div>
+      <div class="deck-desc">Warm, social spaces built for connection.</div>
+      <div class="deck-meta">9 Projects <span class="arrow">→</span></div>
+    </a>
+
+    <a class="deck-card" href="restaurants">
+      <div class="deck-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 2v7a3 3 0 0 0 3 3v10"></path><path d="M8 2v20"></path><path d="M17 2c-2 3-2 6 0 8s2 5 0 8v4"></path></svg>
+      </div>
+      <div class="deck-name">Restaurants</div>
+      <div class="deck-desc">Full-service dining, designed end to end.</div>
+      <div class="deck-meta">6 Projects <span class="arrow">→</span></div>
+    </a>
+
+    <a class="deck-card" href="bars">
+      <div class="deck-icon">
+        <svg viewBox="0 0 24 24"><path d="M8 22h8"></path><path d="M12 11v11"></path><path d="M19 3H5l7 8Z"></path></svg>
+      </div>
+      <div class="deck-name">Bars</div>
+      <div class="deck-desc">Bold, atmospheric spaces built for the night.</div>
+      <div class="deck-meta">12 Projects <span class="arrow">→</span></div>
+    </a>
+
+    <a class="deck-card" href="qsr">
+      <div class="deck-icon">
+        <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+      </div>
+      <div class="deck-name">QSR</div>
+      <div class="deck-desc">Fast formats, without compromising on brand.</div>
+      <div class="deck-meta">11 Projects <span class="arrow">→</span></div>
+    </a>
+
+    <a class="deck-card" href="kiosk">
+      <div class="deck-icon">
+        <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+      </div>
+      <div class="deck-name">Kiosks</div>
+      <div class="deck-desc">Compact footprints, maximum impact.</div>
+      <div class="deck-meta">10 Projects <span class="arrow">→</span></div>
+    </a>
+
+    <a class="deck-card" href="entertainment-spaces">
+      <div class="deck-icon">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+      </div>
+      <div class="deck-name">Entertainment Spaces</div>
+      <div class="deck-desc">Immersive, experience-led environments.</div>
+      <div class="deck-meta">6 Projects <span class="arrow">→</span></div>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <img class="footer-logo" src="assets/branding/sprintco-logo.svg" alt="SprintCo">
+  <div class="tagline">Design that tells your story.</div>
+  <div class="footer-social">
+    <a href="https://www.linkedin.com/company/sprint-co/" target="_blank" rel="noopener" aria-label="SprintCo on LinkedIn">
+      <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </a>
+    <a href="https://www.instagram.com/sprintco_designs/" target="_blank" rel="noopener" aria-label="SprintCo on Instagram">
+      <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    </a>
+    <a href="https://www.youtube.com/@B2B_Designers" target="_blank" rel="noopener" aria-label="SprintCo on YouTube">
+      <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4"></rect><polygon points="10 9 16 12 10 15 10 9" fill="currentColor" stroke="none"></polygon></svg>
+    </a>
+  </div>
+  <div class="legal">© 2026 SprintCo. All rights reserved. <br> Any copying or use of this confidential information is strictly prohibited without the express written permission of SprintCo.</div>
+</footer>
+
+</body>
+</html>

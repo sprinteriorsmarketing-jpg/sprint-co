@@ -1,0 +1,813 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-881264946"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-881264946');
+  gtag('config', 'G-9EFG5Q3JHZ');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Sandoitchi | QSR Interior Design | Ahmedabad</title>
+    <meta name="description" content="QSR interior design for Sandoitchi Ahmedabad. Smart layouts and fast turnaround for quick-service restaurants.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+
+        :root {
+            --im-accent: #E8621A;
+            --im-black: #1a1a1a;
+            --im-gray: #888;
+            --im-light: #f5f5f3;
+            --im-white: #fff;
+            --im-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        .im-project-page {
+            font-family: var(--im-font);
+            color: var(--im-black);
+            background: var(--im-white);
+        }
+
+        /* ── Hero Horizontal Filmstrip Carousel ── */
+        .im-carousel {
+            position: relative;
+            width: 100%;
+            height: 59.5vh;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .im-carousel__track {
+            display: flex;
+            height: 100%;
+            gap: 20px;
+            cursor: grab;
+            transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            will-change: transform;
+        }
+
+        .im-carousel__track.is-dragging {
+            cursor: grabbing;
+            transition: none;
+        }
+
+        .im-carousel__slide {
+            flex: 0 0 auto;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .im-carousel__slide img {
+            height: 100%;
+            width: auto;
+            display: block;
+            object-fit: cover;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .im-carousel__nav {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            z-index: 10;
+        }
+
+        .im-carousel__counter {
+            font-size: 14px;
+            letter-spacing: 0.12em;
+            color: var(--im-gray);
+            font-weight: 300;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .im-carousel__counter span {
+            font-weight: 500;
+            color: var(--im-black);
+        }
+
+        .im-carousel__btn {
+            width: 48px;
+            height: 48px;
+            border: 1.5px solid rgba(0,0,0,0.2);
+            border-radius: 50%;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(4px);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .im-carousel__btn:hover {
+            border-color: var(--im-accent);
+            background: var(--im-accent);
+        }
+
+        .im-carousel__btn:hover svg {
+            stroke: #fff;
+        }
+
+        .im-carousel__btn svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: var(--im-black);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .im-carousel__btn--prev svg {
+            transform: rotate(180deg);
+        }
+
+        .im-carousel__progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: var(--im-accent);
+            transition: width 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        /* ── Project Info Bar ── */
+        .im-project-info {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 60px 80px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .im-project-info__left {
+            flex: 1;
+        }
+
+        .im-project-info__title {
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin: 0 0 8px 0;
+            text-transform: uppercase;
+        }
+
+        .im-project-info__meta {
+            display: flex;
+            gap: 60px;
+            margin-top: 30px;
+        }
+
+        .im-project-info__field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .im-project-info__label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--im-gray);
+            font-weight: 400;
+        }
+
+        .im-project-info__value {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--im-black);
+        }
+
+        /* ── Project Description ── */
+        .im-project-description {
+            background: var(--im-light);
+        }
+
+        .im-project-description__inner {
+            padding: 80px;
+            max-width: 900px;
+        }
+
+        .im-project-description__headline {
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 1.4;
+            margin: 0 0 40px 0;
+            letter-spacing: -0.01em;
+        }
+
+        .im-project-description__subhead {
+            font-size: 22px;
+            font-weight: 300;
+            line-height: 1.5;
+            margin: 0 0 30px 0;
+            color: var(--im-gray);
+        }
+
+        .im-project-description__text {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #555;
+            margin: 0 0 24px 0;
+        }
+
+        .im-project-description__strategy {
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+
+        .im-project-description__strategy-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--im-accent);
+            font-weight: 500;
+            margin: 0 0 30px 0;
+        }
+
+        .im-strategy-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .im-strategy-item__label {
+            font-weight: 500;
+            min-width: 100px;
+            color: var(--im-black);
+        }
+
+        .im-strategy-item__value {
+            font-weight: 300;
+            color: #555;
+        }
+
+
+        /* ── FAQ Accordion (mirrors blog FAQ pattern) ── */
+        .im-project-faq {
+            padding: 80px;
+            max-width: 900px;
+        }
+
+        .im-project-faq__title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--im-accent);
+            font-weight: 500;
+            margin: 0 0 30px 0;
+        }
+
+        /* Scoped overrides so the shared FAQ accordion matches this page's px-based type system */
+        .im-project-faq .e-n-accordion,
+        .im-project-faq .elementor-heading-title {
+            max-width: none;
+        }
+        .im-project-faq .e-n-accordion {
+            border-top-color: #ddd;
+        }
+        .im-project-faq .e-n-accordion-item {
+            border-bottom-color: #ddd;
+        }
+        .im-project-faq .e-n-accordion-item-title {
+            font-family: var(--im-font);
+            font-weight: 500;
+            color: var(--im-black);
+            font-size: 16px;
+            line-height: 1.5;
+            padding: 20px 0;
+            gap: 20px;
+        }
+        .im-project-faq .e-n-accordion-item-title-icon {
+            width: 18px;
+            height: 18px;
+            color: var(--im-accent);
+        }
+        .im-project-faq .e-n-accordion-item-title-icon svg {
+            width: 14px;
+            height: 14px;
+        }
+        .im-project-faq .e-n-accordion-item [role="region"] {
+            padding: 0 0 24px;
+        }
+        .im-project-faq .e-n-accordion-item [role="region"] p {
+            font-family: var(--im-font);
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* ── Divider ── */
+        .im-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--im-accent);
+            margin: 0;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1024px) {
+            .im-carousel { height: 42vh; }
+            .im-carousel__track { gap: 20px; }
+            .im-project-info { padding: 40px; flex-direction: column; gap: 30px; }
+            .im-project-info__title { font-size: 36px; }
+            .im-project-info__meta { gap: 30px; flex-wrap: wrap; }
+            .im-project-description__inner { padding: 40px; }
+            .im-project-description__headline { font-size: 26px; }
+            .im-project-faq { padding: 40px; }
+        }
+
+        @media (max-width: 768px) {
+            .im-carousel { height: 35vh; }
+            .im-carousel__track { gap: 20px; }
+            .im-carousel__nav { bottom: 16px; gap: 16px; }
+            .im-carousel__btn { width: 40px; height: 40px; }
+            .im-project-info { padding: 30px 20px; }
+            .im-project-info__title { font-size: 28px; }
+            .im-project-info__meta { gap: 20px; }
+            .im-project-description__inner { padding: 30px 20px; }
+            .im-project-description__headline { font-size: 22px; }
+            .im-project-description__subhead { font-size: 18px; }
+            .im-project-faq { padding: 30px 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .im-carousel { height: 28vh; }
+            .im-project-info__title { font-size: 24px; }
+            .im-project-info__meta { flex-direction: column; gap: 16px; }
+        }
+    </style>
+
+<!--linkedin partner tracking code-->
+<script type="text/javascript">
+    _linkedin_partner_id = "5652372";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/javascript">
+    (function(l) {
+        if (!l) {
+            window.lintrk = function(a, b) {
+                window.lintrk.q.push([a, b])
+            };
+            window.lintrk.q = []
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+    })(window.lintrk);
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=5652372&fmt=gif" />
+</noscript>
+<!--END linkedin partner tracking code-->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1467236020816075');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1467236020816075&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body class="page-template-template-blank singular template-projects-single">
+
+<!-- Navigation -->
+<div class="website-menu fixed-menu">
+    <div class="website-menu-logo"><a href="/"><img src="images/sprintco-secondary-logo.svg" alt="SprintCo"></a></div>
+    <div class="website-menu-handler">Menu <img src="images/menu-icn.svg" alt="Menu"></div>
+</div>
+<div id="main-navigations">
+    <div class="main-navigations-logo">
+        <div class="navigations-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
+        <div class="close-menu-handler">Close <img src="images/close-menu.svg" alt="Close"></div>
+    </div>
+    <div class="menu-main-menu-container">
+    <ul id="menu-main-menu" class="footer-main-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="about">About Us</a></li>
+        <li class="current-menu-item menu-item-has-children"><a href="projects">Projects</a>
+            <ul class="sub-menu">
+                <li><a href="projects">All</a></li>
+                <li><a href="projects">Bar</a></li>
+                <li><a href="projects">Cafe</a></li>
+                <li><a href="projects">Restaurant</a></li>
+                <li><a href="projects">QSR</a></li>
+                <li><a href="projects">Kiosk</a></li>
+                <li><a href="projects">Entertainment Spaces</a></li>
+            </ul>
+        </li>
+        <li><a href="our-offerings">Our Offerings</a></li>
+        <li><a href="insights">Insights</a></li>
+    </ul>
+    </div>
+    <div class="main-navigations-footer">
+        <div class="common-button light-button"><a href="contact"><span>Get in touch</span></a></div>
+        <div class="menu-social-links-container">
+        <ul class="footer-social-nav">
+            <li><a href="https://www.linkedin.com/company/sprint-co/" target="_blank">Linkedin</a></li>
+            <li><a href="https://www.instagram.com/sprintco_designs/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@B2B_Designers" target="_blank">YouTube</a></li>
+            <li class="menu-none"><a href="https://www.flatpackco.com/" target="_blank">FlatPackCo</a></li>
+        </ul>
+        </div>
+    </div>
+</div>
+<div class="main-navigations-overlay"></div>
+
+<main class="im-project-page">
+
+    <!-- ── Project Title & Meta ── -->
+    <div class="im-project-info">
+        <div class="im-project-info__left">
+            <h1 class="im-project-info__title">Sandoitchi</h1>
+            <div class="im-project-info__meta">
+                <div class="im-project-info__field">
+                    <span class="im-project-info__label">Type</span>
+                    <span class="im-project-info__value">QSR</span>
+                </div>
+                <div class="im-project-info__field">
+                    <span class="im-project-info__label">Location</span>
+                    <span class="im-project-info__value">Ahmedabad</span>
+                </div>
+                <div class="im-project-info__field">
+                    <span class="im-project-info__label">Client</span>
+                    <span class="im-project-info__value">Sandoitchi</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Horizontal Filmstrip Carousel (all images) ── -->
+    <div class="im-carousel" id="imCarousel">
+        <div class="im-carousel__track" id="imTrack">
+            <div class="im-carousel__slide"><img src="images/View01-min.jpg" alt="Sandoitchi Ahmedabad"></div>
+            <div class="im-carousel__slide"><img src="images/GLASS-min-1024x808.jpg" alt="Sandoitchi Ahmedabad - 3D render of the orange-tiled counter with glass Pay Here panel and menu screens"></div>
+            <div class="im-carousel__slide"><img src="images/Sandoitchi-min-1024x576.jpg" alt="Sandoitchi Ahmedabad - material moodboard with floor tile, leather and wall treatment samples"></div>
+            <div class="im-carousel__slide"><img src="images/SANDOITCHI-AHEMDABAD-HERO-IMAGE-min.png" alt="Sandoitchi Ahmedabad - 3D render of the dining area with orange banquette and Make Your Own Doitchi wall"></div>
+            <div class="im-carousel__slide"><img src="images/View02-min-1024x808.jpg" alt="Sandoitchi Ahmedabad - 3D render of the Make Your Own Doitchi station with bar stools"></div>
+            <div class="im-carousel__slide"><img src="images/View04-min-1024x808.jpg" alt="Sandoitchi Ahmedabad - 3D render of the storefront with orange chef-hat sign and glass frontage"></div>
+            <div class="im-carousel__slide"><img src="images/View05-min-1024x808.jpg" alt="Sandoitchi Ahmedabad - 3D render of the orange banquette under the Hand Crafted Sandwiches wall"></div>
+            <div class="im-carousel__slide"><img src="images/View06-min-1024x808.jpg" alt="Sandoitchi Ahmedabad - 3D render of the service counter with drink dispensers and Grab a Bite poster"></div>
+        </div>
+        <div class="im-carousel__nav">
+            <button class="im-carousel__btn im-carousel__btn--prev" id="imPrev" aria-label="Previous slide">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <span class="im-carousel__counter"><span id="imCurrent">01</span> / <span id="imTotal">8</span></span>
+            <button class="im-carousel__btn im-carousel__btn--next" id="imNext" aria-label="Next slide">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+        <div class="im-carousel__progress" id="imProgress"></div>
+    </div>
+
+    <!-- ── Project Details ── -->
+    <div class="im-project-description is-open" id="imDescription">
+        <div class="im-project-description__inner">
+            <hr class="im-divider">
+            <br>
+            <h2 class="im-project-description__headline">A café where clean design meets bold flavours in perfect harmony.</h2>
+            <p class="im-project-description__subhead">At Sandoitchi, we brought Japanese minimalism to the heart of Ahmedabad.</p>
+            <p class="im-project-description__text">Soft hues. Sleek lines. Understated charm.</p>
+            <p class="im-project-description__text">From subtle textures to thoughtful spatial flow, it's not just a café, it's a quiet moment of Zen in a busy city.</p>
+
+            <div class="im-project-description__strategy">
+                <p class="im-project-description__strategy-title">Design Strategy</p>
+                <div class="im-strategy-item">
+                    <span class="im-strategy-item__label">Aesthetic</span>
+                    <span class="im-strategy-item__value">Japanese minimalism translated for the heart of Ahmedabad</span>
+                </div>
+                <div class="im-strategy-item">
+                    <span class="im-strategy-item__label">Palette</span>
+                    <span class="im-strategy-item__value">Soft hues and sleek lines for understated charm</span>
+                </div>
+                <div class="im-strategy-item">
+                    <span class="im-strategy-item__label">Atmosphere</span>
+                    <span class="im-strategy-item__value">A quiet moment of Zen in a busy city</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── FAQ ── -->
+    <div class="im-project-faq">
+        <p class="im-project-faq__title">Frequently Asked Questions</p>
+        <div class="e-n-accordion" aria-label="Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys">
+            <details id="e-n-accordion-item-f1" class="e-n-accordion-item" name="faq-accordion" open>
+                <summary class="e-n-accordion-item-title" data-accordion-index="1" tabindex="0" aria-expanded="true" aria-controls="e-n-accordion-item-f1">
+                    <span class="e-n-accordion-item-title-header"><div class="e-n-accordion-item-title-text"> Who is the designer of Sandoitchi? </div></span>
+                    <span class="e-n-accordion-item-title-icon">
+                        <span class="e-opened"><svg aria-hidden="true" class="e-font-icon-svg e-fas-minus" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg></span>
+                        <span class="e-closed"><svg aria-hidden="true" class="e-font-icon-svg e-fas-plus" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg></span>
+                    </span>
+                </summary>
+                <div role="region" aria-labelledby="e-n-accordion-item-f1">
+                    <p>Sona Mantri, Founder &amp; CEO of SprintCo, is the designer behind Sandoitchi. SprintCo served as the hospitality design firm, creating a contemporary sandwich caf&eacute; that combines efficient planning, premium interiors, and a memorable customer experience.</p>
+                </div>
+            </details>
+            <details id="e-n-accordion-item-f2" class="e-n-accordion-item" name="faq-accordion">
+                <summary class="e-n-accordion-item-title" data-accordion-index="2" tabindex="-1" aria-expanded="false" aria-controls="e-n-accordion-item-f2">
+                    <span class="e-n-accordion-item-title-header"><div class="e-n-accordion-item-title-text"> What should caf&eacute; owners consider before designing a sandwich caf&eacute;? </div></span>
+                    <span class="e-n-accordion-item-title-icon">
+                        <span class="e-opened"><svg aria-hidden="true" class="e-font-icon-svg e-fas-minus" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg></span>
+                        <span class="e-closed"><svg aria-hidden="true" class="e-font-icon-svg e-fas-plus" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg></span>
+                    </span>
+                </summary>
+                <div role="region" aria-labelledby="e-n-accordion-item-f2">
+                    <p>They should consider menu requirements, customer demographics, workflow, seating, branding, kitchen planning, lighting, and future expansion.</p>
+                </div>
+            </details>
+            <details id="e-n-accordion-item-f3" class="e-n-accordion-item" name="faq-accordion">
+                <summary class="e-n-accordion-item-title" data-accordion-index="3" tabindex="-1" aria-expanded="false" aria-controls="e-n-accordion-item-f3">
+                    <span class="e-n-accordion-item-title-header"><div class="e-n-accordion-item-title-text"> Why is counter design important in QSR caf&eacute;s? </div></span>
+                    <span class="e-n-accordion-item-title-icon">
+                        <span class="e-opened"><svg aria-hidden="true" class="e-font-icon-svg e-fas-minus" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg></span>
+                        <span class="e-closed"><svg aria-hidden="true" class="e-font-icon-svg e-fas-plus" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg></span>
+                    </span>
+                </summary>
+                <div role="region" aria-labelledby="e-n-accordion-item-f3">
+                    <p>Well-designed counters improve ordering efficiency, customer interaction, and overall operational performance.</p>
+                </div>
+            </details>
+            <details id="e-n-accordion-item-f4" class="e-n-accordion-item" name="faq-accordion">
+                <summary class="e-n-accordion-item-title" data-accordion-index="4" tabindex="-1" aria-expanded="false" aria-controls="e-n-accordion-item-f4">
+                    <span class="e-n-accordion-item-title-header"><div class="e-n-accordion-item-title-text"> How can caf&eacute; interiors reduce waiting times? </div></span>
+                    <span class="e-n-accordion-item-title-icon">
+                        <span class="e-opened"><svg aria-hidden="true" class="e-font-icon-svg e-fas-minus" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg></span>
+                        <span class="e-closed"><svg aria-hidden="true" class="e-font-icon-svg e-fas-plus" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg></span>
+                    </span>
+                </summary>
+                <div role="region" aria-labelledby="e-n-accordion-item-f4">
+                    <p>Clear circulation paths, organized ordering zones, and efficient service layouts minimize congestion.</p>
+                </div>
+            </details>
+            <details id="e-n-accordion-item-f5" class="e-n-accordion-item" name="faq-accordion">
+                <summary class="e-n-accordion-item-title" data-accordion-index="5" tabindex="-1" aria-expanded="false" aria-controls="e-n-accordion-item-f5">
+                    <span class="e-n-accordion-item-title-header"><div class="e-n-accordion-item-title-text"> Can good interior design increase caf&eacute; sales? </div></span>
+                    <span class="e-n-accordion-item-title-icon">
+                        <span class="e-opened"><svg aria-hidden="true" class="e-font-icon-svg e-fas-minus" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg></span>
+                        <span class="e-closed"><svg aria-hidden="true" class="e-font-icon-svg e-fas-plus" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg></span>
+                    </span>
+                </summary>
+                <div role="region" aria-labelledby="e-n-accordion-item-f5">
+                    <p>Yes. Better customer experiences often lead to longer visits, higher spending, stronger word-of-mouth, and increased repeat business.</p>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <!-- ── CTA Section ── -->
+    <div class="above-footer">
+        <div class="container os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.1s">
+            <div class="quick-connect-section">
+                <div class="quick-connect-icon">
+                    <img src="images/quick-connect-icn.svg" alt="Quick Connect Image">
+                </div>
+                <div class="quick-connect-heading">
+                    <h2>Your Perfect F&amp;B Space is One Step Away.</h2>
+                </div>
+                <div class="quick-connect-text">
+                    <p>With unmatched expertise and award-winning designs, we're ready to turn your ideas into reality.</p>
+                    <a href="contact" class="quick-connect-button">Let's start now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Other Projects ── -->
+    <div class="container other-projects">
+        <h3>Other QSR Projects</h3>
+        <div class="recent-projects os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.1s">
+            <div class="slick-list"><div class="slick-track" style="justify-content:center">
+                <div class="project-item"><a href="pizza-hut-mumbai-qsr"><div class="project-thumb imageoverlay"><img width="541" height="753" src="images/2-31.png" class="attachment-full size-full wp-post-image" alt="Pizza Hut QSR, Mumbai - SprintCo project" decoding="async"><p class="project-category"><span>QSR</span></p></div><h4 class="project-title">Pizza Hut</h4><p class="project-city">Mumbai</p></a></div>
+                <div class="project-item"><a href="sandoitchi-mumbai-qsr"><div class="project-thumb imageoverlay"><img width="541" height="753" src="images/Sandoitchi-Powai-Mumbai-min.png" class="attachment-full size-full wp-post-image" alt="Sandoitchi QSR, Mumbai - SprintCo project" decoding="async"><p class="project-category"><span>QSR</span></p></div><h4 class="project-title">Sandoitchi</h4><p class="project-city">Mumbai</p></a></div>
+                <div class="project-item"><a href="dosa-coffee-new-delhi-qsr"><div class="project-thumb imageoverlay"><img width="541" height="753" src="images/Dosa-min.png" class="attachment-full size-full wp-post-image" alt="Dosa Coffee QSR, New Delhi - SprintCo project" decoding="async"><p class="project-category"><span>QSR</span></p></div><h4 class="project-title">Dosa Coffee</h4><p class="project-city">New Delhi</p></a></div>
+            </div></div>
+        </div>
+        <center>
+            <div class="common-button">
+                <a href="projects"><span>All Projects</span></a>
+            </div>
+        </center>
+    </div>
+
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="scrolltop"><img src="images/scrolltop.svg" alt="Scroll To Top"></div>
+    <div class="footer-container">
+        <div class="footer-block">
+            <div class="footer-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
+            <p>Vasudev Chamber-B, 21, Old Nagardas Cross Rd, near Andheri Subway, opposite Wilson House, Mogra Pada, Natwar Nagar, Andheri East, Mumbai, Maharashtra- 400069<br><br>
+            &copy; 2025 Copyright B2B Designers Pvt Limited 2025. <br>All Rights Reserved.</p>
+            <ul class="footer-privacy-nav"><li><a href="#">Privacy Policy</a></li></ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-main-nav">
+                <li><a href="projects">Projects</a></li>
+                <li><a href="our-offerings">Our Offerings</a></li>
+                <li><a href="our-clients">Our Clients</a></li>
+                <li><a href="insights">Insights</a></li>
+                  <li><a href="../cities">Cities</a></li>
+            </ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-social-nav">
+                <li><a href="https://www.linkedin.com/company/sprint-co/" target="_blank">Linkedin</a></li>
+                <li><a href="https://www.instagram.com/sprintco_designs/" target="_blank">Instagram</a></li>
+                <li><a href="https://www.youtube.com/@B2B_Designers" target="_blank">YouTube</a></li>
+                <li class="menu-none"><a href="https://www.flatpackco.com/" target="_blank">FlatPackCo</a></li>
+            </ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-contact-nav">
+                <li class="copy-text"><a>info@sprint-co.com</a></li>
+                <li class="copy-text"><a>(+91) 9004301234</a></li>
+                <li class="common-button light-button"><a href="contact"><span>Get in Touch</span></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+(function() {
+    // ── Horizontal Filmstrip Carousel ──
+    var carousel = document.getElementById('imCarousel');
+    var track = document.getElementById('imTrack');
+    var slides = track.querySelectorAll('.im-carousel__slide');
+    var prevBtn = document.getElementById('imPrev');
+    var nextBtn = document.getElementById('imNext');
+    var currentEl = document.getElementById('imCurrent');
+    var totalEl = document.getElementById('imTotal');
+    var progressBar = document.getElementById('imProgress');
+    var total = slides.length;
+    var currentIndex = 0;
+    var scrollPos = 0;
+    var maxScroll = 0;
+
+    totalEl.textContent = String(total).padStart(2, '0');
+
+    function calcMaxScroll() {
+        maxScroll = track.scrollWidth - carousel.clientWidth;
+    }
+
+    function getSlideOffsets() {
+        var offsets = [];
+        var gap = 6;
+        for (var i = 0; i < slides.length; i++) {
+            offsets.push(slides[i].offsetLeft);
+        }
+        return offsets;
+    }
+
+    function updateCounter() {
+        var offsets = getSlideOffsets();
+        var closest = 0;
+        var minDist = Infinity;
+        for (var i = 0; i < offsets.length; i++) {
+            var dist = Math.abs(offsets[i] - scrollPos);
+            if (dist < minDist) { minDist = dist; closest = i; }
+        }
+        currentIndex = closest;
+        currentEl.textContent = String(currentIndex + 1).padStart(2, '0');
+    }
+
+    function updateProgress() {
+        calcMaxScroll();
+        var pct = maxScroll > 0 ? (scrollPos / maxScroll) * 100 : 0;
+        progressBar.style.width = Math.min(pct, 100) + '%';
+    }
+
+    function scrollTo(pos, animate) {
+        calcMaxScroll();
+        scrollPos = Math.max(0, Math.min(pos, maxScroll));
+        if (animate !== false) {
+            track.classList.remove('is-dragging');
+            track.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)';
+        }
+        track.style.transform = 'translateX(' + (-scrollPos) + 'px)';
+        updateCounter();
+        updateProgress();
+    }
+
+    function goToSlide(index) {
+        if (index < 0) index = 0;
+        if (index >= total) index = total - 1;
+        var offsets = getSlideOffsets();
+        scrollTo(offsets[index], true);
+    }
+
+    prevBtn.addEventListener('click', function() { goToSlide(currentIndex - 1); });
+    nextBtn.addEventListener('click', function() { goToSlide(currentIndex + 1); });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') goToSlide(currentIndex - 1);
+        if (e.key === 'ArrowRight') goToSlide(currentIndex + 1);
+    });
+
+    // Mouse drag
+    var isDragging = false;
+    var dragStartX = 0;
+    var dragStartScroll = 0;
+
+    carousel.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        dragStartX = e.clientX;
+        dragStartScroll = scrollPos;
+        track.classList.add('is-dragging');
+        track.style.transition = 'none';
+        e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        var dx = dragStartX - e.clientX;
+        scrollTo(dragStartScroll + dx, false);
+    });
+
+    document.addEventListener('mouseup', function() {
+        if (!isDragging) return;
+        isDragging = false;
+        track.classList.remove('is-dragging');
+        track.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)';
+        goToSlide(currentIndex);
+    });
+
+    // Touch drag
+    var touchStartX = 0;
+    var touchStartScroll = 0;
+
+    carousel.addEventListener('touchstart', function(e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartScroll = scrollPos;
+        track.classList.add('is-dragging');
+        track.style.transition = 'none';
+    }, { passive: true });
+
+    carousel.addEventListener('touchmove', function(e) {
+        var dx = touchStartX - e.touches[0].clientX;
+        scrollTo(touchStartScroll + dx, false);
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', function() {
+        track.classList.remove('is-dragging');
+        track.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)';
+        goToSlide(currentIndex);
+    });
+
+    // Mouse wheel horizontal scroll
+    carousel.addEventListener('wheel', function(e) {
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+            e.preventDefault();
+            scrollTo(scrollPos + e.deltaX, true);
+        } else if (Math.abs(e.deltaY) > 0) {
+            e.preventDefault();
+            scrollTo(scrollPos + e.deltaY, true);
+        }
+    }, { passive: false });
+
+    // Recalc on resize
+    window.addEventListener('resize', function() { calcMaxScroll(); updateProgress(); });
+
+    // Init
+    calcMaxScroll();
+    updateProgress();
+})();
+</script>
+</body>
+</html>
