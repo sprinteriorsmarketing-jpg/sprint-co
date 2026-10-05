@@ -143,6 +143,7 @@ body:has(.bv2-page) {
 
 .bv2-featured-img img {
     width: 100%;
+    height: auto;
     display: block;
     object-fit: cover;
 }
@@ -196,9 +197,16 @@ body:has(.bv2-page) {
 
 .bv2-post-body figure img {
     width: 100%;
+    height: auto;
     border-radius: 12px;
     display: block;
 }
+
+/* Side-by-side image comparison (e.g. finish levels) */
+.bv2-compare { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.bv2-compare img { width: 100%; height: auto; border-radius: 10px; display: block; }
+.bv2-compare span { display: block; margin-top: 6px; font-size: 0.84rem; font-weight: 600; }
+@media (max-width: 575px) { .bv2-compare { grid-template-columns: 1fr; gap: 16px; } }
 
 .bv2-post-body figcaption {
     margin-top: 10px;
