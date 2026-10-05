@@ -82,9 +82,11 @@
         .qsr-faq details[open] summary::after{content:"\2212"}
         .qsr-faq details p{margin:.833vw 0 0}
 
-        .qsr-related{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.042vw}
-        .qsr-related a{display:block;padding:1.042vw 1.25vw;background:#fff;border:.052vw solid rgba(23,23,23,.12);text-decoration:none;font-family:var(--seconday-font);font-size:.938vw;color:var(--headlines)}
-        .qsr-related a small{display:block;font-family:var(--primary-font);font-size:.729vw;color:#86868b;margin-top:.26vw}
+        .qsr-related{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:1.042vw}
+        .qsr-related li{display:flex;flex:0 0 calc((100% - 3 * 1.042vw) / 4)}
+        .qsr-related a{flex:1;display:flex;flex-direction:column;gap:.625vw;padding:1.25vw;transition:border-color .2s;background:#fff;border:.052vw solid rgba(23,23,23,.12);text-decoration:none;font-family:var(--seconday-font);font-size:.938vw;color:var(--headlines)}
+        .qsr-related a small{display:block;font-family:var(--primary-font);font-size:.729vw;color:#86868b;margin-top:auto}
+        .qsr-related a:hover{border-color:var(--headlines)}
 
         @media (max-width:767px){
             .qsr-hero-media{height:240px}
@@ -116,7 +118,8 @@
             .qsr-faq details{padding:16px 18px;margin-bottom:10px}
             .qsr-faq summary{font-size:17px;line-height:24px;padding-right:28px}
             .qsr-faq summary::after{font-size:22px}
-            .qsr-related a{font-size:15px;padding:14px 16px}
+            .qsr-related li{flex-basis:100%}
+            .qsr-related a{font-size:15px;padding:14px 16px;gap:6px}
             .qsr-related a small{font-size:12px}
         }
     </style>

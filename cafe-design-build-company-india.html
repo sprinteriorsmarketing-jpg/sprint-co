@@ -64,8 +64,8 @@
 
         .svc-proof{display:flex;gap:3.125vw;align-items:stretch;margin:0 0 3.125vw}
         .svc-proof--reverse{flex-direction:row-reverse}
-        .svc-proof-media{flex:1 1 55%;display:block}
-        .svc-proof-media img{width:100%;height:100%;min-height:24vw;object-fit:cover;display:block}
+        .svc-proof-media{flex:1 1 55%;display:block;position:relative;min-height:24vw}
+        .svc-proof-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
         .svc-proof-body{flex:1 1 45%;display:flex;flex-direction:column;justify-content:center}
         .svc-link{display:inline-block;margin-top:.521vw;font-family:var(--seconday-font);font-weight:600;font-size:.938vw;color:var(--orange-color);text-decoration:none;border-bottom:.104vw solid var(--orange-color);padding-bottom:.156vw}
 
@@ -98,7 +98,8 @@
             .svc-lead{font-size:16px!important;line-height:26px!important}
             .svc-split,.svc-proof,.svc-proof--reverse{flex-direction:column;gap:20px}
             .svc-split-img{height:240px}
-            .svc-proof-media img{min-height:220px;height:220px}
+            .svc-proof-media{min-height:0}
+            .svc-proof-media img{position:static;min-height:220px;height:220px}
             .svc-checklist{columns:1}
             .svc-checklist li{padding-left:22px;margin-bottom:12px}
             .svc-checklist li::before{top:8px;width:10px;height:10px}
@@ -128,7 +129,12 @@
         .svc-grid--4{grid-template-columns:repeat(4,1fr);gap:1.563vw}
         .svc-grid--4 .svc-card img{height:11.458vw}
         .svc-num{display:block;font-family:var(--seconday-font);font-weight:600;font-size:.833vw;letter-spacing:.208vw;color:var(--orange-color);margin:0 0 .521vw}
-        .svc-split--top{align-items:flex-start}
+        .svc-split--top{align-items:stretch}
+        .svc-split--top > :last-child{position:relative}
+        .svc-split--top .svc-split-img{position:absolute;inset:0;height:100%}
+        @media (max-width:767px){
+            .svc-split--top .svc-split-img{position:static;height:240px}
+        }
         .svc-checklist--3{columns:3}
         @media (max-width:767px){
             .svc-section--slim{padding-top:28px;padding-bottom:28px}
@@ -489,7 +495,7 @@ src="https://www.facebook.com/tr?id=1467236020816075&ev=PageView&noscript=1"
         </div>
 
         <div class="svc-proof svc-proof--reverse">
-            <a class="svc-proof-media" href="tuskin-coffee-mumbai-cafe"><img src="images/tuskin-straigh-shot-edited-2.png" alt="Tuskin Coffee Mumbai - blue storefront with Tuskin Coffee elephant logo and Marathi signage" loading="lazy"></a>
+            <a class="svc-proof-media" href="tuskin-coffee-mumbai-cafe"><img src="images/tuskin-straigh-shot-edited-2.png" style="object-position:center top" alt="Tuskin Coffee Mumbai - blue storefront with Tuskin Coffee elephant logo and Marathi signage" loading="lazy"></a>
             <div class="svc-proof-body">
                 <h3>Tuskin Coffee, Mumbai</h3>
                 <p>Our Tuskin Coffee work extended beyond interiors into the name, identity, logo, packaging and modular counter approach &ndash; a strong example of brand and space being developed together for a grab-and-go format.</p>

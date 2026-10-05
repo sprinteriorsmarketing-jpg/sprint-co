@@ -64,9 +64,9 @@
 
         .svc-proof{display:flex;gap:3.125vw;align-items:stretch;margin:0 0 3.125vw}
         .svc-proof--reverse{flex-direction:row-reverse}
-        .svc-proof-media{flex:1 1 55%;display:block}
-        .svc-proof-media img{width:100%;height:100%;min-height:24vw;object-fit:cover;display:block}
-        .svc-proof-body{flex:1 1 45%;display:flex;flex-direction:column;justify-content:center}
+        .svc-proof-media{flex:1 1 0;display:block;position:relative;min-height:24vw}
+        .svc-proof-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+        .svc-proof-body{flex:1 1 0;display:flex;flex-direction:column;justify-content:center}
         .svc-link{display:inline-block;margin-top:.521vw;font-family:var(--seconday-font);font-weight:600;font-size:.938vw;color:var(--orange-color);text-decoration:none;border-bottom:.104vw solid var(--orange-color);padding-bottom:.156vw}
 
         .svc-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:1.563vw;margin-top:1.563vw}
@@ -98,7 +98,8 @@
             .svc-lead{font-size:16px!important;line-height:26px!important}
             .svc-split,.svc-proof,.svc-proof--reverse{flex-direction:column;gap:20px}
             .svc-split-img{height:240px}
-            .svc-proof-media img{min-height:220px;height:220px}
+            .svc-proof-media{min-height:0}
+            .svc-proof-media img{position:static;min-height:220px;height:220px}
             .svc-checklist{columns:1}
             .svc-checklist li{padding-left:22px;margin-bottom:12px}
             .svc-checklist li::before{top:8px;width:10px;height:10px}
@@ -420,12 +421,12 @@ src="https://www.facebook.com/tr?id=1467236020816075&ev=PageView&noscript=1"
         </div>
     </div>
 </div>
+<div class="svc-hero-media" style="background-image:url(images/SJP3822-Edit-min-1024x683.jpg)" role="img" aria-label="Social E-City Bengaluru - mixed seating under coloured ceiling baffles with Out of the Box arches, designed by SprintCo"></div>
 <div class="svc-stats">
     <div class="svc-stat"><strong>3,500+</strong><span>F&amp;B spaces designed</span></div>
     <div class="svc-stat"><strong>8M+</strong><span>sq. ft. delivered</span></div>
     <div class="svc-stat"><strong>Pan-India</strong><span>restaurant, caf&eacute;, bar &amp; QSR expertise</span></div>
 </div>
-<div class="svc-hero-media" style="background-image:url(images/SJP3822-Edit-min-1024x683.jpg)" role="img" aria-label="Social E-City Bengaluru - mixed seating under coloured ceiling baffles with Out of the Box arches, designed by SprintCo"></div>
 
 <!-- The real brief -->
 <section class="svc-section">
