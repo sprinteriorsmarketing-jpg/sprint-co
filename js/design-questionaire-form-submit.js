@@ -1,13 +1,30 @@
 (function () {
     'use strict';
 
-    // Primary recipient: kiishann.mullani@sprint-co.com (must click the one-time
-    // FormSubmit activation link the first time a submission is sent).
-    // CC recipients are set on the form itself via the hidden "_cc" field.
-    var PRIMARY_RECIPIENT = 'kiishann.mullani@sprint-co.com';
-    var AJAX_ENDPOINT = 'https://formsubmit.co/ajax/' + PRIMARY_RECIPIENT;
-    var MAX_TOTAL_FILE_BYTES = 10 * 1024 * 1024; // FormSubmit free-tier limit: 10MB per submission
-    var THANK_YOU_URL = 'thank-you.html';
+    // Submissions go to the Sprint Co BMS API (Laravel), which emails the team.
+    // reCAPTCHA v3 reuses the public site key from js/lead-config.js.
+    var CONFIG = window.SprintCoLeadConfig || {};
+    var ENDPOINT = 'https://bms.sprint-co.com/api/design-questionnaires';
+    var CAPTCHA_ACTION = 'design_questionnaire_submit';
+    var FALLBACK_EMAIL = 'info@sprint-co.com';
+    var MAX_TOTAL_FILE_BYTES = 10 * 1024 * 1024; // API limit: 10MB combined (pdf/pptx/doc/docx/jpg/jpeg/png, max 10 files)
+    var THANK_YOU_URL = CONFIG.thankYouUrl || 'thank-you.html';
+
+    var captchaPromise;
+    function loadCaptcha() {
+        if (captchaPromise) return captchaPromise;
+        captchaPromise = new Promise(function (resolve, reject) {
+            if (!CONFIG.siteKey) return reject(new Error('CAPTCHA is not configured.'));
+            if (window.grecaptcha) return window.grecaptcha.ready(resolve);
+            var script = document.createElement('script');
+            script.src = 'https://www.google.com/recaptcha/api.js?render=' + encodeURIComponent(CONFIG.siteKey);
+            script.async = true;
+            script.onload = function () { window.grecaptcha.ready(resolve); };
+            script.onerror = function () { captchaPromise = null; reject(new Error('CAPTCHA could not be loaded.')); };
+            document.head.appendChild(script);
+        });
+        return captchaPromise;
+    }
 
     function formatBytes(bytes) {
         if (bytes < 1024) return bytes + ' B';
@@ -79,7 +96,7 @@
             event.preventDefault();
 
             // Honeypot: bots fill every field, humans never see this one.
-            var honey = form.querySelector('[name="_honey"]');
+            var honey = form.querySelector('[name="website"]');
             if (honey && honey.value) return;
 
             if (!form.reportValidity()) return;
@@ -95,20 +112,24 @@
             setLoading(submitBtn, true);
 
             try {
-                var response = await fetch(AJAX_ENDPOINT, {
+                await loadCaptcha();
+                var token = await window.grecaptcha.execute(CONFIG.siteKey, { action: CAPTCHA_ACTION });
+
+                var body = new FormData(form);
+                body.set('captcha_token', token);
+
+                var response = await fetch(ENDPOINT, {
                     method: 'POST',
                     headers: { 'Accept': 'application/json' },
-                    body: new FormData(form)
+                    body: body
                 });
-
-                if (!response.ok) throw new Error('Request failed with status ' + response.status);
-
-                // FormSubmit returns HTTP 200 even when it rejects a submission
-                // (e.g. unactivated recipient, blacklist hit) — the real result is
-                // in the JSON body, so response.ok alone can't be trusted.
                 var data = await response.json().catch(function () { return null; });
-                if (!data || String(data.success) !== 'true') {
-                    throw new Error((data && data.message) || 'FormSubmit rejected the submission.');
+
+                if (!response.ok) {
+                    var detail = data && data.errors
+                        ? Object.keys(data.errors).map(function (k) { return data.errors[k][0]; }).join(' ')
+                        : '';
+                    throw new Error(detail || (data && data.message) || 'Request failed with status ' + response.status);
                 }
 
                 setStatus(statusEl, 'Thank you! Your questionnaire has been submitted. Our team will be in touch within 2 business days.', 'success');
@@ -118,7 +139,7 @@
                     window.location.assign(THANK_YOU_URL);
                 }, 1200);
             } catch (error) {
-                setStatus(statusEl, 'We could not submit your questionnaire. Please check your connection and try again, or email us directly at ' + PRIMARY_RECIPIENT + '.', 'error');
+                setStatus(statusEl, 'We could not submit your questionnaire. (' + error.message + '). Please try again, or email us directly at ' + FALLBACK_EMAIL + '.', 'error');
                 setLoading(submitBtn, false);
                 if (window.console) console.error('Design questionnaire submission failed:', error.message);
             }

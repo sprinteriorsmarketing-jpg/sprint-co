@@ -574,14 +574,10 @@
     <p>The more you share, the better we can design a space that aligns perfectly with your vision. Fields marked <span style="color: var(--orange); font-weight: 600;">*</span> are recommended.</p>
   </div>
 
-  <form id="design-questionnaire-form" method="POST" action="https://formsubmit.co/kiishann.mullani@sprint-co.com" enctype="multipart/form-data" novalidate>
+  <form id="design-questionnaire-form" method="POST" enctype="multipart/form-data" novalidate>
 
-    <!-- FormSubmit config (see js/design-questionaire-form-submit.js for the AJAX path) -->
-    <input type="hidden" name="_subject" value="New Design &amp; Build Questionnaire Submission">
-    <input type="hidden" name="_cc" value="abbas.lokhandwalla@sprint-co.com,shahana.khan@sprint-co.com">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="_honey" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <!-- Submits to bms.sprint-co.com via js/design-questionaire-form-submit.js -->
+    <input type="text" name="website"style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
 
     <!-- YOUR DETAILS -->
     <div class="main-offering-card" id="contact-card">
@@ -976,6 +972,7 @@
 
   sections.forEach(s => observer.observe(s));
 </script>
+<script src="js/lead-config.js"></script>
 <script src="js/design-questionaire-form-submit.js"></script>
 
 <!-- Footer -->
