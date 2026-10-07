@@ -425,6 +425,37 @@
   .submit-btn:active { transform: scale(0.98); }
   .submit-btn:disabled { opacity: 0.6; cursor: wait; }
 
+  .save-pdf-btn {
+    background: transparent;
+    color: var(--white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 100px;
+    padding: 15px 36px;
+    margin-left: 12px;
+    cursor: pointer;
+  }
+  .save-pdf-btn:hover { border-color: var(--white); }
+  .pdf-top-bar { text-align: right; margin-bottom: 16px; }
+  .save-pdf-top { color: var(--ink); border-color: var(--ink); margin-left: 0; padding: 10px 24px; font-size: 14px; }
+  .save-pdf-top:hover { border-color: var(--orange); color: var(--orange); }
+
+  #pdf-summary { display: none; }
+  @media print {
+    body.pdf-mode > *:not(#pdf-summary) { display: none !important; }
+    body.pdf-mode #pdf-summary { display: block; font-family: Arial, sans-serif; color: #111; padding: 8px 0; }
+    #pdf-summary h1 { font-size: 22px; margin: 0 0 4px; }
+    #pdf-summary .pdf-date { font-size: 12px; color: #666; margin-bottom: 18px; }
+    #pdf-summary h2 { font-size: 16px; margin: 22px 0 6px; padding-bottom: 4px; border-bottom: 2px solid #E85B2A; }
+    #pdf-summary h3 { font-size: 13px; margin: 14px 0 4px; color: #E85B2A; text-transform: uppercase; }
+    #pdf-summary .pdf-q { margin: 0 0 10px; break-inside: avoid; }
+    #pdf-summary .pdf-q b { display: block; font-size: 12px; margin-bottom: 2px; }
+    #pdf-summary .pdf-q span { display: block; font-size: 12px; white-space: pre-wrap; }
+  }
+  @media (max-width: 600px) { .save-pdf-btn { margin: 12px 0 0; } }
+
   .form-status {
     display: none;
     margin-top: 20px;
@@ -577,7 +608,11 @@
   <form id="design-questionnaire-form" method="POST" enctype="multipart/form-data" novalidate>
 
     <!-- Submits to bms.sprint-co.com via js/design-questionaire-form-submit.js -->
-    <input type="text" name="website"style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <input type="text" name="website" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <div class="pdf-top-bar">
+      <button class="save-pdf-btn save-pdf-top" type="button" id="save-pdf-top-btn">Download a PDF of your answers</button>
+    </div>
 
     <!-- YOUR DETAILS -->
     <div class="main-offering-card" id="contact-card">
@@ -948,6 +983,7 @@
     <h3>Ready to bring your vision to life?</h3>
     <p>Our team will review your answers and get back to you within 2 business days.</p>
     <button class="submit-btn" type="submit" id="submit-btn">Submit Questionnaire →</button>
+    <button class="save-pdf-btn" type="button" id="save-pdf-btn">Save as PDF</button>
     <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
   </div>
 

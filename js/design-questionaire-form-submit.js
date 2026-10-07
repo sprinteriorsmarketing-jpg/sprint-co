@@ -76,9 +76,91 @@
         button.textContent = loading ? 'Submitting…' : button.dataset.originalLabel;
     }
 
+    function cleanText(el) {
+        return el.textContent.replace(/\*/g, '').replace(/\s+/g, ' ').trim();
+    }
+
+    // Builds a plain printable copy of the answers so the browser's
+    // "Save as PDF" captures full textarea content (not clipped boxes).
+    function buildSummary(form) {
+        var wrap = document.createElement('div');
+        wrap.id = 'pdf-summary';
+
+        var title = document.createElement('h1');
+        title.textContent = 'Design & Build Questionnaire';
+        wrap.appendChild(title);
+        var date = document.createElement('div');
+        date.className = 'pdf-date';
+        date.textContent = new Date().toLocaleDateString();
+        wrap.appendChild(date);
+
+        form.querySelectorAll('.section-title, .question-group-title, .main-offering-card, .question-item').forEach(function (el) {
+            if (el.classList.contains('section-title')) {
+                var h2 = document.createElement('h2');
+                h2.textContent = cleanText(el);
+                wrap.appendChild(h2);
+                return;
+            }
+            if (el.classList.contains('question-group-title')) {
+                var h3 = document.createElement('h3');
+                h3.textContent = cleanText(el);
+                wrap.appendChild(h3);
+                return;
+            }
+
+            var label = el.querySelector('label');
+            var answers = [];
+            el.querySelectorAll('input, textarea').forEach(function (f) {
+                if (f.name === 'website' || f.type === 'file' || f.type === 'hidden') return;
+                if (f.type === 'radio' || f.type === 'checkbox') {
+                    if (f.checked) answers.push(f.value);
+                } else if (f.value.trim()) {
+                    var prefix = el.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea').length > 1 && f.placeholder
+                        ? f.placeholder + ': ' : '';
+                    answers.push(prefix + f.value.trim());
+                }
+            });
+            var fileInput = el.querySelector('input[type="file"]');
+            if (fileInput && fileInput.files.length) {
+                answers.push('Attachments: ' + Array.prototype.map.call(fileInput.files, function (f) { return f.name; }).join(', '));
+            }
+
+            var q = document.createElement('div');
+            q.className = 'pdf-q';
+            var b = document.createElement('b');
+            b.textContent = label ? cleanText(label) : '';
+            var s = document.createElement('span');
+            s.textContent = answers.length ? answers.join('\n') : '—';
+            q.appendChild(b);
+            q.appendChild(s);
+            wrap.appendChild(q);
+        });
+        return wrap;
+    }
+
+    function savePdf(form, summary) {
+        var old = document.getElementById('pdf-summary');
+        if (old) old.remove();
+        document.body.appendChild(summary || buildSummary(form));
+        document.body.classList.add('pdf-mode');
+        var cleanup = function () {
+            document.body.classList.remove('pdf-mode');
+            var el = document.getElementById('pdf-summary');
+            if (el) el.remove();
+            window.removeEventListener('afterprint', cleanup);
+        };
+        window.addEventListener('afterprint', cleanup);
+        window.print();
+    }
+
     function init() {
         var form = document.getElementById('design-questionnaire-form');
         if (!form) return;
+
+        ['save-pdf-btn', 'save-pdf-top-btn'].forEach(function (id) {
+            var pdfBtn = document.getElementById(id);
+            if (pdfBtn) pdfBtn.addEventListener('click', function () { savePdf(form); });
+        });
 
         var fileInput = document.getElementById('brand-files');
         var fileList = document.getElementById('brand-files-list');
@@ -132,14 +214,30 @@
                     throw new Error(detail || (data && data.message) || 'Request failed with status ' + response.status);
                 }
 
-                setStatus(statusEl, 'Thank you! Your questionnaire has been submitted. Our team will be in touch within 2 business days.', 'success');
+                // Capture the answers before the form is cleared so the client can keep a copy.
+                var submitted = buildSummary(form);
+                setStatus(statusEl, 'Thank you! Your questionnaire has been submitted. Our team will be in touch within 2 business days. ', 'success');
                 form.reset();
                 if (fileList) fileList.innerHTML = '';
-                setTimeout(function () {
-                    window.location.assign(THANK_YOU_URL);
-                }, 1200);
+
+                var goToThanks = function () { window.location.assign(THANK_YOU_URL); };
+                var copyBtn = document.createElement('button');
+                copyBtn.type = 'button';
+                copyBtn.className = 'save-pdf-btn';
+                copyBtn.textContent = 'Download your copy (PDF)';
+                copyBtn.addEventListener('click', function () { savePdf(form, submitted); });
+                var continueBtn = document.createElement('button');
+                continueBtn.type = 'button';
+                continueBtn.className = 'save-pdf-btn';
+                continueBtn.textContent = 'Continue';
+                continueBtn.addEventListener('click', goToThanks);
+                statusEl.appendChild(document.createElement('br'));
+                statusEl.appendChild(copyBtn);
+                statusEl.appendChild(continueBtn);
+                submitBtn.disabled = true;
+                setTimeout(goToThanks, 60000);
             } catch (error) {
-                setStatus(statusEl, 'We could not submit your questionnaire. (' + error.message + '). Please try again, or email us directly at ' + FALLBACK_EMAIL + '.', 'error');
+                setStatus(statusEl, 'We could not submit your questionnaire (' + error.message + '). Please try again, or email us directly at ' + FALLBACK_EMAIL + '.', 'error');
                 setLoading(submitBtn, false);
                 if (window.console) console.error('Design questionnaire submission failed:', error.message);
             }
