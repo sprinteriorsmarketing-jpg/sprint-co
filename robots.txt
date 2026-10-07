@@ -1,12 +1,28 @@
+# Applies to every crawler, including the AI crawlers listed below
 User-agent: *
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-Web
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: CCBot
 Allow: /
-
+Allow: /consultation/Images/
 Disallow: /Decks/
 Disallow: /consultation/
-Allow: /consultation/Images/
 Disallow: /Ineternal_Projects_Template.html
 Disallow: /New_project_template.html
 Disallow: /croffle-guys-case-study%20-%20Copy.html
 Disallow: /social-e-city-case-study%20-%20Copy.html
+Disallow: /wp-admin/
+Disallow: /wp-login.php
 
+# XML Sitemap
 Sitemap: https://www.sprint-co.com/sitemap.xml
