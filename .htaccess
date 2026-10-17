@@ -1,6 +1,15 @@
 Options -MultiViews
 RewriteEngine On
 
+# Canonical host: send http:// and non-www requests to https://www.sprint-co.com
+# in a single 301. Only matches the main domain, so subdomains served from
+# folders inside public_html are untouched. Must stay above every other rule.
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteCond %{HTTP_HOST} ^(?:www\.)?sprint-co\.com$ [NC]
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^sprint-co\.com$ [NC]
+RewriteRule ^ https://www.sprint-co.com%{REQUEST_URI} [R=301,L]
+
 # Serve the branded error document while preserving the HTTP 404 status.
 ErrorDocument 404 /404.html
 
