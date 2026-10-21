@@ -1,6 +1,15 @@
 Options -MultiViews
 RewriteEngine On
 
+# Retired blog subdomain: 301 its old URLs to the main site. Only applies if
+# blog.sprint-co.com points at this folder (cPanel subdomain, root public_html).
+RewriteCond %{HTTP_HOST} ^blog\.sprint-co\.com$ [NC]
+RewriteRule ^projects/?$ https://www.sprint-co.com/projects [R=301,L]
+RewriteCond %{HTTP_HOST} ^blog\.sprint-co\.com$ [NC]
+RewriteRule ^category/coffee-shop-interior-design/?$ https://www.sprint-co.com/cafe-interior-design-projects [R=301,L]
+RewriteCond %{HTTP_HOST} ^blog\.sprint-co\.com$ [NC]
+RewriteRule ^ https://www.sprint-co.com/insights [R=301,L]
+
 # Canonical host: send http:// and non-www requests to https://www.sprint-co.com
 # in a single 301. Only matches the main domain, so subdomains served from
 # folders inside public_html are untouched. Must stay above every other rule.
