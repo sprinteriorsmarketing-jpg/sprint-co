@@ -18,21 +18,53 @@ ErrorDocument 410 /404.html
 # legacy root-level URL and the .html form. Must stay above rule 1 and the
 # catch-all, or those rules fire first.
 # Smaller cities folded into a nearby hub (301).
-RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:thane|navi-mumbai|lonavala|karjat)(?:\.html)?/?$ /In/restaurant-interior-designer-mumbai [R=301,L]
-RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:noida|greater-noida|ghaziabad|faridabad|sonipat)(?:\.html)?/?$ /In/restaurant-interior-designer-delhi [R=301,L]
-RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:anjuna|panaji|calangute|candolim|vagator|madgaon|benaulim|vasco-da-gama)(?:\.html)?/?$ /In/restaurant-interior-designer-goa [R=301,L]
-RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:secunderabad)(?:\.html)?/?$ /In/restaurant-interior-designer-hyderabad [R=301,L]
-RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:gandhinagar)(?:\.html)?/?$ /In/restaurant-interior-designer-ahmedabad [R=301,L]
-RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:abu-dhabi)(?:\.html)?/?$ /locations/restaurant-interior-designer-dubai [R=301,L]
-RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:pune)(?:\.html)?/?$ /cities [R=301,L]
+RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:thane|navi-mumbai|lonavala|karjat)(?:\.html)?/?$ /In/restaurant-interior-designer-mumbai [NC,R=301,L]
+RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:noida|greater-noida|ghaziabad|faridabad|sonipat)(?:\.html)?/?$ /In/restaurant-interior-designer-delhi [NC,R=301,L]
+RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:anjuna|panaji|calangute|candolim|vagator|madgaon|benaulim|vasco-da-gama)(?:\.html)?/?$ /In/restaurant-interior-designer-goa [NC,R=301,L]
+RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:secunderabad)(?:\.html)?/?$ /In/restaurant-interior-designer-hyderabad [NC,R=301,L]
+RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:gandhinagar)(?:\.html)?/?$ /In/restaurant-interior-designer-ahmedabad [NC,R=301,L]
+RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:abu-dhabi)(?:\.html)?/?$ /locations/restaurant-interior-designer-dubai [NC,R=301,L]
+RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:pune)(?:\.html)?/?$ /cities [NC,R=301,L]
 # Thin city pages retired for good (410 Gone).
-RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:abu-road|ajmer|alwar|amreli|amritsar|ankleshwar|aurangabad|bharatpur|bharuch|bhavnagar|bhopal|bhubaneswar|bikaner|bilaspur|bokaro|chikkamagaluru|chittorgarh|coimbatore|darjeeling|dehradun|dharamshala|ernakulam|gangtok|gujarat|guwahati|gwalior|hampi|haridwar|haryana|howrah|hubballi|igatpuri|jabalpur|jaisalmer|jalandhar|jalgaon|jammu|jamnagar|jamshedpur|jhansi)(?:\.html)?/?$ - [G]
-RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:jodhpur|kanpur|kochi|kolhapur|kolkata|kota|kozhikode|ludhiana|madurai|manali|mangalore|mathura|meerut|mussoorie|mysuru|nagaon|nagpur|nainital|nashik|nellore|ooty|panipat|patiala|patna|pimpri-chinchwad|prayagraj|rajkot|rajpur|ranchi|ratnagiri|rohtak|sangamner|satara|shillong|shimla|shirdi|siliguri|solapur|srinagar|thiruvananthapuram)(?:\.html)?/?$ - [G]
-RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:thrissur|tiruchirappalli|tirupati|udaipur|udupi|ujjain|vadodara|valsad|vapi|varanasi|vellore|vijayawada|visakhapatnam)(?:\.html)?/?$ - [G]
-RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:auckland|austin|bahrain|baku|bali|bangkok|beijing|boston|brisbane|brussels|cape-town|cebu|colombo|davao|doha|dublin|galle|greece|guangzhou|hikkaduwa|jakarta|johannesburg|kandy|kuwait-city|london|malta|manila|melbourne|montreal|muscat|nairobi|new-jersey|new-york|paris|perth|phoenix|port-elizabeth|prague|rome|seoul|shanghai|shenzhen|singapore|sydney|tbilisi|tokyo|toronto|turkey|vancouver)(?:\.html)?/?$ - [G]
+RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:abu-road|ajmer|alwar|amreli|amritsar|ankleshwar|aurangabad|bharatpur|bharuch|bhavnagar|bhopal|bhubaneswar|bikaner|bilaspur|bokaro|chikkamagaluru|chittorgarh|coimbatore|darjeeling|dehradun|dharamshala|ernakulam|gangtok|gujarat|guwahati|gwalior|hampi|haridwar|haryana|howrah|hubballi|igatpuri|jabalpur|jaisalmer|jalandhar|jalgaon|jammu|jamnagar|jamshedpur|jhansi)(?:\.html)?/?$ - [NC,G]
+RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:jodhpur|kanpur|kochi|kolhapur|kolkata|kota|kozhikode|ludhiana|madurai|manali|mangalore|mathura|meerut|mussoorie|mysuru|nagaon|nagpur|nainital|nashik|nellore|ooty|panipat|patiala|patna|pimpri-chinchwad|prayagraj|rajkot|rajpur|ranchi|ratnagiri|rohtak|sangamner|satara|shillong|shimla|shirdi|siliguri|solapur|srinagar|thiruvananthapuram)(?:\.html)?/?$ - [NC,G]
+RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:thrissur|tiruchirappalli|tirupati|udaipur|udupi|ujjain|vadodara|valsad|vapi|varanasi|vellore|vijayawada|visakhapatnam)(?:\.html)?/?$ - [NC,G]
+RewriteRule ^(?:(?:In|locations)/)?restaurant-interior-designer-(?:auckland|austin|bahrain|baku|bali|bangkok|beijing|boston|brisbane|brussels|cape-town|cebu|colombo|davao|doha|dublin|galle|greece|guangzhou|hikkaduwa|jakarta|johannesburg|kandy|kuwait-city|london|malta|manila|melbourne|montreal|muscat|nairobi|new-jersey|new-york|paris|perth|phoenix|port-elizabeth|prague|rome|seoul|shanghai|shenzhen|singapore|sydney|tbilisi|tokyo|toronto|turkey|vancouver)(?:\.html)?/?$ - [NC,G]
 # Legacy root-level URLs for the live hubs.
 RewriteRule ^(restaurant-interior-designer-(?:dubai))(?:\.html)?$ /locations/$1 [R=301,L]
 RewriteRule ^(restaurant-interior-designer-[a-z-]+?)(?:\.html)?$ /In/$1 [R=301,L]
+
+# Wrong-case folder names (Linux paths are case-sensitive): /in/ -> /In/, /Locations/ -> /locations/
+RewriteCond %{REQUEST_URI} !^/In/
+RewriteRule ^in/(.*)$ /In/$1 [NC,R=301,L]
+RewriteCond %{REQUEST_URI} !^/locations/
+RewriteRule ^locations/(.*)$ /locations/$1 [NC,R=301,L]
+
+# Legacy WordPress URLs (Search Console 'Not found (404)' export, 2026-10-21) -> closest current page.
+# Matches with or without the trailing slash, in one hop.
+RewriteRule ^oceans11-luxury-restaurant-interior-design-mumbai/?$ /oceans-11-mumbai-restaurant [NC,R=301,L]
+RewriteRule ^brewdog-premium-bar-interior-design-gurugram/?$ /bar-interior-design-projects [NC,R=301,L]
+RewriteRule ^the-beer-cafe-bar-interior-design-kandivali/?$ /the-beer-cafe-kandivali-mumbai-bar [NC,R=301,L]
+RewriteRule ^the-croffle-guys-best-qsr-interior-design/?$ /the-croffle-guys-qsr-interior-design [NC,R=301,L]
+RewriteRule ^coffee-culture/?$ /coffee-culture-citylight-surat-cafe [NC,R=301,L]
+RewriteRule ^coffee-culture-interior-design-in-surat/?$ /coffee-culture-citylight-surat-cafe [NC,R=301,L]
+RewriteRule ^pizza-hut-premium-qsr-interior-design-experts/?$ /pizza-hut-mumbai-qsr [NC,R=301,L]
+RewriteRule ^pizza-hut-premium-qsr-interior-designe-experts/?$ /pizza-hut-mumbai-qsr [NC,R=301,L]
+RewriteRule ^kanha-group-qsr-interior-design-firm-in-jaipur/?$ /kanha-delight-express-jaipur-qsr [NC,R=301,L]
+RewriteRule ^sandwizzaa-kandivali-indias-best-qsr-desing-firm/?$ /sandwizzaa-kandivali-qsr [NC,R=301,L]
+RewriteRule ^therapy-bar-cafe/?$ /therapy-cocktail-mumbai-cafe [NC,R=301,L]
+RewriteRule ^the-hood-restaurant-and-bar-design-in-bengalore/?$ /the-hood-by-olive-bengaluru-bar [NC,R=301,L]
+RewriteRule ^mumbais-best-cafe-interior-design-in-india/?$ /cafe-interior-design-projects [NC,R=301,L]
+RewriteRule ^bar-lighting-design-ideas/?$ /best-bar-lighting-design-ideas-restaurant [NC,R=301,L]
+RewriteRule ^restaurant-and-cafe-design-build-expertise/?$ /restaurant-and-cafe-design-build [NC,R=301,L]
+RewriteRule ^the-complete-commercial-kitchen-equipment-guide-for-restaurants-and-cafes/?$ /commercial-kitchen-equipment-complete-setup-for-f-b [NC,R=301,L]
+RewriteRule ^blue-tokai-cafe-interior-design-hyderabd/?$ /blue-tokai-hyderabad-cafe [NC,R=301,L]
+RewriteRule ^top-interior-design-trends-for-a-luxury-bar-in-2025-2/?$ /luxury-bar-interior-design-trends-in-2025 [NC,R=301,L]
+RewriteRule ^blog/profitable-premium-restaurants-design-and-build/?$ /premium-restaurants-design-and-build-strategies-for-success [NC,R=301,L]
+# Slug contained a curly apostrophe (India’s), so match on the prefix.
+RewriteRule ^blog/outdoor-dining-tips-from-india /best-outdoor-restaurant-patio-designs-in-india [NC,R=301,L]
+# WordPress API endpoints no longer exist.
+RewriteRule ^wp-json(?:/|$) - [G]
 
 # 0) /index.html should redirect to the site root, not to /index
 RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
@@ -75,9 +107,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{THE_REQUEST} \s/+(.+)/[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{THE_REQUEST} \s/+(.+)/[\s?] [NC]
-RewriteRule ^ /%1 [R=301,L]
 
 
 # 301 redirect: strip trailing slash for this exact slug
@@ -127,11 +156,7 @@ RewriteRule ^ /sona-mantri? [R=301,L]
 
 
 
-# Catch-all: any URL that isn't a real file/directory and wasn't handled
-# by the rules above -> redirect to the homepage
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ /? [R=301,L]
+# No catch-all: unknown URLs fall through to a real 404 (ErrorDocument above).
 
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “ea-php83” package as the default “PHP” programming language.

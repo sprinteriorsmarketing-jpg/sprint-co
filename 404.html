@@ -4,16 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
-    <script>
-        // Relative assets support direct file previews; the base keeps them rooted
-        // correctly when Apache serves this page for a deeply nested missing URL.
-        if (window.location.protocol !== 'file:') {
-            document.write('<base href="/">');
-        }
-    </script>
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
     <title>Page Not Found – SprintCo</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <style>
         .error-section {
             min-height: 78vh;
@@ -68,6 +61,31 @@
             transition: background .2s ease, color .2s ease, transform .2s ease;
         }
         .error-button.secondary { background: transparent; color: #f4602b; }
+        .error-links {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 28px;
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid #ddd3c9;
+            text-align: left;
+        }
+        .error-links h2 {
+            margin: 0 0 12px;
+            color: #1a1a1a;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+        .error-links ul { margin: 0; padding: 0; list-style: none; }
+        .error-links li { margin: 0 0 8px; }
+        .error-links a { color: #5b554f; font-size: 15px; line-height: 1.4; text-decoration: none; }
+        .error-links a:hover,
+        .error-links a:focus-visible { color: #f4602b; text-decoration: underline; }
+        @media (max-width: 767px) {
+            .error-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 48px; }
+        }
         .error-button:hover,
         .error-button:focus-visible {
             background: #1a1a1a;
@@ -86,13 +104,13 @@
 
 <!-- Navigation -->
 <div class="website-menu fixed-menu">
-    <div class="website-menu-logo"><a href="/"><img src="images/sprintco-secondary-logo.svg" alt="SprintCo"></a></div>
-    <div class="website-menu-handler">Menu <img src="images/menu-icn.svg" alt="Menu"></div>
+    <div class="website-menu-logo"><a href="/"><img src="/images/sprintco-secondary-logo.svg" alt="SprintCo"></a></div>
+    <div class="website-menu-handler">Menu <img src="/images/menu-icn.svg" alt="Menu"></div>
 </div>
 <div id="main-navigations">
     <div class="main-navigations-logo">
-        <div class="navigations-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
-        <div class="close-menu-handler">Close <img src="images/close-menu.svg" alt="Close"></div>
+        <div class="navigations-logo"><a href="/"><img src="/images/sprintco-logo.svg" alt="SprintCo"></a></div>
+        <div class="close-menu-handler">Close <img src="/images/close-menu.svg" alt="Close"></div>
     </div>
     <div class="menu-main-menu-container">
         <ul id="menu-main-menu" class="footer-main-nav">
@@ -135,15 +153,54 @@
                 <a class="error-button" href="/">Return home</a>
                 <a class="error-button secondary" href="/projects">Explore projects</a>
             </div>
+            <nav class="error-links" aria-label="Popular pages">
+                <div>
+                    <h2>Design &amp; build</h2>
+                    <ul>
+                        <li><a href="/restaurant-design-build-company-india">Restaurants</a></li>
+                        <li><a href="/cafe-design-build-company-india">Cafes</a></li>
+                        <li><a href="/qsr-design-build-company-india">QSRs</a></li>
+                        <li><a href="/our-offerings">All services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Projects</h2>
+                    <ul>
+                        <li><a href="/restaurant-interior-design-projects">Restaurants</a></li>
+                        <li><a href="/cafe-interior-design-projects">Cafes</a></li>
+                        <li><a href="/bar-interior-design-projects">Bars</a></li>
+                        <li><a href="/qsr-interior-design-projects">QSRs</a></li>
+                        <li><a href="/kiosk-design-projects">Kiosks</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Cost guides</h2>
+                    <ul>
+                        <li><a href="/restaurant-interior-design-cost-india-2026">Restaurant interior cost</a></li>
+                        <li><a href="/restaurant-design-build-cost-per-sq-ft-india">Design &amp; build cost per sq ft</a></li>
+                        <li><a href="/cafe-interior-design-cost-per-sq-ft-india">Cafe interior cost</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Cities</h2>
+                    <ul>
+                        <li><a href="/In/restaurant-interior-designer-mumbai">Mumbai</a></li>
+                        <li><a href="/In/restaurant-interior-designer-bengaluru">Bengaluru</a></li>
+                        <li><a href="/In/restaurant-interior-designer-delhi">Delhi NCR</a></li>
+                        <li><a href="/In/restaurant-interior-designer-hyderabad">Hyderabad</a></li>
+                        <li><a href="/cities">All cities</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="scrolltop"><img src="images/scrolltop.svg" alt="Scroll To Top"></div>
+        <div class="scrolltop"><img src="/images/scrolltop.svg" alt="Scroll To Top"></div>
         <div class="footer-container">
             <div class="footer-block">
-                <div class="footer-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
+                <div class="footer-logo"><a href="/"><img src="/images/sprintco-logo.svg" alt="SprintCo"></a></div>
                 <p>Vasudev Chamber-B, 21, Old Nagardas Cross Rd, near Andheri Subway, opposite Wilson House, Mogra Pada, Natwar Nagar, Andheri East, Mumbai, Maharashtra- 400069<br><br>
                 © 2025 Copyright B2B Designers Pvt Limited 2025.<br>All Rights Reserved.</p>
                 <ul class="footer-privacy-nav"><li><a href="#">Privacy Policy</a></li></ul>
@@ -154,7 +211,7 @@
                     <li><a href="/our-offerings">Our Offerings</a></li>
                     <li><a href="/our-clients">Our Clients</a></li>
                     <li><a href="/insights">Insights</a></li>
-                    <li><a href="cities">Cities</a></li>
+                    <li><a href="/cities">Cities</a></li>
                 </ul>
             </div>
             <div class="footer-block">
@@ -176,6 +233,6 @@
     </footer>
 </main>
 
-<script src="js/main.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
