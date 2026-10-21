@@ -8,6 +8,7 @@ RewriteRule ^projects/?$ https://www.sprint-co.com/projects [R=301,L]
 RewriteCond %{HTTP_HOST} ^blog\.sprint-co\.com$ [NC]
 RewriteRule ^category/coffee-shop-interior-design/?$ https://www.sprint-co.com/cafe-interior-design-projects [R=301,L]
 RewriteCond %{HTTP_HOST} ^blog\.sprint-co\.com$ [NC]
+RewriteCond %{REQUEST_URI} !^/\.well-known/
 RewriteRule ^ https://www.sprint-co.com/insights [R=301,L]
 
 # Canonical host: send http:// and non-www requests to https://www.sprint-co.com
