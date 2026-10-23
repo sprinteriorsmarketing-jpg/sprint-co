@@ -109,7 +109,7 @@
     .svc-eyebrow{display:block;font-family:var(--seconday-font);font-weight:600;font-size:.833vw;line-height:1vw;letter-spacing:.208vw;text-transform:uppercase;color:var(--orange-color);margin:0 0 1.042vw}
     .svc-section h2{font-family:var(--seconday-font);font-weight:400;color:var(--headlines);font-size:2.5vw;line-height:2.917vw;margin:0 0 1.458vw}
     .svc-section h3{font-family:var(--seconday-font);font-weight:500;color:var(--headlines);font-size:1.354vw;line-height:1.771vw;margin:0 0 .625vw}
-    .svc-section p,.svc-section li,.svc-section td{font-family:var(--primary-font);font-weight:400;color:var(--dark-color);font-size:.938vw;line-height:1.563vw}
+    .svc-section p,.svc-section li{font-family:var(--primary-font);font-weight:400;color:var(--dark-color);font-size:.938vw;line-height:1.563vw}
     .svc-section p{margin:0 0 1.042vw}
     .svc-section a.svc-inline{color:var(--orange-color);text-decoration:underline}
     .svc-lead{font-size:1.146vw!important;line-height:1.875vw!important;max-width:52.083vw}
@@ -124,10 +124,6 @@
     .svc-steps li{counter-increment:step;background:#fff;border:.052vw solid rgba(23,23,23,.12);padding:1.563vw 1.667vw;display:flex;gap:1.042vw;align-items:flex-start}
     .svc-steps li::before{content:counter(step,decimal-leading-zero);font-family:var(--seconday-font);font-weight:600;color:var(--orange-color);font-size:1.25vw;line-height:1.563vw;flex:0 0 auto}
     .svc-steps strong{display:block;font-family:var(--seconday-font);font-weight:500;color:var(--headlines);margin-bottom:.3vw}
-    .svc-table{width:100%;border-collapse:collapse;background:#fff;margin:2.083vw 0 1.563vw}
-    .svc-table th,.svc-table td{text-align:left;padding:1.042vw 1.458vw;border-bottom:.052vw solid rgba(23,23,23,.12);vertical-align:top}
-    .svc-table th{font-family:var(--seconday-font);font-weight:600;font-size:1.042vw;color:#fff;background:var(--headlines)}
-    .svc-table th:last-child{background:var(--orange-color)}
     .svc-related{list-style:none;margin:2.083vw 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.042vw}
     .svc-related a{display:block;padding:1.042vw 1.25vw;background:#fff;border:.052vw solid rgba(23,23,23,.12);text-decoration:none;font-family:var(--seconday-font);font-size:.938vw;color:var(--headlines)}
     .svc-related a:hover{color:var(--orange-color)}
@@ -144,7 +140,7 @@
         .svc-eyebrow{font-size:12px;line-height:14px;letter-spacing:2px;margin:0 0 12px}
         .svc-section h2{font-size:28px;line-height:34px;margin:0 0 16px}
         .svc-section h3{font-size:20px;line-height:26px;margin:0 0 8px}
-        .svc-section p,.svc-section li,.svc-section td{font-size:15px;line-height:24px}
+        .svc-section p,.svc-section li{font-size:15px;line-height:24px}
         .svc-section p{margin:0 0 14px}
         .svc-lead{font-size:16px!important;line-height:26px!important}
         .svc-checklist{columns:1;margin-top:16px}
@@ -156,8 +152,6 @@
         .svc-link{font-size:15px;border-bottom-width:2px;margin-right:16px}
         .svc-steps li{padding:18px 20px;gap:12px}
         .svc-steps li::before{font-size:18px;line-height:24px}
-        .svc-table{margin:20px 0 16px}
-        .svc-table th,.svc-table td{font-size:14px;line-height:21px;padding:12px}
         .svc-related{grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px}
         .svc-related a{font-size:15px;padding:12px 14px}
         .svc-faq{margin-top:20px}
@@ -557,26 +551,8 @@ src="https://www.facebook.com/tr?id=1467236020816075&ev=PageView&noscript=1"
     </div>
 </section>
 
-<!-- Cost -->
-<section class="svc-section svc-section--tint">
-    <div class="svc-wrap">
-        <span class="svc-eyebrow">Budgets</span>
-        <h2>What does a restaurant interior cost in India?</h2>
-        <p class="svc-lead">Cost depends mostly on finish level, kitchen scope and how much of the services work the site needs. These are our published benchmarks for interiors, per sq ft.</p>
-        <table class="svc-table">
-            <thead><tr><th>Finish level</th><th>Indicative cost per sq ft</th></tr></thead>
-            <tbody>
-                <tr><td>Budget / functional</td><td>₹800 – ₹1,200</td></tr>
-                <tr><td>Mid-range</td><td>₹1,500 – ₹2,500</td></tr>
-                <tr><td>Premium, highly customised</td><td>₹2,800 – ₹5,000+</td></tr>
-            </tbody>
-        </table>
-        <p>Kitchen equipment, HVAC, licences and brand work are usually budgeted separately. For a full breakdown, read our <a class="svc-inline" href="restaurant-interior-design-cost-india-2026">restaurant interior design cost guide</a>, the <a class="svc-inline" href="restaurant-design-build-cost-per-sq-ft-india">design-and-build cost per sq ft guide</a> and the <a class="svc-inline" href="cafe-interior-design-cost-per-sq-ft-india">café interior cost guide</a>, or ask us for a quote based on your site.</p>
-    </div>
-</section>
-
 <!-- Cities -->
-<section class="svc-section">
+<section class="svc-section svc-section--tint">
     <div class="svc-wrap">
         <span class="svc-eyebrow">Where we work</span>
         <h2>Restaurant interior design across India</h2>
@@ -603,7 +579,7 @@ src="https://www.facebook.com/tr?id=1467236020816075&ev=PageView&noscript=1"
 </section>
 
 <!-- FAQ -->
-<section class="svc-section svc-section--tint">
+<section class="svc-section">
     <div class="svc-wrap">
         <span class="svc-eyebrow">FAQ</span>
         <h2>Questions restaurant owners ask us</h2>
