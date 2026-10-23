@@ -69,12 +69,15 @@ RewriteRule ^bar-lighting-design-ideas/?$ /best-bar-lighting-design-ideas-restau
 RewriteRule ^restaurant-and-cafe-design-build-expertise/?$ /restaurant-and-cafe-design-build [NC,R=301,L]
 RewriteRule ^the-complete-commercial-kitchen-equipment-guide-for-restaurants-and-cafes/?$ /commercial-kitchen-equipment-complete-setup-for-f-b [NC,R=301,L]
 RewriteRule ^blue-tokai-cafe-interior-design-hyderabd/?$ /blue-tokai-hyderabad-cafe [NC,R=301,L]
-RewriteRule ^top-interior-design-trends-for-a-luxury-bar-in-2025-2/?$ /luxury-bar-interior-design-trends-in-2025 [NC,R=301,L]
+RewriteRule ^top-interior-design-trends-for-a-luxury-bar-in-2025-2/?$ /bar-and-cocktail-lounge-design-trends [NC,R=301,L]
 RewriteRule ^blog/profitable-premium-restaurants-design-and-build/?$ /premium-restaurants-design-and-build-strategies-for-success [NC,R=301,L]
 # Slug contained a curly apostrophe (India’s), so match on the prefix.
 RewriteRule ^blog/outdoor-dining-tips-from-india /best-outdoor-restaurant-patio-designs-in-india [NC,R=301,L]
 # Merged cluster: kitchen equipment posts -> commercial-kitchen-equipment-complete-setup-for-f-b
 RewriteRule ^(?:blog/)?(?:10-must-have-commercial-kitchen-equipment|equipment-required-in-a-commercial-kitchen)(?:\.html)?/?$ /commercial-kitchen-equipment-complete-setup-for-f-b [NC,R=301,L]
+
+# Merged cluster -> bar-and-cocktail-lounge-design-trends
+RewriteRule ^(?:blog/)?(?:luxury-bar-interior-design-trends-in-2025)(?:\.html)?/?$ /bar-and-cocktail-lounge-design-trends [NC,R=301,L]
 
 # Retired /blog/ folder (old blog subdomain copy). Every post now lives at the
 # site root under the same slug; anything else under /blog goes to /insights.
@@ -84,7 +87,7 @@ RewriteRule ^blog(?:/.*)?$ /insights [NC,R=301,L]
 # the 63 old URLs with clicks or 100+ impressions -> closest current page.
 # Exact match, with or without trailing slash, one hop.
 RewriteRule ^top-interior-design-for-bar-ideas/?$ /top-interior-design-ideas-for-a-luxury-bar [NC,R=301,L]
-RewriteRule ^top-interior-design-trends-for-a-luxury-bar-in-2025/?$ /luxury-bar-interior-design-trends-in-2025 [NC,R=301,L]
+RewriteRule ^top-interior-design-trends-for-a-luxury-bar-in-2025/?$ /bar-and-cocktail-lounge-design-trends [NC,R=301,L]
 RewriteRule ^about-us/?$ /about [NC,R=301,L]
 RewriteRule ^fb-interior-design-in-mumbais/?$ /In/restaurant-interior-designer-mumbai [NC,R=301,L]
 RewriteRule ^the-future-of-restaurant-design-trends-in-2025/?$ /indias-best-restaurant-interior-designer-firm [NC,R=301,L]
