@@ -1,4 +1,5 @@
-Options -MultiViews
+# -Indexes: folder URLs without their own page return 403 instead of a file list
+Options -MultiViews -Indexes
 RewriteEngine On
 
 # Retired blog subdomain: 301 its old URLs to the main site. Only applies if
