@@ -93,6 +93,12 @@ RewriteRule ^(?:blog/)?(?:restaurant-bar-and-coffee-shop-interior-designer-in-de
 # Merged cluster -> In/restaurant-interior-designer-bengaluru
 RewriteRule ^(?:blog/)?(?:coffee-shop-and-restaurant-interior-designer-in-bengaluru|coffee-shop-restaurant-interior-designer-in-bangalore-and-delhi)(?:\.html)?/?$ /In/restaurant-interior-designer-bengaluru [NC,R=301,L]
 
+# Merged cluster -> restaurant-interior-design-ideas
+RewriteRule ^(?:blog/)?(?:top-restaurant-interior-design-ideas-in-2025|premium-restaurant-design-ideas|what-style-should-i-choose-for-my-restaurant|trendy-restaurant-designs-for-young-diners)(?:\.html)?/?$ /restaurant-interior-design-ideas [NC,R=301,L]
+
+# Merged cluster -> restaurant-design-trends-india
+RewriteRule ^(?:blog/)?(?:top-restaurant-design-trends-for-2025-in-india-july-update|2025-restaurant-design-trends-smart-materials-that-maximize-space|what-are-the-current-trends-that-i-should-follow-in-order-to-have-the-best-interior-for-my-restaurant|indias-best-restaurant-interior-designer-firm)(?:\.html)?/?$ /restaurant-design-trends-india [NC,R=301,L]
+
 # Retired /blog/ folder (old blog subdomain copy). Every post now lives at the
 # site root under the same slug; anything else under /blog goes to /insights.
 RewriteRule ^blog/(10-colour-choices-that-will-make-your-cafe-look-huge|10-impressive-restaurants-to-visit-across-india|10-must-have-commercial-kitchen-equipment|10-things-to-consider-while-opening-a-restaurant|2025-restaurant-design-trends-smart-materials-that-maximize-space|5-inexpensive-personal-touches-for-your-coffee-shop|5-tips-tricks-restaurant-should-follow-to-attract-customers|5-ways-to-redesign-your-old-bar-with-modern-touch|6-points-to-remember-while-designing-a-new-restaurant|7-budget-friendly-restaurant-design-ideas|7-premium-cafe-coffee-shops-who-preferred-interior-more-than-anything|7-top-hotel-design-concepts-to-be-followed-in-2019|8-best-decoration-ideas-by-designers-for-the-coming-new-year|8-points-to-follow-while-designing-a-restaurant-bar|8-tips-to-focus-on-eco-friendly-hotel-interior|bill-of-quantities|branding-secret-successful-restaurant-design|five-things-you-need-to-know-about-commercial-interior-designing-today|how-restaurant-interiors-can-help-you-achieve-growth-in-business|how-to-finalise-bakery-menu|how-to-run-a-successful-bar-restaurant|how-to-select-the-best-location-to-start-my-restaurant|how-to-set-up-a-commercial-kitchen|how-to-start-a-restaurant-with-no-previous-experience|indias-best-restaurant-interior-designer-firm|premium-restaurant-design-ideas|premium-restaurants-design-and-build-strategies-for-success|restaurant-interior-design-7-things-to-consider-when-designing-one|simple-and-smart-design-for-your-restaurant-cafe|top-10-things-to-keep-in-mind-while-designing-your-restaurant-kitchen|top-5-styles-of-furniture-you-can-apply-in-your-coffee-shop|what-are-the-current-trends-that-i-should-follow-in-order-to-have-the-best-interior-for-my-restaurant|what-style-should-i-choose-for-my-restaurant|what-to-expect-when-you-hire-a-restaurant-interior-designer-to-re-decorate-your-restaurant|what-to-look-for-when-planning-to-refurbish-your-restaurant-interior|why-restaurant-funding-easier-in-india-2025)(?:\.html)?/?$ /$1 [NC,R=301,L]
@@ -104,15 +110,15 @@ RewriteRule ^top-interior-design-for-bar-ideas/?$ /top-interior-design-ideas-for
 RewriteRule ^top-interior-design-trends-for-a-luxury-bar-in-2025/?$ /bar-and-cocktail-lounge-design-trends [NC,R=301,L]
 RewriteRule ^about-us/?$ /about [NC,R=301,L]
 RewriteRule ^fb-interior-design-in-mumbais/?$ /In/restaurant-interior-designer-mumbai [NC,R=301,L]
-RewriteRule ^the-future-of-restaurant-design-trends-in-2025/?$ /indias-best-restaurant-interior-designer-firm [NC,R=301,L]
+RewriteRule ^the-future-of-restaurant-design-trends-in-2025/?$ /restaurant-design-trends-india [NC,R=301,L]
 RewriteRule ^third-wave-coffee-interior-design-mumbai/?$ /third-wave-coffee-mumbai-cafe [NC,R=301,L]
 RewriteRule ^trunks-and-leaves-premium-restaurant-design-mumbai/?$ /trunks-and-leaves-mumbai-restaurant [NC,R=301,L]
 RewriteRule ^coffee-shop-and-restaurant-interior-designer-in-bangalore-and-delhi/?$ /In/restaurant-interior-designer-bengaluru [NC,R=301,L]
 RewriteRule ^looking-for-the-best-restaurant/?$ /restaurant-design-build-company-india [NC,R=301,L]
 RewriteRule ^restaurant-and-coffee-shop-interior-designer-in-delhi/?$ /In/restaurant-interior-designer-delhi [NC,R=301,L]
 RewriteRule ^kongsi-tea-bar-qsr-interior-design-bengaluru/?$ /kongsi-tea-bar-bengaluru-qsr [NC,R=301,L]
-RewriteRule ^how-to-attract-millennials-and-gen-z-restaurant-designs/?$ /trendy-restaurant-designs-for-young-diners [NC,R=301,L]
-RewriteRule ^how-to-attract-millennials-and-gen-z-with-instagram-worthy-restaurant-designs/?$ /trendy-restaurant-designs-for-young-diners [NC,R=301,L]
+RewriteRule ^how-to-attract-millennials-and-gen-z-restaurant-designs/?$ /restaurant-interior-design-ideas [NC,R=301,L]
+RewriteRule ^how-to-attract-millennials-and-gen-z-with-instagram-worthy-restaurant-designs/?$ /restaurant-interior-design-ideas [NC,R=301,L]
 RewriteRule ^best-restaurant-interior-designer-firm-in-india/?$ /restaurant-design-build-company-india [NC,R=301,L]
 RewriteRule ^the-beer-cafe-premium-bar-interior-design-mumbai/?$ /the-beer-cafe-inorbit-mall-mumbai-bar [NC,R=301,L]
 RewriteRule ^team/sona-mantri/?$ /sona-mantri [NC,R=301,L]
@@ -193,10 +199,10 @@ RewriteRule ^the-branding-secret-every-successful-restaurant-knows-but-wont-tell
 RewriteRule ^how-to-leverage-google-reviews-to-drive-foot-traffic-to-your-restaurant(?:\.html)?/?$ /google-reviews-help-to-get-more-traffic-to-your-restaurant [NC,R=301,L]
 RewriteRule ^the-truth-about-restaurant-expansionwhy-most-brands-struggle(?:\.html)?/?$ /why-restaurant-expansions-fail-how-to-avoid-it [NC,R=301,L]
 RewriteRule ^the-power-of-visual-merchandising-for-kiosks-design-strategies-to-dominate-high-traffic-areas(?:\.html)?/?$ /best-kiosk-design-ideas-for-2025 [NC,R=301,L]
-RewriteRule ^designing-for-gen-z-how-restaurants-can-captivate-the-next-big-spenders(?:\.html)?/?$ /trendy-restaurant-designs-for-young-diners [NC,R=301,L]
+RewriteRule ^designing-for-gen-z-how-restaurants-can-captivate-the-next-big-spenders(?:\.html)?/?$ /restaurant-interior-design-ideas [NC,R=301,L]
 RewriteRule ^outdoor-dining-inspiration-how-indias-leading-restaurant-designers-create-patios-that-drive-revenue-year-round(?:\.html)?/?$ /best-outdoor-restaurant-patio-designs-in-india [NC,R=301,L]
 RewriteRule ^maximize-orders-with-simple-fixes-your-qsrs-sightlines(?:\.html)?/?$ /qsr-layout-design-tips-for-better-space-speed [NC,R=301,L]
-RewriteRule ^the-future-of-restaurant-design-what-2025-has-in-store-for-indias-fb-spaces(?:\.html)?/?$ /indias-best-restaurant-interior-designer-firm [NC,R=301,L]
+RewriteRule ^the-future-of-restaurant-design-what-2025-has-in-store-for-indias-fb-spaces(?:\.html)?/?$ /restaurant-design-trends-india [NC,R=301,L]
 RewriteRule ^the-power-of-localisation-infusing-regional-elements-into-restaurant-design(?:\.html)?/?$ /global-design-local-understanding [NC,R=301,L]
 RewriteRule ^why-cafe-owners-need-to-think-like-airports-yes-really(?:\.html)?/?$ /how-to-design-a-cafe-interior-guide-for-first-time-owners [NC,R=301,L]
 RewriteRule ^how-to-design-a-cafe(?:\.html)?/?$ /how-to-design-a-cafe-interior-guide-for-first-time-owners [NC,R=301,L]
