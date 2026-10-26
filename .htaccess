@@ -87,6 +87,12 @@ RewriteRule ^(?:blog/)?(?:7-budget-friendly-restaurant-design-ideas-2025)(?:\.ht
 # Merged cluster -> In/restaurant-interior-designer-mumbai
 RewriteRule ^(?:blog/)?(?:restaurant-design-and-build-company-mumbai|best-f-b-interior-designer-firm-in-bandra-mumbai|best-restaurant-interior-designer-firm-in-andheri-india)(?:\.html)?/?$ /In/restaurant-interior-designer-mumbai [NC,R=301,L]
 
+# Merged cluster -> In/restaurant-interior-designer-delhi
+RewriteRule ^(?:blog/)?(?:restaurant-bar-and-coffee-shop-interior-designer-in-delhi|cafe-interior-design-in-delhi-ncr)(?:\.html)?/?$ /In/restaurant-interior-designer-delhi [NC,R=301,L]
+
+# Merged cluster -> In/restaurant-interior-designer-bengaluru
+RewriteRule ^(?:blog/)?(?:coffee-shop-and-restaurant-interior-designer-in-bengaluru|coffee-shop-restaurant-interior-designer-in-bangalore-and-delhi)(?:\.html)?/?$ /In/restaurant-interior-designer-bengaluru [NC,R=301,L]
+
 # Retired /blog/ folder (old blog subdomain copy). Every post now lives at the
 # site root under the same slug; anything else under /blog goes to /insights.
 RewriteRule ^blog/(10-colour-choices-that-will-make-your-cafe-look-huge|10-impressive-restaurants-to-visit-across-india|10-must-have-commercial-kitchen-equipment|10-things-to-consider-while-opening-a-restaurant|2025-restaurant-design-trends-smart-materials-that-maximize-space|5-inexpensive-personal-touches-for-your-coffee-shop|5-tips-tricks-restaurant-should-follow-to-attract-customers|5-ways-to-redesign-your-old-bar-with-modern-touch|6-points-to-remember-while-designing-a-new-restaurant|7-budget-friendly-restaurant-design-ideas|7-premium-cafe-coffee-shops-who-preferred-interior-more-than-anything|7-top-hotel-design-concepts-to-be-followed-in-2019|8-best-decoration-ideas-by-designers-for-the-coming-new-year|8-points-to-follow-while-designing-a-restaurant-bar|8-tips-to-focus-on-eco-friendly-hotel-interior|bill-of-quantities|branding-secret-successful-restaurant-design|five-things-you-need-to-know-about-commercial-interior-designing-today|how-restaurant-interiors-can-help-you-achieve-growth-in-business|how-to-finalise-bakery-menu|how-to-run-a-successful-bar-restaurant|how-to-select-the-best-location-to-start-my-restaurant|how-to-set-up-a-commercial-kitchen|how-to-start-a-restaurant-with-no-previous-experience|indias-best-restaurant-interior-designer-firm|premium-restaurant-design-ideas|premium-restaurants-design-and-build-strategies-for-success|restaurant-interior-design-7-things-to-consider-when-designing-one|simple-and-smart-design-for-your-restaurant-cafe|top-10-things-to-keep-in-mind-while-designing-your-restaurant-kitchen|top-5-styles-of-furniture-you-can-apply-in-your-coffee-shop|what-are-the-current-trends-that-i-should-follow-in-order-to-have-the-best-interior-for-my-restaurant|what-style-should-i-choose-for-my-restaurant|what-to-expect-when-you-hire-a-restaurant-interior-designer-to-re-decorate-your-restaurant|what-to-look-for-when-planning-to-refurbish-your-restaurant-interior|why-restaurant-funding-easier-in-india-2025)(?:\.html)?/?$ /$1 [NC,R=301,L]
@@ -101,9 +107,9 @@ RewriteRule ^fb-interior-design-in-mumbais/?$ /In/restaurant-interior-designer-m
 RewriteRule ^the-future-of-restaurant-design-trends-in-2025/?$ /indias-best-restaurant-interior-designer-firm [NC,R=301,L]
 RewriteRule ^third-wave-coffee-interior-design-mumbai/?$ /third-wave-coffee-mumbai-cafe [NC,R=301,L]
 RewriteRule ^trunks-and-leaves-premium-restaurant-design-mumbai/?$ /trunks-and-leaves-mumbai-restaurant [NC,R=301,L]
-RewriteRule ^coffee-shop-and-restaurant-interior-designer-in-bangalore-and-delhi/?$ /coffee-shop-restaurant-interior-designer-in-bangalore-and-delhi [NC,R=301,L]
+RewriteRule ^coffee-shop-and-restaurant-interior-designer-in-bangalore-and-delhi/?$ /In/restaurant-interior-designer-bengaluru [NC,R=301,L]
 RewriteRule ^looking-for-the-best-restaurant/?$ /restaurant-design-build-company-india [NC,R=301,L]
-RewriteRule ^restaurant-and-coffee-shop-interior-designer-in-delhi/?$ /restaurant-bar-and-coffee-shop-interior-designer-in-delhi [NC,R=301,L]
+RewriteRule ^restaurant-and-coffee-shop-interior-designer-in-delhi/?$ /In/restaurant-interior-designer-delhi [NC,R=301,L]
 RewriteRule ^kongsi-tea-bar-qsr-interior-design-bengaluru/?$ /kongsi-tea-bar-bengaluru-qsr [NC,R=301,L]
 RewriteRule ^how-to-attract-millennials-and-gen-z-restaurant-designs/?$ /trendy-restaurant-designs-for-young-diners [NC,R=301,L]
 RewriteRule ^how-to-attract-millennials-and-gen-z-with-instagram-worthy-restaurant-designs/?$ /trendy-restaurant-designs-for-young-diners [NC,R=301,L]
