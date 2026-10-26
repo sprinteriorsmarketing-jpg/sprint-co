@@ -194,13 +194,25 @@
         form.dataset.submitting = 'true'; setLoading(form, true);
         try {
             await loadCaptcha();
-            var token = await window.grecaptcha.execute(config.siteKey, { action: 'lead_submit' });
-            var response = await fetch(config.endpoint || 'https://sprint-co.com/api/leads', {
+            // Forms with data-mail-endpoint post to a mail-only BMS endpoint (nothing stored as a lead).
+            var mailEndpoint = form.dataset.mailEndpoint;
+            var token = await window.grecaptcha.execute(config.siteKey, { action: form.dataset.captchaAction || 'lead_submit' });
+            var body = mailEndpoint
+                ? {
+                    full_name: value(form, ['[name="full_name"]', '#name']),
+                    email: value(form, ['[name="email"]', '#email', 'input[type="email"]']),
+                    phone: value(form, ['[name="phone"]', '#phone']),
+                    page: window.location.pathname,
+                    captcha_token: token,
+                    website: value(form, ['[name="website"]'])
+                }
+                : payloadFor(form, token);
+            var response = await fetch(mailEndpoint || config.endpoint || 'https://sprint-co.com/api/leads', {
                 method: 'POST',
                 mode: 'cors',
                 credentials: 'omit',
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify(payloadFor(form, token))
+                body: JSON.stringify(body)
             });
             var data = await response.json().catch(function () { return {}; });
             if (!response.ok) throw { userMessage: data.message, errors: data.errors };
