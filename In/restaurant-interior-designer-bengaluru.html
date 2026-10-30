@@ -27,35 +27,59 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  \1"Restaurant Interior Designers in Bengaluru",
-  "serviceType": "Restaurant, cafe, bar and QSR interior design and build",
-  "url": "https://www.sprint-co.com/In/restaurant-interior-designer-bengaluru",
-  "description": "Restaurant, bar and caf&eacute; interior designers in Bengaluru behind The Hood by Olive, Social E-City, Amoeba and Harvest Salad Co. Design and build.",
-  "areaServed": {
-    "@type": "City",
-    "name": "Bengaluru, India"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "SprintCo",
-    "url": "https://www.sprint-co.com/",
-    "logo": "https://www.sprint-co.com/images/favicon.png",
-    "telephone": "+91-9004301234",
-    "email": "info@sprint-co.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Vasudev Chamber-B, 21, Old Nagardas Cross Rd, near Andheri Subway, opposite Wilson House, Mogra Pada, Natwar Nagar, Andheri East",
-      "addressLocality": "Mumbai",
-      "addressRegion": "Maharashtra",
-      "postalCode": "400069",
-      "addressCountry": "IN"
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Restaurant Interior Designers in Bengaluru",
+      "serviceType": "Restaurant, cafe, bar and QSR interior design and build",
+      "url": "https://www.sprint-co.com/In/restaurant-interior-designer-bengaluru",
+      "description": "Restaurant, bar and caf&eacute; interior designers in Bengaluru behind The Hood by Olive, Social E-City, Amoeba and Harvest Salad Co. Design and build.",
+      "areaServed": {
+        "@type": "City",
+        "name": "Bengaluru, India"
+      },
+      "provider": {
+        "@id": "https://www.sprint-co.com/#organization"
+      }
     },
-    "sameAs": [
-      "https://www.linkedin.com/company/sprint-co/",
-      "https://www.instagram.com/sprintco_designs/",
-      "https://www.youtube.com/@B2B_Designers"
-    ]
-  }
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.sprint-co.com/In/restaurant-interior-designer-bengaluru#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.sprint-co.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cities",
+          "item": "https://www.sprint-co.com/cities"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Restaurant Interior Designers in Restaurant Interior Designers In Bengaluru",
+          "item": "https://www.sprint-co.com/In/restaurant-interior-designer-bengaluru"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.sprint-co.com/#organization",
+      "name": "SprintCo",
+      "legalName": "B2B Designers Pvt Limited",
+      "url": "https://www.sprint-co.com/",
+      "logo": "https://www.sprint-co.com/images/sprintco-logo.svg",
+      "sameAs": [
+        "https://www.linkedin.com/company/sprint-co/",
+        "https://www.instagram.com/sprintco_designs/",
+        "https://www.youtube.com/@B2B_Designers"
+      ]
+    }
+  ]
 }
 </script>
 

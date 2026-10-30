@@ -27,104 +27,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Restaurant, Cafe, Bar & QSR Interior Design in Dubai",
-  "serviceType": "Restaurant, cafe, bar and QSR interior design and build",
-  "url": "https://www.sprint-co.com/locations/restaurant-interior-designer-dubai",
-  "description": "Restaurant, cafe, bar and QSR interior design and build services, now serving Dubai as part of SprintCo's international expansion beyond its 3,500+ project India portfolio.",
-  "areaServed": {
-    "@type": "City",
-    "name": "Dubai, United Arab Emirates"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "SprintCo",
-    "url": "https://www.sprint-co.com/",
-    "logo": "https://www.sprint-co.com/images/favicon.png",
-    "telephone": "+91-9004301234",
-    "email": "info@sprint-co.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Vasudev Chamber-B, 21, Old Nagardas Cross Rd, near Andheri Subway, opposite Wilson House, Mogra Pada, Natwar Nagar, Andheri East",
-      "addressLocality": "Mumbai",
-      "addressRegion": "Maharashtra",
-      "postalCode": "400069",
-      "addressCountry": "IN"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/sprint-co/",
-      "https://www.instagram.com/sprintco_designs/",
-      "https://www.youtube.com/@B2B_Designers"
-    ]
-  }
-}
-</script>
-
-<!-- FAQPage schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "How do I choose a restaurant interior designer in Dubai?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Choose a restaurant interior designer with proven F&B experience, strong space-planning skills and an understanding of kitchen workflow, customer circulation, lighting, MEP requirements and brand identity. The designer should balance aesthetics with the operational needs of the restaurant."
+      "@type": "Service",
+      "name": "Restaurant, Cafe, Bar & QSR Interior Design in Dubai",
+      "serviceType": "Restaurant, cafe, bar and QSR interior design and build",
+      "url": "https://www.sprint-co.com/locations/restaurant-interior-designer-dubai",
+      "description": "Restaurant, cafe, bar and QSR interior design and build services, now serving Dubai as part of SprintCo's international expansion beyond its 3,500+ project India portfolio.",
+      "areaServed": {
+        "@type": "City",
+        "name": "Dubai, United Arab Emirates"
+      },
+      "provider": {
+        "@id": "https://www.sprint-co.com/#organization"
       }
     },
     {
-      "@type": "Question",
-      "name": "Does SprintCo design cafés, bars and QSRs in Dubai?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SprintCo specialises in F&B environments including restaurants, cafés, bars and QSRs. The design approach considers brand identity, customer experience, operational efficiency and the specific requirements of each restaurant format."
-      }
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I choose a restaurant interior designer in Dubai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Choose a restaurant interior designer with proven F&B experience, strong space-planning skills and an understanding of kitchen workflow, customer circulation, lighting, MEP requirements and brand identity. The designer should balance aesthetics with the operational needs of the restaurant."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SprintCo design cafés, bars and QSRs in Dubai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SprintCo specialises in F&B environments including restaurants, cafés, bars and QSRs. The design approach considers brand identity, customer experience, operational efficiency and the specific requirements of each restaurant format."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does restaurant interior design cost in Dubai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Restaurant interior design costs in Dubai depend on the size of the space, restaurant format, design complexity, material specifications, kitchen requirements and scope of services. A detailed project brief and site assessment are needed before establishing an accurate budget."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should be considered when designing a restaurant in Dubai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Important considerations include restaurant format, target customer, location, seating capacity, customer circulation, kitchen and service workflow, lighting, acoustics, material durability, branding and applicable local building and safety requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is space planning important for restaurants?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Good space planning balances seating capacity with comfortable customer circulation and efficient staff movement. It also helps coordinate entrances, waiting areas, kitchens, service stations, counters, storage and dining zones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can SprintCo design restaurants for international F&B brands?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SprintCo works on F&B-focused design involving concept development, brand integration, operational planning and rollout requirements. For international brands, the design should maintain the core brand identity while responding appropriately to the individual site and local market."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between restaurant design and general commercial interior design?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Restaurant design requires specialised planning for kitchens, service flow, seating, exhaust, HVAC, plumbing, electrical loads, lighting, acoustics and food-service operations. General commercial interior design may not require the same level of F&B-specific technical and operational coordination."
+          }
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "How much does restaurant interior design cost in Dubai?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Restaurant interior design costs in Dubai depend on the size of the space, restaurant format, design complexity, material specifications, kitchen requirements and scope of services. A detailed project brief and site assessment are needed before establishing an accurate budget."
-      }
+      "@type": "BreadcrumbList",
+      "@id": "https://www.sprint-co.com/locations/restaurant-interior-designer-dubai#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.sprint-co.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cities",
+          "item": "https://www.sprint-co.com/cities"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Restaurant Interior Designers in Restaurant Interior Designer In Dubai",
+          "item": "https://www.sprint-co.com/locations/restaurant-interior-designer-dubai"
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "What should be considered when designing a restaurant in Dubai?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Important considerations include restaurant format, target customer, location, seating capacity, customer circulation, kitchen and service workflow, lighting, acoustics, material durability, branding and applicable local building and safety requirements."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why is space planning important for restaurants?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Good space planning balances seating capacity with comfortable customer circulation and efficient staff movement. It also helps coordinate entrances, waiting areas, kitchens, service stations, counters, storage and dining zones."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can SprintCo design restaurants for international F&B brands?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "SprintCo works on F&B-focused design involving concept development, brand integration, operational planning and rollout requirements. For international brands, the design should maintain the core brand identity while responding appropriately to the individual site and local market."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between restaurant design and general commercial interior design?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Restaurant design requires specialised planning for kitchens, service flow, seating, exhaust, HVAC, plumbing, electrical loads, lighting, acoustics and food-service operations. General commercial interior design may not require the same level of F&B-specific technical and operational coordination."
-      }
+      "@type": "Organization",
+      "@id": "https://www.sprint-co.com/#organization",
+      "name": "SprintCo",
+      "legalName": "B2B Designers Pvt Limited",
+      "url": "https://www.sprint-co.com/",
+      "logo": "https://www.sprint-co.com/images/sprintco-logo.svg",
+      "sameAs": [
+        "https://www.linkedin.com/company/sprint-co/",
+        "https://www.instagram.com/sprintco_designs/",
+        "https://www.youtube.com/@B2B_Designers"
+      ]
     }
   ]
 }
 </script>
+
+<!-- FAQPage schema -->
 
 <!--linkedin partner tracking code-->
 <script type="text/javascript">

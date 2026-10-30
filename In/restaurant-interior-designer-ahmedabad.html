@@ -27,36 +27,59 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Restaurant, Cafe, Bar & QSR Interior Design in Ahmedabad",
-  "serviceType": "Restaurant, cafe, bar and QSR interior design and build",
-  "url": "https://www.sprint-co.com/In/restaurant-interior-designer-ahmedabad",
-  "description": "QSR and cafe interior designer for Ahmedabad and Gujarat — Sandoitchi in Ahmedabad and Coffee Culture in Surat. Design, build and fit-out by SprintCo.",
-  "areaServed": {
-    "@type": "City",
-    "name": "Ahmedabad, India"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "SprintCo",
-    "url": "https://www.sprint-co.com/",
-    "logo": "https://www.sprint-co.com/images/favicon.png",
-    "telephone": "+91-9004301234",
-    "email": "info@sprint-co.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Vasudev Chamber-B, 21, Old Nagardas Cross Rd, near Andheri Subway, opposite Wilson House, Mogra Pada, Natwar Nagar, Andheri East",
-      "addressLocality": "Mumbai",
-      "addressRegion": "Maharashtra",
-      "postalCode": "400069",
-      "addressCountry": "IN"
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Restaurant, Cafe, Bar & QSR Interior Design in Ahmedabad",
+      "serviceType": "Restaurant, cafe, bar and QSR interior design and build",
+      "url": "https://www.sprint-co.com/In/restaurant-interior-designer-ahmedabad",
+      "description": "QSR and cafe interior designer for Ahmedabad and Gujarat — Sandoitchi in Ahmedabad and Coffee Culture in Surat. Design, build and fit-out by SprintCo.",
+      "areaServed": {
+        "@type": "City",
+        "name": "Ahmedabad, India"
+      },
+      "provider": {
+        "@id": "https://www.sprint-co.com/#organization"
+      }
     },
-    "sameAs": [
-      "https://www.linkedin.com/company/sprint-co/",
-      "https://www.instagram.com/sprintco_designs/",
-      "https://www.youtube.com/@B2B_Designers"
-    ]
-  }
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.sprint-co.com/In/restaurant-interior-designer-ahmedabad#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.sprint-co.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cities",
+          "item": "https://www.sprint-co.com/cities"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Restaurant Interior Designers in Restaurant Interior Designer In Ahmedabad",
+          "item": "https://www.sprint-co.com/In/restaurant-interior-designer-ahmedabad"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.sprint-co.com/#organization",
+      "name": "SprintCo",
+      "legalName": "B2B Designers Pvt Limited",
+      "url": "https://www.sprint-co.com/",
+      "logo": "https://www.sprint-co.com/images/sprintco-logo.svg",
+      "sameAs": [
+        "https://www.linkedin.com/company/sprint-co/",
+        "https://www.instagram.com/sprintco_designs/",
+        "https://www.youtube.com/@B2B_Designers"
+      ]
+    }
+  ]
 }
 </script>
 

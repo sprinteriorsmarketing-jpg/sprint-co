@@ -27,36 +27,59 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Restaurant, Cafe, Bar & QSR Interior Design in Hyderabad",
-  "serviceType": "Restaurant, cafe, bar and QSR interior design and build",
-  "url": "https://www.sprint-co.com/In/restaurant-interior-designer-hyderabad",
-  "description": "Restaurant and cafe interior designer in Hyderabad — SprintCo designed Blue Tokai Banjara Hills, Fly Chicken and The Yellow Straw.",
-  "areaServed": {
-    "@type": "City",
-    "name": "Hyderabad, India"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "SprintCo",
-    "url": "https://www.sprint-co.com/",
-    "logo": "https://www.sprint-co.com/images/favicon.png",
-    "telephone": "+91-9004301234",
-    "email": "info@sprint-co.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Vasudev Chamber-B, 21, Old Nagardas Cross Rd, near Andheri Subway, opposite Wilson House, Mogra Pada, Natwar Nagar, Andheri East",
-      "addressLocality": "Mumbai",
-      "addressRegion": "Maharashtra",
-      "postalCode": "400069",
-      "addressCountry": "IN"
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Restaurant, Cafe, Bar & QSR Interior Design in Hyderabad",
+      "serviceType": "Restaurant, cafe, bar and QSR interior design and build",
+      "url": "https://www.sprint-co.com/In/restaurant-interior-designer-hyderabad",
+      "description": "Restaurant and cafe interior designer in Hyderabad — SprintCo designed Blue Tokai Banjara Hills, Fly Chicken and The Yellow Straw.",
+      "areaServed": {
+        "@type": "City",
+        "name": "Hyderabad, India"
+      },
+      "provider": {
+        "@id": "https://www.sprint-co.com/#organization"
+      }
     },
-    "sameAs": [
-      "https://www.linkedin.com/company/sprint-co/",
-      "https://www.instagram.com/sprintco_designs/",
-      "https://www.youtube.com/@B2B_Designers"
-    ]
-  }
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.sprint-co.com/In/restaurant-interior-designer-hyderabad#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.sprint-co.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cities",
+          "item": "https://www.sprint-co.com/cities"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Restaurant Interior Designers in Restaurant Interior Designer In Hyderabad",
+          "item": "https://www.sprint-co.com/In/restaurant-interior-designer-hyderabad"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.sprint-co.com/#organization",
+      "name": "SprintCo",
+      "legalName": "B2B Designers Pvt Limited",
+      "url": "https://www.sprint-co.com/",
+      "logo": "https://www.sprint-co.com/images/sprintco-logo.svg",
+      "sameAs": [
+        "https://www.linkedin.com/company/sprint-co/",
+        "https://www.instagram.com/sprintco_designs/",
+        "https://www.youtube.com/@B2B_Designers"
+      ]
+    }
+  ]
 }
 </script>
 
