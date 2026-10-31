@@ -108,6 +108,21 @@ RewriteRule ^(?:blog/)?(?:croffle-guys-case-study)(?:\.html)?/?$ /the-croffle-gu
 # Merged cluster -> social-e-city-bengaluru-bar
 RewriteRule ^(?:blog/)?(?:social-e-city-case-study)(?:\.html)?/?$ /social-e-city-bengaluru-bar [NC,R=301,L]
 
+# Merged cluster -> 10-things-to-consider-while-opening-a-restaurant
+RewriteRule ^(?:blog/)?(?:how-to-start-a-restaurant-with-no-previous-experience)(?:\.html)?/?$ /10-things-to-consider-while-opening-a-restaurant [NC,R=301,L]
+
+# Merged cluster -> restaurant-interior-design-7-things-to-consider-when-designing-one
+RewriteRule ^(?:blog/)?(?:6-points-to-remember-while-designing-a-new-restaurant|simple-and-smart-design-for-your-restaurant-cafe)(?:\.html)?/?$ /restaurant-interior-design-7-things-to-consider-when-designing-one [NC,R=301,L]
+
+# Merged cluster -> what-to-look-for-when-planning-to-refurbish-your-restaurant-interior
+RewriteRule ^(?:blog/)?(?:8-points-to-follow-while-designing-a-restaurant-bar|5-ways-to-redesign-your-old-bar-with-modern-touch)(?:\.html)?/?$ /what-to-look-for-when-planning-to-refurbish-your-restaurant-interior [NC,R=301,L]
+
+# Merged cluster -> 7-budget-friendly-restaurant-design-ideas
+RewriteRule ^(?:blog/)?(?:5-inexpensive-personal-touches-for-your-coffee-shop)(?:\.html)?/?$ /7-budget-friendly-restaurant-design-ideas [NC,R=301,L]
+
+# Off-topic posts retired for good (410): hotels, decor, bakery menu, marketing, operations
+RewriteRule ^(?:blog/)?(?:8-tips-to-focus-on-eco-friendly-hotel-interior|7-top-hotel-design-concepts-to-be-followed-in-2019|8-best-decoration-ideas-by-designers-for-the-coming-new-year|how-to-finalise-bakery-menu|5-tips-tricks-restaurant-should-follow-to-attract-customers|how-to-run-a-successful-bar-restaurant)(?:\.html)?/?$ - [NC,G]
+
 # Retired /blog/ folder (old blog subdomain copy). Every post now lives at the
 # site root under the same slug; anything else under /blog goes to /insights.
 RewriteRule ^blog/(10-colour-choices-that-will-make-your-cafe-look-huge|10-impressive-restaurants-to-visit-across-india|10-must-have-commercial-kitchen-equipment|10-things-to-consider-while-opening-a-restaurant|2025-restaurant-design-trends-smart-materials-that-maximize-space|5-inexpensive-personal-touches-for-your-coffee-shop|5-tips-tricks-restaurant-should-follow-to-attract-customers|5-ways-to-redesign-your-old-bar-with-modern-touch|6-points-to-remember-while-designing-a-new-restaurant|7-budget-friendly-restaurant-design-ideas|7-premium-cafe-coffee-shops-who-preferred-interior-more-than-anything|7-top-hotel-design-concepts-to-be-followed-in-2019|8-best-decoration-ideas-by-designers-for-the-coming-new-year|8-points-to-follow-while-designing-a-restaurant-bar|8-tips-to-focus-on-eco-friendly-hotel-interior|bill-of-quantities|branding-secret-successful-restaurant-design|five-things-you-need-to-know-about-commercial-interior-designing-today|how-restaurant-interiors-can-help-you-achieve-growth-in-business|how-to-finalise-bakery-menu|how-to-run-a-successful-bar-restaurant|how-to-select-the-best-location-to-start-my-restaurant|how-to-set-up-a-commercial-kitchen|how-to-start-a-restaurant-with-no-previous-experience|indias-best-restaurant-interior-designer-firm|premium-restaurant-design-ideas|premium-restaurants-design-and-build-strategies-for-success|restaurant-interior-design-7-things-to-consider-when-designing-one|simple-and-smart-design-for-your-restaurant-cafe|top-10-things-to-keep-in-mind-while-designing-your-restaurant-kitchen|top-5-styles-of-furniture-you-can-apply-in-your-coffee-shop|what-are-the-current-trends-that-i-should-follow-in-order-to-have-the-best-interior-for-my-restaurant|what-style-should-i-choose-for-my-restaurant|what-to-expect-when-you-hire-a-restaurant-interior-designer-to-re-decorate-your-restaurant|what-to-look-for-when-planning-to-refurbish-your-restaurant-interior|why-restaurant-funding-easier-in-india-2025)(?:\.html)?/?$ /$1 [NC,R=301,L]
