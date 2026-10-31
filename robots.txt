@@ -17,3 +17,4 @@ Allow: /
 
 # XML Sitemap
 Sitemap: https://www.sprint-co.com/sitemap.xml
+Sitemap: https://www.sprint-co.com/sitemap-images.xml
