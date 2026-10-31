@@ -218,10 +218,15 @@ RewriteRule ^how-to-design-a-cafe(?:\.html)?/?$ /how-to-design-a-cafe-interior-g
 RewriteRule ^blogs(?:\.html)?/?$ /insights [NC,R=301,L]
 RewriteRule ^how-we-work(?:\.html)?/?$ /our-offerings [NC,R=301,L]
 RewriteRule ^get-started/[^/]+(?:\.html)?/?$ /contact [NC,R=301,L]
-RewriteRule ^Ineternal_Projects_Template(?:\.html)?/?$ /projects [NC,R=301,L]
 RewriteRule ^service-detail/[0-9]+(?:\.html)?/?$ /our-offerings [NC,R=301,L]
 RewriteRule ^interior-design/[0-9]+(?:\.html)?/?$ / [NC,R=301,L]
 RewriteRule ^register(?:\.html)?/?$ /contact [NC,R=301,L]
+
+# Internal templates and stray "- Copy" duplicates: gone for good (410), in any
+# encoding (plain, %20 or double-encoded %2520), before the .html redirect can
+# turn them into broken double-encoded URLs.
+RewriteRule ^(?:Ineternal_Projects_Template|New_project_template)(?:\.html)?/?$ - [NC,G]
+RewriteRule (?:\s|%20|%2520)-(?:\s|%20|%2520)Copy(?:\.html)?/?$ - [NC,G]
 
 # Everything else left over from WordPress is gone for good (410):
 # media/system files, tag/author/feed/pagination archives, unmapped categories.

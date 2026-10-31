@@ -14,15 +14,6 @@ User-agent: Bingbot
 User-agent: Applebot
 User-agent: CCBot
 Allow: /
-Allow: /consultation/Images/
-Disallow: /Decks/
-Disallow: /consultation/
-Disallow: /Ineternal_Projects_Template.html
-Disallow: /New_project_template.html
-Disallow: /croffle-guys-case-study%20-%20Copy.html
-Disallow: /social-e-city-case-study%20-%20Copy.html
-Disallow: /wp-admin/
-Disallow: /wp-login.php
 
 # XML Sitemap
 Sitemap: https://www.sprint-co.com/sitemap.xml

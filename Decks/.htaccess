@@ -1,4 +1,13 @@
 Options -MultiViews
+
+# Password protection for the sales decks. The login itself is created in
+# cPanel > Directory Privacy (public_html/Decks), which stores it at the path
+# below, outside the website and outside this repo. These lines are kept here
+# so a GitHub deploy never overwrites the protection cPanel adds.
+AuthType Basic
+AuthName "SprintCo Decks"
+AuthUserFile "/home/sprintco/.htpasswds/public_html/Decks/passwd"
+Require valid-user
 RewriteEngine On
 
 # 1) If a browser requests a *.html URL directly, send a permanent redirect
