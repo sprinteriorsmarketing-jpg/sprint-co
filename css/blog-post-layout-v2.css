@@ -722,3 +722,24 @@ body:has(.bv2-page) {
         align-items: flex-start;
     }
 }
+
+/* Photo gallery grid (e.g. ideas gallery) */
+.bv2-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin: 0 0 28px; }
+.bv2-post-body .bv2-gallery figure { margin: 0; }
+.bv2-post-body .bv2-gallery figure img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; }
+.bv2-post-body .bv2-gallery figcaption { margin-top: 6px; font-size: 0.8rem; text-align: left; }
+@media (max-width: 575px) { .bv2-gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+
+/* Printable tick-box checklist */
+.bv2-checklist { border: 1px solid var(--bv2-border); border-radius: 12px; padding: 18px 20px; margin: 0 0 16px; background: var(--bv2-tint); }
+.bv2-checklist .bv2-checklist-group { margin: 14px 0 6px; }
+.bv2-checklist ul { list-style: none; padding-left: 0; margin: 0; }
+.bv2-checklist li { margin: 4px 0; }
+.bv2-checklist label { cursor: pointer; display: inline-flex; gap: 8px; align-items: baseline; }
+.bv2-checklist .bv2-checklist-note { font-size: 0.82rem; color: var(--bv2-muted); margin: 14px 0 0; }
+button.bv2-btn { font-family: inherit; }
+@media print {
+  body.bv2-print-checklist * { visibility: hidden; }
+  body.bv2-print-checklist #kitchen-equipment-checklist, body.bv2-print-checklist #kitchen-equipment-checklist * { visibility: visible; }
+  body.bv2-print-checklist #kitchen-equipment-checklist { position: absolute; left: 0; top: 0; width: 100%; border: 0; background: #fff; }
+}
