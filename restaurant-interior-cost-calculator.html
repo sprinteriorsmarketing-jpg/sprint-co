@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-881264946"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-881264946');
+  gtag('config', 'G-9EFG5Q3JHZ');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Restaurant Interior Cost Calculator (India) | SprintCo</title>
+    <meta name="description" content="Free restaurant interior cost calculator for India. Enter area, finish level, format, city and site condition to get an instant budget range and cost split.">
+    <link rel="canonical" href="https://www.sprint-co.com/restaurant-interior-cost-calculator">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Restaurant Interior Cost Calculator (India) | SprintCo">
+    <meta property="og:description" content="Free restaurant interior cost calculator for India. Enter area, finish level, format, city and site condition to get an instant budget range and cost split.">
+    <meta property="og:url" content="https://www.sprint-co.com/restaurant-interior-cost-calculator">
+    <meta property="og:image" content="https://www.sprint-co.com/images/restaurant-interior-mid-range-finish.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/our-offerings.css">
+    <style>
+        /* Vertical service page: extends the Our Offerings layout */
+        .svc-hero-media{width:100%;height:36vw;background-size:cover;background-position:center;background-color:#e9e5dc}
+        .svc-section{padding:6.25vw 5.208vw;box-sizing:border-box;background-color:var(--body-color);border-top:.052vw solid rgba(23,23,23,.12)}
+        .svc-section--tint{background-color:#f3efe5}
+        .svc-wrap{max-width:72.917vw;margin:0 auto}
+        .svc-wrap--narrow{max-width:52.083vw}
+        .svc-eyebrow{display:block;font-family:var(--seconday-font);font-weight:600;font-size:.833vw;line-height:1vw;letter-spacing:.208vw;text-transform:uppercase;color:var(--orange-color);margin:0 0 1.042vw}
+        .svc-section h2{font-family:var(--seconday-font);font-weight:400;color:var(--headlines);font-size:2.5vw;line-height:2.917vw;margin:0 0 1.458vw}
+        .svc-section h3{font-family:var(--seconday-font);font-weight:500;color:var(--headlines);font-size:1.354vw;line-height:1.771vw;margin:0 0 .625vw}
+        .svc-section p,.svc-section li{font-family:var(--primary-font);font-weight:400;color:var(--dark-color);font-size:.938vw;line-height:1.563vw}
+        .svc-section p{margin:0 0 1.042vw}
+        .svc-section a.svc-inline{color:var(--orange-color);text-decoration:underline}
+        .svc-lead{font-size:1.146vw!important;line-height:1.875vw!important;max-width:52.083vw}
+
+        .svc-split{display:flex;gap:4.167vw;align-items:center}
+        .svc-split > *{flex:1 1 0}
+        .svc-split-img{width:100%;height:30vw;object-fit:cover;display:block}
+
+        .svc-checklist{list-style:none;margin:0;padding:0;columns:2;column-gap:3.125vw}
+        .svc-checklist li{position:relative;padding:0 0 0 1.667vw;margin:0 0 .938vw;break-inside:avoid}
+        .svc-checklist li::before{content:"";position:absolute;left:0;top:.521vw;width:.625vw;height:.625vw;border-radius:50%;background:var(--orange-color)}
+
+        .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.083vw}
+        .svc-card{background:#fff;border:.052vw solid rgba(23,23,23,.12);display:flex;flex-direction:column}
+        .svc-card img{width:100%;height:13.542vw;object-fit:cover;display:block}
+        .svc-card-body{padding:1.563vw 1.667vw 1.875vw}
+        .svc-card-body p{margin:0}
+
+        .svc-table{width:100%;border-collapse:collapse;background:#fff}
+        .svc-table th,.svc-table td{font-family:var(--primary-font);text-align:left;padding:1.042vw 1.458vw;border-bottom:.052vw solid rgba(23,23,23,.12);font-size:.938vw;line-height:1.458vw;color:var(--dark-color);width:50%;vertical-align:top}
+        .svc-table th{font-family:var(--seconday-font);font-weight:600;font-size:1.042vw;color:#fff;background:var(--headlines)}
+        .svc-table th:last-child{background:var(--orange-color)}
+
+        .svc-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.563vw;counter-reset:step}
+        .svc-steps li{counter-increment:step;background:#fff;border:.052vw solid rgba(23,23,23,.12);padding:1.563vw 1.667vw;display:flex;gap:1.042vw;align-items:flex-start}
+        .svc-steps li::before{content:counter(step,decimal-leading-zero);font-family:var(--seconday-font);font-weight:600;color:var(--orange-color);font-size:1.25vw;line-height:1.563vw;flex:0 0 auto}
+
+        .svc-proof{display:flex;gap:3.125vw;align-items:stretch;margin:0 0 3.125vw}
+        .svc-proof--reverse{flex-direction:row-reverse}
+        .svc-proof-media{flex:1 1 0;display:block;position:relative;min-height:24vw}
+        .svc-proof-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+        .svc-proof-body{flex:1 1 0;display:flex;flex-direction:column;justify-content:center}
+        .svc-link{display:inline-block;margin-top:.521vw;font-family:var(--seconday-font);font-weight:600;font-size:.938vw;color:var(--orange-color);text-decoration:none;border-bottom:.104vw solid var(--orange-color);padding-bottom:.156vw}
+
+        .svc-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:1.563vw;margin-top:1.563vw}
+        .svc-thumb{text-decoration:none;color:inherit;display:block;background:#fff;border:.052vw solid rgba(23,23,23,.12)}
+        .svc-thumb img{width:100%;height:11.458vw;object-fit:cover;display:block}
+        .svc-thumb span{display:block;padding:.833vw 1.042vw;font-family:var(--seconday-font);font-size:.938vw;color:var(--headlines)}
+        .svc-thumb small{display:block;font-family:var(--primary-font);font-size:.729vw;color:#86868b;margin-top:.208vw}
+
+        .svc-faq details{background:#fff;border:.052vw solid rgba(23,23,23,.12);margin:0 0 .833vw;padding:1.25vw 1.563vw}
+        .svc-faq summary{font-family:var(--seconday-font);font-weight:500;color:var(--headlines);font-size:1.146vw;line-height:1.563vw;cursor:pointer;list-style:none;position:relative;padding-right:2.083vw}
+        .svc-faq summary::-webkit-details-marker{display:none}
+        .svc-faq summary::after{content:"+";position:absolute;right:0;top:0;color:var(--orange-color);font-size:1.458vw}
+        .svc-faq details[open] summary::after{content:"\2212"}
+        .svc-faq details p{margin:.833vw 0 0}
+
+        .svc-related{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.042vw}
+        .svc-related a{display:block;padding:1.042vw 1.25vw;background:#fff;border:.052vw solid rgba(23,23,23,.12);text-decoration:none;font-family:var(--seconday-font);font-size:.938vw;color:var(--headlines)}
+        .svc-related a small{display:block;font-family:var(--primary-font);font-size:.729vw;color:#86868b;margin-top:.26vw}
+
+        @media (max-width:767px){
+            .svc-hero-media{height:240px}
+            .svc-section{padding:48px 20px}
+            .svc-wrap,.svc-wrap--narrow,.svc-lead{max-width:100%}
+            .svc-eyebrow{font-size:12px;line-height:14px;letter-spacing:2px;margin:0 0 12px}
+            .svc-section h2{font-size:28px;line-height:34px;margin:0 0 16px}
+            .svc-section h3{font-size:20px;line-height:26px;margin:0 0 8px}
+            .svc-section p,.svc-section li{font-size:15px;line-height:24px}
+            .svc-section p{margin:0 0 14px}
+            .svc-lead{font-size:16px!important;line-height:26px!important}
+            .svc-split,.svc-proof,.svc-proof--reverse{flex-direction:column;gap:20px}
+            .svc-split-img{height:240px}
+            .svc-proof-media{min-height:0}
+            .svc-proof-media img{position:static;min-height:220px;height:220px}
+            .svc-checklist{columns:1}
+            .svc-checklist li{padding-left:22px;margin-bottom:12px}
+            .svc-checklist li::before{top:8px;width:10px;height:10px}
+            .svc-grid,.svc-steps,.svc-related{grid-template-columns:1fr;gap:16px}
+            .svc-card img{height:200px}
+            .svc-card-body{padding:18px 20px 22px}
+            .svc-table th,.svc-table td{font-size:14px;line-height:21px;padding:12px}
+            .svc-steps li{padding:18px 20px;gap:12px}
+            .svc-steps li::before{font-size:18px;line-height:24px}
+            .svc-link{font-size:15px;margin-top:8px;border-bottom-width:2px}
+            .svc-thumbs{grid-template-columns:repeat(2,1fr);gap:12px}
+            .svc-thumb img{height:120px}
+            .svc-thumb span{font-size:14px;padding:10px 12px}
+            .svc-thumb small{font-size:12px}
+            .svc-faq details{padding:16px 18px;margin-bottom:10px}
+            .svc-faq summary{font-size:17px;line-height:24px;padding-right:28px}
+            .svc-faq summary::after{font-size:22px}
+            .svc-related a{font-size:15px;padding:14px 16px}
+            .svc-related a small{font-size:12px}
+        }
+
+        .svc-section--slim{padding-top:2.604vw;padding-bottom:2.604vw}
+        .svc-callout{display:flex;align-items:center;justify-content:space-between;gap:3.125vw}
+        .svc-callout p{margin:0;max-width:41.667vw}
+        .svc-callout-btn{flex:0 0 auto;display:inline-block;padding:1.042vw 1.875vw;background:var(--headlines);color:#fff;text-decoration:none;font-family:var(--seconday-font);font-weight:500;font-size:.938vw;transition:background .3s ease}
+        .svc-callout-btn:hover{background:var(--orange-color)}
+        .svc-grid--4{grid-template-columns:repeat(4,1fr);gap:1.563vw}
+        .svc-grid--4 .svc-card img{height:11.458vw}
+        .svc-num{display:block;font-family:var(--seconday-font);font-weight:600;font-size:.833vw;letter-spacing:.208vw;color:var(--orange-color);margin:0 0 .521vw}
+        .svc-split--top{align-items:flex-start}
+        .svc-checklist--3{columns:3}
+        @media (max-width:767px){
+            .svc-section--slim{padding-top:28px;padding-bottom:28px}
+            .svc-callout{flex-direction:column;align-items:flex-start;gap:16px}
+            .svc-callout p{max-width:100%}
+            .svc-callout-btn{font-size:15px;padding:12px 20px}
+            .svc-grid--4{grid-template-columns:1fr;gap:16px}
+            .svc-grid--4 .svc-card img{height:200px}
+            .svc-num{font-size:12px;letter-spacing:2px;margin-bottom:6px}
+            .svc-checklist--3{columns:1}
+        }
+        .svc-quote{margin:0 0 1.042vw;padding:0 0 0 1.25vw;border-left:.208vw solid var(--orange-color);font-family:var(--seconday-font);font-size:1.25vw;line-height:1.771vw;color:var(--headlines)}
+        .svc-quote cite{display:block;margin-top:.417vw;font-family:var(--primary-font);font-style:normal;font-size:.833vw;color:#86868b}
+        @media (max-width:767px){
+            .svc-quote{font-size:18px;line-height:26px;padding-left:14px;border-left-width:3px;margin-bottom:14px}
+            .svc-quote cite{font-size:13px;margin-top:6px}
+        }
+        .svc-hero-ctas{display:flex;align-items:center;justify-content:center;gap:2.083vw;flex-wrap:wrap}
+        .svc-hero-ctas .svc-link{margin-top:0}
+        .svc-stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--headlines);color:#fff}
+        .svc-stat{padding:2.083vw 2.604vw;text-align:center;border-left:.052vw solid rgba(255,255,255,.15)}
+        .svc-stat:first-child{border-left:0}
+        .svc-stat strong{display:block;font-family:var(--seconday-font);font-weight:500;font-size:2.5vw;line-height:2.917vw;color:var(--orange-color)}
+        .svc-stat span{display:block;font-family:var(--primary-font);font-size:.938vw;line-height:1.458vw;color:#fff;margin-top:.313vw}
+        .svc-callout-text{font-family:var(--seconday-font)!important;font-size:1.458vw!important;line-height:2.083vw!important;color:var(--headlines)!important;border-left:.208vw solid var(--orange-color);padding-left:1.25vw}
+        .svc-flow{list-style:none;margin:3.125vw 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.625vw;counter-reset:flow}
+        .svc-flow li{counter-increment:flow;font-family:var(--seconday-font);font-size:.938vw;line-height:1.25vw;color:var(--headlines);background:#f3efe5;border:.052vw solid rgba(23,23,23,.12);padding:.729vw 1.042vw;margin:0}
+        .svc-flow li::before{content:counter(flow,decimal-leading-zero) " ";color:var(--orange-color);font-weight:600}
+        .svc-scope{display:grid;grid-template-columns:repeat(3,1fr);gap:1.563vw;margin-top:2.083vw}
+        .svc-scope--4{grid-template-columns:repeat(4,1fr)}
+        .svc-scope > div{background:#fff;border:.052vw solid rgba(23,23,23,.12);border-top:.208vw solid var(--orange-color);padding:1.563vw 1.667vw}
+        .svc-scope p{margin:0}
+        .svc-scope-highlight{background:#f3efe5!important}
+        .svc-steps--detail{margin-top:2.083vw}
+        .svc-steps--detail p{margin:0}
+        .svc-card-body .svc-link{margin-top:.833vw}
+        .svc-final{background:#f3efe5}
+        .svc-form{background:#fff;border:.052vw solid rgba(23,23,23,.12);padding:2.083vw;display:flex;flex-direction:column}
+        .svc-form label{font-family:var(--seconday-font);font-size:.833vw;color:var(--headlines);margin:0 0 .417vw}
+        .svc-form input[type=text],.svc-form input[type=tel],.svc-form select{font-family:var(--primary-font);font-size:.938vw;padding:.729vw .833vw;border:.052vw solid rgba(23,23,23,.25);background:#fff;margin:0 0 1.042vw;width:100%;box-sizing:border-box}
+        .svc-form .svc-form-check{display:flex;align-items:center;gap:.521vw;font-family:var(--primary-font);font-size:.833vw;color:var(--dark-color);margin:-.417vw 0 1.042vw;cursor:pointer}
+        .svc-form-btn{margin-top:.521vw;padding:1.042vw;background:var(--orange-color);color:#fff;border:0;font-family:var(--seconday-font);font-weight:600;font-size:.938vw;letter-spacing:.104vw;text-transform:uppercase;cursor:pointer;transition:background .3s ease}
+        .svc-form-btn:hover{background:var(--headlines)}
+        @media (max-width:767px){
+            .svc-hero-ctas{flex-direction:column;gap:16px}
+            .svc-stats{grid-template-columns:1fr}
+            .svc-stat{padding:20px;border-left:0;border-top:1px solid rgba(255,255,255,.15)}
+            .svc-stat:first-child{border-top:0}
+            .svc-stat strong{font-size:30px;line-height:36px}
+            .svc-stat span{font-size:14px;line-height:20px;margin-top:4px}
+            .svc-callout-text{font-size:19px!important;line-height:27px!important;padding-left:14px;border-left-width:3px}
+            .svc-flow{margin-top:28px;gap:8px}
+            .svc-flow li{font-size:13px;line-height:18px;padding:8px 12px}
+            .svc-scope,.svc-scope--4{grid-template-columns:1fr;gap:14px;margin-top:20px}
+            .svc-scope > div{padding:18px 20px;border-top-width:3px}
+            .svc-card-body .svc-link{margin-top:10px}
+            .svc-form{padding:22px}
+            .svc-form label{font-size:14px;margin-bottom:6px}
+            .svc-form input[type=text],.svc-form input[type=tel],.svc-form select{font-size:16px;padding:12px;margin-bottom:16px}
+            .svc-form .svc-form-check{font-size:14px;gap:8px;margin:-6px 0 16px}
+            .svc-form-btn{font-size:15px;padding:14px;letter-spacing:1px}
+        }
+
+        /* Cost calculator */
+        .calc{display:grid;grid-template-columns:1.1fr 1fr;gap:2.604vw;align-items:start;margin-top:1.042vw}
+        .calc-inputs,.calc-result{background:#fff;border:.052vw solid rgba(23,23,23,.12);padding:2.083vw}
+        .calc-field{margin:0 0 1.563vw;border:0;padding:0;min-width:0}
+        .calc-field label,.calc-field legend{display:block;font-family:var(--seconday-font);font-weight:600;font-size:.833vw;color:var(--headlines);margin:0 0 .521vw;padding:0}
+        .calc-field select,.calc-field input[type=number]{font-family:var(--primary-font);font-size:.938vw;padding:.729vw .833vw;border:.052vw solid rgba(23,23,23,.25);background:#fff;width:100%;box-sizing:border-box;color:var(--dark-color)}
+        .calc-area{display:flex;gap:1.042vw;align-items:center}
+        .calc-area input[type=range]{flex:1 1 auto;accent-color:var(--orange-color)}
+        .calc-area input[type=number]{flex:0 0 7.5vw}
+        .calc-row{display:grid;grid-template-columns:1fr 1fr;gap:1.042vw}
+        .calc-options{display:grid;gap:.625vw}
+        .calc-field .calc-opt{display:flex;gap:.729vw;align-items:flex-start;border:.052vw solid rgba(23,23,23,.18);padding:.833vw 1.042vw;cursor:pointer;margin:0;font-weight:400}
+        .calc-opt.is-on{border-color:var(--orange-color);background:#fbf6ee}
+        .calc-opt input{accent-color:var(--orange-color);margin-top:.26vw}
+        .calc-opt strong{display:block;font-family:var(--seconday-font);font-weight:600;font-size:.938vw;color:var(--headlines)}
+        .calc-opt small{display:block;font-family:var(--primary-font);font-weight:400;font-size:.781vw;line-height:1.146vw;color:#6e6e73;margin-top:.156vw}
+        .calc-result{position:sticky;top:6vw;border-top:.208vw solid var(--orange-color)}
+        .calc-result-label{display:block;font-family:var(--seconday-font);font-weight:600;font-size:.833vw;letter-spacing:.156vw;text-transform:uppercase;color:var(--orange-color)}
+        .calc-total{font-family:var(--seconday-font);font-weight:500;font-size:2.917vw;line-height:3.333vw;color:var(--headlines);margin:.521vw 0 .26vw}
+        .calc-rate{font-family:var(--primary-font);font-size:.938vw;color:#6e6e73;margin:0 0 1.563vw}
+        .calc-split{width:100%;border-collapse:collapse;margin:0 0 1.25vw}
+        .calc-split th,.calc-split td{font-family:var(--primary-font);font-size:.833vw;line-height:1.25vw;text-align:left;padding:.521vw 0;border-bottom:.052vw solid rgba(23,23,23,.1);color:var(--dark-color)}
+        .calc-split th{font-family:var(--seconday-font);font-weight:600;color:var(--headlines)}
+        .calc-split th:nth-child(n+2),.calc-split td:nth-child(n+2){text-align:right;white-space:nowrap;padding-left:.833vw}
+        .svc-section p.calc-extra,.svc-section .calc-notes li{font-size:.833vw;line-height:1.354vw}
+        .svc-section p.calc-extra{margin:0 0 .833vw}
+        .calc-notes{margin:0 0 1.25vw;padding-left:1.042vw}
+        .calc-notes li{margin:0 0 .417vw}
+        .calc-notes:empty{display:none}
+        .calc-cta{display:block;text-align:center;padding:1.042vw;background:var(--orange-color);color:#fff;text-decoration:none;font-family:var(--seconday-font);font-weight:600;font-size:.938vw;letter-spacing:.104vw;text-transform:uppercase;transition:background .3s ease}
+        .calc-cta:hover{background:var(--headlines);color:#fff}
+        .svc-section p.calc-disclaimer{font-size:.729vw;line-height:1.146vw;color:#86868b;margin:.833vw 0 0}
+        .calc-table-wrap{margin-top:2.083vw;overflow-x:auto}
+        .svc-checklist.calc-one-col{columns:1}
+        .svc-section p.calc-summary{background:#fff;border-left:.208vw solid var(--orange-color);padding:.833vw 1.042vw}
+        .calc-summary:empty{display:none}
+        .calc-hint{display:block;font-family:var(--primary-font);font-size:.729vw;line-height:1.042vw;color:#86868b;margin-top:.417vw}
+        @media (max-width:991px){.calc{grid-template-columns:1fr}.calc-result{position:static}}
+        @media (max-width:767px){
+            .calc{gap:20px;margin-top:12px}
+            .calc-inputs,.calc-result{padding:20px}
+            .calc-field{margin-bottom:20px}
+            .calc-field label,.calc-field legend{font-size:14px;margin-bottom:8px}
+            .calc-field select,.calc-field input[type=number]{font-size:16px;padding:12px}
+            .calc-area{gap:12px}
+            .calc-area input[type=number]{flex:0 0 100px}
+            .calc-row{grid-template-columns:1fr;gap:0}
+            .calc-hint{font-size:12px;line-height:17px;margin-top:6px}
+            .calc-options{gap:8px}
+            .calc-field .calc-opt{gap:10px;padding:12px 14px}
+            .calc-opt input{margin-top:4px}
+            .calc-opt strong{font-size:15px}
+            .calc-opt small{font-size:13px;line-height:18px;margin-top:2px}
+            .calc-result{border-top-width:3px}
+            .calc-result-label{font-size:12px;letter-spacing:2px}
+            .calc-total{font-size:34px;line-height:40px;margin:8px 0 4px}
+            .calc-rate{font-size:15px;margin-bottom:18px}
+            .calc-split th,.calc-split td{font-size:13px;line-height:19px;padding:7px 0}
+            .calc-split th:nth-child(n+2),.calc-split td:nth-child(n+2){padding-left:10px}
+            .svc-section p.calc-extra,.svc-section .calc-notes li{font-size:14px;line-height:21px}
+            .calc-notes{padding-left:18px;margin-bottom:18px}
+            .calc-cta{font-size:15px;padding:14px;letter-spacing:1px}
+            .svc-section p.calc-disclaimer{font-size:12px;line-height:18px;margin-top:12px}
+            .calc-table-wrap{margin-top:20px}
+            .svc-section p.calc-summary{border-left-width:3px;padding:12px 14px}
+        }
+    </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.sprint-co.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights",
+          "item": "https://www.sprint-co.com/insights"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Restaurant Interior Cost Calculator",
+          "item": "https://www.sprint-co.com/restaurant-interior-cost-calculator"
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Restaurant Interior Cost Calculator",
+      "url": "https://www.sprint-co.com/restaurant-interior-cost-calculator",
+      "description": "Free restaurant interior cost calculator for India. Enter area, finish level, format, city and site condition to get an instant budget range and cost split.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "en-IN",
+      "isAccessibleForFree": true,
+      "image": "https://www.sprint-co.com/images/restaurant-interior-mid-range-finish.jpg",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      },
+      "provider": {
+        "@id": "https://www.sprint-co.com/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.sprint-co.com/#organization",
+      "name": "SprintCo",
+      "legalName": "B2B Designers Pvt Limited",
+      "url": "https://www.sprint-co.com/",
+      "logo": "https://www.sprint-co.com/images/sprintco-logo.svg",
+      "sameAs": [
+        "https://www.linkedin.com/company/sprint-co/",
+        "https://www.instagram.com/sprintco_designs/",
+        "https://www.youtube.com/@B2B_Designers"
+      ]
+    }
+  ]
+}
+</script>
+
+<!--linkedin partner tracking code-->
+<script type="text/javascript">
+    _linkedin_partner_id = "5652372";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/javascript">
+    (function(l) {
+        if (!l) {
+            window.lintrk = function(a, b) {
+                window.lintrk.q.push([a, b])
+            };
+            window.lintrk.q = []
+        }
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+    })(window.lintrk);
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=5652372&fmt=gif" />
+</noscript>
+<!--END linkedin partner tracking code-->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1467236020816075');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1467236020816075&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<style>img{height:auto}</style>
+</head>
+<body class="page-template-template-blank">
+
+<!-- Navigation -->
+<div class="website-menu fixed-menu">
+    <div class="website-menu-logo"><a href="/"><img src="images/sprintco-secondary-logo.svg" alt="SprintCo"></a></div>
+    <div class="website-menu-handler">Menu <img src="images/menu-icn.svg" alt="Menu"></div>
+</div>
+<div id="main-navigations">
+    <div class="main-navigations-logo">
+        <div class="navigations-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
+        <div class="close-menu-handler">Close <img src="images/close-menu.svg" alt="Close"></div>
+    </div>
+    <div class="menu-main-menu-container">
+    <ul id="menu-main-menu" class="footer-main-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="about">About Us</a></li>
+        <li class="menu-item-has-children"><a href="projects">Projects</a>
+            <ul class="sub-menu">
+                <li><a href="projects">All</a></li>
+                <li><a href="projects">Bar</a></li>
+                <li><a href="projects">Cafe</a></li>
+                <li><a href="projects">Restaurant</a></li>
+                <li><a href="projects">QSR</a></li>
+                <li><a href="projects">Kiosk</a></li>
+                <li><a href="projects">Entertainment Spaces</a></li>
+            </ul>
+        </li>
+        <li><a href="our-offerings">Our Offerings</a></li>
+        <li><a href="insights">Insights</a></li>
+    </ul>
+    </div>
+    <div class="main-navigations-footer">
+        <div class="common-button light-button"><a href="contact"><span>Get in touch</span></a></div>
+        <div class="menu-social-links-container">
+        <ul class="footer-social-nav">
+            <li><a href="https://www.linkedin.com/company/sprint-co/" target="_blank">Linkedin</a></li>
+            <li><a href="https://www.instagram.com/sprintco_designs/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@B2B_Designers" target="_blank">YouTube</a></li>
+            <li class="menu-none"><a href="https://www.flatpackco.com/" target="_blank">FlatPackCo</a></li>
+        </ul>
+        </div>
+    </div>
+</div>
+<div class="main-navigations-overlay"></div>
+
+<main id="site-content">
+
+<!-- Hero -->
+<div class="offering-hero">
+    <div class="container">
+        <span class="offering-hero-eyebrow os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.1s">Free Tool &middot; India</span>
+        <h1 class="os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.15s">Restaurant interior cost calculator.</h1>
+        <p class="offering-hero-intro os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.2s">Get an instant interior budget range for your restaurant, caf&eacute;, bar, QSR, kiosk or cloud kitchen in India. Enter your area, finish level, format, city and site condition. No sign-up needed to see the result.</p>
+        <div class="svc-hero-ctas os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.25s">
+            <div class="wp-block-buttons common-button dark-button">
+                <div class="wp-block-button"><a class="wp-block-button__link" href="#calculator"><span>Calculate My Budget</span></a></div>
+            </div>
+            <a class="svc-link" href="restaurant-interior-design-cost-india-2026">Read the Cost Guide</a>
+        </div>
+    </div>
+</div>
+
+<!-- Calculator -->
+<section class="svc-section svc-section--tint" id="calculator">
+    <div class="svc-wrap">
+        <span class="svc-eyebrow">Calculator</span>
+        <h2>Estimate your restaurant interior budget.</h2>
+        <div class="calc">
+            <form class="calc-inputs" id="cost-calc" onsubmit="return false" aria-label="Restaurant interior cost calculator">
+                <div class="calc-field">
+                    <label for="calc-area">Carpet area (sq ft)</label>
+                    <div class="calc-area">
+                        <input type="range" id="calc-area-range" min="100" max="6000" step="50" value="1000" aria-label="Carpet area slider">
+                        <input type="number" id="calc-area" min="50" max="20000" step="10" value="1000" inputmode="numeric">
+                    </div>
+                </div>
+                <fieldset class="calc-field">
+                    <legend>Finish level</legend>
+                    <div class="calc-options">
+                        <label class="calc-opt"><input type="radio" name="finish" value="budget"><span><strong>Budget / functional</strong><small>Simple finish palette, standard furniture, limited custom work</small></span></label>
+                        <label class="calc-opt"><input type="radio" name="finish" value="mid" checked><span><strong>Mid-range</strong><small>Stronger materials, custom counter and joinery, layered lighting, branding</small></span></label>
+                        <label class="calc-opt"><input type="radio" name="finish" value="premium"><span><strong>Premium</strong><small>Bespoke furniture, specialist materials, decorative lighting, complex detailing</small></span></label>
+                    </div>
+                </fieldset>
+                <div class="calc-row">
+                    <div class="calc-field">
+                        <label for="calc-format">Format</label>
+                        <select id="calc-format">
+                            <option value="restaurant">Restaurant</option>
+                            <option value="cafe">Caf&eacute; or bakery</option>
+                            <option value="bar">Bar, pub or brewery</option>
+                            <option value="qsr">QSR</option>
+                            <option value="kiosk">Kiosk</option>
+                            <option value="cloud">Cloud kitchen</option>
+                        </select>
+                    </div>
+                    <div class="calc-field">
+                        <label for="calc-city">City</label>
+                        <select id="calc-city">
+                            <option value="metro">Metro city</option>
+                            <option value="tier2">Tier 2 city</option>
+                            <option value="tier3">Tier 3 city or town</option>
+                        </select>
+                        <small class="calc-hint">Metros: Mumbai, Delhi NCR, Bengaluru, Hyderabad, Chennai, Pune, Kolkata, Ahmedabad</small>
+                    </div>
+                </div>
+                <div class="calc-field">
+                    <label for="calc-site">Site condition</label>
+                    <select id="calc-site">
+                        <option value="shell">Bare shell (new outlet)</option>
+                        <option value="existing">Existing restaurant or caf&eacute;</option>
+                        <option value="convert">Converting an office or shop</option>
+                    </select>
+                </div>
+            </form>
+
+            <div class="calc-result" aria-live="polite">
+                <span class="calc-result-label">Estimated interior budget</span>
+                <div class="calc-total" id="calc-total">&#8377;15&ndash;25 lakh</div>
+                <div class="calc-rate" id="calc-rate">&#8377;1,500&ndash;2,500 per sq ft</div>
+                <table class="calc-split" aria-label="Indicative budget split">
+                    <thead><tr><th>Where the budget usually goes</th><th>Share</th><th>Amount</th></tr></thead>
+                    <tbody id="calc-split"></tbody>
+                </table>
+                <p class="calc-extra" id="calc-extra"></p>
+                <ul class="calc-notes" id="calc-notes"></ul>
+                <a class="calc-cta" href="#share-brief">Get a Scope-Based Estimate</a>
+                <p class="calc-disclaimer">Indicative interior-only range for planning, not a quote. Excludes GST, kitchen equipment, licences, rent deposits and major landlord or base-building upgrades.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Method -->
+<section class="svc-section">
+    <div class="svc-wrap">
+        <span class="svc-eyebrow">How it works</span>
+        <h2>How the estimate is worked out.</h2>
+        <p class="svc-lead">The calculator starts from SprintCo&rsquo;s published per-sq-ft benchmarks for restaurant interiors, then adjusts for format, city and site. The formula is simple: <strong>area &times; finish rate &times; format &times; city &times; site</strong>.</p>
+        <div class="svc-scope">
+            <div>
+                <h3>Finish level</h3>
+                <p>Budget &#8377;800&ndash;1,200, mid-range &#8377;1,500&ndash;2,500 and premium &#8377;2,800&ndash;5,000+ per sq ft, for a restaurant in a metro on a bare shell. These are the same benchmarks as our <a class="svc-inline" href="restaurant-interior-design-cost-india-2026">restaurant interior design cost guide</a>.</p>
+            </div>
+            <div>
+                <h3>Format</h3>
+                <p>Bars and pubs cost more per sq ft (bar counter, back bar, acoustics and lighting). Kiosks cost more per sq ft because counters, services and signage are spread over a small area. Cloud kitchens cost less, with no dine-in finishes.</p>
+            </div>
+            <div>
+                <h3>City and site</h3>
+                <p>Tier 2 and tier 3 cities are usually lower on labour-heavy work, while materials and equipment cost much the same. Reusing an existing restaurant&rsquo;s services saves money; converting an office or shop to F&amp;B usually adds services work.</p>
+            </div>
+        </div>
+        <div class="calc-table-wrap">
+            <table class="svc-table calc-factors">
+                <thead><tr><th>Factor</th><th>Adjustment to the per-sq-ft rate</th></tr></thead>
+                <tbody>
+                    <tr><td>Restaurant, caf&eacute;, QSR</td><td>Base rate</td></tr>
+                    <tr><td>Bar, pub or brewery</td><td>+15%</td></tr>
+                    <tr><td>Kiosk</td><td>+30%</td></tr>
+                    <tr><td>Cloud kitchen</td><td>&minus;20%</td></tr>
+                    <tr><td>Tier 2 city / tier 3 city</td><td>&minus;10% / &minus;15%</td></tr>
+                    <tr><td>Existing F&amp;B site / converted non-F&amp;B space</td><td>&minus;10% / +10%</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Included -->
+<section class="svc-section svc-section--tint">
+    <div class="svc-wrap svc-split svc-split--top">
+        <div>
+            <span class="svc-eyebrow">Included</span>
+            <h2>What the estimate covers.</h2>
+            <ul class="svc-checklist calc-one-col">
+                <li>Civil changes, partitions, flooring, wall and ceiling finishes</li>
+                <li>Fixed joinery, counters and display</li>
+                <li>Loose furniture and upholstery</li>
+                <li>Electrical works and decorative lighting</li>
+                <li>Plumbing, drainage, HVAC and exhaust interfaces within the interior scope</li>
+                <li>Signage and in-store branding elements</li>
+            </ul>
+        </div>
+        <div>
+            <span class="svc-eyebrow">Not included</span>
+            <h2>Budget for these separately.</h2>
+            <ul class="svc-checklist calc-one-col">
+                <li>Commercial kitchen equipment and refrigeration</li>
+                <li>Major landlord or base-building upgrades (DG, transformer, fire system changes)</li>
+                <li>Licences, approvals and authority fees</li>
+                <li>POS, IT, CCTV and music systems</li>
+                <li>Crockery, smallwares and opening stock</li>
+                <li>GST, rent deposit and pre-opening costs</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Next steps -->
+<section class="svc-section">
+    <div class="svc-wrap">
+        <span class="svc-eyebrow">From estimate to budget</span>
+        <h2>Turn the range into a real number.</h2>
+        <ol class="svc-steps">
+            <li><div><strong>Survey the site</strong><br>Electrical load, exhaust route, drainage and ceiling height decide whether the low or high end of the range is realistic.</div></li>
+            <li><div><strong>Freeze the menu and format</strong><br>Kitchen intensity drives services cost, so settle the menu before the layout is drawn.</div></li>
+            <li><div><strong>Get a line-by-line BOQ</strong><br>A <a class="svc-inline" href="bill-of-quantities">bill of quantities</a> fixes scope and cost before work starts, so you can compare vendors fairly.</div></li>
+        </ol>
+        <p style="margin-top:2.083vw">More on budgets: <a class="svc-inline" href="restaurant-interior-design-cost-india-2026">restaurant interior design cost in India</a>, <a class="svc-inline" href="1000-sq-ft-restaurant-design-build-cost">1,000 sq ft restaurant cost breakdown</a> and <a class="svc-inline" href="cafe-interior-design-cost-per-sq-ft-india">caf&eacute; interior design cost per sq ft</a>.</p>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="svc-section svc-section--tint">
+    <div class="svc-wrap">
+        <span class="svc-eyebrow">FAQ</span>
+        <h2>Restaurant interior cost questions.</h2>
+        <div class="svc-faq">
+            <details><summary>How much does restaurant interior design cost per sq ft in India?</summary><p>As a planning benchmark, restaurant interiors in a metro run about &#8377;800&ndash;1,200 per sq ft for a budget setup, &#8377;1,500&ndash;2,500 for mid-range and &#8377;2,800&ndash;5,000+ for premium concepts. Format, city and site condition move the number up or down, which is what this calculator adjusts for.</p></details>
+            <details><summary>How much does a 1,000 sq ft restaurant interior cost?</summary><p>For a restaurant on a bare shell in a metro, roughly &#8377;8&ndash;12 lakh at a budget finish, &#8377;15&ndash;25 lakh mid-range and &#8377;28&ndash;50 lakh+ premium, for interiors only. See the <a class="svc-inline" href="1000-sq-ft-restaurant-design-build-cost">1,000 sq ft cost breakdown</a> for what sits inside and outside that number.</p></details>
+            <details><summary>Is this a quote?</summary><p>No. It is an indicative range to help you plan and compare. A real number needs a site survey, an agreed scope and a bill of quantities. Share your site details below and we will come back with a scope-based estimate.</p></details>
+            <details><summary>Why does a kiosk cost more per sq ft?</summary><p>A kiosk still needs a counter, services, lighting, signage and display, but those costs are spread over a very small area, so the per-sq-ft rate is higher even though the total is lower.</p></details>
+            <details><summary>Does the estimate include kitchen equipment and GST?</summary><p>No. Kitchen equipment, GST, licences, rent deposits and major landlord upgrades are budgeted separately. Our <a class="svc-inline" href="commercial-kitchen-equipment-complete-setup-for-f-b">commercial kitchen equipment guide</a> has a printable checklist for the kitchen.</p></details>
+            <details><summary>Can SprintCo design and build within my budget?</summary><p>Yes. We plan design, MEP and build together so the budget is checked during design, not after. See our <a class="svc-inline" href="restaurant-fit-out-company-india">restaurant fit-out service</a>.</p></details>
+        </div>
+    </div>
+</section>
+
+<section class="svc-section svc-final" id="share-brief">
+    <div class="svc-wrap svc-split svc-split--top">
+        <div>
+            <span class="svc-eyebrow">Get a scope-based estimate</span>
+            <h2>Want a number for your actual site?</h2>
+            <p class="svc-lead">Share your details and we will review your site, format and finish level, and come back with a scope-based estimate. Your calculator inputs are sent along with the form.</p>
+            <p class="calc-summary" id="calc-summary"></p>
+            <p>Prefer to talk? Call <a class="svc-inline" href="tel:+919004301234">+91 90043 01234</a> or email <a class="svc-inline" href="mailto:info@sprint-co.com">info@sprint-co.com</a>.</p>
+        </div>
+        <div>
+            <form id="landing-form" class="svc-form" data-service="Cost Calculator" novalidate>
+                <label for="lf-name">Full name*</label>
+                <input id="lf-name" name="full_name" type="text" autocomplete="name" required>
+                <label for="lf-phone">Phone / WhatsApp*</label>
+                <input id="lf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" required>
+                <label class="svc-form-check"><input type="checkbox" name="whatsapp"> Send me updates on WhatsApp</label>
+                <label for="lf-city">City*</label>
+                <input id="lf-city" name="city" type="text" autocomplete="address-level2" required>
+                <button type="submit" class="svc-form-btn">Get My Estimate</button>
+                <div class="lead-form-status" aria-live="polite"></div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer>
+    <div class="scrolltop"><img src="images/scrolltop.svg" alt="Scroll To Top"></div>
+    <div class="footer-container">
+        <div class="footer-block">
+            <div class="footer-logo"><a href="/"><img src="images/sprintco-logo.svg" alt="SprintCo"></a></div>
+            <p>Vasudev Chamber-B, 21, Old Nagardas Cross Rd, near Andheri Subway, opposite Wilson House, Mogra Pada, Natwar Nagar, Andheri East, Mumbai, Maharashtra- 400069<br><br>
+            © 2025 Copyright B2B Designers Pvt Limited 2025. <br>All Rights Reserved.</p>
+            <ul class="footer-privacy-nav"><li><a href="privacy-policy">Privacy Policy</a></li></ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-main-nav">
+                <li><a href="projects">Projects</a></li>
+                <li><a href="our-offerings">Our Offerings</a></li>
+                <li><a href="our-clients">Our Clients</a></li>
+                <li><a href="insights">Insights</a></li>
+                <li><a href="cities">Cities</a></li>
+            </ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-social-nav">
+                <li><a href="https://www.linkedin.com/company/sprint-co/" target="_blank">Linkedin</a></li>
+                <li><a href="https://www.instagram.com/sprintco_designs/" target="_blank">Instagram</a></li>
+                <li><a href="https://www.youtube.com/@B2B_Designers" target="_blank">YouTube</a></li>
+                <li class="menu-none"><a href="https://www.flatpackco.com/" target="_blank">FlatPackCo</a></li>
+            </ul>
+        </div>
+        <div class="footer-block">
+            <ul class="footer-contact-nav">
+                <li class="copy-text"><a>info@sprint-co.com</a></li>
+                <li class="copy-text"><a>(+91) 9004301234</a></li>
+                <li class="common-button light-button"><a href="contact"><span>Get in Touch</span></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+</main>
+<script src="js/main.js"></script>
+<script src="js/lead-config.js"></script>
+<script src="js/lead-forms.js" defer></script>
+<script>
+(function () {
+    'use strict';
+    var BANDS = { budget: [800, 1200], mid: [1500, 2500], premium: [2800, 5000] };
+    var FINISH = { budget: 'Budget', mid: 'Mid-range', premium: 'Premium' };
+    var FORMAT = { restaurant: [1, 'Restaurant'], cafe: [1, 'Cafe'], qsr: [1, 'QSR'], bar: [1.15, 'Bar'], kiosk: [1.3, 'Kiosk'], cloud: [0.8, 'Cloud kitchen'] };
+    var CITY = { metro: [1, 'Metro'], tier2: [0.9, 'Tier 2'], tier3: [0.85, 'Tier 3'] };
+    var SITE = { shell: [1, 'Shell'], existing: [0.9, 'Existing F&B'], convert: [1.1, 'Conversion'] };
+    var SPLITS = {
+        standard: [['Civil, flooring, walls and ceilings', 30], ['Joinery, counters and display', 20], ['Furniture and upholstery', 15], ['Electrical and lighting', 15], ['Plumbing, HVAC and exhaust interfaces', 12], ['Signage and branding', 8]],
+        bar: [['Civil, flooring, walls and ceilings', 25], ['Bar counter, back bar and joinery', 25], ['Furniture and upholstery', 15], ['Electrical and lighting', 17], ['Plumbing, HVAC and exhaust interfaces', 10], ['Signage and branding', 8]],
+        kiosk: [['Counter, joinery and display', 40], ['Signage and branding', 20], ['Electrical and lighting', 15], ['Flooring and finishes', 15], ['Plumbing and services', 10]],
+        cloud: [['Civil, flooring, walls and ceilings', 35], ['Plumbing, HVAC and exhaust', 25], ['Electrical and lighting', 20], ['Stainless steel joinery and storage', 15], ['Signage and branding', 5]]
+    };
+    var NOTES = {
+        bar: 'Bar and excise licences, and acoustic treatment for live music, are budgeted separately.',
+        kiosk: 'Kiosks cost more per sq ft because the counter, services and signage sit in a small area. Check the mall or airport fit-out rules early.',
+        cloud: 'Exhaust, fresh air, gas and drainage drive a cloud kitchen budget more than finishes do.',
+        existing: 'Existing services can often be reused, but test the electrical load, exhaust and drainage before you rely on them.',
+        convert: 'Converting a non-F&B space usually needs a new exhaust route, drainage and extra electrical load. Check these before you sign the lease.',
+        premium: 'Bespoke furniture, specialist stone and custom metalwork add fabrication time as well as cost.',
+        small: 'Small outlets often cost more per sq ft: fixed items like the counter, services and signage are spread across fewer square feet.'
+    };
+    function $(id) { return document.getElementById(id); }
+    var range = $('calc-area-range'), area = $('calc-area');
+
+    function lakh(v, up) {
+        if (v < 100000) { var r = up ? Math.ceil(v / 5000) * 5000 : Math.max(5000, Math.floor(v / 5000) * 5000); return r.toLocaleString('en-IN'); }
+        var l = v / 100000, step = l < 5 ? 0.1 : l < 20 ? 0.5 : 1;
+        l = up ? Math.ceil(l / step) * step : Math.floor(l / step) * step;
+        if (l <= 0) l = 0.1;
+        l = Math.round(l * 10) / 10;
+        if (l >= 100) return String(Math.round(l) / 100) + ' crore';
+        return (l % 1 ? l.toFixed(1) : String(l)) + ' lakh';
+    }
+    function rangeText(lo, hi, plus) {
+        var a = lakh(lo, false), b = lakh(hi, true);
+        if (a.slice(-5) === b.slice(-5)) a = a.replace(/ (lakh|crore)$/, '');
+        return '₹' + a + '–' + b + (plus ? '+' : '');
+    }
+    function num(v) { return Math.round(v).toLocaleString('en-IN'); }
+
+    var tracked = false;
+    function calc(e) {
+        if (e && e.target === range) area.value = range.value;
+        if (e && e.target === area && +area.value >= 100 && +area.value <= 6000) range.value = area.value;
+        var sq = Math.max(50, Math.min(20000, parseInt(area.value, 10) || 50));
+        var checked = document.querySelector('input[name="finish"]:checked');
+        var finish = checked ? checked.value : 'mid';
+        document.querySelectorAll('.calc-opt').forEach(function (o) { o.classList.toggle('is-on', o.querySelector('input').checked); });
+        var fmt = $('calc-format').value, city = $('calc-city').value, site = $('calc-site').value;
+        var f = FORMAT[fmt][0] * CITY[city][0] * SITE[site][0];
+        var rlo = BANDS[finish][0] * f, rhi = BANDS[finish][1] * f;
+        var lo = sq * rlo, hi = sq * rhi, plus = finish === 'premium';
+        $('calc-total').textContent = rangeText(lo, hi, plus);
+        $('calc-rate').textContent = '₹' + num(Math.round(rlo / 50) * 50) + '–' + num(Math.round(rhi / 50) * 50) + (plus ? '+' : '') + ' per sq ft for ' + num(sq) + ' sq ft';
+        var key = (fmt === 'bar' || fmt === 'kiosk' || fmt === 'cloud') ? fmt : 'standard';
+        $('calc-split').innerHTML = SPLITS[key].map(function (r) {
+            return '<tr><td>' + r[0] + '</td><td>' + r[1] + '%</td><td>' + rangeText(lo * r[1] / 100, hi * r[1] / 100, false) + '</td></tr>';
+        }).join('');
+        var cont = site === 'shell' ? 10 : 15;
+        $('calc-extra').innerHTML = '<strong>Plan on top:</strong> a ' + cont + '% contingency (about ' + rangeText(lo * cont / 100, hi * cont / 100, false) + ') for site surprises and scope changes, plus GST at 18%.';
+        var notes = [];
+        if (NOTES[fmt]) notes.push(NOTES[fmt]);
+        if (NOTES[site]) notes.push(NOTES[site]);
+        if (plus) notes.push(NOTES.premium);
+        if (sq < 400 && fmt !== 'kiosk') notes.push(NOTES.small);
+        $('calc-notes').innerHTML = notes.map(function (n) { return '<li>' + n + '</li>'; }).join('');
+        var summary = FORMAT[fmt][1] + ', ' + num(sq) + ' sq ft, ' + FINISH[finish] + ', ' + CITY[city][1] + ', ' + SITE[site][1];
+        var est = rangeText(lo, hi, plus);
+        var form = $('landing-form');
+        if (form) form.dataset.service = ('Cost Calculator - ' + summary + ' (' + est.replace('₹', 'Rs ').replace('–', '-') + ')').slice(0, 100);
+        $('calc-summary').textContent = 'Your estimate: ' + summary + ', ' + est + '.';
+        if (e && !tracked && typeof window.gtag === 'function') {
+            tracked = true;
+            window.gtag('event', 'calculator_use', { calculator: 'restaurant_interior_cost' });
+        }
+    }
+    $('cost-calc').addEventListener('input', calc);
+    $('cost-calc').addEventListener('change', calc);
+    calc();
+})();
+</script>
+</body>
+</html>
