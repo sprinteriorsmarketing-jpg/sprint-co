@@ -38,11 +38,31 @@
       setStatus('', '');
       setLoading(true);
 
+      // The tick boxes sit outside this <form> and have no name attribute,
+      // so FormData(form) never picks them up. Collect them explicitly.
+      var ticked = Array.prototype.slice.call(document.querySelectorAll('[data-item]:checked'))
+        .map(function (cb) {
+          var groupEl = document.getElementById(cb.getAttribute('aria-labelledby'));
+          var group = groupEl ? groupEl.textContent.trim() : cb.id;
+          var section = cb.closest('.checklist-section');
+          var sectionEl = section && section.querySelector('.section-heading h2');
+          var sectionName = sectionEl ? sectionEl.textContent.replace(/\s+/g, ' ').trim() : '';
+          return sectionName ? sectionName + ' — ' + group : group;
+        });
+      var tickedText = ticked.length ? ticked.join('\n') : 'None ticked';
+
+      var body = new FormData(form);
+      body.append('checklist_items', tickedText);
+      // Also fold the ticked groups into the requirement text so they reach the
+      // notification email even if the BMS API ignores unknown fields.
+      body.set('requirement', (body.get('requirement') || '') +
+        '\n\n--- Checklist groups ticked (' + ticked.length + ') ---\n' + tickedText);
+
       try {
         var response = await fetch(ENDPOINT, {
           method: 'POST',
           headers: { 'Accept': 'application/json' },
-          body: new FormData(form)
+          body: body
         });
         var data = await response.json().catch(function () { return null; });
 
