@@ -740,6 +740,9 @@ body:has(.bv2-page) {
 button.bv2-btn { font-family: inherit; }
 @media print {
   body.bv2-print-checklist * { visibility: hidden; }
-  body.bv2-print-checklist #kitchen-equipment-checklist, body.bv2-print-checklist #kitchen-equipment-checklist * { visibility: visible; }
-  body.bv2-print-checklist #kitchen-equipment-checklist { position: absolute; left: 0; top: 0; width: 100%; border: 0; background: #fff; }
+  body.bv2-print-checklist .bv2-checklist, body.bv2-print-checklist .bv2-checklist * { visibility: visible; }
+  body.bv2-print-checklist .bv2-checklist { position: absolute; left: 0; top: 0; width: 100%; border: 0; background: #fff; }
 }
+
+/* Answer-first summary */
+.bv2-post-body .bv2-quick-answer { background: var(--bv2-tint); border-left: 3px solid var(--bv2-accent); padding: 14px 18px; border-radius: 6px; }
